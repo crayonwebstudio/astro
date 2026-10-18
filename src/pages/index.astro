@@ -1,0 +1,46 @@
+---
+import Base from '../layouts/Base.astro';
+import { site, home } from '../data/content.ts';
+---
+<Base>
+<section class="hero"><div class="wrap"><div class="hero-grid">
+<div>
+<h1>{home.heroTitleA}<br />{home.heroTitleB} <span class="accent">.</span><br />{home.heroTitleC}<br />{home.heroTitleD}</h1>
+<p class="lead">{home.heroLead}</p>
+<div class="hero-actions"><a class="btn" href={site.ctaHref}>{site.ctaLabel} &rarr;</a><a class="textlink" href={home.heroSecondaryHref}>{home.heroSecondaryLabel}</a></div>
+</div>
+<div>
+<div class="card-meter">
+{home.stats.map(s => <div class="meter-row"><span>{s.label}</span><span>{s.value}</span></div>)}
+<div class="meter-note"><span>{home.statsNote}</span><span>{home.statsPrev}</span></div>
+</div>
+<div class="scribble">{home.scribble}<small>Demo data, vervang in src/data/content.ts</small></div>
+</div>
+</div></div></section>
+
+<section><div class="wrap"><div class="quote-grid">
+<p class="quote"><em>&ldquo;</em>{home.quote}<em>&rdquo;</em></p>
+<div class="prose">{home.quoteBody.map(p => <p>{p}</p>)}</div>
+</div></div></section>
+
+<section id="expertise"><div class="wrap">
+<h2 class="kop-sectie">{home.servicesTitle}</h2>
+<div class="services">
+<div class="svc-img placeholder">REPLACE IMAGE 1<small>1600 x 744 - plaats je eigen foto in /public/ en verwijs ernaar in de code</small></div>
+{home.services.slice(0,2).map(s => <a class="svc" href={s.href}><span class="arrow">&nearr;</span><h3>{s.title}</h3><ul>{s.points.map(pt => <li>{pt}</li>)}</ul></a>)}
+{home.services.slice(2).map(s => <a class="svc" href={s.href}><span class="arrow">&nearr;</span><h3>{s.title}</h3><ul>{s.points.map(pt => <li>{pt}</li>)}</ul></a>)}
+<div class="svc-img placeholder">REPLACE IMAGE 2<small>1600 x 744 - plaats je eigen foto in /public/</small></div>
+</div>
+</div></section>
+
+<section><div class="wrap"><div class="about-grid">
+<div class="about-img placeholder">REPLACE IMAGE - PORTRET 4:5<small>{home.aboutImageAlt}<br />Bestand in /public/ zetten, bv. /portret.jpg</small></div>
+<div><p class="eyebrow">{home.aboutEyebrow}</p><h2 class="kop-sectie" style="margin-top:12px">{home.aboutTitle}</h2><div class="prose" style="margin-top:28px">{home.aboutBody.map(p => <p>{p}</p>)}</div><div class="hero-actions"><a class="btn" href={home.aboutCtaHref}>{home.aboutCtaLabel} &rarr;</a><a class="textlink" href={home.aboutLinkHref}>{home.aboutLinkLabel}</a></div></div>
+</div></div></section>
+
+<section><div class="wrap">
+<p class="eyebrow">Werkwijze</p><h2 class="kop-sectie" style="margin-top:12px">{home.processTitle}</h2>
+<div class="steps">{home.processSteps.map((s,i) => <div class="step"><b>0{i+1}</b><h3>{s.title}</h3><p style="color:var(--muted)">{s.text}</p></div>)}</div>
+<p style="margin-top:22px"><a class="textlink" href={home.processLinkHref}>{home.processLinkLabel} &rarr;</a></p>
+</div></section>
+</Base>

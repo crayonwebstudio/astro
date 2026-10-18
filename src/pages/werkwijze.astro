@@ -1,0 +1,8 @@
+---
+import Base from '../layouts/Base.astro';
+import { werkwijze, site } from '../data/content.ts';
+---
+<Base title={`Werkwijze - ${site.name}`}>
+<section class="hero"><div class="wrap"><p class="eyebrow">Werkwijze</p><h1>{werkwijze.title}</h1><p class="lead">{werkwijze.lead}</p></div></section>
+<section><div class="wrap"><div class="steps">{werkwijze.steps.map(s => <div class="step"><b>{s.n}</b><h3>{s.title}</h3><p style="color:var(--muted)">{s.text}</p></div>)}</div></div></section>
+</Base>

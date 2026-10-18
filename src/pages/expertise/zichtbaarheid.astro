@@ -1,0 +1,6 @@
+---
+import Base from '../../layouts/Base.astro';
+import { home } from '../../data/content.ts';
+const s = home.services[1];
+---
+<Base title={`${s.title} - Biite`}><section class="hero"><div class="wrap"><p class="eyebrow">Expertise</p><h1>{s.title}</h1><p class="lead">Vindbaar in Google en in AI-antwoorden, met conversie als doel.</p></div></section><section><div class="wrap"><ul>{s.points.map(p => <li>{p}</li>)}</ul><p style="margin-top:20px"><a class="btn" href="/contact/">plan een kennismaking &rarr;</a></p></div></section></Base>

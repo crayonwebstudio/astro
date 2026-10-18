@@ -1,0 +1,8 @@
+---
+import Base from '../../layouts/Base.astro';
+import { expertiseIndex, home, site } from '../../data/content.ts';
+---
+<Base title={`${expertiseIndex.title} - ${site.name}`}>
+<section class="hero"><div class="wrap"><p class="eyebrow">Expertise</p><h1>{expertiseIndex.title}</h1><p class="lead">{expertiseIndex.lead}</p><p style="color:var(--muted)">{expertiseIndex.intro}</p></div></section>
+<section><div class="wrap"><div class="services">{home.services.map(s => <a class="svc" href={s.href}><span class="arrow">&nearr;</span><h3>{s.title}</h3><ul>{s.points.map(pt => <li>{pt}</li>)}</ul></a>)}</div></div></section>
+</Base>
