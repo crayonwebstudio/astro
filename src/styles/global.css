@@ -8,7 +8,8 @@
   --vivid:#FF4D1C; --teal:#5ABDB2; --line:rgba(22,24,26,.12); --radius:24px;
 }
 *{box-sizing:border-box} html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--deep);font-family:"Switzer",Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;line-height:1.6}
+body{margin:0;background:var(--bg);color:var(--deep);font-family:"Oxygen",Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;line-height:1.6}
+h1,h2,h3,.kop,.kop-sectie,.kop-display,.quote{font-family:"Switzer",Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
 a{color:inherit;text-decoration:none} img{max-width:100%;display:block}
 .wrap{max-width:1600px;margin:0 auto;padding:0 20px}
 @media(min-width:768px){.wrap{padding:0 40px}}
@@ -20,7 +21,7 @@ header.site{position:absolute;inset:0 0 auto 0;z-index:40}
 nav.main{margin-left:auto;display:none;gap:4px;font-size:14px}
 @media(min-width:1024px){nav.main{display:flex}}
 nav.main a{padding:6px 12px;color:var(--muted)} nav.main a:hover{color:var(--vivid)}
-.btn{display:inline-flex;align-items:center;gap:10px;background:var(--deep);color:#fff;padding:12px 22px;border-radius:999px;font-size:14px;font-weight:600}
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--deep);color:#fff;padding:12px 32px;border-radius:999px;font-size:14px;font-weight:600}
 .btn:hover{background:var(--vivid)}
 .textlink{font-weight:600;text-decoration:underline;text-decoration-color:var(--vivid);text-decoration-thickness:2px;text-underline-offset:4px}
 .hero{padding:130px 0 60px;position:relative;overflow:hidden}
@@ -38,7 +39,7 @@ h1 .accent{color:var(--vivid)}
 .meter-note{font-size:13px;color:var(--muted);display:flex;justify-content:space-between;margin-top:12px}
 .scribble{margin-top:16px;font-weight:800;font-size:20px}
 .scribble small{display:block;font-weight:500;color:var(--muted);font-size:13px}
-section{padding:72px 0} @media(min-width:768px){section{padding:96px 0}}
+section{padding:96px 0} @media(min-width:768px){section{padding:128px 0}}
 .quote-grid{display:grid;gap:40px} @media(min-width:768px){.quote-grid{grid-template-columns:6fr 5fr;gap:64px}}
 .quote{font-size:clamp(28px,4vw,48px);line-height:1.15;letter-spacing:-.03em;font-weight:750;margin:0}
 .quote em{color:var(--vivid);font-style:normal}
