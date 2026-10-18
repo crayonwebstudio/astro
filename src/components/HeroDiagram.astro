@@ -1,0 +1,54 @@
+---
+import { home } from '../data/content.ts';
+const nodes = home.diagramNodes;
+---
+<div class="hero-diagram" aria-hidden="true">
+  <svg class="diagram-lines" viewBox="0 0 100 100" preserveAspectRatio="none">
+    <path d="M 25 8 L 55 12 L 55 30 L 40 32 L 40 50 L 15 50 L 15 75 L 30 75 L 75 62 L 75 40 L 85 40 L 85 20 L 68 18" fill="none" stroke="#CBD5E1" stroke-width="0.4" stroke-dasharray="1 1.2" class="line-draw" />
+    <path d="M 55 30 L 85 40 L 75 62 L 30 75 L 85 85" fill="none" stroke="#CBD5E1" stroke-width="0.4" stroke-dasharray="1 1.2" class="line-draw line-draw-2" />
+    <circle r="1.2" fill="#FF4D1C"><animateMotion dur="6s" repeatCount="indefinite" path="M 25 8 L 55 12 L 55 30 L 40 32 L 40 50 L 15 50 L 15 75 L 30 75 L 75 62 L 75 40 L 85 40" /></circle>
+    <circle r="1" fill="#2563EB"><animateMotion dur="8s" repeatCount="indefinite" path="M 85 85 L 30 75 L 15 50 L 40 32 L 55 30 L 85 40" /></circle>
+  </svg>
+  {nodes.map((n, i) => (
+    <span class="diagram-node" style={`left:${n.x};top:${n.y};animation-delay:${i * 0.18}s`}>
+      <i style={`background:${n.color}`}></i>{n.label}
+    </span>
+  ))}
+  <div class="stats-card">
+    <div class="stats-top">
+      {home.stats.map(s => <div><span>{s.label}</span><b>{s.value}</b></div>)}
+      <span class="stats-check">✓</span>
+    </div>
+    <svg class="stats-chart" viewBox="0 0 200 70" preserveAspectRatio="none">
+      <path d="M0,45 L20,42 L40,48 L60,40 L80,44 L100,22 L110,48 L130,38 L160,42 L200,46" fill="none" stroke="#2563EB" stroke-width="2" class="chart-line" />
+      <path d="M0,52 L20,54 L40,50 L60,55 L80,52 L100,50 L130,52 L160,54 L200,53" fill="none" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 3" />
+      <circle cx="100" cy="22" r="3" fill="#FF4D1C" />
+    </svg>
+    <div class="stats-dates"><span>21 sep</span><span>28</span><span>05 okt</span><span>12</span></div>
+    <div class="stats-legend"><span><i class="dot-blue"></i>{home.statsNote}</span><span><i class="dot-grey"></i>{home.statsPrev}</span></div>
+  </div>
+</div>
+<style>
+.hero-diagram{position:relative;height:560px;max-width:640px;margin-left:auto}
+.diagram-lines{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.line-draw{stroke-dasharray:300;stroke-dashoffset:300;animation:draw 2.2s ease forwards}
+.line-draw-2{animation-delay:.6s}
+@keyframes draw{to{stroke-dashoffset:0}}
+.diagram-node{position:absolute;display:inline-flex;align-items:center;gap:7px;background:#fff;border:1px dashed #CBD5E1;border-radius:999px;padding:7px 12px;font-size:13px;color:#475569;box-shadow:0 4px 16px rgba(0,0,0,.05);opacity:0;animation:nodeIn .5s ease forwards}
+.diagram-node i{width:12px;height:12px;border-radius:50%;display:block;flex:none}
+@keyframes nodeIn{from{opacity:0;transform:translateY(8px) scale(.96)}to{opacity:1;transform:none}}
+.stats-card{position:absolute;right:0;bottom:0;width:min(340px,86%);background:#fff;border:1px solid #E2E8F0;border-radius:14px;padding:14px;box-shadow:0 16px 40px rgba(0,0,0,.10)}
+.stats-top{display:flex;gap:16px;position:relative;padding-right:28px}
+.stats-top div{display:flex;flex-direction:column}
+.stats-top span{font-size:12px;color:#2563EB}
+.stats-top b{font-size:17px;line-height:1.2}
+.stats-check{position:absolute;right:0;top:-10px;width:26px;height:26px;border-radius:50%;background:#0F766E;color:#fff;display:flex;align-items:center;justify-content:center;font-size:14px}
+.stats-chart{width:100%;height:70px;margin-top:10px}
+.chart-line{stroke-dasharray:400;stroke-dashoffset:400;animation:draw 2s ease .4s forwards}
+.stats-dates{display:flex;justify-content:space-between;font-size:10px;color:#64748B;margin-top:4px}
+.stats-legend{display:flex;gap:16px;font-size:11px;color:#64748B;margin-top:8px}
+.dot-blue,.dot-grey{width:14px;height:2px;display:inline-block;margin-right:6px;vertical-align:middle}
+.dot-blue{background:#2563EB}.dot-grey{background:#94A3B8}
+@media(max-width:700px){.hero-diagram{height:480px}.diagram-node{font-size:12px;padding:6px 10px}}
+@media(prefers-reduced-motion:reduce){.line-draw,.chart-line,.diagram-node{animation:none;opacity:1;stroke-dashoffset:0}}
+</style>

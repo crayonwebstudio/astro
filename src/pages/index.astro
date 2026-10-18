@@ -1,21 +1,16 @@
 ---
 import Base from '../layouts/Base.astro';
+import HeroDiagram from '../components/HeroDiagram.astro';
 import { site, home } from '../data/content.ts';
 ---
 <Base>
 <section class="hero"><div class="wrap"><div class="hero-grid">
 <div>
-<h1>{home.heroTitleA}<br />{home.heroTitleB} <span class="accent">.</span><br />{home.heroTitleC}<br />{home.heroTitleD}</h1>
+<h1>{home.heroTitleA}<br />{home.heroTitleB}<br />{home.heroTitleC}<br />{home.heroTitleD}<span class="accent">.</span></h1>
 <p class="lead">{home.heroLead}</p>
-<div class="hero-actions"><a class="btn" href={site.ctaHref}>{site.ctaLabel} &rarr;</a><a class="textlink" href={home.heroSecondaryHref}>{home.heroSecondaryLabel}</a></div>
+<div class="hero-actions"><a class="btn" style="background:#FF4D5A" href={site.ctaHref}>{site.ctaLabel} &rarr;</a><a class="textlink" href={home.heroSecondaryHref}>{home.heroSecondaryLabel}</a></div>
 </div>
-<div>
-<div class="card-meter">
-{home.stats.map(s => <div class="meter-row"><span>{s.label}</span><span>{s.value}</span></div>)}
-<div class="meter-note"><span>{home.statsNote}</span><span>{home.statsPrev}</span></div>
-</div>
-<div class="scribble">{home.scribble}<small>Demo data, vervang in src/data/content.ts</small></div>
-</div>
+<div><HeroDiagram /></div>
 </div></div></section>
 
 <section><div class="wrap"><div class="quote-grid">
