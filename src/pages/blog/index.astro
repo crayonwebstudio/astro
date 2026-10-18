@@ -1,4 +1,29 @@
 ---
+import { getCollection } from 'astro:content';
 import Base from '../../layouts/Base.astro';
+
+const posts = (await getCollection('blog')).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+
+const fmtDate = (d: Date) =>
+  d.toLocaleDateString('nl-NL', { day: 'numeric', month: 'long', year: 'numeric' });
 ---
-<Base title="Blog - Biite"><section class="hero"><div class="wrap"><h1>Blog</h1><p class="lead">Artikelen over marketing, data, AI en systemen. Voeg nieuwe posts toe als .astro bestanden in src/pages/blog/.</p></div></section><section><div class="wrap"><div class="card"><p>Geen posts yet. Maak bijvoorbeeld <code>src/pages/blog/mijn-eerste-post.astro</code> aan.</p></div></div></section></Base>
+<Base title="Blog over marketing en techniek · Biite" description="Lessen uit het werk van Biite over strategie, techniek, taal en AI. Wat opvalt als je die vier naast elkaar legt, en waar groei dan meestal vastloopt.">
+<section class="hero"><div class="wrap"><p class="eyebrow">Blog</p><h1>Lessen uit het werk</h1><p class="lead">Wat opvalt als je strategie, techniek, vindbaarheid en taal naast elkaar legt. Ik volg geen publicatieschema: een stuk komt erbij als een onderwerp steeds terugkomt in gesprekken.</p></div></section>
+<section><div class="wrap"><div class="services">
+{posts.map((post) => (
+  <article class="svc" style="min-height:0">
+    {post.data.heroImage && (
+      <a href={`/blog/${post.slug}/`} aria-label={post.data.title}>
+        <img src={post.data.heroImage} alt="" style="width:100%;border-radius:16px;aspect-ratio:16/9;object-fit:cover" />
+      </a>
+    )}
+    <p style="color:var(--muted);font-size:14px;margin:18px 0 0">{fmtDate(post.data.pubDate)}{post.data.readingTime ? ` · ${post.data.readingTime}` : ''}</p>
+    <h3 style="margin:10px 0 10px"><a href={`/blog/${post.slug}/`}>{post.data.title}</a></h3>
+    <p style="color:var(--muted)">{post.data.description}</p>
+    <p style="margin-top:14px"><a class="textlink" href={`/blog/${post.slug}/`}>Lees het stuk &rarr;</a></p>
+  </article>
+))}
+</div></div></section>
+</Base>

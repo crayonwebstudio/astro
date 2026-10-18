@@ -1,4 +1,11 @@
 ---
 import Base from '../layouts/Base.astro';
+import { voorwaarden, site } from '../data/content.ts';
 ---
-<Base title="Algemene voorwaarden - Biite"><section class="hero"><div class="wrap"><h1>Algemene voorwaarden</h1><p class="lead">Vervang deze pagina door je eigen voorwaarden.</p></div></section></Base>
+<Base title={`${voorwaarden.title} - ${site.name}`} description={voorwaarden.description}>
+<section class="hero"><div class="wrap"><p class="eyebrow">Voorwaarden</p><h1>{voorwaarden.title}</h1><p class="lead">{voorwaarden.lead}</p><p style="color:var(--muted)">{voorwaarden.companyLine}</p><p><a class="btn" href="/Biite-algemene-voorwaarden.pdf">Download als PDF &rarr;</a> <a class="textlink" href={`mailto:${site.email}`} style="margin-left:14px">Vraag over deze voorwaarden</a></p></div></section>
+
+<section><div class="wrap"><h2 class="kop-sectie">Inhoud</h2><ol>{voorwaarden.toc.map((t, i) => <li><a class="textlink" href={`#artikel-${i + 1}`}>{t}</a></li>)}</ol></div></section>
+
+{voorwaarden.articles.map((a, i) => <section id={`artikel-${i + 1}`}><div class="wrap"><h2 class="kop-sectie">{a.heading}</h2>{a.blocks.map(b => b.type === 'ul' ? <ul>{b.items.map(it => <li>{it}</li>)}</ul> : <div class="prose"><p>{b.text}</p></div>)}</div></section>)}
+</Base>

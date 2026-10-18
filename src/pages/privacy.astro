@@ -1,4 +1,8 @@
 ---
 import Base from '../layouts/Base.astro';
+import { privacy, site } from '../data/content.ts';
 ---
-<Base title="Privacy - Biite"><section class="hero"><div class="wrap"><h1>Privacy</h1><p class="lead">Vervang deze pagina door je eigen privacyverklaring.</p></div></section></Base>
+<Base title={`${privacy.title} - ${site.name}`} description={privacy.description}>
+<section class="hero"><div class="wrap"><p class="eyebrow">Privacy</p><h1>{privacy.title}</h1><p class="lead">{privacy.lead}</p></div></section>
+{privacy.sections.map(s => <section><div class="wrap"><h2 class="kop-sectie">{s.heading}</h2><div class="prose">{s.paras.map(p => <p>{p}</p>)}</div></div></section>)}
+</Base>

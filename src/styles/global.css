@@ -1,9 +1,14 @@
+@font-face{font-family:"Switzer";src:url("/fonts/Switzer-Variable.woff2") format("woff2");font-weight:100 900;font-style:normal;font-display:swap}
+@font-face{font-family:"Schoolbell";src:url("/fonts/Schoolbell-Regular.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Oxygen";src:url("/fonts/Oxygen-Light.woff2") format("woff2");font-weight:300;font-style:normal;font-display:swap}
+@font-face{font-family:"Oxygen";src:url("/fonts/Oxygen-Regular.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Oxygen";src:url("/fonts/Oxygen-Bold.woff2") format("woff2");font-weight:700;font-style:normal;font-display:swap}
 :root{
   --bg:#FAF8F4; --surface:#FFFFFF; --raised:#EFEAE1; --deep:#16181A; --muted:rgba(22,24,26,.72); --muted2:rgba(22,24,26,.62);
   --vivid:#FF4D1C; --teal:#5ABDB2; --line:rgba(22,24,26,.12); --radius:24px;
 }
 *{box-sizing:border-box} html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--deep);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;line-height:1.6}
+body{margin:0;background:var(--bg);color:var(--deep);font-family:"Switzer",Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;line-height:1.6}
 a{color:inherit;text-decoration:none} img{max-width:100%;display:block}
 .wrap{max-width:1600px;margin:0 auto;padding:0 20px}
 @media(min-width:768px){.wrap{padding:0 40px}}

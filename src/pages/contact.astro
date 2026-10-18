@@ -2,10 +2,23 @@
 import Base from '../layouts/Base.astro';
 import { contactPage, site } from '../data/content.ts';
 ---
-<Base title={`${contactPage.title} - ${site.name}`}>
-<section class="hero"><div class="wrap"><h1>{contactPage.title}</h1><p class="lead">{contactPage.lead}</p></div></section>
-<section><div class="wrap"><div class="two-col">
-<div class="card"><p><b>{contactPage.emailLabel}</b><br /><a href={`mailto:${site.email}`}>{site.email}</a></p><p><b>{contactPage.phoneLabel}</b><br /><a href={`tel:${site.phoneLink}`}>{site.phoneDisplay}</a></p><p class="note">Dit formulier is een voorbeeld zonder backend. Koppel het aan Formspree, Netlify Forms of je eigen endpoint als je inzendingen wilt ontvangen.</p></div>
-<form class="card" onsubmit="return false"><label>Naam</label><input class="input" placeholder="Je naam" /><label>E-mail</label><input class="input" type="email" placeholder="je@mail.nl" /><label>Bericht</label><textarea class="input" rows="5" placeholder="Wat wil je bereiken?"></textarea><button class="btn" style="margin-top:18px">Verstuur &rarr;</button></form>
+<Base title={`${contactPage.title} - ${site.name}`} description={contactPage.lead}>
+<section class="hero"><div class="wrap"><p class="eyebrow">{contactPage.eyebrow}</p><h1>{contactPage.title}</h1><p class="lead">{contactPage.lead}</p></div></section>
+
+<section><div class="wrap"><div class="about-grid">
+<figure class="about-img" style="padding:0;overflow:hidden;margin:0"><img src={contactPage.image} alt={contactPage.imageAlt} width="1200" height="900" style="width:100%;height:100%;object-fit:cover" /></figure>
+<div><h2 class="kop-sectie">{contactPage.bulletsTitle}</h2><ul>{contactPage.bullets.map(b => <li>{b}</li>)}</ul><p style="margin-top:22px"><a class="btn" href={contactPage.calendarHref} target="_blank" rel="noopener">{contactPage.calendarLabel} &rarr;</a></p><p style="margin-top:14px"><a class="textlink" href={contactPage.messageLinkHref}>{contactPage.messageLinkLabel}</a></p></div>
+</div></div></section>
+
+<section id="bericht"><div class="wrap"><div class="two-col">
+<div><h2 class="kop-sectie">{contactPage.formTitle}</h2><div class="prose">{contactPage.formIntro.map(p => <p>{p}</p>)}</div><p><b>{contactPage.emailLabel}</b><br /><a href={`mailto:${site.email}`}>{site.email}</a></p><p><b>{contactPage.phoneLabel}</b><br /><a href={`tel:${site.phoneLink}`}>{site.phoneDisplay}</a></p><p class="note">{contactPage.privacyNote}</p></div>
+<form class="card" onsubmit="return false">
+<label for="naam">Naam</label><input class="input" id="naam" name="naam" placeholder="Je naam" autocomplete="name" />
+<label for="email">E-mail</label><input class="input" id="email" name="email" type="email" placeholder="je@mail.nl" autocomplete="email" />
+<label for="telefoon">Telefoonnummer (optioneel)</label><input class="input" id="telefoon" name="telefoon" type="tel" placeholder="06 ..." autocomplete="tel" />
+<label for="bericht">Bericht</label><textarea class="input" id="bericht" name="bericht" rows="5" placeholder="Wat wil je bereiken?"></textarea>
+<p class="note">{contactPage.formNote}</p>
+<button class="btn" style="margin-top:18px" type="submit">Verstuur &rarr;</button>
+</form>
 </div></div></section>
 </Base>

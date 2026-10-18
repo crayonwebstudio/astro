@@ -1,6 +1,27 @@
 ---
 import Base from '../../layouts/Base.astro';
-import { home } from '../../data/content.ts';
-const s = home.services[1];
+import { expertiseDetails, site } from '../../data/content.ts';
+const d = expertiseDetails.find(x => x.slug === 'zichtbaarheid')!;
 ---
-<Base title={`${s.title} - Biite`}><section class="hero"><div class="wrap"><p class="eyebrow">Expertise</p><h1>{s.title}</h1><p class="lead">Vindbaar in Google en in AI-antwoorden, met conversie als doel.</p></div></section><section><div class="wrap"><ul>{s.points.map(p => <li>{p}</li>)}</ul><p style="margin-top:20px"><a class="btn" href="/contact/">plan een kennismaking &rarr;</a></p></div></section></Base>
+<Base title={`${d.title} - ${site.name}`} description={d.description}>
+<section class="hero"><div class="wrap"><p class="eyebrow"><a class="textlink" href="/expertise/">Expertise</a> / {d.title}</p><h1><span style="color:var(--muted)">{d.number} </span>{d.title}</h1><p class="lead">{d.lead}</p><p><a class="btn" href={site.ctaHref}>{site.ctaLabel} &rarr;</a></p></div></section>
+
+<section><div class="wrap"><div class="about-grid">
+<figure class="about-img" style="padding:0;overflow:hidden;margin:0"><img src={d.painImage} alt={d.painImageAlt} width="1200" height="900" style="width:100%;height:100%;object-fit:cover" /></figure>
+<div><h2 class="kop-sectie">{d.painTitle}</h2><dl>{d.painPoints.map(p => <div style="margin-top:24px"><dt><b>{p.title}</b></dt><dd style="margin:8px 0 0;color:var(--muted)">{p.text}</dd></div>)}</dl></div>
+</div></div></section>
+
+<section><div class="wrap"><h2 class="kop-sectie">{d.whatYouGetTitle}</h2><div class="services">{d.whatYouGet.map(w => <div class="svc"><h3>{w.title}</h3><p style="color:var(--muted)">{w.body}</p></div>)}</div></div></section>
+
+{d.extraNoteTitle && <section><div class="wrap"><h2 class="kop-sectie">{d.extraNoteTitle}</h2><div class="prose"><p>{d.extraNote}</p></div></div></section>}
+
+<section><div class="wrap"><h2 class="kop-sectie">{d.processTitle}</h2><div class="steps">{d.process.map((s, i) => <div class="step"><b>0{i + 1}</b><h3>{s.title}</h3><p style="color:var(--muted)">{s.text}</p></div>)}</div></div></section>
+
+<section><div class="wrap"><h2 class="kop-sectie">{d.sameTitle}</h2><dl>{d.sameInEvery.map(p => <div style="margin-top:24px"><dt><b>{p.title}</b></dt><dd style="margin:8px 0 0;color:var(--muted)">{p.text}</dd></div>)}</dl></div></section>
+
+<section><div class="wrap"><div class="two-col"><div><h2 class="kop-sectie">{d.fitsTitle}</h2>{d.fitsIntro && <p style="color:var(--muted)">{d.fitsIntro}</p>}<ul>{d.fits.map(f => <li>{f}</li>)}</ul></div><div><h2 class="kop-sectie">Dit past niet als</h2><ul>{d.notFits.map(f => <li>{f}</li>)}</ul></div></div></div></section>
+
+<section><div class="wrap"><h2 class="kop-sectie">{d.faqTitle}</h2>{d.faq.map(f => <div style="margin-top:24px"><h3>{f.q}</h3><p style="color:var(--muted)">{f.a}</p></div>)}</div></section>
+
+<section><div class="wrap"><h2 class="kop-sectie">{d.relatedTitle}</h2><div class="services">{d.relatedPosts.map(p => <a class="svc" href={p.href}><span class="arrow">&nearr;</span><p style="color:var(--muted)">{p.date}</p><h3>{p.title}</h3><p style="color:var(--muted)">{p.description}</p></a>)}</div></div></section>
+</Base>
