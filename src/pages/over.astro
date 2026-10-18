@@ -10,7 +10,7 @@ import { over, site } from '../data/content.ts';
 <div><h2 class="kop-sectie">{over.storyTitle}</h2><div class="prose" style="margin-top:28px">{over.storyBody.map(p => <p>{p}</p>)}</div><p style="margin-top:22px"><a class="btn" href={site.ctaHref}>{site.ctaLabel} &rarr;</a></p></div>
 </div></div></section>
 
-<section><div class="wrap"><div class="quote-grid"><p class="quote"><em>&ldquo;</em>{over.pullQuote}<em>&rdquo;</em></p></div></div></section>
+<section><div class="wrap"><h2 class="kop-sectie">{over.pullQuote}.</h2></div></section>
 
 <section><div class="wrap"><h2 class="kop-sectie">{over.pillarsTitle}</h2><div class="services">{over.pillars.map(p => <div class="svc"><h3>{p.title}</h3><p style="color:var(--muted)">{p.text}</p>{p.linkLabel && <p style="margin-top:14px"><a class="textlink" href={p.linkHref}>{p.linkLabel} &rarr;</a></p>}</div>)}</div></div></section>
 

@@ -1,6 +1,7 @@
 ---
 title: "Een nieuwe AI-website: hoe neem je je vindbaarheid mee?"
 description: "Een nieuwe site uit Lovable, Claude Code of Codex? Beperk SEO-verlies met een URL-mapping, redirects, canonicals en controles voor en na de livegang."
+excerpt: "Je nieuwe website staat klaar, maar waar komen bezoekers via oude links terecht? Dit stuk laat zien hoe je de overstap naar een AI-gebouwde site voorbereidt, wat Google adviseert en welke redirects, canonicals en controles je nodig hebt voor en na de livegang."
 pubDate: 2026-09-30
 readingTime: "22 min lezen"
 heroImage: "/blog/website-migratie-ai-site-header.jpg"
@@ -137,13 +138,9 @@ Een canonical is een regel in de kop van je pagina die zegt: dit is het officië
 Google gebruikt meerdere signalen om te bepalen welk adres de canonieke versie is, en weegt ze verschillend ([Google Search Central](https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls)):
 
 | Signaal | Hoe sterk volgens Google |
-
 | --- | --- |
-
 | Een permanente redirect | Sterk signaal dat het doel canoniek is |
-
 | Een `rel="canonical"`-regel | Sterk signaal |
-
 | Opname in de sitemap | Zwak signaal |
 
 Belangrijk om te weten: een canonical is een hint en geen bevel. Google beslist uiteindelijk zelf welk adres het toont. Hoe consistenter je signalen zijn, hoe groter de kans dat Google jouw keuze volgt. Een redirect naar A, een canonical naar B en een sitemap met C is precies wat je niet wilt.
@@ -179,15 +176,10 @@ Haal je oude URL's uit zoveel mogelijk bronnen, want geen enkele bron is volledi
 Daarna maak je per URL een keuze:
 
 | Oude URL | Nieuwe URL | Keuze |
-
 | --- | --- | --- |
-
 | `/diensten/seo-webshops/` | `/expertise/seo-voor-webshops/` | Naar de inhoudelijk gelijkwaardige opvolger |
-
 | `/blog/tips-2021/` | `/blog/tips-2021/` | Adres blijft gelijk, geen redirect nodig |
-
 | `/team/` en `/over-ons/` | `/over/` | Twee pagina's samengevoegd in één |
-
 | `/actie-zomer-2022/` | Geen | Bewust een 404, want er is geen opvolger |
 
 De voorbeelden zijn verzonnen om de keuzes te laten zien. Het principe is echt: elke rij is een beslissing. Zonder die lijst merk je ontbrekende verwijzingen vaak pas als bezoekers erop vastlopen.
@@ -199,13 +191,9 @@ Een tip die veel werk scheelt: houd waar het kan je oude adressen aan. Een URL d
 Een redirect stuurt een oude URL door naar een nieuwe. Welke soort je gebruikt, maakt uit ([Google Search Central](https://developers.google.com/search/docs/crawling-indexing/301-redirects)):
 
 | Soort | Betekenis voor Google |
-
 | --- | --- |
-
 | 301 en 308 | Permanent. Een signaal aan Google om de nieuwe URL als voorkeursadres te gebruiken. |
-
 | 302 en 307 | Tijdelijk. Geeft op zichzelf geen signaal om het voorkeursadres te vervangen. |
-
 | JavaScript-redirect | Alleen als het niet anders kan, want als het renderen mislukt, ziet Google hem misschien nooit. |
 
 Google raadt waar mogelijk een permanente redirect aan die de server zelf uitvoert. Die is voor zoekmachines en bezoekers het betrouwbaarst. Waar je die regels zet, hangt af van je hosting. Drie veelvoorkomende varianten:
@@ -314,59 +302,36 @@ Werk deze lijst af, in deze volgorde. Hij is gebaseerd op de migratiehandleiding
 **Voor de livegang**
 
 | Stap | Waarom |
-
 | --- | --- |
-
 | Verzamel alle oude URL's uit sitemap, Search Console, analytics, logs en backlinks | Zo mis je minder pagina's met bezoekers of verwijzingen |
-
 | Maak de URL-mapping: per oude URL een nieuwe, samengevoegd of bewust weg | Elke keuze die je niet maakt, maak je per ongeluk |
-
 | Houd oude adressen aan waar dat kan | Wat niet verandert, hoeft niet te worden doorgestuurd |
-
 | Zoek uit waar en hoe je host redirects uitvoert | Test of oude adressen op de juiste opvolger uitkomen |
-
 | Geef unieke, indexeerbare pagina's een canonical naar hun volledige eigen adres | Zo maak je het gewenste voorkeursadres duidelijk |
-
 | Bouw een sitemap met alleen nieuwe, indexeerbare URL's | De sitemap is je lijst voor Google |
-
 | Werk interne links, afbeeldingen en eventuele hreflang bij | Je eigen site hoort meteen naar de juiste adressen te wijzen |
-
 | Exporteer je best presterende pagina's uit Search Console | Je ijkpunt voor na de livegang |
 
 **Op de dag zelf**
 
 | Stap | Waarom |
-
 | --- | --- |
-
 | Verwijder ongewenste noindex- en crawlblokkades op de live site | Een vergeten blokkade laat je site stil verdwijnen |
-
 | Zet de redirects live en test een reeks oude URL's | Controleer op 301 of 308 en op de juiste bestemming |
-
 | Controleer op ketens en op redirects naar de homepage | Eén sprong, naar de best passende pagina |
-
 | Dien de nieuwe sitemap in; bewaar de oude eventueel apart voor monitoring | Zo leert Google de nieuwe adressen kennen |
-
 | Controleer je belangrijkste pagina's met de URL-inspectie | Indexeerbaar, en met de juiste canonical |
-
 | Gebruik de tool Adreswijziging alleen bij een ander domein of subdomein | Voor andere migraties is het niet bedoeld |
 
 **De weken erna**
 
 | Stap | Waarom |
-
 | --- | --- |
-
 | Volg het indexeringsrapport voor pagina's | Soft 404's, noindex en afwijkende canonicals vallen hier op |
-
 | Verwijder een apart bijgehouden oude sitemap als je die niet meer nodig hebt voor monitoring | Je actuele sitemap bevat de definitieve adressen |
-
 | Vergelijk je prestaties met je ijkpunt | Zie welke pagina's niet zijn aangekomen |
-
 | Repareer ontbrekende redirects zodra je ze vindt | Voorkom dat bezoekers via oude links blijven vastlopen |
-
 | Laat de redirects minstens een jaar staan | Geeft Google tijd om signalen aan de nieuwe URL's toe te kennen |
-
 | Zet oude hosting pas uit als de redirects elders blijven werken; behoud zo nodig het oude domein en TLS-certificaat | De oude site hoeft niet te blijven draaien, maar de omleidingen wel |
 
 ## Veelgestelde vragen

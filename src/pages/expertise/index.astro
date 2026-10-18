@@ -6,7 +6,7 @@ import { expertiseIndex, site } from '../../data/content.ts';
 <section class="hero"><div class="wrap"><p class="eyebrow">Expertise</p><h1>{expertiseIndex.title}</h1><p class="lead">{expertiseIndex.lead}</p><p style="color:var(--muted)">{expertiseIndex.intro}</p></div></section>
 <section><div class="wrap"><ul style="list-style:none;padding:0;display:flex;flex-wrap:wrap;gap:12px 28px">{expertiseIndex.clusters.map(c => <li><a class="textlink" href={c.anchor}>{c.number} {c.title} &darr;</a></li>)}</ul></div></section>
 {expertiseIndex.clusters.map(c => <section id={c.anchor.slice(1)}><div class="wrap"><div class="about-grid">
-<figure class="about-img" style="padding:0;overflow:hidden;margin:0"><img src={c.image} alt={c.imageAlt} width="1200" height="900" style="width:100%;height:100%;object-fit:cover" /></figure>
-<div><p class="eyebrow">{c.tagline}</p><h2 class="kop-sectie" style="margin-top:12px"><span style="color:var(--muted)">{c.number} </span>{c.title}</h2><div class="prose" style="margin-top:28px"><p>{c.description}</p></div><ul>{c.items.map(it => <li><a class="textlink" href={c.href}>{it} &rarr;</a></li>)}</ul><p style="margin-top:22px"><a class="btn" href={c.href}>bekijk {c.title.toLowerCase()} &rarr;</a></p></div>
+<figure class="about-img" style="padding:0;overflow:hidden;margin:0"><img src={c.image} alt={c.imageAlt} width="800" height="1200" style="width:100%;height:100%;object-fit:cover" /></figure>
+<div><p class="eyebrow">{c.number} {c.tagline}</p><h2 class="kop-sectie" style="margin-top:12px">{c.title}</h2><div class="prose" style="margin-top:28px"><p>{c.description}</p></div><ul>{c.items.map(it => <li><a class="textlink" href={c.href}>{it} &rarr;</a></li>)}</ul><p style="margin-top:22px"><a class="btn" href={c.href}>bekijk {c.title.toLowerCase()} &rarr;</a></p></div>
 </div></div></section>)}
 </Base>

@@ -5,14 +5,14 @@ import { werkwijze, site } from '../data/content.ts';
 <Base title={`${werkwijze.title} - ${site.name}`} description={werkwijze.lead}>
 <section class="hero"><div class="wrap"><p class="eyebrow">Werkwijze</p><h1>{werkwijze.title}</h1><p class="lead">{werkwijze.lead}</p><p><a class="btn" href={site.ctaHref}>{site.ctaLabel} &rarr;</a> <a class="textlink" href="#fases" style="margin-left:14px">bekijk de vijf fases</a></p></div></section>
 
-<section id="fases"><div class="wrap"><div class="steps">{werkwijze.steps.map(s => <div class="step" id={`fase-${s.n}`}><b>{s.n}</b><h3>{s.title}</h3><p style="color:var(--muted)">{s.text}</p></div>)}</div></div></section>
+<section id="fases"><div class="wrap"><div class="steps">{werkwijze.steps.map(s => <div class="step" id={`fase-${s.n}`}><b>{s.n}</b><h2 class="kop-sectie" style="font-size:clamp(22px,2.4vw,32px)">{s.title}</h2><p style="color:var(--muted)">{s.text}</p></div>)}</div></div></section>
 
 <section><div class="wrap"><div class="about-grid">
-<figure class="about-img" style="padding:0;overflow:hidden;margin:0"><img src={werkwijze.formsImage} alt={werkwijze.formsImageAlt} width="1600" height="900" style="width:100%;height:100%;object-fit:cover" /></figure>
-<div><h2 class="kop-sectie">{werkwijze.formsTitle}</h2><div class="prose" style="margin-top:28px"><p>{werkwijze.formsIntro}</p></div><dl>{werkwijze.forms.map(f => <div style="margin-top:24px"><dt><b>{f.title}</b></dt><dd style="margin:8px 0 0;color:var(--muted)">{f.text}</dd></div>)}</dl><div class="prose" style="margin-top:28px"><p>{werkwijze.formsClosing}</p></div></div>
+<figure class="about-img" style="padding:0;overflow:hidden;margin:0"><img src={werkwijze.formsImage} alt={werkwijze.formsImageAlt} width="1942" height="809" style="width:100%;height:100%;object-fit:cover" /></figure>
+<div><h2 class="kop-sectie">{werkwijze.formsTitle}</h2><div class="prose" style="margin-top:28px"><p>{werkwijze.formsIntro}</p></div><div>{werkwijze.forms.map(f => <div style="margin-top:24px"><h3>{f.title}</h3><p style="color:var(--muted)">{f.text}</p></div>)}</div><div class="prose" style="margin-top:28px"><p>{werkwijze.formsClosing}</p></div></div>
 </div></div></section>
 
-<section><div class="wrap"><h2 class="kop-sectie">{werkwijze.selfTitle}</h2><div class="prose"><p>{werkwijze.selfIntro}</p></div><dl>{werkwijze.selfItems.map(it => <div style="margin-top:24px"><dt><b>{it.title}</b></dt><dd style="margin:8px 0 0;color:var(--muted)">{it.text}</dd></div>)}</dl><p style="margin-top:22px"><a class="textlink" href={werkwijze.selfLinkHref}>{werkwijze.selfLinkLabel} &rarr;</a></p></div></section>
+<section><div class="wrap"><h2 class="kop-sectie">{werkwijze.selfTitle}</h2><div class="prose"><p>{werkwijze.selfIntro}</p></div><div>{werkwijze.selfItems.map(it => <div style="margin-top:24px"><h3>{it.title}</h3><p style="color:var(--muted)">{it.text}</p></div>)}</div><p style="margin-top:22px"><a class="textlink" href={werkwijze.selfLinkHref}>{werkwijze.selfLinkLabel} &rarr;</a></p></div></section>
 
 <section><div class="wrap"><h2 class="kop-sectie">Expertise</h2><div class="prose"><p>{werkwijze.expertiseIntro}</p></div><div class="services">{werkwijze.expertiseLinks.map(l => <a class="svc" href={l.href}><span class="arrow">&nearr;</span><h3>{l.n} {l.title}</h3><p style="color:var(--muted)">{l.description}</p></a>)}</div></div></section>
 </Base>

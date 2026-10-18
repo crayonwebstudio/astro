@@ -1,6 +1,7 @@
 ---
 title: "Claude Opus 5.5: wat het nieuwe model verandert aan je online marketing"
 description: "Wat Claude Opus 5.5 kan, wat de eerste testers ervan vinden en wat het verandert aan je online marketing, van audits en analyse tot de afspraken eromheen."
+excerpt: "Anthropic bracht op 22 september Claude Opus 5.5 uit, met werk op het niveau van Fable 5.1 voor minder geld dan Opus 5. Dit stuk legt de cijfers naast de eerste reacties uit de markt en werkt uit wat het betekent voor online marketing, inclusief de kanttekeningen."
 pubDate: 2026-09-23
 readingTime: "10 min lezen"
 heroImage: "/blog/claude-opus-5-5-online-marketing-header.jpg"
@@ -47,19 +48,12 @@ Bij Biite is Opus het model waar ik het vaakst naar grijp. Ik gebruik het voor a
 In één zin: volgens Anthropic krijg je op veel werk het niveau van Fable 5.1 voor minder geld dan je voor Opus 5 betaalde. Anthropic spreekt van ongeveer 40 procent lagere kosten op typische taken bij standaardinstellingen en ruim 30 procent snellere output. Daarbij rondt het taken in minder stappen af. Klanten als GitHub en Lovable melden dat hetzelfde werk in een derde tot de helft minder stappen klaar is.
 
 |  | Opus 5 | Opus 5.5 |
-
 | --- | --- | --- |
-
 | Input per miljoen tokens | $5 | $4 |
-
 | Output per miljoen tokens | $25 | $20 |
-
 | Uit de cache lezen per miljoen tokens | $0,50 | $0,20 |
-
 | GDPval-AA (kenniswerk) | 1708 Elo | 1846 Elo |
-
 | OSWorld 2.0 (zelfstandig een computer bedienen) | 74,0% | 81,8% |
-
 | Terminal-Bench 4.0 (werk in de terminal) | 52,3% | 66,4% |
 
 Voor marketing zijn twee regels uit die tabel interessanter dan de rest. GDPval meet kenniswerk, zoals analyses, rapporten en onderbouwde voorstellen. OSWorld meet hoe goed een model zelfstandig door schermen en programma's werkt. Leg die twee naast elkaar en je hebt ongeveer de functieomschrijving van een marketinganalist.

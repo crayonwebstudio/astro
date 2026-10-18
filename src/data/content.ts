@@ -27,10 +27,6 @@ export const nav = [
     "label": "Het bureau",
     "href": "/over/"
   },
-  {
-    "label": "Blog",
-    "href": "/blog/"
-  }
 ];
 
 export const home = {
@@ -193,27 +189,27 @@ export const werkwijze = {
   "steps": [
     {
       "n": "01",
-      "title": "Kennismaking Je vertelt wat je wilt bereiken en waar je tegenaan loopt. Samen verkennen we je vraag en of er een goede match is. Dat kan eenvoudig en snel online, of op locatie als je dat prettiger vindt.",
+      "title": "Kennismaking",
       "text": "Je vertelt wat je wilt bereiken en waar je tegenaan loopt. Samen verkennen we je vraag en of er een goede match is. Dat kan eenvoudig en snel online, of op locatie als je dat prettiger vindt."
     },
     {
       "n": "02",
-      "title": "Eerste inzichten en voorstel Je krijgt een eerste presentatie: wat valt op, waar lijken de knelpunten te zitten en wat kan als eerste worden aangepakt? Daaruit volgt een voorstel met doelen, afbakening, planning en kosten. Pas als je daarmee akkoord bent, begint de opdracht.",
+      "title": "Eerste inzichten en voorstel",
       "text": "Je krijgt een eerste presentatie: wat valt op, waar lijken de knelpunten te zitten en wat kan als eerste worden aangepakt? Daaruit volgt een voorstel met doelen, afbakening, planning en kosten. Pas als je daarmee akkoord bent, begint de opdracht."
     },
     {
       "n": "03",
-      "title": "Aan de slag De opdracht staat vast. Nu duikt Biite in de systemen, data en marketingprocessen die bij je vraag horen. Wat gebeurt er achter de schermen, waar gaat informatie verloren en wat werkt al goed? De bevindingen maken duidelijk wat er nodig is om de afgesproken doelen te bereiken. Verbeteringen die direct kunnen worden opgepakt, gaan mee in de uitvoering.",
+      "title": "Aan de slag",
       "text": "De opdracht staat vast. Nu duikt Biite in de systemen, data en marketingprocessen die bij je vraag horen. Wat gebeurt er achter de schermen, waar gaat informatie verloren en wat werkt al goed? De bevindingen maken duidelijk wat er nodig is om de afgesproken doelen te bereiken. Verbeteringen die direct kunnen worden opgepakt, gaan mee in de uitvoering."
     },
     {
       "n": "04",
-      "title": "Afstemmen en keuzes maken Tijdens het werk wordt duidelijker wat aandacht nodig heeft en in welke volgorde. Je bespreekt de bevindingen en houdt samen de afgesproken doelen voor ogen. Komt er iets naar boven dat buiten de opdracht valt, dan hoor je wat het betekent en welke mogelijkheden er zijn. Extra werk begint alleen na overleg en jouw akkoord.",
+      "title": "Afstemmen en keuzes maken",
       "text": "Tijdens het werk wordt duidelijker wat aandacht nodig heeft en in welke volgorde. Je bespreekt de bevindingen en houdt samen de afgesproken doelen voor ogen. Komt er iets naar boven dat buiten de opdracht valt, dan hoor je wat het betekent en welke mogelijkheden er zijn. Extra werk begint alleen na overleg en jouw akkoord."
     },
     {
       "n": "05",
-      "title": "Verbeteren en verder bouwen Je kijkt samen terug op wat is uitgevoerd en wat het oplevert. Wat werkt goed, wat kan beter en waar liggen nog kansen? De afgesproken opdracht wordt afgerond met duidelijke resultaten en overdracht. Is het waardevol om samen verder te werken, dan bespreek je hoe een vervolg eruit kan zien.",
+      "title": "Verbeteren en verder bouwen",
       "text": "Je kijkt samen terug op wat is uitgevoerd en wat het oplevert. Wat werkt goed, wat kan beter en waar liggen nog kansen? De afgesproken opdracht wordt afgerond met duidelijke resultaten en overdracht. Is het waardevol om samen verder te werken, dan bespreek je hoe een vervolg eruit kan zien."
     }
   ],
@@ -293,8 +289,6 @@ export const over = {
   "lead": "Biite helpt bedrijven meer samenhang te brengen in hun marketing. Strategie, content, data en techniek worden samen bekeken, omdat een goed plan pas waarde krijgt als het ook werkt in de praktijk. Met aandacht voor wat je wilt bereiken en wat nodig is om daarop voort te bouwen.",
   "storyTitle": "Van vormgeving naar de vraag waarom iets werkt",
   "storyBody": [
-    "Dylan van den Bosch",
-    "Oprichter van Biite",
     "Biite is ontstaan vanuit de nieuwsgierigheid van oprichter Dylan van den Bosch. Wat begon met vormgeving, groeide uit tot een bredere vraag: waarom doen mensen wat ze doen, en hoe kun je daar met marketing op aansluiten?",
     "Een website kan er goed uitzien en toch onduidelijk zijn. Een campagne kan veel bezoekers trekken zonder de juiste doelgroep te bereiken. En een stijgend cijfer betekent niet automatisch dat je bedrijf verder komt. Daarom kijkt Biite naar de samenhang tussen wat mensen nodig hebben, wat je vertelt en hoe de techniek daarachter werkt.",
     "Het doel is marketing waarop je kunt voortbouwen. Door te begrijpen waarom iets werkt, verbeteringen vast te leggen en kennis bruikbaar te maken in het dagelijkse werk. Zo bouw je aan duurzame groei die verder gaat dan de piek van één campagne."
@@ -431,6 +425,7 @@ export const expertiseDetails = [
     "slug": "data-en-techniek",
     "number": "01",
     "title": "Data en techniek",
+    "headline": "Systemen die samenwerken en cijfers die je helpen betere marketingkeuzes te maken.",
     "description": "Marketingsystemen die je bedrijfsdoelen volgen. Tracking, martech-koppelingen en één datamodel, zodat je cijfers kloppen en je weer op feiten stuurt.",
     "lead": "Je wilt weten welke marketing klanten oplevert. Maar je website, klantensysteem en rapportages geven niet altijd hetzelfde beeld. Biite onderzoekt waar die verschillen vandaan komen: wat wordt gemeten, hoe gegevens worden doorgegeven en welke afspraken er over de cijfers zijn. Je krijgt inzicht in wat beter moet en hulp om het uit te voeren. Daarbij blijft wat al goed werkt behouden.",
     "painTitle": "Waar het meestal misgaat",
@@ -558,6 +553,7 @@ export const expertiseDetails = [
     "slug": "zichtbaarheid",
     "number": "02",
     "title": "Zichtbaarheid",
+    "headline": "Beter gevonden worden en meer bezoekers omzetten in klanten.",
     "description": "Gevonden worden in Google en geciteerd worden in AI-antwoorden. SEO, GEO, sitearchitectuur en CRO, met een helder pad van eerste bezoek naar gesprek.",
     "lead": "Je wilt dat potentiële klanten je vinden en begrijpen wat je voor ze kunt doen. Biite verbindt de inhoud, structuur en techniek van je website, zodat vindbaarheid en conversie elkaar versterken. Van verschijnen in zoekresultaten en AI-antwoorden tot de stap waarmee een bezoeker een lead wordt.",
     "painTitle": "Waar het meestal misgaat",
@@ -672,12 +668,14 @@ export const expertiseDetails = [
       {
         "title": "\"Het las zo lekker\" Waarom je AI content toch posities verliest in Google",
         "href": "/blog/posities-kwijt-na-ai-content/",
+      "image": "/blog/posities-kwijt-na-ai-content-3d-header.jpg",
         "description": "Met AI publiceerde je sneller. De teksten lazen goed en er kwamen toch echt meer bezoekers. Tot je zichtbaarheid in Google daalde. Wat kan er zijn misgegaan, hoe zoek je de oorzaak uit en welke pagina’s verbeter je of haal je weg?",
         "date": "15 oktober 2026 · 12 min lezen"
       },
       {
         "title": "Een nieuwe AI-website: hoe neem je je vindbaarheid mee?",
         "href": "/blog/website-migratie-ai-site/",
+      "image": "/blog/website-migratie-ai-site-header.jpg",
         "description": "Je nieuwe website staat klaar, maar waar komen bezoekers via oude links terecht? Dit stuk laat zien hoe je de overstap naar een AI-gebouwde site voorbereidt, wat Google adviseert en welke redirects, canonicals en controles je nodig hebt voor en na de livegang.",
         "date": "30 september 2026 · 22 min lezen"
       },
@@ -695,6 +693,7 @@ export const expertiseDetails = [
     "slug": "merk-en-taal",
     "number": "03",
     "title": "Merk en taal",
+    "headline": "Een merkverhaal dat je doelgroep begrijpt en herkent, waar die je ook tegenkomt.",
     "description": "Een positie die overeind blijft als iemand anders je verhaal navertelt. Eén taal over al je kanalen, ook in de samenvatting die een AI-model van je maakt.",
     "lead": "Je wilt dat je doelgroep begrijpt waar je voor staat en je herkent in alles wat je deelt. Biite helpt je missie en visie te vertalen naar een helder merkverhaal, een eigen toon en samenhangende content. Zodat wat je uitstraalt ook past bij wie je bent en wat je wilt bereiken.",
     "painTitle": "Waar het meestal misgaat",
@@ -805,6 +804,7 @@ export const expertiseDetails = [
       {
         "title": "Een AI-website die converteert: wat moet je vooraf meegeven?",
         "href": "/blog/website-maken-met-ai-strategie/",
+      "image": "/blog/website-maken-met-ai-strategie-header.jpg",
         "description": "Met AI kun je een website bouwen die bezoekers helpt de volgende stap te zetten. Maar laat je context over je doelgroep, aanbod en merk weg, dan kan AI die zelf invullen. Dit stuk gaat over de start: voor wie maak je de site, wat bied je die mensen en wat geef je AI mee?",
         "date": "5 oktober 2026 · 8 min lezen"
       }
@@ -816,6 +816,7 @@ export const expertiseDetails = [
     "slug": "werken-met-ai",
     "number": "04",
     "title": "Werken met AI",
+    "headline": "AI inzetten om je marketingprocessen blijvend te verbeteren.",
     "description": "Sneller werken met AI, terwijl de keuzes en je data van jou blijven. Eerst klein bewijzen in echt werk, daarna vastleggen wat werkt.",
     "lead": "AI verandert hoe je marketing organiseert en uitvoert. Biite helpt je bepalen wat dat voor jouw bedrijf betekent en de veranderingen doorvoeren in je processen, systemen en dagelijkse werk. Van onderzoek en content tot rapportage en opvolging: welke processen kan AI verbeteren, wat vraagt dat van je organisatie en hoe beoordeel je het resultaat? Zo bouw je aan een aanpak die verder gaat dan losse experimenten en mee kan veranderen met nieuwe ontwikkelingen.",
     "painTitle": "Waar het meestal misgaat",
@@ -932,18 +933,21 @@ export const expertiseDetails = [
       {
         "title": "Geen paspoort, geen productie: grip en audit trails voor je AI-agents",
         "href": "/blog/agent-passport-ai-agents-register/",
+      "image": "/blog/agent-passport-ai-agents-register-header.jpg",
         "description": "Jij, een collega en meerdere AI-agents werken aan dezelfde codebase. Agent Passport laat zien wie erbij betrokken is en welke agent wat wijzigde. Handig als je een fout onderzoekt, een project overdraagt of informatie voor een audit verzamelt.",
         "date": "17 oktober 2026 · 8 min lezen"
       },
       {
         "title": "OpenAI dots: wat kun je als marketeer uit handen geven?",
         "href": "/blog/openai-dots-marketing/",
+      "image": "/blog/openai-dots-marketing-header.jpg",
         "description": "OpenAI lanceerde op 29 september dots, agents die altijd aanstaan, een eigen cloudcomputer hebben en draaien op GPT-6 Astra. Dit stuk legt uit wat ze kunnen, wie ze in Nederland kan gebruiken, wat de systeemkaart over hun grenzen zegt en waar ze in je marketing passen.",
         "date": "29 september 2026 · 13 min lezen"
       },
       {
         "title": "Claude Sonnet 5.5: bijna Opus-niveau voor je dagelijkse marketingwerk",
         "href": "/blog/claude-sonnet-5-5-online-marketing/",
+      "image": "/blog/claude-sonnet-5-5-online-marketing-header.jpg",
         "description": "Anthropic bracht op 28 september Claude Sonnet 5.5 uit, het snellere en goedkopere broertje van Opus 5.5. Op kenniswerk scoort het vrijwel even hoog, voor de helft van de tokenprijs. Dit stuk zet de cijfers op een rij en laat zien waar het in je marketing past.",
         "date": "28 september 2026 · 7 min lezen"
       }
@@ -1015,18 +1019,21 @@ export const aiEnData = {
     {
       "title": "Geen paspoort, geen productie: grip en audit trails voor je AI-agents",
       "href": "/blog/agent-passport-ai-agents-register/",
+      "image": "/blog/agent-passport-ai-agents-register-header.jpg",
       "description": "Jij, een collega en meerdere AI-agents werken aan dezelfde codebase. Agent Passport laat zien wie erbij betrokken is en welke agent wat wijzigde. Handig als je een fout onderzoekt, een project overdraagt of informatie voor een audit verzamelt.",
       "date": "17 oktober 2026 · 8 min lezen"
     },
     {
       "title": "OpenAI dots: wat kun je als marketeer uit handen geven?",
       "href": "/blog/openai-dots-marketing/",
+      "image": "/blog/openai-dots-marketing-header.jpg",
       "description": "OpenAI lanceerde op 29 september dots, agents die altijd aanstaan, een eigen cloudcomputer hebben en draaien op GPT-6 Astra. Dit stuk legt uit wat ze kunnen, wie ze in Nederland kan gebruiken, wat de systeemkaart over hun grenzen zegt en waar ze in je marketing passen.",
       "date": "29 september 2026 · 13 min lezen"
     },
     {
       "title": "Claude Sonnet 5.5: bijna Opus-niveau voor je dagelijkse marketingwerk",
       "href": "/blog/claude-sonnet-5-5-online-marketing/",
+      "image": "/blog/claude-sonnet-5-5-online-marketing-header.jpg",
       "description": "Anthropic bracht op 28 september Claude Sonnet 5.5 uit, het snellere en goedkopere broertje van Opus 5.5. Op kenniswerk scoort het vrijwel even hoog, voor de helft van de tokenprijs. Dit stuk zet de cijfers op een rij en laat zien waar het in je marketing past.",
       "date": "28 september 2026 · 7 min lezen"
     }
@@ -1074,6 +1081,13 @@ export const contactPage = {
   "imageAlt": "Dylan van den Bosch aan tafel achter zijn laptop met een kop koffie, met handgeschreven notities: even uitzoeken, koffie erbij.",
   "calendarLabel": "kies jouw moment in mijn agenda",
   "calendarHref": "https://calendar.app.google/KUeioa9oKrn7SDWQ6",
+  "calendarDetails": ["30 minuten", "Google Meet", "Vrijblijvend"],
+  "founderName": "Dylan van den Bosch",
+  "consentText": "Ik ga ermee akkoord dat Biite mijn gegevens gebruikt om op dit bericht te reageren, zoals beschreven in de privacyverklaring.",
+  "honeypotLabel": "Laat dit veld leeg",
+  "formPrivacyNote": "Je gegevens gebruik ik alleen om op dit bericht te reageren. Ik deel ze niet met anderen en bewaar ze niet langer dan nodig.",
+  "companyFieldLabel": "Bedrijfsnaam (optioneel)",
+  "helpFieldLabel": "Waar wil je hulp bij?",
   "messageLinkLabel": "Of stuur je liever een berichtje?",
   "messageLinkHref": "#bericht",
   "formTitle": "Vertel wat er speelt",

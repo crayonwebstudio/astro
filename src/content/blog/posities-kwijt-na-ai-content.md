@@ -1,6 +1,7 @@
 ---
 title: "\"Het las zo lekker\" Waarom je AI content toch posities verliest in Google"
 description: "Je AI teksten lazen lekker en je verkeer groeide. Nu zak je in Google. Hoe kan dat, is het een penalty en wat doe je om je vindbaarheid te verbeteren?"
+excerpt: "Met AI publiceerde je sneller. De teksten lazen goed en er kwamen toch echt meer bezoekers. Tot je zichtbaarheid in Google daalde. Wat kan er zijn misgegaan, hoe zoek je de oorzaak uit en welke pagina’s verbeter je of haal je weg?"
 pubDate: 2026-10-15
 readingTime: "12 min lezen"
 heroImage: "/blog/posities-kwijt-na-ai-content-3d-header.jpg"

@@ -1,6 +1,7 @@
 ---
 title: "Vindbaar en toch niet gevonden"
 description: "Je staat in de resultaten en toch komt er niemand. Wat er tussen een positie en een bezoeker staat, en wat antwoordmachines aan die rekensom veranderen."
+excerpt: "Ranken en gevonden worden zijn twee verschillende dingen. Tussen een positie en een bezoeker staan de vraag achter de zoekopdracht, de regel in het zoekresultaat en de pagina die het antwoord moet geven. Antwoordmachines schuiven die drie verder uit elkaar."
 pubDate: 2026-08-11
 readingTime: "4 min lezen"
 author: "Dylan van den Bosch"

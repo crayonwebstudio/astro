@@ -4,14 +4,7 @@ import HeroDiagram from '../components/HeroDiagram.astro';
 import { site, home } from '../data/content.ts';
 ---
 <Base>
-<section class="hero"><div class="wrap"><div class="hero-grid">
-<div>
-<h1>{home.heroTitleA}<br />{home.heroTitleB}<br />{home.heroTitleC}<br />{home.heroTitleD}<span class="accent">.</span></h1>
-<p class="lead">{home.heroLead}</p>
-<div class="hero-actions"><a class="btn" style="background:#FF4D5A" href={site.ctaHref}>{site.ctaLabel} &rarr;</a><a class="textlink" href={home.heroSecondaryHref}>{home.heroSecondaryLabel}</a></div>
-</div>
-<div><HeroDiagram /></div>
-</div></div></section>
+<HeroDiagram />
 
 <section><div class="wrap"><div class="quote-grid">
 <p class="quote"><em>&ldquo;</em>{home.quote}<em>&rdquo;</em></p>

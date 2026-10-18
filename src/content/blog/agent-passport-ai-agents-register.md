@@ -1,6 +1,7 @@
 ---
 title: "Geen paspoort, geen productie: grip en audit trails voor je AI-agents"
 description: "Meerdere mensen en AI-agents in één project? Agent Passport geeft overzicht, legt acties vast en helpt je wijzigingen terugzoeken en verantwoorden."
+excerpt: "Jij, een collega en meerdere AI-agents werken aan dezelfde codebase. Agent Passport laat zien wie erbij betrokken is en welke agent wat wijzigde. Handig als je een fout onderzoekt, een project overdraagt of informatie voor een audit verzamelt."
 pubDate: 2026-10-17
 readingTime: "8 min lezen"
 heroImage: "/blog/agent-passport-ai-agents-register-header.jpg"

@@ -16,12 +16,12 @@ const fmtDate = (d: Date) =>
   <article class="svc" style="min-height:0">
     {post.data.heroImage && (
       <a href={`/blog/${post.slug}/`} aria-label={post.data.title}>
-        <img src={post.data.heroImage} alt="" style="width:100%;border-radius:16px;aspect-ratio:16/9;object-fit:cover" />
+        <img src={post.data.heroImage} alt="" width="1254" height="1254" style="width:100%;border-radius:16px;aspect-ratio:16/9;object-fit:cover" />
       </a>
     )}
     <p style="color:var(--muted);font-size:14px;margin:18px 0 0">{fmtDate(post.data.pubDate)}{post.data.readingTime ? ` · ${post.data.readingTime}` : ''}</p>
     <h3 style="margin:10px 0 10px"><a href={`/blog/${post.slug}/`}>{post.data.title}</a></h3>
-    <p style="color:var(--muted)">{post.data.description}</p>
+    <p style="color:var(--muted)">{post.data.excerpt ?? post.data.description}</p>
     <p style="margin-top:14px"><a class="textlink" href={`/blog/${post.slug}/`}>Lees het stuk &rarr;</a></p>
   </article>
 ))}

@@ -1,6 +1,7 @@
 ---
 title: "GPT-6 Sol en Luna: waar je de nieuwe modellen van OpenAI voor inzet"
 description: "Wat GPT-6 Sol en Luna zijn, waar ze sterk en zwak in zijn en hoe je ze inzet in je online marketing, van tagging en data cleaning tot automatisering."
+excerpt: "OpenAI bracht op 22 september GPT-6 Sol en GPT-6 Luna uit. Sol is gebouwd voor alledaags werk en automatisering, Luna voor grote volumes. Dit stuk zet op een rij waar elk model in past, waar niet, en hoe je het in je marketing inzet."
 pubDate: 2026-09-23
 readingTime: "8 min lezen"
 heroImage: "/blog/gpt-6-sol-en-luna-marketing-header.jpg"
@@ -81,15 +82,10 @@ Voor technisch werk ligt dat anders. Dan Shipper van Every maakte Sol meteen zij
 Ze kwamen op dezelfde dag uit, maar ze zijn voor ander werk gebouwd. Op basis van wat de makers en de eerste testers publiceren, ziet de verdeling er zo uit:
 
 | Soort werk | Eerste kandidaat | Waarom |
-
 | --- | --- | --- |
-
 | Processen tussen systemen automatiseren | GPT-6 Sol | Goede kandidaat bij een beperkt budget; geen aangetoonde voorsprong op Opus 5.5 |
-
 | Tagging, classificeren, data cleaning in grote aantallen | GPT-6 Luna | Snel en goedkoop, mits met vaste categorieën |
-
 | Analyses, rapportages, strategische documenten | Claude Opus 5.5 | Sterk op kenniswerk (GDPval) |
-
 | Een agent die zelf door schermen werkt | GPT-6 Astra of Claude Opus 5.5 | Hoogste scores op computergebruik |
 
 Lees die tabel als een startpunt en niet als een uitslag. De cijfers van OpenAI en Anthropic zijn niet een op een te vergelijken, omdat ze soms andere versies van dezelfde benchmark en andere instellingen gebruiken.

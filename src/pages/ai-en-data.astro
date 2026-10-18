@@ -5,18 +5,18 @@ import { aiEnData, site } from '../data/content.ts';
 <Base title={`${aiEnData.title} - ${site.name}`} description={aiEnData.lead}>
 <section class="hero"><div class="wrap"><p class="eyebrow">AI en data</p><h1>{aiEnData.title}</h1><p class="lead">{aiEnData.lead}</p><p><a class="btn" href={site.ctaHref}>{site.ctaLabel} &rarr;</a> <a class="textlink" href="#rollen" style="margin-left:14px">bekijk waar AI meedoet</a></p></div></section>
 
-<section><div class="wrap"><figure class="about-img" style="padding:0;overflow:hidden;margin:0"><img src={aiEnData.heroImage} alt={aiEnData.heroImageAlt} width="1600" height="900" style="width:100%;height:100%;object-fit:cover" /></figure></div></section>
+<section><div class="wrap"><figure class="about-img" style="padding:0;overflow:hidden;margin:0"><img src={aiEnData.heroImage} alt={aiEnData.heroImageAlt} width="1122" height="1402" style="width:100%;height:100%;object-fit:cover" /></figure></div></section>
 
 <section id="rollen"><div class="wrap"><div class="about-grid">
-<figure class="about-img" style="padding:0;overflow:hidden;margin:0"><img src={aiEnData.rolesImage} alt={aiEnData.rolesImageAlt} width="1200" height="900" style="width:100%;height:100%;object-fit:cover" /></figure>
-<div><h2 class="kop-sectie">{aiEnData.rolesTitle}</h2><dl>{aiEnData.roles.map(r => <div style="margin-top:24px"><dt><b>{r.title}</b></dt><dd style="margin:8px 0 0;color:var(--muted)">{r.text}</dd></div>)}</dl></div>
+<figure class="about-img" style="padding:0;overflow:hidden;margin:0"><img src={aiEnData.rolesImage} alt={aiEnData.rolesImageAlt} width="1609" height="977" style="width:100%;height:100%;object-fit:cover" /></figure>
+<div><h2 class="kop-sectie">{aiEnData.rolesTitle}</h2><div>{aiEnData.roles.map(r => <div style="margin-top:24px"><h3>{r.title}</h3><p style="color:var(--muted)">{r.text}</p></div>)}</div></div>
 </div></div></section>
 
-<section><div class="wrap"><h2 class="kop-sectie">{aiEnData.agreementsTitle}</h2><div class="prose"><p>{aiEnData.agreementsIntro}</p></div><dl>{aiEnData.agreements.map(a => <div style="margin-top:24px"><dt><b>{a.title}</b></dt><dd style="margin:8px 0 0;color:var(--muted)">{a.text}</dd></div>)}</dl></div></section>
+<section><div class="wrap"><h2 class="kop-sectie">{aiEnData.agreementsTitle}</h2><div class="prose"><p>{aiEnData.agreementsIntro}</p></div><div>{aiEnData.agreements.map(a => <div style="margin-top:24px"><h3>{a.title}</h3><p style="color:var(--muted)">{a.text}</p></div>)}</div></div></section>
 
 <section><div class="wrap"><h2 class="kop-sectie">{aiEnData.principlesTitle}</h2><div class="services">{aiEnData.principles.map(p => <div class="svc"><h3>{p.title}</h3><p style="color:var(--muted)">{p.text}</p></div>)}</div></div></section>
 
-<section><div class="wrap"><h2 class="kop-sectie">{aiEnData.faqTitle}</h2>{aiEnData.faq.map(f => <div style="margin-top:24px"><h3>{f.q}</h3><p style="color:var(--muted)">{f.a}</p></div>)}</div></section>
+<section><div class="wrap"><h2 class="kop-sectie">{aiEnData.relatedTitle}</h2><div class="services">{aiEnData.relatedPosts.map(p => <a class="svc" href={p.href}>{p.image && <img src={p.image} alt="" width="1254" height="1254" style="width:100%;border-radius:16px;aspect-ratio:16/9;object-fit:cover" />}<span class="arrow">&nearr;</span><p style="color:var(--muted)">{p.date}</p><h3>{p.title}</h3><p style="color:var(--muted)">{p.description}</p></a>)}</div></div></section>
 
-<section><div class="wrap"><h2 class="kop-sectie">{aiEnData.relatedTitle}</h2><div class="services">{aiEnData.relatedPosts.map(p => <a class="svc" href={p.href}><span class="arrow">&nearr;</span><p style="color:var(--muted)">{p.date}</p><h3>{p.title}</h3><p style="color:var(--muted)">{p.description}</p></a>)}</div></div></section>
+<section><div class="wrap"><h2 class="kop-sectie">{aiEnData.faqTitle}</h2>{aiEnData.faq.map(f => <div style="margin-top:24px"><h3>{f.q}</h3><p style="color:var(--muted)">{f.a}</p></div>)}</div></section>
 </Base>

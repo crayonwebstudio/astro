@@ -1,6 +1,7 @@
 ---
 title: "Grok 4.7: waar het model van SpaceXAI past in je online marketing"
 description: "Wat Grok 4.7 is, waar het sterk en zwak in is en hoe je het inzet in je online marketing, van publieke opinie peilen op X tot afwijkingen in je cijfers vinden."
+excerpt: "SpaceXAI bracht op 21 september Grok 4.7 uit, een dag voor Claude Opus 5.5 en GPT-6 Sol en Luna. Dit stuk zet op een rij waar Grok sterk in is, waar niet, en waar het in je online marketing een plek verdient."
 pubDate: 2026-09-23
 readingTime: "8 min lezen"
 heroImage: "/blog/grok-4-7-online-marketing-header.jpg"
@@ -91,17 +92,11 @@ SpaceXAI noemt Grok 4.7 overigens het sterkste model dat het tot nu toe heeft ge
 Grok 4.7 kwam op 21 september uit, Claude Opus 5.5 en GPT-6 Sol en Luna een dag later. Leg je ze naast elkaar, dan ontstaat deze verdeling:
 
 | Soort werk | Eerste kandidaat | Meer lezen |
-
 | --- | --- | --- |
-
 | Peilen wat er op X en online gezegd wordt | Grok 4.7 | dit stuk |
-
 | Afwijkingen in cijfers opsporen | Grok 4.7 of Claude Opus 5.5 | dit stuk en [Opus 5.5](/blog/claude-opus-5-5-online-marketing/) |
-
 | Analyses en rapportages die je doorstuurt | Claude Opus 5.5 | [Opus 5.5](/blog/claude-opus-5-5-online-marketing/) |
-
 | Processen tussen systemen automatiseren binnen een beperkt budget | GPT-6 Sol | [Sol en Luna](/blog/gpt-6-sol-en-luna-marketing/) |
-
 | Tagging en data cleaning in grote aantallen | GPT-6 Luna | [Sol en Luna](/blog/gpt-6-sol-en-luna-marketing/) |
 
 Voor alle drie geldt dezelfde kanttekening. De makers meten met hun eigen benchmarks en instellingen, en die zijn niet een op een te vergelijken. Zie de tabel daarom als een startpunt voor je eigen test. Na een week testen op je eigen werk heb je meer houvast dan na drie aankondigingen.

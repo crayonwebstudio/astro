@@ -1,6 +1,7 @@
 ---
 title: "Claude Sonnet 5.5: bijna Opus-niveau voor je dagelijkse marketingwerk"
 description: "Wat Claude Sonnet 5.5 kan, hoe het zich verhoudt tot Opus 5.5 en waar je het inzet in je online marketing, van rapportages en slides tot klantcontact."
+excerpt: "Anthropic bracht op 28 september Claude Sonnet 5.5 uit, het snellere en goedkopere broertje van Opus 5.5. Op kenniswerk scoort het vrijwel even hoog, voor de helft van de tokenprijs. Dit stuk zet de cijfers op een rij en laat zien waar het in je marketing past."
 pubDate: 2026-09-28
 readingTime: "7 min lezen"
 heroImage: "/blog/claude-sonnet-5-5-online-marketing-header.jpg"
@@ -45,19 +46,12 @@ Sonnet 5.5 is het tweede model uit de 5.5-familie van Anthropic, uitgebracht op 
 Twee cijfers springen eruit. Sonnet 5.5 levert zijn antwoorden volgens Anthropic ruim 30 procent sneller dan Sonnet 5, en kost tot 30 procent minder per taak. Die besparing komt niet uit lagere tarieven, want die zijn gelijk gebleven. Het model gebruikt minder tokens en doet minder tool calls om hetzelfde werk af te ronden ([VentureBeat](https://venturebeat.com/technology/anthropic-launches-claude-sonnet-5-5-with-30-cost-reduction-per-task-due-to-faster-speeds-and-fewer-tool-calls)).
 
 |  | Sonnet 5 | Sonnet 5.5 | Opus 5.5 |
-
 | --- | --- | --- | --- |
-
 | Input per miljoen tokens | $2 | $2 | $4 |
-
 | Output per miljoen tokens | $10 | $10 | $20 |
-
 | GDPval-AA v2.1 (kenniswerk) | 1449 | 1844 | 1846 |
-
 | AA-Briefcase v1.1 (professioneel werk) | 1359 | 1811 | 1822 |
-
 | OSWorld 2.1 (zelfstandig een computer bedienen) | 57,0% | 80,1% | 81,8% |
-
 | Terminal-Bench 4.0 (werk in de terminal) | 10,3% | 70,6% | 66,4% |
 
 Alle cijfers komen uit de tabel van Anthropic zelf. Sonnet 5.5 is beschikbaar via de API van Anthropic en via AWS, Google Cloud en Microsoft Azure. Net als bij Opus 5.5 kun je zero data retention gebruiken, zodat je invoer na verwerking niet wordt bewaard.

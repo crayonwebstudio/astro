@@ -1,88 +1,147 @@
 ---
+import { site, home } from '../data/content.ts';
+// Nodes positioned in full-section 0-100 coords (veld occupies right half).
+// Each node maps to a meter fase for hover highlighting.
 const nodes = [
-  { label: "SEO", color: "#4285F4", x: "26%", y: "2%", detail: "01 Zichtbaarheid", detailSub: "Beter vindbaar in Google" },
-  { label: "GEO", color: "#111827", x: "68%", y: "12%", detail: "01 Zichtbaarheid", detailSub: "Zichtbaar in AI-antwoorden" },
-  { label: "Positionering", color: "#0A66C2", x: "38%", y: "25%", detail: "03 Merk en taal", detailSub: "Duidelijk wat je biedt" },
-  { label: "Taalregister", color: "#111827", x: "84%", y: "33%", detail: "03 Merk en taal", detailSub: "Herkenbare taal" },
-  { label: "Governance", color: "#7B5CFF", x: "14%", y: "46%", detail: "04 Werken met AI", detailSub: "Zelf de controle houden" },
-  { label: "Automatisering", color: "#FF5A1F", x: "68%", y: "58%", detail: "02 Data en techniek", detailSub: "Systemen die samenwerken" },
-  { label: "Tracking", color: "#2563EB", x: "18%", y: "74%", detail: "02 Data en techniek", detailSub: "Meten wat werkt" },
-  { label: "Martech", color: "#FF4D1C", x: "78%", y: "84%", detail: "02 Data en techniek", detailSub: "Koppelingen die kloppen" },
+  { label: "SEO", color: "#4285F4", x: 68, y: 7, fase: "zichtbaarheid", detail: "01 Zichtbaarheid", detailSub: "Beter vindbaar in Google" },
+  { label: "GEO", color: "#111827", x: 86, y: 16, fase: "zichtbaarheid", detail: "01 Zichtbaarheid", detailSub: "Zichtbaar in AI-antwoorden" },
+  { label: "Positionering", color: "#0A66C2", x: 62, y: 29, fase: "merk-en-taal", detail: "03 Merk en taal", detailSub: "Duidelijk wat je biedt" },
+  { label: "Taalregister", color: "#111827", x: 90, y: 37, fase: "merk-en-taal", detail: "03 Merk en taal", detailSub: "Herkenbare taal" },
+  { label: "Governance", color: "#7B5CFF", x: 56, y: 49, fase: "werken-met-ai", detail: "04 Werken met AI", detailSub: "Zelf de controle houden" },
+  { label: "Automatisering", color: "#FF5A1F", x: 82, y: 61, fase: "data-en-techniek", detail: "02 Data en techniek", detailSub: "Systemen die samenwerken" },
+  { label: "Tracking", color: "#2563EB", x: 58, y: 76, fase: "data-en-techniek", detail: "02 Data en techniek", detailSub: "Meten wat werkt" },
+  { label: "Martech", color: "#FF4D1C", x: 88, y: 86, fase: "data-en-techniek", detail: "02 Data en techniek", detailSub: "Koppelingen die kloppen" },
 ];
-const stats = [
-  { label: "Leads", value: "414" },
-  { label: "Verkeer", value: "17.695" },
-  { label: "Conversie", value: "2,3%" },
-];
+const HART = { x: 33, y: 47 };
+// Elbow wire: horizontal from hart, vertical to node row, horizontal into node.
+const wirePath = (n: typeof nodes[number]) => {
+  const midX = (HART.x + n.x) / 2;
+  return `M ${HART.x} ${HART.y} H ${midX} V ${n.y} H ${n.x - 2}`;
+};
+const fases = ["data-en-techniek", "zichtbaarheid", "merk-en-taal", "werken-met-ai"];
 ---
-<div class="hero-diagram" aria-hidden="true">
-  <svg class="diagram-lines" viewBox="0 0 100 100" preserveAspectRatio="none">
-    <!-- thin elbow network -->
-    <path d="M 32 5 L 58 5 L 58 14 L 72 14" fill="none" stroke="#D7DEE8" stroke-width="0.35" />
-    <path d="M 58 14 L 58 27 L 45 27" fill="none" stroke="#D7DEE8" stroke-width="0.35" />
-    <path d="M 58 27 L 58 35 L 88 35" fill="none" stroke="#D7DEE8" stroke-width="0.35" />
-    <path d="M 58 35 L 58 50 L 24 50" fill="none" stroke="#D7DEE8" stroke-width="0.35" />
-    <path d="M 58 50 L 58 60 L 74 60" fill="none" stroke="#D7DEE8" stroke-width="0.35" />
-    <path d="M 58 60 L 58 76 L 28 76" fill="none" stroke="#D7DEE8" stroke-width="0.35" />
-    <path d="M 58 76 L 58 86 L 82 86" fill="none" stroke="#D7DEE8" stroke-width="0.35" />
-    <!-- thick spine from headline dot -->
-    <path d="M 0 50 L 58 50 L 58 60" fill="none" stroke="#0F172A" stroke-width="0.9" class="spine" />
-    <path d="M 24 50 L 35 50" fill="none" stroke="#FF4D5A" stroke-width="0.9" />
-    <!-- travelling pulses -->
-    <circle r="1.1" fill="#FF4D1C"><animateMotion dur="5s" repeatCount="indefinite" path="M 0 50 L 58 50 L 58 60 L 74 60" /></circle>
-    <circle r="0.9" fill="#2563EB"><animateMotion dur="7s" repeatCount="indefinite" path="M 58 14 L 58 35 L 88 35" /></circle>
+<section class="hartslag" id="hartslag">
+  <svg class="hartslag__draden" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+    <g class="wires__base">
+      {nodes.map(n => <path d={wirePath(n)} class="wire wire--base" data-fase={n.fase} />)}
+    </g>
+    <g class="wires__staart">
+      <path d={`M ${HART.x} ${HART.y} H 48 V 62 H 70`} class="wire wire--tail" />
+    </g>
+    <g class="wires__puls">
+      {nodes.map((n, i) => (
+        <circle r="0.9" fill={n.color} class="pulse-dot">
+          <animateMotion dur={`${4 + i * 0.7}s`} repeatCount="indefinite" path={wirePath(n)} />
+        </circle>
+      ))}
+    </g>
   </svg>
-  {nodes.map((n, i) => (
-    <span class="diagram-node" style={`left:${n.x};top:${n.y};animation-delay:${i * 0.12}s`}>
-      <i style={`background:${n.color}`}></i>{n.label}
-      <span class="node-card"><b>{n.detail}</b><span>{n.detailSub}</span></span>
-    </span>
-  ))}
-  <div class="stats-card">
-    <div class="stats-top">
-      {stats.map(s => <div><span>{s.label}</span><b>{s.value}</b></div>)}
-      <span class="stats-check">✓</span>
+  <div class="hero__body"><div class="hero__lower">
+    <div class="hero__copy">
+      <h1 class="kop"><span class="kop__line"><span class="kop__inner">Marketing die<br /> klopt </span></span><span class="kop__line"><span class="kop__inner">tot in de<br /> systemen<span class="sr-only">.</span><span class="hart" id="hart" aria-hidden="true"><span class="hart__ring"></span></span></span></span></h1>
+      <p class="lead">{home.heroLead}</p>
+      <div class="hero-actions"><a class="btn" style="background:#FF4D5A" href={site.ctaHref}>{site.ctaLabel} &rarr;</a><a class="textlink" href={home.heroSecondaryHref}>{home.heroSecondaryLabel}</a></div>
     </div>
-    <svg class="stats-chart" viewBox="0 0 200 70" preserveAspectRatio="none">
-      <path d="M0,45 L15,43 L30,48 L45,42 L60,46 L75,40 L90,44 L105,28 L120,42 L140,38 L160,42 L180,44 L200,46" fill="none" stroke="#2563EB" stroke-width="1.6" class="chart-line" />
-      <path d="M0,54 L20,55 L40,52 L60,56 L80,54 L100,53 L130,54 L160,55 L200,54" fill="none" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 3" />
-      <circle cx="105" cy="28" r="3" fill="#FF4D1C" />
-    </svg>
-    <div class="stats-dates"><span>21 sep</span><span>28</span><span>05 okt</span><span>12</span></div>
-    <div class="stats-legend"><span><i class="dot-blue"></i>Afgelopen 28 dagen</span><span><i class="dot-grey"></i>Vorige periode</span></div>
-  </div>
-  <div class="groei">
-    <span>Groei die blijft</span>
-    <svg viewBox="0 0 60 50" width="52" height="42"><path d="M52 4 C 40 18, 28 30, 8 40" fill="none" stroke="#0F172A" stroke-width="1.6" stroke-linecap="round" /><path d="M14 32 L8 40 L18 42" fill="none" stroke="#0F172A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" /></svg>
-  </div>
-</div>
+    <div class="veld" id="veld" aria-hidden="true">
+      <span class="veld__hub" id="veld-hub"></span>
+      {nodes.map((n, i) => (
+        <button type="button" class="veld-node" data-fase={n.fase} data-wire={i} style={`left:${n.x}%;top:${n.y}%`}>
+          <i style={`background:${n.color}`}></i>{n.label}
+          <span class="node-card"><b>{n.detail}</b><span>{n.detailSub}</span></span>
+        </button>
+      ))}
+      <div class="meter" id="meter" data-fase="data-en-techniek">
+        <span class="meter__status"><svg class="status__vink" viewBox="0 0 256 256"><path d="M232.49,80.49l-128,128a12,12,0,0,1-17,0l-56-56a12,12,0,1,1,17-17L96,183,215.51,63.51a12,12,0,0,1,17,17Z"></path></svg></span>
+        <div class="meter__rijen">
+          <span class="meter__indicator"></span>
+          {home.stats.map((s, i) => <div class={`meter__rij ${i === 0 ? 'is-actief' : ''}`} data-fase={fases[i % fases.length]}><span class="meter__naam">{s.label}</span><span class="meter__getal">{s.value}</span></div>)}
+        </div>
+        <div class="grafiek">
+          <svg class="spoor" viewBox="0 0 272 68" aria-hidden="true">
+            <g class="spoor__raster">{[12, 26, 40, 54].map(y => <line x1="0" y1={y} x2="272" y2={y} />)}</g>
+            <g class="spoor__datums"><text x="4" y="66">21 sep</text><text x="78" y="66">28</text><text x="152" y="66">05 okt</text><text x="226" y="66">12</text></g>
+            <path class="spoor__vorig" d="M0,52 L30,54 L60,50 L90,55 L120,53 L150,52 L180,54 L220,53 L272,54" />
+            <path class="spoor__lijn" d="M0,44 L25,42 L50,47 L75,41 L100,45 L125,39 L150,43 L175,28 L200,41 L230,37 L272,45" />
+            <circle class="spoor__piek" cx="175" cy="28" r="3" />
+            <circle class="spoor__punt" cx="175" cy="28" r="3.5" />
+          </svg>
+        </div>
+        <p class="meter__voet"><span><i></i>{home.statsNote}</span><span><i class="is-vorig"></i>{home.statsPrev}</span></p>
+      </div>
+      <div class="krabbel" id="krabbel"><span class="krabbel__tekst">{home.scribble}</span>
+        <svg class="krabbel__pijl krabbel__pijl--rechts" viewBox="0 0 90 60"><path class="krabbel__lijn" d="M78 4 C 82 30, 52 50, 8 47"></path><path class="krabbel__lijn krabbel__kop" d="M19 39 L8 47 L20 54"></path></svg>
+        <svg class="krabbel__pijl krabbel__pijl--onder" viewBox="0 0 70 56"><path class="krabbel__lijn" d="M8 52 C 14 30, 34 12, 62 6"></path><path class="krabbel__lijn krabbel__kop" d="M49 3 L62 6 L55 17"></path></svg>
+      </div>
+    </div>
+  </div></div>
+</section>
+<script>
+  const veld = document.getElementById('veld');
+  const meter = document.getElementById('meter');
+  const wires = document.querySelectorAll('.hartslag__draden .wire--base');
+  const nodes = veld ? veld.querySelectorAll('.veld-node') : [];
+  const rows = meter ? meter.querySelectorAll('.meter__rij') : [];
+  function setFase(fase) {
+    if (meter) meter.setAttribute('data-fase', fase || 'data-en-techniek');
+    wires.forEach(w => w.classList.toggle('is-actief', !!fase && w.getAttribute('data-fase') === fase));
+    rows.forEach((r, i) => r.classList.toggle('is-actief', i === 0));
+  }
+  nodes.forEach((node) => {
+    node.addEventListener('mouseenter', () => setFase(node.getAttribute('data-fase')));
+    node.addEventListener('focus', () => setFase(node.getAttribute('data-fase')));
+    node.addEventListener('mouseleave', () => setFase('data-en-techniek'));
+    node.addEventListener('blur', () => setFase('data-en-techniek'));
+  });
+</script>
 <style>
-.hero-diagram{position:relative;height:580px;max-width:680px;margin-left:auto}
-.diagram-lines{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
-.spine{stroke-dasharray:200;stroke-dashoffset:200;animation:draw 1.8s ease forwards}
-@keyframes draw{to{stroke-dashoffset:0}}
-.diagram-node{position:absolute;display:inline-flex;align-items:center;gap:7px;background:#fff;border:1px dashed #D7DEE8;border-radius:999px;padding:7px 12px;font-size:13px;color:#64748B;box-shadow:0 2px 10px rgba(0,0,0,.04);opacity:0;animation:nodeIn .5s ease forwards;cursor:default}
-.diagram-node:hover{border-color:#0F172A;color:#0F172A}
-.diagram-node i{width:12px;height:12px;border-radius:3px;display:block;flex:none}
+.hartslag{position:relative;overflow:clip;padding:130px 0 60px}
+.hartslag__draden{position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none;z-index:0}
+.wire{fill:none;stroke:#D7DEE8;stroke-width:0.35;stroke-dasharray:200;stroke-dashoffset:200;animation:wireDraw 1.6s ease forwards}
+.wire--tail{stroke:#0F172A;stroke-width:0.9}
+.wire.is-actief{stroke:#FF4D5A;stroke-width:0.7;stroke-dashoffset:0}
+@keyframes wireDraw{to{stroke-dashoffset:0}}
+.pulse-dot{opacity:.9}
+.hero__body{position:relative;z-index:1;max-width:1600px;margin:0 auto;padding:0 20px}
+@media(min-width:768px){.hero__body{padding:0 40px}}
+.hero__lower{display:grid;gap:48px;align-items:end}
+@media(min-width:1024px){.hero__lower{grid-template-columns:1fr 1.15fr}}
+.kop{font-size:clamp(48px,7.2vw,104px);line-height:.92;letter-spacing:-.055em;margin:0;font-weight:850}
+.kop__line{display:block}.kop__inner{display:inline-block}
+.hart{position:relative;display:inline-block;width:.16em;height:.16em;border-radius:50%;background:#FF4D5A;margin-left:.08em;vertical-align:baseline;transform:translateY(-.02em)}
+.hart__ring{position:absolute;inset:-.35em;border:1.5px solid #FF4D5A;border-radius:50%;animation:hartPulse 2.4s ease-out infinite}
+@keyframes hartPulse{0%{transform:scale(.5);opacity:.9}100%{transform:scale(1.4);opacity:0}}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+.veld{position:relative;min-height:580px}
+.veld__hub{position:absolute;left:48%;top:47%;width:14px;height:14px;border-radius:50%;background:#0F172A;box-shadow:0 0 0 6px rgba(15,23,42,.08)}
+.veld-node{position:absolute;transform:translate(-50%,-50%);display:inline-flex;align-items:center;gap:7px;background:#fff;border:1px dashed #D7DEE8;border-radius:999px;padding:7px 12px;font-size:13px;color:#64748B;box-shadow:0 2px 10px rgba(0,0,0,.04);cursor:pointer;font:inherit;z-index:3;white-space:nowrap}
+.veld-node:hover,.veld-node:focus-visible{border-color:#0F172A;color:#0F172A;outline:none}
+.veld-node i{width:12px;height:12px;border-radius:3px;display:block;flex:none}
 .node-card{position:absolute;left:50%;bottom:calc(100% + 10px);transform:translateX(-50%) translateY(6px);background:#fff;border:1px solid #E2E8F0;border-radius:12px;padding:10px 12px;box-shadow:0 12px 30px rgba(0,0,0,.12);opacity:0;pointer-events:none;transition:.2s;white-space:nowrap;z-index:5;text-align:left}
 .node-card b{display:block;font-size:12px;color:#C026D3}
 .node-card span{display:block;font-size:13px;color:#0F172A}
-.diagram-node:hover .node-card{opacity:1;transform:translateX(-50%) translateY(0)}
-@keyframes nodeIn{from{opacity:0;transform:translateY(8px) scale(.96)}to{opacity:1;transform:none}}
-.stats-card{position:absolute;left:18%;bottom:0;width:min(340px,88%);background:#fff;border:1px solid #E2E8F0;border-radius:14px;padding:14px;box-shadow:0 16px 40px rgba(0,0,0,.10)}
-.stats-top{display:flex;gap:16px;position:relative;padding-right:28px}
-.stats-top div{display:flex;flex-direction:column}
-.stats-top span{font-size:12px;color:#2563EB}
-.stats-top b{font-size:17px;line-height:1.2}
-.stats-check{position:absolute;right:0;top:-10px;width:26px;height:26px;border-radius:50%;background:#0F766E;color:#fff;display:flex;align-items:center;justify-content:center;font-size:14px}
-.stats-chart{width:100%;height:70px;margin-top:10px}
-.chart-line{stroke-dasharray:400;stroke-dashoffset:400;animation:draw 2s ease .4s forwards}
-.stats-dates{display:flex;justify-content:space-between;font-size:10px;color:#64748B;margin-top:4px}
-.stats-legend{display:flex;gap:16px;font-size:11px;color:#64748B;margin-top:8px}
-.dot-blue,.dot-grey{width:14px;height:2px;display:inline-block;margin-right:6px;vertical-align:middle}
-.dot-blue{background:#2563EB}.dot-grey{background:#94A3B8}
-.groei{position:absolute;right:0;bottom:36px;display:flex;flex-direction:column;align-items:flex-end;gap:2px;transform:translateX(12px)}
-.groei span{font-family:"Segoe Script","Comic Sans MS",cursive;font-size:20px;color:#0F172A;transform:rotate(-2deg)}
-@media(max-width:900px){.hero-diagram{height:520px}.groei{right:0;bottom:120px}.groei span{font-size:17px}}
-@media(prefers-reduced-motion:reduce){.spine,.chart-line,.diagram-node{animation:none;opacity:1;stroke-dashoffset:0}}
+.veld-node:hover .node-card,.veld-node:focus-visible .node-card{opacity:1;transform:translateX(-50%) translateY(0)}
+.meter{position:absolute;left:12%;bottom:0;width:min(340px,88%);background:#fff;border:1px solid #E2E8F0;border-radius:14px;padding:14px;box-shadow:0 16px 40px rgba(0,0,0,.10);z-index:2}
+.meter__status{position:absolute;right:12px;top:-10px;width:26px;height:26px;border-radius:50%;background:#0F766E;color:#fff;display:flex;align-items:center;justify-content:center}
+.status__vink{width:14px;height:14px;fill:#fff}
+.meter__rijen{position:relative;display:flex;gap:16px;padding-right:28px}
+.meter__rij{display:flex;flex-direction:column;transition:.2s}
+.meter__rij.is-actief .meter__getal{color:#FF4D5A}
+.meter__naam{font-size:12px;color:#2563EB}
+.meter__getal{font-size:17px;font-weight:700;line-height:1.2}
+.meter__indicator{position:absolute;left:0;bottom:-6px;width:34px;height:3px;background:#2563EB;border-radius:2px}
+.spoor{width:100%;height:68px;margin-top:10px}
+.spoor__raster line{stroke:#E2E8F0;stroke-width:.5}
+.spoor__datums text{font-size:7px;fill:#64748B;font-family:inherit}
+.spoor__vorig{fill:none;stroke:#94A3B8;stroke-width:1;stroke-dasharray:3 3}
+.spoor__lijn{fill:none;stroke:#2563EB;stroke-width:1.6;stroke-dasharray:400;stroke-dashoffset:400;animation:wireDraw 2s ease .4s forwards}
+.spoor__piek{fill:#FF4D1C}.spoor__punt{fill:none;stroke:#FF4D1C;stroke-width:1}
+.meter__voet{display:flex;gap:16px;font-size:11px;color:#64748B;margin:8px 0 0}
+.meter__voet i{display:inline-block;width:14px;height:2px;background:#2563EB;margin-right:6px;vertical-align:middle}
+.meter__voet i.is-vorig{background:#94A3B8}
+.krabbel{position:absolute;right:0;bottom:36px;display:flex;flex-direction:column;align-items:flex-end;z-index:2}
+.krabbel__tekst{font-family:"Schoolbell","Segoe Script",cursive;font-size:20px;color:#0F172A;transform:rotate(-2deg)}
+.krabbel__pijl{width:52px;height:42px;overflow:visible}
+.krabbel__lijn{fill:none;stroke:#0F172A;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+@media(max-width:1023px){.hartslag{padding-top:110px}.veld{min-height:520px}.krabbel{bottom:130px}}
+@media(prefers-reduced-motion:reduce){.wire,.spoor__lijn,.hart__ring{animation:none;stroke-dashoffset:0}}
 </style>

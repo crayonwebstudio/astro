@@ -6,19 +6,23 @@ import { contactPage, site } from '../data/content.ts';
 <section class="hero"><div class="wrap"><p class="eyebrow">{contactPage.eyebrow}</p><h1>{contactPage.title}</h1><p class="lead">{contactPage.lead}</p></div></section>
 
 <section><div class="wrap"><div class="about-grid">
-<figure class="about-img" style="padding:0;overflow:hidden;margin:0"><img src={contactPage.image} alt={contactPage.imageAlt} width="1200" height="900" style="width:100%;height:100%;object-fit:cover" /></figure>
-<div><h2 class="kop-sectie">{contactPage.bulletsTitle}</h2><ul>{contactPage.bullets.map(b => <li>{b}</li>)}</ul><p style="margin-top:22px"><a class="btn" href={contactPage.calendarHref} target="_blank" rel="noopener">{contactPage.calendarLabel} &rarr;</a></p><p style="margin-top:14px"><a class="textlink" href={contactPage.messageLinkHref}>{contactPage.messageLinkLabel}</a></p></div>
+<figure class="about-img" style="padding:0;overflow:hidden;margin:0"><img src={contactPage.image} alt={contactPage.imageAlt} width="1122" height="1402" style="width:100%;height:100%;object-fit:cover;aspect-ratio:4/5" /><figcaption style="margin-top:12px"><b>{contactPage.founderName}</b></figcaption></figure>
+<div><p><a class="btn" href={contactPage.calendarHref} target="_blank" rel="noopener">{contactPage.calendarLabel} &rarr;</a></p><ul style="margin-top:18px;display:flex;flex-wrap:wrap;gap:8px 20px;list-style:none;padding:0">{contactPage.calendarDetails.map(d => <li>{d}</li>)}</ul><p style="margin-top:14px"><a class="textlink" href={contactPage.messageLinkHref}>{contactPage.messageLinkLabel}</a></p><h2 class="kop-sectie" style="margin-top:28px">{contactPage.bulletsTitle}</h2><ul style="margin-top:16px">{contactPage.bullets.map(b => <li>{b}</li>)}</ul></div>
 </div></div></section>
 
 <section id="bericht"><div class="wrap"><div class="two-col">
-<div><h2 class="kop-sectie">{contactPage.formTitle}</h2><div class="prose">{contactPage.formIntro.map(p => <p>{p}</p>)}</div><p><b>{contactPage.emailLabel}</b><br /><a href={`mailto:${site.email}`}>{site.email}</a></p><p><b>{contactPage.phoneLabel}</b><br /><a href={`tel:${site.phoneLink}`}>{site.phoneDisplay}</a></p><p class="note">{contactPage.privacyNote}</p></div>
+<div><h2 class="kop-sectie">{contactPage.formTitle}</h2><div class="prose">{contactPage.formIntro.map(p => <p>{p}</p>)}</div><p><b>{contactPage.emailLabel}</b><br /><a href={`mailto:${site.email}`}>{site.email}</a></p><p><b>{contactPage.phoneLabel}</b><br /><a href={`tel:${site.phoneLink}`}>{site.phoneDisplay}</a></p><p>{site.email} &middot; {site.phoneDisplay}</p></div>
 <form class="card" onsubmit="return false">
-<label for="naam">Naam</label><input class="input" id="naam" name="naam" placeholder="Je naam" autocomplete="name" />
-<label for="email">E-mail</label><input class="input" id="email" name="email" type="email" placeholder="je@mail.nl" autocomplete="email" />
+<label for="naam">Naam</label><input class="input" id="naam" name="naam" placeholder="Je naam" autocomplete="name" required />
+<label for="email">E-mailadres</label><input class="input" id="email" name="email" type="email" placeholder="je@mail.nl" autocomplete="email" required />
+<label for="organisatie">{contactPage.companyFieldLabel}</label><input class="input" id="organisatie" name="organisatie" placeholder="Je bedrijfsnaam" autocomplete="organization" />
 <label for="telefoon">Telefoonnummer (optioneel)</label><input class="input" id="telefoon" name="telefoon" type="tel" placeholder="06 ..." autocomplete="tel" />
-<label for="bericht">Bericht</label><textarea class="input" id="bericht" name="bericht" rows="5" placeholder="Wat wil je bereiken?"></textarea>
+<label for="toelichting">{contactPage.helpFieldLabel}</label><textarea class="input" id="toelichting" name="toelichting" rows="5" placeholder="Een paar zinnen is genoeg. Een link naar je website mag erbij."></textarea>
+<label style="display:flex;gap:10px;align-items:flex-start;margin-top:14px"><input type="checkbox" id="toestemming" name="toestemming" required style="margin-top:4px" /><span>{contactPage.consentText} <a href="/privacy/">privacyverklaring</a>.</span></label>
+<label for="bedrijfsnaam_bevestiging" style="position:absolute;left:-9999px" aria-hidden="true">{contactPage.honeypotLabel}<input class="input" id="bedrijfsnaam_bevestiging" name="bedrijfsnaam_bevestiging" tabindex="-1" autocomplete="off" /></label>
 <p class="note">{contactPage.formNote}</p>
-<button class="btn" style="margin-top:18px" type="submit">Verstuur &rarr;</button>
+<button class="btn" style="margin-top:18px" type="submit">Verstuur je bericht &rarr;</button>
+<p class="note" style="margin-top:14px">{contactPage.formPrivacyNote}</p>
 </form>
 </div></div></section>
 </Base>

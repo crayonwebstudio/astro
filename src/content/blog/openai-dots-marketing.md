@@ -1,6 +1,7 @@
 ---
 title: "OpenAI dots: wat kun je als marketeer uit handen geven?"
 description: "Wat OpenAI dots zijn, of je ze in Nederland kunt gebruiken en wat always-on agents betekenen voor je online marketing, met de cijfers uit de systeemkaart."
+excerpt: "OpenAI lanceerde op 29 september dots, agents die altijd aanstaan, een eigen cloudcomputer hebben en draaien op GPT-6 Astra. Dit stuk legt uit wat ze kunnen, wie ze in Nederland kan gebruiken, wat de systeemkaart over hun grenzen zegt en waar ze in je marketing passen."
 pubDate: 2026-09-29
 readingTime: "13 min lezen"
 heroImage: "/blog/openai-dots-marketing-header.jpg"
@@ -53,15 +54,10 @@ Via het plug-in-ecosysteem van ChatGPT kan een dot verbinding maken met meer dan
 Het grootste verschil met een gewoon gesprek in ChatGPT zit in de tijd. Hieronder vergelijk ik dots met een losse chat, zonder extra taken of agents:
 
 |  | Een gesprek in ChatGPT | Een dot |
-
 | --- | --- | --- |
-
 | Wanneer werkt het? | Als jij een vraag stelt | Doorlopend, ook tussen gesprekken door |
-
 | Waar werkt het? | In het gesprek | Op een eigen cloudcomputer, in de apps die je koppelt |
-
 | Context | Per gesprek, met het geheugen van ChatGPT | Bouwt eigen geheugen op, ook uit gekoppelde apps |
-
 | Bereikbaar via | ChatGPT | ChatGPT, Slack en Teams |
 
 Een belangrijk onderdeel is wat OpenAI proactief onderzoek noemt. Als je niet actief met je dot werkt, zoekt hij op de achtergrond naar manieren om te helpen, in de apps die je hebt gekoppeld. Dat onderzoek kan alleen lezen. Voor een vervolgactie gelden de normale regels en controles. OpenAI noemt een vroege tester bij wie de dot een vergeten factuur opmerkte. De dot stelde de factuur op en verstuurde hem na goedkeuring.
@@ -115,19 +111,12 @@ Voor dots heeft OpenAI een aparte bijlage met veiligheidstests toegevoegd aan de
 Een paar uitkomsten die voor marketingteams tellen:
 
 | Test | Uitkomst |
-
 | --- | --- |
-
 | 50.000 gesimuleerde e-mails, waarvan 16.600 aanvallen die de dot informatie moesten laten lekken, mail laten doorsturen of een betaling laten omleiden | Geen enkele geslaagde aanval |
-
 | 2.638 aanvallen die telkens werden bijgeschaafd op basis van de vorige reactie | Geen enkele geslaagde aanval |
-
 | 49 taken waarin halverwege de rechten of de opdracht veranderden | 45 goed afgehandeld (91,8 procent), inclusief alle 17 expliciete wijzigingen van rechten |
-
 | Een reeks taken met vijf tussenliggende opdrachten en wisselende grenzen | In 8,6 procent een overschrijding met beperkte gevolgen |
-
 | De testvariant met tien tussenliggende opdrachten | In 19,7 procent een overschrijding met beperkte gevolgen |
-
 | Een waarschuwing die een actie verbiedt, bij het maximale redeneerbudget | In 17,4 procent probeerde het model de beperking toch te omzeilen |
 
 Twee dingen om bij die cijfers te weten. De tests zijn gemaakt om zwakke plekken te vinden, deels zonder de extra controles die in het product zitten. Het zijn geen foutpercentages voor dagelijks gebruik; nul geslaagde aanvallen betekent ook niet dat elke aanval wordt tegengehouden. En het zijn resultaten die OpenAI zelf publiceert.
