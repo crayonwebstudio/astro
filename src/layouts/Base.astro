@@ -1,9 +1,16 @@
 ---
 import '../styles/global.css';
 import { site, nav, footer, home } from '../data/content.ts';
-const { title = site.name + ' - ' + site.tagline, description = site.description, finalCtaImage = '/portret-dylan.jpg', finalCtaImageAlt = 'Dylan van den Bosch, oprichter van Biite' } = Astro.props;
-const canonical = `https://astro.woodwolfdigital.com${Astro.url.pathname}`;
-const ogImage = 'https://astro.woodwolfdigital.com/og.jpg';
+const { title = site.name + ' · ' + site.tagline, description = site.description, ogDescription = description, jsonLd = [], finalCtaImage = '/portret-dylan.jpg', finalCtaImageAlt = 'Dylan van den Bosch, oprichter van Biite' } = Astro.props;
+const siteUrl = 'https://astro.woodwolfdigital.com';
+const canonical = `${siteUrl}${Astro.url.pathname}`;
+const ogImage = `${siteUrl}/og.jpg`;
+const jsonLdGraph = [
+  { '@type': 'Organization', '@id': `${siteUrl}/#organisatie`, name: 'Biite', url: `${siteUrl}/`, description: 'Biite werkt waar strategie, techniek, zichtbaarheid, taal en AI elkaar raken. Eén aanspreekpunt, van het eerste gesprek tot de oplevering.', email: 'hallo@biite.nl', telephone: '+31619618278', logo: { '@type': 'ImageObject', '@id': `${siteUrl}/#logo`, url: `${siteUrl}/logo.svg`, contentUrl: `${siteUrl}/logo.svg`, caption: 'Biite' }, image: { '@id': `${siteUrl}/#logo` }, contactPoint: { '@type': 'ContactPoint', contactType: 'sales', email: 'hallo@biite.nl', telephone: '+31619618278', availableLanguage: 'nl', areaServed: 'NL' }, founder: { '@id': `${siteUrl}/over/#oprichter` }, sameAs: ['https://www.linkedin.com/company/biite-agency'], identifier: { '@type': 'PropertyValue', name: 'KvK', value: '42153735' }, iso6523Code: '0106:42153735', vatID: 'NL005540062B37', areaServed: 'NL', knowsLanguage: 'nl-NL' },
+  { '@type': 'WebSite', '@id': `${siteUrl}/#website`, url: `${siteUrl}/`, name: 'Biite', alternateName: 'biite.nl', inLanguage: 'nl-NL', publisher: { '@id': `${siteUrl}/#organisatie` } },
+  { '@type': 'Person', '@id': `${siteUrl}/over/#oprichter`, name: 'Dylan van den Bosch', url: `${siteUrl}/over/`, jobTitle: 'Oprichter', image: `${siteUrl}/portret-dylan.jpg`, sameAs: ['https://www.linkedin.com/in/dylan-van-den-bosch/'], worksFor: { '@id': `${siteUrl}/#organisatie` } },
+  ...jsonLd,
+];
 const checkItems = [
   'Je bespreekt je vraag met iemand die ook bij de uitvoering betrokken blijft.',
   'Samen met Biite bekijk je wat nodig is en welke eerste stap past.',
@@ -21,7 +28,7 @@ const checkSvg = '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
 <meta name="robots" content="index, follow" />
 <link rel="canonical" href={canonical} />
 <meta property="og:title" content={title} />
-<meta property="og:description" content={description} />
+<meta property="og:description" content={ogDescription} />
 <meta property="og:image" content={ogImage} />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
@@ -30,8 +37,9 @@ const checkSvg = '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
 <meta property="og:locale" content="nl_NL" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content={title} />
-<meta name="twitter:description" content={description} />
+<meta name="twitter:description" content={ogDescription} />
 <meta name="twitter:image" content={ogImage} />
+<script type="application/ld+json" set:html={JSON.stringify({ '@context': 'https://schema.org', '@graph': jsonLdGraph })} />
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 <link rel="icon" href="/favicon-32x32.png" type="image/png" sizes="32x32" />
 <link rel="icon" href="/favicon-16x16.png" type="image/png" sizes="16x16" />
@@ -42,11 +50,14 @@ const checkSvg = '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
 </head>
 <body>
 <header class="site"><div class="wrap"><div class="header-inner">
-<a href="/" aria-label="Biite, naar de homepage"><img src="/logo.svg" alt="Biite" style="height:26px;width:auto;display:block" /></a>
+<a href="/" aria-label="Biite, naar de homepage"><img src="/logo.svg" alt="Biite" class="site-logo" /></a>
 <nav class="main" aria-label="hoofdnavigatie">{nav.map(n => <a href={n.href}>{n.label}</a>)}</nav>
-<a href={site.ctaHref} class="btn" style="margin-left:auto">{site.ctaLabel} &rarr;</a>
-<button type="button" class="menu-btn" aria-expanded="false" aria-controls="mobile-menu" aria-label="menu openen" onclick="document.getElementById('mobile-menu').classList.toggle('open');this.setAttribute('aria-expanded', document.getElementById('mobile-menu').classList.contains('open') ? 'true' : 'false')"><span></span><span></span><span></span></button>
-</div><nav id="mobile-menu" class="mobile-menu" aria-label="mobiele navigatie">{nav.map(n => <a href={n.href}>{n.label}</a>)}<a href="/blog/">Blog</a><a href="/contact/">Contact</a></nav></div></header>
+</div></div></header>
+<div class="header-actions">
+<a href={site.ctaHref} class="btn header-cta">{site.ctaLabel} &rarr;</a>
+<button type="button" class="menu-btn" aria-expanded="false" aria-controls="mobile-menu" aria-label="menu openen" onclick="document.getElementById('mobile-menu').classList.toggle('open');this.setAttribute('aria-expanded', document.getElementById('mobile-menu').classList.contains('open') ? 'true' : 'false')"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="3" y="5" width="18" height="2" rx="1"></rect><rect x="3" y="11" width="18" height="2" rx="1"></rect><rect x="3" y="17" width="18" height="2" rx="1"></rect></svg></button>
+</div>
+<nav id="mobile-menu" class="mobile-menu" aria-label="mobiele navigatie">{nav.map(n => <a href={n.href} onclick="document.getElementById('mobile-menu').classList.remove('open')">{n.label}</a>)}<a href="/blog/" onclick="document.getElementById('mobile-menu').classList.remove('open')">Blog</a><a href="/contact/" onclick="document.getElementById('mobile-menu').classList.remove('open')">Contact</a></nav>
 <main><slot /></main>
 <footer>
   <section class="final-cta-section"><div class="wrap"><div class="final-cta-grid">
@@ -55,7 +66,7 @@ const checkSvg = '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
       <ul class="final-cta-checklist">
         {checkItems.map(t => <li><span set:html={checkSvg} />{t}</li>)}
       </ul>
-      <div class="hero-actions"><a class="btn" style="background:#FF4D5A" href={site.ctaHref}>{site.ctaLabel} &rarr;</a><a class="textlink" href="/expertise/">{home.finalCtaSecondaryLabel}</a></div>
+      <div class="final-cta-actions"><a class="btn btn-lg" href={site.ctaHref}>{site.ctaLabel} &rarr;</a><a class="textlink" href="/expertise/">{home.finalCtaSecondaryLabel}</a></div>
     </div>
     <div class="final-cta-img"><img src={finalCtaImage} alt={finalCtaImageAlt} width="1122" height="1402" loading="lazy" decoding="async" /></div>
   </div></div></section>
@@ -67,7 +78,7 @@ const checkSvg = '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
     </div>
     <nav aria-label="footernavigatie"><p class="footer-col-title">{footer.navTitle}</p><ul class="footer-links">{footer.navLinks.map(l => <li><a href={l.href}>{l.label}</a></li>)}</ul></nav>
     <nav aria-label="expertise"><p class="footer-col-title">{footer.expertiseTitle}</p><ul class="footer-links">{footer.expertiseLinks.map(l => <li><a href={l.href}><span class="footer-num">{l.n}</span>{l.label}</a></li>)}</ul></nav>
-    <div><p class="footer-col-title">{footer.contactTitle}</p><ul class="footer-links"><li><a href={`mailto:${site.email}`}>{site.email}</a></li><li><a href={`tel:${site.phoneLink}`}>{site.phoneDisplay}</a></li></ul></div>
+    <div><p class="footer-col-title">{footer.contactTitle}</p><ul class="footer-links"><li><a href={`mailto:${site.email}`} style="display:inline-flex;align-items:baseline;gap:8px"><svg class="footer-contact-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 256 256" aria-hidden="true"><path d="M224,44H32A12,12,0,0,0,20,56V192a20,20,0,0,0,20,20H216a20,20,0,0,0,20-20V56A12,12,0,0,0,224,44ZM193.15,68,128,127.72,62.85,68ZM44,188V83.28l75.89,69.57a12,12,0,0,0,16.22,0L212,83.28V188Z"></path></svg>{site.email}</a></li><li><a href={`tel:${site.phoneLink}`} style="display:inline-flex;align-items:baseline;gap:8px"><svg class="footer-contact-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 256 256" aria-hidden="true"><path d="M224,154.8l-47.09-21.11-.18-.08a19.94,19.94,0,0,0-19,1.75,13.08,13.08,0,0,0-1.12.84l-22.31,19c-13-7.05-26.43-20.37-33.49-33.21l19.06-22.66a11.76,11.76,0,0,0,.85-1.15,20,20,0,0,0,1.66-18.83,1.42,1.42,0,0,1-.08-.18L101.2,32A20.06,20.06,0,0,0,80.42,20.15,60.27,60.27,0,0,0,28,80c0,81.61,66.39,148,148,148a60.27,60.27,0,0,0,59.85-52.42A20.06,20.06,0,0,0,224,154.8ZM176,204A124.15,124.15,0,0,1,52,80,36.29,36.29,0,0,1,80.48,44.46l18.82,42L80.14,109.28a12,12,0,0,0-.86,1.16A20,20,0,0,0,78,130.08c9.42,19.28,28.83,38.56,48.31,48A20,20,0,0,0,146,176.63a11.63,11.63,0,0,0,1.11-.85l22.43-19.07,42,18.81A36.29,36.29,0,0,1,176,204Z"></path></svg>{site.phoneDisplay}</a></li></ul></div>
   </div>
   <div class="footer-bottom-light"><p>2026 Biite<span> &middot; KvK 42153735</span><span> &middot; btw NL005540062B37</span></p><div>{footer.legal.map(l => <a href={l.href}>{l.label}</a>)}</div></div>
   </div></div></div>

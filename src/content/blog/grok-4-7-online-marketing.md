@@ -1,10 +1,12 @@
 ---
 title: "Grok 4.7: waar het model van SpaceXAI past in je online marketing"
+seoTitle: "Grok 4.7 voor je online marketing"
 description: "Wat Grok 4.7 is, waar het sterk en zwak in is en hoe je het inzet in je online marketing, van publieke opinie peilen op X tot afwijkingen in je cijfers vinden."
 excerpt: "SpaceXAI bracht op 21 september Grok 4.7 uit, een dag voor Claude Opus 5.5 en GPT-6 Sol en Luna. Dit stuk zet op een rij waar Grok sterk in is, waar niet, en waar het in je online marketing een plek verdient."
 pubDate: 2026-09-23
 readingTime: "8 min lezen"
 heroImage: "/blog/grok-4-7-online-marketing-header.jpg"
+heroAlt: "De tekst Grok 4.7 tegen donkerblauwe lichtbanen."
 author: "Dylan van den Bosch"
 tags: ["Werken met AI"]
 ---
@@ -131,6 +133,6 @@ Dit stuk raakt aan [Werken met AI](/expertise/werken-met-ai/). Daar staat wat er
 
 - [Claude Sonnet 5.5: bijna Opus-niveau voor je dagelijkse marketingwerk](/blog/claude-sonnet-5-5-online-marketing/)
 
-- [GPT-6 Sol en Luna: waar je de nieuwe modellen van OpenAI voor inzet](/blog/gpt-6-sol-en-luna-marketing/)
-
 - [Claude Opus 5.5: wat het nieuwe model verandert aan je online marketing](/blog/claude-opus-5-5-online-marketing/)
+
+- [GPT-6 Sol en Luna: waar je de nieuwe modellen van OpenAI voor inzet](/blog/gpt-6-sol-en-luna-marketing/)

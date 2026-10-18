@@ -1,5 +1,6 @@
 ---
 title: "Wat je analytics niet meet"
+seoTitle: "Wat je analytics niet meet"
 description: "Je dashboard laat minder verkeer zien dan er werkelijk is. Waar die gaten vandaan komen, hoe groot ze bij jou zijn en wat dat met je keuzes doet."
 excerpt: "Elk analyticspakket meet minder dan er gebeurt. Dat is geen storing maar de optelsom van toestemming, blokkades en verwijzers die onderweg wegvallen. Zolang je niet weet hoe groot dat gat is, weeg je kanalen tegen elkaar af op cijfers die niet even compleet zijn."
 pubDate: 2026-07-14

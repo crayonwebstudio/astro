@@ -1,10 +1,12 @@
 ---
 title: "Claude Sonnet 5.5: bijna Opus-niveau voor je dagelijkse marketingwerk"
+seoTitle: "Claude Sonnet 5.5 voor je online marketing"
 description: "Wat Claude Sonnet 5.5 kan, hoe het zich verhoudt tot Opus 5.5 en waar je het inzet in je online marketing, van rapportages en slides tot klantcontact."
 excerpt: "Anthropic bracht op 28 september Claude Sonnet 5.5 uit, het snellere en goedkopere broertje van Opus 5.5. Op kenniswerk scoort het vrijwel even hoog, voor de helft van de tokenprijs. Dit stuk zet de cijfers op een rij en laat zien waar het in je marketing past."
 pubDate: 2026-09-28
 readingTime: "7 min lezen"
 heroImage: "/blog/claude-sonnet-5-5-online-marketing-header.jpg"
+heroAlt: "De tekst Claude Sonnet 5.5 boven de aarde, gezien door een raam in de ruimte."
 author: "Dylan van den Bosch"
 tags: ["Werken met AI"]
 ---
@@ -128,6 +130,6 @@ Dit stuk raakt aan [Werken met AI](/expertise/werken-met-ai/). Daar staat wat er
 
 - [Claude Opus 5.5: wat het nieuwe model verandert aan je online marketing](/blog/claude-opus-5-5-online-marketing/)
 
-- [Grok 4.7: waar het model van SpaceXAI past in je online marketing](/blog/grok-4-7-online-marketing/)
-
 - [GPT-6 Sol en Luna: waar je de nieuwe modellen van OpenAI voor inzet](/blog/gpt-6-sol-en-luna-marketing/)
+
+- [Grok 4.7: waar het model van SpaceXAI past in je online marketing](/blog/grok-4-7-online-marketing/)

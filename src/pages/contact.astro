@@ -1,28 +1,35 @@
 ---
 import Base from '../layouts/Base.astro';
 import { contactPage, site } from '../data/content.ts';
+const siteUrl = 'https://astro.woodwolfdigital.com';
+const jsonLd = [
+  { '@type': 'ContactPage', '@id': `${siteUrl}/contact/#webpage`, url: `${siteUrl}/contact/`, inLanguage: 'nl-NL', isPartOf: { '@id': `${siteUrl}/#website` }, name: 'Contact', mainEntity: { '@id': `${siteUrl}/#organisatie` }, publisher: { '@id': `${siteUrl}/#organisatie` }, breadcrumb: { '@id': `${siteUrl}/contact/#kruimelpad` } },
+  { '@type': 'BreadcrumbList', '@id': `${siteUrl}/contact/#kruimelpad`, itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Biite', item: `${siteUrl}/` }, { '@type': 'ListItem', position: 2, name: 'Contact', item: `${siteUrl}/contact/` }] },
+];
 ---
-<Base title={`${contactPage.title} - ${site.name}`} description={contactPage.lead}>
+<Base title="Contact en kennismaking · Biite" description="Plan een vrijblijvende kennismaking van 30 minuten met Biite of stuur een bericht. Bespreek je vraag over marketing, strategie en techniek direct met Dylan." jsonLd={jsonLd}>
 <section class="hero"><div class="wrap"><p class="eyebrow">{contactPage.eyebrow}</p><h1>{contactPage.title}</h1><p class="lead">{contactPage.lead}</p></div></section>
 
-<section><div class="wrap"><div class="about-grid">
-<figure class="about-img" style="padding:0;overflow:hidden;margin:0"><img src={contactPage.image} alt={contactPage.imageAlt} width="1122" height="1402" style="width:100%;height:100%;object-fit:cover;aspect-ratio:4/5" /><figcaption style="margin-top:12px"><b>{contactPage.founderName}</b></figcaption></figure>
-<div><p><a class="btn" href={contactPage.calendarHref} target="_blank" rel="noopener">{contactPage.calendarLabel} &rarr;</a></p><ul style="margin-top:18px;display:flex;flex-wrap:wrap;gap:8px 20px;list-style:none;padding:0">{contactPage.calendarDetails.map(d => <li>{d}</li>)}</ul><p style="margin-top:14px"><a class="textlink" href={contactPage.messageLinkHref}>{contactPage.messageLinkLabel}</a></p><h2 class="kop-sectie" style="margin-top:28px">{contactPage.bulletsTitle}</h2><ul style="margin-top:16px">{contactPage.bullets.map(b => <li>{b}</li>)}</ul></div>
+<section><div class="wrap"><div class="contact-grid">
+<div><p><a class="btn" href={contactPage.calendarHref} target="_blank" rel="noopener">{contactPage.calendarLabel} &rarr;</a></p><ul style="margin-top:18px;display:flex;flex-wrap:wrap;gap:8px 20px;list-style:none;padding:0">{contactPage.calendarDetails.map(d => <li>{d}</li>)}</ul><p style="margin-top:14px"><a class="textlink" href={contactPage.messageLinkHref}>{contactPage.messageLinkLabel}</a></p><div class="bullets-block"><p class="bullets-title">{contactPage.bulletsTitle}</p><ul class="checklist">{contactPage.bullets.map(b => <li>{b}</li>)}</ul></div></div>
+<figure class="contact-figure"><div class="img-wrap"><img src={contactPage.image} alt={contactPage.imageAlt} width="1122" height="1402" /></div><figcaption><span>{contactPage.founderName}</span></figcaption></figure>
 </div></div></section>
 
-<section id="bericht"><div class="wrap"><div class="two-col">
-<div><h2 class="kop-sectie">{contactPage.formTitle}</h2><div class="prose">{contactPage.formIntro.map(p => <p>{p}</p>)}</div><p><b>{contactPage.emailLabel}</b><br /><a href={`mailto:${site.email}`}>{site.email}</a></p><p><b>{contactPage.phoneLabel}</b><br /><a href={`tel:${site.phoneLink}`}>{site.phoneDisplay}</a></p><p>{site.email} &middot; {site.phoneDisplay}</p></div>
-<form class="card" onsubmit="return false">
-<label for="naam">Naam</label><input class="input" id="naam" name="naam" placeholder="Je naam" autocomplete="name" required />
-<label for="email">E-mailadres</label><input class="input" id="email" name="email" type="email" placeholder="je@mail.nl" autocomplete="email" required />
-<label for="organisatie">{contactPage.companyFieldLabel}</label><input class="input" id="organisatie" name="organisatie" placeholder="Je bedrijfsnaam" autocomplete="organization" />
-<label for="telefoon">Telefoonnummer (optioneel)</label><input class="input" id="telefoon" name="telefoon" type="tel" placeholder="06 ..." autocomplete="tel" />
-<label for="toelichting">{contactPage.helpFieldLabel}</label><textarea class="input" id="toelichting" name="toelichting" rows="5" placeholder="Een paar zinnen is genoeg. Een link naar je website mag erbij."></textarea>
-<label style="display:flex;gap:10px;align-items:flex-start;margin-top:14px"><input type="checkbox" id="toestemming" name="toestemming" required style="margin-top:4px" /><span>{contactPage.consentText} <a href="/privacy/">privacyverklaring</a>.</span></label>
-<label for="bedrijfsnaam_bevestiging" style="position:absolute;left:-9999px" aria-hidden="true">{contactPage.honeypotLabel}<input class="input" id="bedrijfsnaam_bevestiging" name="bedrijfsnaam_bevestiging" tabindex="-1" autocomplete="off" /></label>
-<p class="note">{contactPage.formNote}</p>
-<button class="btn" style="margin-top:18px" type="submit">Verstuur je bericht &rarr;</button>
-<p class="note" style="margin-top:14px">{contactPage.formPrivacyNote}</p>
+<section id="bericht" class="section-top"><div class="wrap"><div class="contact-form-grid">
+<div><h2 class="kop-sectie">{contactPage.formTitle}</h2><div class="prose">{contactPage.formIntro.map(p => <p>{p}</p>)}</div><div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:32px"><a class="btn-outline" href={`mailto:${site.email}`}><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 256 256" aria-hidden="true"><path d="M224,48H32a8,8,0,0,0-8,8V192a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A8,8,0,0,0,224,48ZM203.43,64,128,133.15,52.57,64ZM216,192H40V74.19l82.59,75.71a8,8,0,0,0,10.82,0L216,74.19V192Z"></path></svg>{contactPage.emailLabel}</a><a class="btn-outline" href={`tel:${site.phoneLink}`}><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 256 256" aria-hidden="true"><path d="M222.37,158.46l-47.11-21.11-.13-.06a16,16,0,0,0-15.17,1.4,8.12,8.12,0,0,0-.75.56L134.87,160c-15.42-7.49-31.34-23.29-38.83-38.51l20.78-24.71c.2-.25.39-.5.57-.77a16,16,0,0,0,1.32-15.06l0-.12L97.54,33.64a16,16,0,0,0-16.62-9.52A56.26,56.26,0,0,0,32,80c0,79.4,64.6,144,144,144a56.26,56.26,0,0,0,55.88-48.92A16,16,0,0,0,222.37,158.46ZM176,208A128.14,128.14,0,0,1,48,80,40.2,40.2,0,0,1,82.87,40a.61.61,0,0,0,0,.12l21,47L83.2,111.86a6.13,6.13,0,0,0-.57.77,16,16,0,0,0-1,15.7c9.06,18.53,27.73,37.06,46.46,46.11a16,16,0,0,0,15.75-1.14,8.44,8.44,0,0,0,.74-.56L168.89,152l47,21.05h0s.08,0,.11,0A40.21,40.21,0,0,1,176,208Z"></path></svg>{contactPage.phoneLabel}</a></div><p style="margin-top:16px;font-size:14px;color:var(--muted)">{site.email} &middot; {site.phoneDisplay}</p></div>
+<form class="card form-card" onsubmit="return false">
+<!-- Formulier is front-end only; verzending via custom API nog te koppelen. Geen endpoint bedacht. -->
+<div class="form-grid">
+<div><label for="naam">Naam</label><input class="input" id="naam" name="naam" autocomplete="name" required /></div>
+<div><label for="email">E-mailadres</label><input class="input" id="email" name="email" type="email" autocomplete="email" required /></div>
+<div><label for="organisatie">{contactPage.companyFieldLabel}</label><input class="input" id="organisatie" name="organisatie" autocomplete="organization" /></div>
+<div><label for="telefoon">Telefoonnummer (optioneel)</label><input class="input" id="telefoon" name="telefoon" type="tel" autocomplete="tel" /></div>
+<div class="full"><label for="toelichting">{contactPage.helpFieldLabel}</label><p class="field-hint" id="toelichting-hint">{contactPage.privacyNote}</p><textarea class="input" id="toelichting" name="toelichting" rows="5" required aria-describedby="toelichting-hint"></textarea></div>
+<div class="full"><label style="display:flex;gap:10px;align-items:flex-start;margin-top:14px"><input type="checkbox" id="toestemming" name="toestemming" style="margin-top:4px" /><span>{contactPage.consentText}<a href="/privacy/">privacyverklaring</a>.</span></label></div>
+</div>
+<div aria-hidden="true" style="position:absolute;left:-9999px;top:0;height:1px;width:1px;overflow:hidden"><label for="bedrijfsnaam-bevestiging">{contactPage.honeypotLabel}</label><input class="input" id="bedrijfsnaam-bevestiging" name="bedrijfsnaam_bevestiging" type="text" tabindex="-1" autocomplete="off" /></div>
+<div style="margin-top:28px"><button class="btn btn-full" type="submit">Verstuur je bericht &rarr;</button></div>
+<p class="note" style="margin-top:24px">{contactPage.formPrivacyNote}</p>
 </form>
 </div></div></section>
 </Base>

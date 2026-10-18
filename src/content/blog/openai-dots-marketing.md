@@ -1,10 +1,12 @@
 ---
 title: "OpenAI dots: wat kun je als marketeer uit handen geven?"
+seoTitle: "OpenAI dots: marketing uit handen geven?"
 description: "Wat OpenAI dots zijn, of je ze in Nederland kunt gebruiken en wat always-on agents betekenen voor je online marketing, met de cijfers uit de systeemkaart."
 excerpt: "OpenAI lanceerde op 29 september dots, agents die altijd aanstaan, een eigen cloudcomputer hebben en draaien op GPT-6 Astra. Dit stuk legt uit wat ze kunnen, wie ze in Nederland kan gebruiken, wat de systeemkaart over hun grenzen zegt en waar ze in je marketing passen."
 pubDate: 2026-09-29
 readingTime: "13 min lezen"
 heroImage: "/blog/openai-dots-marketing-header.jpg"
+heroAlt: "Het woord dots in oplichtende letters boven vier pluizige figuurtjes op een donkerblauwe achtergrond."
 author: "Dylan van den Bosch"
 tags: ["Werken met AI"]
 ---
@@ -197,8 +199,8 @@ Dit stuk raakt aan [Werken met AI](/expertise/werken-met-ai/). Daar staat wat er
 
 ## Meer lezen
 
-- [GPT-6 Sol en Luna: waar je de nieuwe modellen van OpenAI voor inzet](/blog/gpt-6-sol-en-luna-marketing/)
-
 - [Claude Opus 5.5: wat het nieuwe model verandert aan je online marketing](/blog/claude-opus-5-5-online-marketing/)
+
+- [GPT-6 Sol en Luna: waar je de nieuwe modellen van OpenAI voor inzet](/blog/gpt-6-sol-en-luna-marketing/)
 
 - [Geen paspoort, geen productie: grip en audit trails voor je AI-agents](/blog/agent-passport-ai-agents-register/)

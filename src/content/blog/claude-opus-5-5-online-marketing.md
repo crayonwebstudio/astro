@@ -1,10 +1,12 @@
 ---
 title: "Claude Opus 5.5: wat het nieuwe model verandert aan je online marketing"
+seoTitle: "Claude Opus 5.5 voor je online marketing"
 description: "Wat Claude Opus 5.5 kan, wat de eerste testers ervan vinden en wat het verandert aan je online marketing, van audits en analyse tot de afspraken eromheen."
 excerpt: "Anthropic bracht op 22 september Claude Opus 5.5 uit, met werk op het niveau van Fable 5.1 voor minder geld dan Opus 5. Dit stuk legt de cijfers naast de eerste reacties uit de markt en werkt uit wat het betekent voor online marketing, inclusief de kanttekeningen."
 pubDate: 2026-09-23
 readingTime: "10 min lezen"
 heroImage: "/blog/claude-opus-5-5-online-marketing-header.jpg"
+heroAlt: "De tekst Claude Opus 5.5 boven een rode horizon."
 author: "Dylan van den Bosch"
 tags: ["Werken met AI"]
 ---
@@ -152,4 +154,4 @@ Dit stuk raakt aan [Werken met AI](/expertise/werken-met-ai/). Daar staat wat er
 
 - [OpenAI dots: wat kun je als marketeer uit handen geven?](/blog/openai-dots-marketing/)
 
-- [Grok 4.7: waar het model van SpaceXAI past in je online marketing](/blog/grok-4-7-online-marketing/)
+- [GPT-6 Sol en Luna: waar je de nieuwe modellen van OpenAI voor inzet](/blog/gpt-6-sol-en-luna-marketing/)

@@ -30,7 +30,7 @@ const nodeW = (label: string) => 44 + label.length * 8.5;
     <div class="hero__copy">
       <h1 class="kop"><span class="kop__line"><span class="kop__inner">Marketing die<br /> klopt </span></span><span class="kop__line"><span class="kop__inner">tot in de<br /> systemen<span class="sr-only">.</span><span class="hart" id="hart" aria-hidden="true"><span class="hart__ring"></span></span></span></span></h1>
       <p class="lead">{home.heroLead}</p>
-      <div class="hero-actions"><a class="btn" style="background:#FF4D5A" href={site.ctaHref}>{site.ctaLabel} &rarr;</a><a class="textlink" href={home.heroSecondaryHref}>{home.heroSecondaryLabel}</a></div>
+      <div class="hero-actions"><a class="btn" href={site.ctaHref}>{site.ctaLabel} &rarr;</a><a class="textlink" href={home.heroSecondaryHref}>{home.heroSecondaryLabel}</a></div>
     </div>
     <div class="veld" id="veld">
       <!-- ONE SVG: wires + hub + nodes + pulses, all in 0 0 1000 560 -->
@@ -45,8 +45,8 @@ const nodeW = (label: string) => 44 + label.length * 8.5;
             </circle>
           ))}
         </g>
-        <circle cx={HUB.x} cy={HUB.y} r="8" fill="#0F172A" />
-        <circle cx={HUB.x} cy={HUB.y} r="16" fill="none" stroke="#0F172A" stroke-opacity="0.15" stroke-width="1.5" />
+        <circle cx={HUB.x} cy={HUB.y} r="6" fill="#FF5757" />
+        <circle cx={HUB.x} cy={HUB.y} r="12" fill="none" stroke="#FF5757" stroke-opacity="0.2" stroke-width="1.5" />
         {nodes.map(n => {
           const w = nodeW(n.label);
           return (
@@ -62,6 +62,7 @@ const nodeW = (label: string) => 44 + label.length * 8.5;
       <div class="meter" id="meter">
         <span class="meter__status"><svg class="status__vink" viewBox="0 0 256 256"><path d="M232.49,80.49l-128,128a12,12,0,0,1-17,0l-56-56a12,12,0,1,1,17-17L96,183,215.51,63.51a12,12,0,0,1,17,17Z"></path></svg></span>
         <div class="meter__rijen">
+          <span class="meter__indicator"></span>
           {home.stats.map((s, i) => <div class={`meter__rij ${i === 0 ? 'is-actief' : ''}`}><span class="meter__naam">{s.label}</span><span class="meter__getal">{s.value}</span></div>)}
         </div>
         <div class="grafiek">
@@ -78,6 +79,7 @@ const nodeW = (label: string) => 44 + label.length * 8.5;
       </div>
       <div class="krabbel" id="krabbel"><span class="krabbel__tekst">{home.scribble}</span>
         <svg class="krabbel__pijl krabbel__pijl--rechts" viewBox="0 0 90 60"><path class="krabbel__lijn" d="M78 4 C 82 30, 52 50, 8 47"></path><path class="krabbel__lijn krabbel__kop" d="M19 39 L8 47 L20 54"></path></svg>
+        <svg class="krabbel__pijl krabbel__pijl--onder" viewBox="0 0 70 56"><path class="krabbel__lijn" d="M8 52 C 14 30, 34 12, 62 6"></path><path class="krabbel__lijn krabbel__kop" d="M49 3 L62 6 L55 17"></path></svg>
       </div>
     </div>
   </div></div>
@@ -89,36 +91,40 @@ const nodeW = (label: string) => 44 + label.length * 8.5;
 .hero__lower{display:grid;gap:32px;align-items:start}
 @media(min-width:1024px){.hero__lower{grid-template-columns:0.95fr 1.05fr;gap:24px}}
 .hero__copy{min-width:0;padding-top:8px}
-.kop{font-size:clamp(48px,6.4vw,96px);line-height:.94;letter-spacing:-.045em;margin:0;font-weight:850;overflow-wrap:break-word}
+.kop{font-size:clamp(48px,4.6vw,74px);line-height:.94;letter-spacing:-.04em;margin:0;font-weight:700;overflow-wrap:break-word}
 .kop__line{display:block}.kop__inner{display:inline-block;max-width:100%}
-.hart{position:relative;display:inline-block;width:.16em;height:.16em;border-radius:50%;background:#FF4D5A;margin-left:.08em;vertical-align:baseline;transform:translateY(-.02em)}
-.hart__ring{position:absolute;inset:-.35em;border:1.5px solid #FF4D5A;border-radius:50%;animation:hartPulse 2.4s ease-out infinite}
+.hart{position:relative;display:inline-block;width:.19em;height:.19em;border-radius:50%;background:var(--vivid);margin-left:.02em;vertical-align:baseline;transform:translateY(-.02em)}
+.hart__ring{position:absolute;inset:-.35em;border:1.5px solid var(--vivid);border-radius:50%;animation:hartPulse 2.4s ease-out infinite}
 @keyframes hartPulse{0%{transform:scale(.5);opacity:.9}100%{transform:scale(1.4);opacity:0}}
 .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
 .veld{position:relative;min-width:0}
 .diagram-svg{display:block;width:100%;height:auto;overflow:visible}
 .wire{fill:none;stroke:#D7DEE8;stroke-width:1}
 .diagram-node text{font-weight:500}
-.meter{position:relative;margin:-8px auto 0;width:min(360px,92%);background:#fff;border:1px solid #E2E8F0;border-radius:14px;padding:14px;box-shadow:0 16px 40px rgba(0,0,0,.10);z-index:2}
-.meter__status{position:absolute;right:12px;top:-10px;width:26px;height:26px;border-radius:50%;background:#0F766E;color:#fff;display:flex;align-items:center;justify-content:center}
+.meter{position:relative;margin:-8px auto 0;width:min(360px,92%);background:#FFFEF7;border:1px solid rgba(16,23,49,.2);border-radius:16px;padding:2px 16px 11px;box-shadow:0 18px 40px -26px rgba(16,23,49,.35);z-index:2}
+.meter__status{position:absolute;right:-12px;top:-12px;width:26px;height:26px;border-radius:50%;background:#03624C;color:#fff;display:flex;align-items:center;justify-content:center}
 .status__vink{width:14px;height:14px;fill:#fff}
-.meter__rijen{position:relative;display:flex;gap:16px;padding-right:28px}
-.meter__rij{display:flex;flex-direction:column}
-.meter__rij.is-actief .meter__getal{color:#FF4D5A}
-.meter__naam{font-size:12px;color:#2563EB}
-.meter__getal{font-size:17px;font-weight:700;line-height:1.2}
+.meter__rijen{position:relative;display:grid;grid-template-columns:repeat(3,1fr);border-bottom:1px solid #E3E4E8;margin:0 -16px}
+.meter__indicator{position:absolute;top:0;left:0;width:33.3333%;height:2px;background:#1A73E8;background-clip:content-box;padding:0 12px}
+.meter__rij{display:grid;padding:10px 10px 8px 16px}
+.meter__rij+.meter__rij{border-left:1px solid #E3E4E8;padding-left:10px}
+.meter__rij.is-actief .meter__naam{color:#1A73E8}
+.meter__naam{font-size:12px;color:#5F6368;white-space:nowrap}
+.meter__getal{font-size:17px;font-weight:400;line-height:1.25;color:#101731;font-variant-numeric:tabular-nums;white-space:nowrap}
 .spoor{width:100%;height:68px;margin-top:10px}
-.spoor__raster line{stroke:#E2E8F0;stroke-width:.5}
-.spoor__datums text{font-size:7px;fill:#64748B;font-family:inherit}
+.spoor__raster line{stroke:#E3E4E8;stroke-width:.5}
+.spoor__datums text{font-size:7px;fill:#5F6368;font-family:inherit}
 .spoor__vorig{fill:none;stroke:#94A3B8;stroke-width:1;stroke-dasharray:3 3}
-.spoor__lijn{fill:none;stroke:#2563EB;stroke-width:1.6}
-.spoor__piek{fill:#FF4D1C}.spoor__punt{fill:none;stroke:#FF4D1C;stroke-width:1}
-.meter__voet{display:flex;gap:16px;font-size:11px;color:#64748B;margin:8px 0 0}
-.meter__voet i{display:inline-block;width:14px;height:2px;background:#2563EB;margin-right:6px;vertical-align:middle}
-.meter__voet i.is-vorig{background:#94A3B8}
-.krabbel{display:flex;align-items:center;justify-content:flex-end;gap:8px;margin-top:10px}
-.krabbel__tekst{font-family:"Schoolbell","Segoe Script",cursive;font-size:20px;color:#0F172A;transform:rotate(-2deg)}
-.krabbel__pijl{width:52px;height:42px;overflow:visible;transform:scaleX(-1)}
+.spoor__lijn{fill:none;stroke:#1A73E8;stroke-width:1.6}
+.spoor__piek{fill:var(--vivid)}.spoor__punt{fill:none;stroke:var(--vivid);stroke-width:1}
+.meter__voet{display:flex;gap:14px;font-size:11px;color:#5F6368;margin:8px 0 0}
+.meter__voet span{display:inline-flex;align-items:center;gap:6px}
+.meter__voet i{display:inline-block;width:14px;border-top:2px solid #1A73E8}
+.meter__voet i.is-vorig{border-top:1.5px dashed #1A73E8;opacity:.6}
+.krabbel{display:flex;align-items:flex-start;justify-content:flex-end;gap:6px;margin-top:10px}
+.krabbel__tekst{font-family:"Schoolbell","Segoe Script",cursive;font-size:20px;color:#101731;transform:rotate(-4deg);line-height:1}
+.krabbel__pijl{width:52px;height:42px;overflow:visible;flex:none}
+.krabbel__pijl--onder{width:44px;height:36px}
 .krabbel__lijn{fill:none;stroke:#0F172A;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
 @media(max-width:1023px){.hartslag{padding-top:110px}}
 @media(prefers-reduced-motion:reduce){.hart__ring{animation:none}}

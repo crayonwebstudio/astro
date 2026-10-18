@@ -1,10 +1,12 @@
 ---
 title: "Een nieuwe AI-website: hoe neem je je vindbaarheid mee?"
+seoTitle: "AI-website migreren: behoud je vindbaarheid"
 description: "Een nieuwe site uit Lovable, Claude Code of Codex? Beperk SEO-verlies met een URL-mapping, redirects, canonicals en controles voor en na de livegang."
 excerpt: "Je nieuwe website staat klaar, maar waar komen bezoekers via oude links terecht? Dit stuk laat zien hoe je de overstap naar een AI-gebouwde site voorbereidt, wat Google adviseert en welke redirects, canonicals en controles je nodig hebt voor en na de livegang."
 pubDate: 2026-09-30
 readingTime: "22 min lezen"
 heroImage: "/blog/website-migratie-ai-site-header.jpg"
+heroAlt: "Een koraalrode brug verbindt twee websitevensters: bezoekers vinden hun weg van de oude naar de nieuwe site."
 author: "Dylan van den Bosch"
 tags: ["Zichtbaarheid"]
 ---

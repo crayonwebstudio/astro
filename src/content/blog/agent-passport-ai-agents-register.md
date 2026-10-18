@@ -1,10 +1,12 @@
 ---
 title: "Geen paspoort, geen productie: grip en audit trails voor je AI-agents"
+seoTitle: "Agent Passport: overzicht en audit trails"
 description: "Meerdere mensen en AI-agents in één project? Agent Passport geeft overzicht, legt acties vast en helpt je wijzigingen terugzoeken en verantwoorden."
 excerpt: "Jij, een collega en meerdere AI-agents werken aan dezelfde codebase. Agent Passport laat zien wie erbij betrokken is en welke agent wat wijzigde. Handig als je een fout onderzoekt, een project overdraagt of informatie voor een audit verzamelt."
 pubDate: 2026-10-17
 readingTime: "8 min lezen"
 heroImage: "/blog/agent-passport-ai-agents-register-header.jpg"
+heroAlt: "Een lichtblauw, glanzend figuurtje met een glimlach houdt een navy paspoort met een koperkleurige wereldbol vast."
 author: "Dylan van den Bosch"
 tags: ["Werken met AI"]
 ---
@@ -193,4 +195,4 @@ Dit stuk raakt aan [Werken met AI](/expertise/werken-met-ai/). Daar staat wat er
 
 - [Claude Sonnet 5.5: bijna Opus-niveau voor je dagelijkse marketingwerk](/blog/claude-sonnet-5-5-online-marketing/)
 
-- [Grok 4.7: waar het model van SpaceXAI past in je online marketing](/blog/grok-4-7-online-marketing/)
+- [Claude Opus 5.5: wat het nieuwe model verandert aan je online marketing](/blog/claude-opus-5-5-online-marketing/)

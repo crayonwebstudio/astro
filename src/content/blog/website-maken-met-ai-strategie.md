@@ -1,10 +1,12 @@
 ---
 title: "Een AI-website die converteert: wat moet je vooraf meegeven?"
+seoTitle: "Website maken met AI: de basis voor conversie"
 description: "Een website die converteert bouwen met AI? Begin bij je doelgroep, propositie en merk. Wat je openlaat, kan AI invullen met aannames die niet bij je passen."
 excerpt: "Met AI kun je een website bouwen die bezoekers helpt de volgende stap te zetten. Maar laat je context over je doelgroep, aanbod en merk weg, dan kan AI die zelf invullen. Dit stuk gaat over de start: voor wie maak je de site, wat bied je die mensen en wat geef je AI mee?"
 pubDate: 2026-10-05
 readingTime: "8 min lezen"
 heroImage: "/blog/website-maken-met-ai-strategie-header.jpg"
+heroAlt: "Een werktafel met een websitebriefing over doelgroep en aanbod, naast een handgetekende paginaschets."
 author: "Dylan van den Bosch"
 tags: ["Merk en taal"]
 ---

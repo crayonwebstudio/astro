@@ -1,10 +1,12 @@
 ---
 title: "GPT-6 Sol en Luna: waar je de nieuwe modellen van OpenAI voor inzet"
+seoTitle: "GPT-6 Sol en Luna in je online marketing"
 description: "Wat GPT-6 Sol en Luna zijn, waar ze sterk en zwak in zijn en hoe je ze inzet in je online marketing, van tagging en data cleaning tot automatisering."
 excerpt: "OpenAI bracht op 22 september GPT-6 Sol en GPT-6 Luna uit. Sol is gebouwd voor alledaags werk en automatisering, Luna voor grote volumes. Dit stuk zet op een rij waar elk model in past, waar niet, en hoe je het in je marketing inzet."
 pubDate: 2026-09-23
 readingTime: "8 min lezen"
 heroImage: "/blog/gpt-6-sol-en-luna-marketing-header.jpg"
+heroAlt: "De tekst OpenAI Sol & Luna tussen een zon en een maan in de ruimte."
 author: "Dylan van den Bosch"
 tags: ["Werken met AI"]
 ---
@@ -132,4 +134,4 @@ Dit stuk raakt aan [Werken met AI](/expertise/werken-met-ai/). Daar staat wat er
 
 - [Claude Sonnet 5.5: bijna Opus-niveau voor je dagelijkse marketingwerk](/blog/claude-sonnet-5-5-online-marketing/)
 
-- [Grok 4.7: waar het model van SpaceXAI past in je online marketing](/blog/grok-4-7-online-marketing/)
+- [Claude Opus 5.5: wat het nieuwe model verandert aan je online marketing](/blog/claude-opus-5-5-online-marketing/)
