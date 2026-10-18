@@ -4,5 +4,5 @@ import { over, site } from '../data/content.ts';
 ---
 <Base title={`${over.title} - ${site.name}`}>
 <section class="hero"><div class="wrap"><p class="eyebrow">Het bureau</p><h1>{over.title}</h1><p class="lead">{over.lead}</p></div></section>
-<section><div class="wrap"><div class="two-col"><div class="prose">{over.body.map(p => <p>{p}</p>)}</div><div class="card"><b>{over.founderName}</b><p style="color:var(--muted)">{over.founderRole}</p><p style="color:var(--muted)">Vervang dit blok met je eigen bio en foto in src/data/content.ts en /public/.</p></div></div></div></section>
+<section><div class="wrap"><div class="two-col"><div class="prose">{over.body.map(p => <p>{p}</p>)}</div><div><img src="/dylan-koffie.jpg" alt="Dylan van den Bosch met een kop koffie" width="1080" height="1350" style="width:100%;border-radius:24px;object-fit:cover" /><p style="margin-top:12px"><b>{over.founderName}</b><br /><span style="color:var(--muted)">{over.founderRole}</span></p></div></div></div></section>
 </Base>

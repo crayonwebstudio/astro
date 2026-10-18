@@ -14,14 +14,14 @@ const { title = site.name + ' - ' + site.tagline, description = site.description
 </head>
 <body>
 <header class="site"><div class="wrap"><div class="header-inner">
-<a href="/" class="logo">biite<i>.</i></a>
+<a href="/" aria-label="Biite, naar de homepage"><img src="/logo.svg" alt="Biite" style="height:26px;width:auto;display:block" /></a>
 <nav class="main" aria-label="hoofdnavigatie">{nav.map(n => <a href={n.href}>{n.label}</a>)}</nav>
 <a href={site.ctaHref} class="btn" style="margin-left:auto">{site.ctaLabel} &rarr;</a>
 </div></div></header>
 <main><slot /></main>
 <section class="final-cta"><div class="wrap"><h2>{home.finalCtaTitle}</h2><p class="lead" style="max-width:62ch">{home.finalCtaBody}</p><div class="hero-actions"><a class="btn" href={site.ctaHref}>{site.ctaLabel} &rarr;</a><a class="textlink" href={home.finalCtaSecondaryHref}>{home.finalCtaSecondaryLabel}</a></div></div></section>
 <footer><div class="wrap"><div class="footer-grid">
-<div><div class="logo" style="color:#fff">biite<i>.</i></div><p style="color:rgba(255,255,255,.72);max-width:38ch">{footer.intro}</p></div>
+<div><img src="/logo.svg" alt="Biite" style="height:28px;width:auto;display:block;filter:invert(1)" /><p style="color:rgba(255,255,255,.72);max-width:38ch;margin-top:16px">{footer.intro}</p></div>
 <div><b>{footer.navTitle}</b><ul style="list-style:none;padding:0;display:grid;gap:8px;margin-top:14px">{footer.navLinks.map(l => <li><a href={l.href}>{l.label}</a></li>)}</ul></div>
 <div><b>{footer.expertiseTitle}</b><ul style="list-style:none;padding:0;display:grid;gap:8px;margin-top:14px">{footer.expertiseLinks.map(l => <li><a href={l.href}>{l.n} {l.label}</a></li>)}</ul></div>
 <div><b>{footer.contactTitle}</b><ul style="list-style:none;padding:0;display:grid;gap:8px;margin-top:14px"><li><a href={`mailto:${site.email}`}>{site.email}</a></li><li><a href={`tel:${site.phoneLink}`}>{site.phoneDisplay}</a></li><li><a href={site.linkedin}>LinkedIn</a></li></ul></div>

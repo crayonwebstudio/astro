@@ -26,15 +26,15 @@ import { site, home } from '../data/content.ts';
 <section id="expertise"><div class="wrap">
 <h2 class="kop-sectie">{home.servicesTitle}</h2>
 <div class="services">
-<div class="svc-img placeholder">REPLACE IMAGE 1<small>1600 x 744 - plaats je eigen foto in /public/ en verwijs ernaar in de code</small></div>
+<div class="svc-img" style="padding:0;overflow:hidden"><img src="/diensten-beeld-1.jpg" alt="" width="1600" height="744" style="width:100%;height:100%;object-fit:cover" /></div>
 {home.services.slice(0,2).map(s => <a class="svc" href={s.href}><span class="arrow">&nearr;</span><h3>{s.title}</h3><ul>{s.points.map(pt => <li>{pt}</li>)}</ul></a>)}
 {home.services.slice(2).map(s => <a class="svc" href={s.href}><span class="arrow">&nearr;</span><h3>{s.title}</h3><ul>{s.points.map(pt => <li>{pt}</li>)}</ul></a>)}
-<div class="svc-img placeholder">REPLACE IMAGE 2<small>1600 x 744 - plaats je eigen foto in /public/</small></div>
+<div class="svc-img" style="padding:0;overflow:hidden"><img src="/diensten-beeld-2.jpg" alt="" width="1600" height="744" style="width:100%;height:100%;object-fit:cover" /></div>
 </div>
 </div></section>
 
 <section><div class="wrap"><div class="about-grid">
-<div class="about-img placeholder">REPLACE IMAGE - PORTRET 4:5<small>{home.aboutImageAlt}<br />Bestand in /public/ zetten, bv. /portret.jpg</small></div>
+<figure class="about-img" style="padding:0;overflow:hidden;margin:0"><img src="/kennismaking-dylan.jpg" alt="Dylan van den Bosch aan een houten tafel achter zijn laptop." width="1122" height="1402" style="width:100%;height:100%;object-fit:cover;aspect-ratio:4/5" /></figure>
 <div><p class="eyebrow">{home.aboutEyebrow}</p><h2 class="kop-sectie" style="margin-top:12px">{home.aboutTitle}</h2><div class="prose" style="margin-top:28px">{home.aboutBody.map(p => <p>{p}</p>)}</div><div class="hero-actions"><a class="btn" href={home.aboutCtaHref}>{home.aboutCtaLabel} &rarr;</a><a class="textlink" href={home.aboutLinkHref}>{home.aboutLinkLabel}</a></div></div>
 </div></div></section>
 
