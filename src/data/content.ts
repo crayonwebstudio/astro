@@ -31,7 +31,7 @@ export const home = {
   heroSecondaryHref: "/werkwijze/",
   stats: [
     { label: "Leads", value: "414" },
-    { label: "Verkeer", value: "17.694" },
+    { label: "Verkeer", value: "17.695" },
     { label: "Conversie", value: "2,3%" },
   ],
   statsNote: "Afgelopen 28 dagen",

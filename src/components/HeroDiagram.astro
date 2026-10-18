@@ -1,43 +1,75 @@
 ---
-import { home } from '../data/content.ts';
-const nodes = home.diagramNodes;
+const nodes = [
+  { label: "SEO", color: "#4285F4", x: "26%", y: "2%", detail: "01 Zichtbaarheid", detailSub: "Beter vindbaar in Google" },
+  { label: "GEO", color: "#111827", x: "68%", y: "12%", detail: "01 Zichtbaarheid", detailSub: "Zichtbaar in AI-antwoorden" },
+  { label: "Positionering", color: "#0A66C2", x: "38%", y: "25%", detail: "03 Merk en taal", detailSub: "Duidelijk wat je biedt" },
+  { label: "Taalregister", color: "#111827", x: "84%", y: "33%", detail: "03 Merk en taal", detailSub: "Herkenbare taal" },
+  { label: "Governance", color: "#7B5CFF", x: "14%", y: "46%", detail: "04 Werken met AI", detailSub: "Zelf de controle houden" },
+  { label: "Automatisering", color: "#FF5A1F", x: "68%", y: "58%", detail: "02 Data en techniek", detailSub: "Systemen die samenwerken" },
+  { label: "Tracking", color: "#2563EB", x: "18%", y: "74%", detail: "02 Data en techniek", detailSub: "Meten wat werkt" },
+  { label: "Martech", color: "#FF4D1C", x: "78%", y: "84%", detail: "02 Data en techniek", detailSub: "Koppelingen die kloppen" },
+];
+const stats = [
+  { label: "Leads", value: "414" },
+  { label: "Verkeer", value: "17.695" },
+  { label: "Conversie", value: "2,3%" },
+];
 ---
 <div class="hero-diagram" aria-hidden="true">
   <svg class="diagram-lines" viewBox="0 0 100 100" preserveAspectRatio="none">
-    <path d="M 25 8 L 55 12 L 55 30 L 40 32 L 40 50 L 15 50 L 15 75 L 30 75 L 75 62 L 75 40 L 85 40 L 85 20 L 68 18" fill="none" stroke="#CBD5E1" stroke-width="0.4" stroke-dasharray="1 1.2" class="line-draw" />
-    <path d="M 55 30 L 85 40 L 75 62 L 30 75 L 85 85" fill="none" stroke="#CBD5E1" stroke-width="0.4" stroke-dasharray="1 1.2" class="line-draw line-draw-2" />
-    <circle r="1.2" fill="#FF4D1C"><animateMotion dur="6s" repeatCount="indefinite" path="M 25 8 L 55 12 L 55 30 L 40 32 L 40 50 L 15 50 L 15 75 L 30 75 L 75 62 L 75 40 L 85 40" /></circle>
-    <circle r="1" fill="#2563EB"><animateMotion dur="8s" repeatCount="indefinite" path="M 85 85 L 30 75 L 15 50 L 40 32 L 55 30 L 85 40" /></circle>
+    <!-- thin elbow network -->
+    <path d="M 32 5 L 58 5 L 58 14 L 72 14" fill="none" stroke="#D7DEE8" stroke-width="0.35" />
+    <path d="M 58 14 L 58 27 L 45 27" fill="none" stroke="#D7DEE8" stroke-width="0.35" />
+    <path d="M 58 27 L 58 35 L 88 35" fill="none" stroke="#D7DEE8" stroke-width="0.35" />
+    <path d="M 58 35 L 58 50 L 24 50" fill="none" stroke="#D7DEE8" stroke-width="0.35" />
+    <path d="M 58 50 L 58 60 L 74 60" fill="none" stroke="#D7DEE8" stroke-width="0.35" />
+    <path d="M 58 60 L 58 76 L 28 76" fill="none" stroke="#D7DEE8" stroke-width="0.35" />
+    <path d="M 58 76 L 58 86 L 82 86" fill="none" stroke="#D7DEE8" stroke-width="0.35" />
+    <!-- thick spine from headline dot -->
+    <path d="M 0 50 L 58 50 L 58 60" fill="none" stroke="#0F172A" stroke-width="0.9" class="spine" />
+    <path d="M 24 50 L 35 50" fill="none" stroke="#FF4D5A" stroke-width="0.9" />
+    <!-- travelling pulses -->
+    <circle r="1.1" fill="#FF4D1C"><animateMotion dur="5s" repeatCount="indefinite" path="M 0 50 L 58 50 L 58 60 L 74 60" /></circle>
+    <circle r="0.9" fill="#2563EB"><animateMotion dur="7s" repeatCount="indefinite" path="M 58 14 L 58 35 L 88 35" /></circle>
   </svg>
   {nodes.map((n, i) => (
-    <span class="diagram-node" style={`left:${n.x};top:${n.y};animation-delay:${i * 0.18}s`}>
+    <span class="diagram-node" style={`left:${n.x};top:${n.y};animation-delay:${i * 0.12}s`}>
       <i style={`background:${n.color}`}></i>{n.label}
+      <span class="node-card"><b>{n.detail}</b><span>{n.detailSub}</span></span>
     </span>
   ))}
   <div class="stats-card">
     <div class="stats-top">
-      {home.stats.map(s => <div><span>{s.label}</span><b>{s.value}</b></div>)}
+      {stats.map(s => <div><span>{s.label}</span><b>{s.value}</b></div>)}
       <span class="stats-check">✓</span>
     </div>
     <svg class="stats-chart" viewBox="0 0 200 70" preserveAspectRatio="none">
-      <path d="M0,45 L20,42 L40,48 L60,40 L80,44 L100,22 L110,48 L130,38 L160,42 L200,46" fill="none" stroke="#2563EB" stroke-width="2" class="chart-line" />
-      <path d="M0,52 L20,54 L40,50 L60,55 L80,52 L100,50 L130,52 L160,54 L200,53" fill="none" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 3" />
-      <circle cx="100" cy="22" r="3" fill="#FF4D1C" />
+      <path d="M0,45 L15,43 L30,48 L45,42 L60,46 L75,40 L90,44 L105,28 L120,42 L140,38 L160,42 L180,44 L200,46" fill="none" stroke="#2563EB" stroke-width="1.6" class="chart-line" />
+      <path d="M0,54 L20,55 L40,52 L60,56 L80,54 L100,53 L130,54 L160,55 L200,54" fill="none" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 3" />
+      <circle cx="105" cy="28" r="3" fill="#FF4D1C" />
     </svg>
     <div class="stats-dates"><span>21 sep</span><span>28</span><span>05 okt</span><span>12</span></div>
-    <div class="stats-legend"><span><i class="dot-blue"></i>{home.statsNote}</span><span><i class="dot-grey"></i>{home.statsPrev}</span></div>
+    <div class="stats-legend"><span><i class="dot-blue"></i>Afgelopen 28 dagen</span><span><i class="dot-grey"></i>Vorige periode</span></div>
+  </div>
+  <div class="groei">
+    <span>Groei die blijft</span>
+    <svg viewBox="0 0 60 50" width="52" height="42"><path d="M52 4 C 40 18, 28 30, 8 40" fill="none" stroke="#0F172A" stroke-width="1.6" stroke-linecap="round" /><path d="M14 32 L8 40 L18 42" fill="none" stroke="#0F172A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" /></svg>
   </div>
 </div>
 <style>
-.hero-diagram{position:relative;height:560px;max-width:640px;margin-left:auto}
+.hero-diagram{position:relative;height:580px;max-width:680px;margin-left:auto}
 .diagram-lines{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
-.line-draw{stroke-dasharray:300;stroke-dashoffset:300;animation:draw 2.2s ease forwards}
-.line-draw-2{animation-delay:.6s}
+.spine{stroke-dasharray:200;stroke-dashoffset:200;animation:draw 1.8s ease forwards}
 @keyframes draw{to{stroke-dashoffset:0}}
-.diagram-node{position:absolute;display:inline-flex;align-items:center;gap:7px;background:#fff;border:1px dashed #CBD5E1;border-radius:999px;padding:7px 12px;font-size:13px;color:#475569;box-shadow:0 4px 16px rgba(0,0,0,.05);opacity:0;animation:nodeIn .5s ease forwards}
-.diagram-node i{width:12px;height:12px;border-radius:50%;display:block;flex:none}
+.diagram-node{position:absolute;display:inline-flex;align-items:center;gap:7px;background:#fff;border:1px dashed #D7DEE8;border-radius:999px;padding:7px 12px;font-size:13px;color:#64748B;box-shadow:0 2px 10px rgba(0,0,0,.04);opacity:0;animation:nodeIn .5s ease forwards;cursor:default}
+.diagram-node:hover{border-color:#0F172A;color:#0F172A}
+.diagram-node i{width:12px;height:12px;border-radius:3px;display:block;flex:none}
+.node-card{position:absolute;left:50%;bottom:calc(100% + 10px);transform:translateX(-50%) translateY(6px);background:#fff;border:1px solid #E2E8F0;border-radius:12px;padding:10px 12px;box-shadow:0 12px 30px rgba(0,0,0,.12);opacity:0;pointer-events:none;transition:.2s;white-space:nowrap;z-index:5;text-align:left}
+.node-card b{display:block;font-size:12px;color:#C026D3}
+.node-card span{display:block;font-size:13px;color:#0F172A}
+.diagram-node:hover .node-card{opacity:1;transform:translateX(-50%) translateY(0)}
 @keyframes nodeIn{from{opacity:0;transform:translateY(8px) scale(.96)}to{opacity:1;transform:none}}
-.stats-card{position:absolute;right:0;bottom:0;width:min(340px,86%);background:#fff;border:1px solid #E2E8F0;border-radius:14px;padding:14px;box-shadow:0 16px 40px rgba(0,0,0,.10)}
+.stats-card{position:absolute;left:18%;bottom:0;width:min(340px,88%);background:#fff;border:1px solid #E2E8F0;border-radius:14px;padding:14px;box-shadow:0 16px 40px rgba(0,0,0,.10)}
 .stats-top{display:flex;gap:16px;position:relative;padding-right:28px}
 .stats-top div{display:flex;flex-direction:column}
 .stats-top span{font-size:12px;color:#2563EB}
@@ -49,6 +81,8 @@ const nodes = home.diagramNodes;
 .stats-legend{display:flex;gap:16px;font-size:11px;color:#64748B;margin-top:8px}
 .dot-blue,.dot-grey{width:14px;height:2px;display:inline-block;margin-right:6px;vertical-align:middle}
 .dot-blue{background:#2563EB}.dot-grey{background:#94A3B8}
-@media(max-width:700px){.hero-diagram{height:480px}.diagram-node{font-size:12px;padding:6px 10px}}
-@media(prefers-reduced-motion:reduce){.line-draw,.chart-line,.diagram-node{animation:none;opacity:1;stroke-dashoffset:0}}
+.groei{position:absolute;right:0;bottom:36px;display:flex;flex-direction:column;align-items:flex-end;gap:2px;transform:translateX(12px)}
+.groei span{font-family:"Segoe Script","Comic Sans MS",cursive;font-size:20px;color:#0F172A;transform:rotate(-2deg)}
+@media(max-width:900px){.hero-diagram{height:520px}.groei{right:0;bottom:120px}.groei span{font-size:17px}}
+@media(prefers-reduced-motion:reduce){.spine,.chart-line,.diagram-node{animation:none;opacity:1;stroke-dashoffset:0}}
 </style>
