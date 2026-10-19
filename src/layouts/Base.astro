@@ -47,6 +47,7 @@ const checkSvg = '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
 <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
 <link rel="manifest" href="/site.webmanifest" />
 <meta name="theme-color" content="#fffef7" />
+<link rel="stylesheet" href="/original/assets/contact-Dnh_JLTF.css" />
 </head>
 <body>
 <header class="site"><div class="wrap"><div class="header-inner">
@@ -66,7 +67,7 @@ const checkSvg = '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
       <ul class="final-cta-checklist">
         {checkItems.map(t => <li><span set:html={checkSvg} />{t}</li>)}
       </ul>
-      <div class="final-cta-actions"><a class="btn btn-lg" href={site.ctaHref}>{site.ctaLabel} &rarr;</a><a class="textlink" href="/expertise/">{home.finalCtaSecondaryLabel}</a></div>
+      <div class="final-cta-actions"><a class="btn" href={site.ctaHref}>{site.ctaLabel} &rarr;</a><a class="textlink" href="/expertise/">{home.finalCtaSecondaryLabel}</a></div>
     </div>
     <div class="final-cta-img"><img src={finalCtaImage} alt={finalCtaImageAlt} width="1122" height="1402" loading="lazy" decoding="async" /></div>
   </div></div></section>
