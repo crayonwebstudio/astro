@@ -17,12 +17,9 @@ header.site{position:absolute;inset:0 0 auto 0;z-index:40}
 .header-inner{display:flex;align-items:center;height:64px;gap:16px;padding-right:76px}
 @media(min-width:768px){.header-inner{height:72px;padding-right:88px}}
 @media(min-width:1024px){.header-inner{padding-right:344px}}
-@media(min-width:768px){.header-inner{height:72px;padding-right:48px}}
-@media(min-width:1024px){.header-inner{padding-right:304px}}
 .site-logo{height:24px;width:auto;display:block}
 @media(min-width:768px){.site-logo{height:28px}}
 .header-actions{position:fixed;top:12px;right:20px;z-index:70;display:flex;align-items:center;gap:8px}
-@media(min-width:768px){.header-actions{top:16px;right:40px}}
 @media(min-width:768px){.header-actions{top:16px;right:40px}}
 .btn.header-cta{box-shadow:0 0 0 1px var(--bg);padding:8px 18px;font-size:13px;line-height:1.4}
 @media(max-width:639px){.btn.header-cta{display:none}}
