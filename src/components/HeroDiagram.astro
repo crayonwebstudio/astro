@@ -4,23 +4,28 @@ import { site, home } from '../data/content.ts';
 // one SVG viewBox 0 0 1000 560. Nodes, wires, hub and pulses all share these
 // coordinates, so wires can never drift away from their nodes.
 // No HTML nodes positioned with % + a separate SVG: that was the bug.
+const SPINE_X = 620;
+const SPINE_Y1 = 36;
+const SPINE_Y2 = 512;
+const HUB = { x: 0, y: 288 };
 const nodes = [
-  { label: "SEO", color: "#4285F4", x: 610, y: 52 },
-  { label: "GEO", color: "#111827", x: 840, y: 110 },
-  { label: "Positionering", color: "#0A66C2", x: 560, y: 168 },
-  { label: "Taalregister", color: "#111827", x: 880, y: 216 },
-  { label: "Governance", color: "#7B5CFF", x: 540, y: 288 },
-  { label: "Automatisering", color: "#FF5A1F", x: 820, y: 330 },
-  { label: "Tracking", color: "#2563EB", x: 570, y: 420 },
-  { label: "Martech", color: "#FF4D1C", x: 860, y: 470 },
+  { label: "SEO", color: "#4285F4", x: 770, y: 52, side: "right" as const },
+  { label: "GEO", color: "#111827", x: 830, y: 122, side: "right" as const },
+  { label: "Positionering", color: "#0A66C2", x: 450, y: 172, side: "left" as const },
+  { label: "Taalregister", color: "#111827", x: 830, y: 232, side: "right" as const },
+  { label: "Governance", color: "#7B5CFF", x: 450, y: 288, side: "left" as const },
+  { label: "Automatisering", color: "#FF5A1F", x: 810, y: 342, side: "right" as const },
+  { label: "Tracking", color: "#2563EB", x: 460, y: 420, side: "left" as const },
+  { label: "Martech", color: "#FF4D1C", x: 820, y: 478, side: "right" as const },
 ];
-const HUB = { x: 380, y: 280 };
-// Smooth curve wire: hub -> gentle S-curve into node left edge, no sharp elbows.
+// Reference model: single vertical spine + horizontal branches, not fan-out curves.
+// Right nodes: spine -> horizontal to node left edge. Left nodes: spine -> horizontal to node right edge.
 const wirePath = (n: typeof nodes[number]) => {
-  const endX = n.x - nodeW(n.label) / 2;
-  const c1x = HUB.x + (endX - HUB.x) * 0.5;
-  return `M ${HUB.x} ${HUB.y} C ${c1x} ${HUB.y}, ${c1x} ${n.y}, ${endX} ${n.y}`;
+  const endX = n.side === "right" ? n.x - nodeW(n.label) / 2 : n.x + nodeW(n.label) / 2;
+  return `M ${SPINE_X} ${n.y} H ${endX}`;
 };
+const spinePath = `M ${SPINE_X} ${SPINE_Y1} V ${SPINE_Y2}`;
+const mainPath = `M ${HUB.x} ${HUB.y} H ${SPINE_X}`;
 const nodeW = (label: string) => 44 + label.length * 8.5;
 // Wire ends exactly at the node's left edge (centre - half width), so the
 // line visibly connects to the box for every label length.
@@ -36,17 +41,20 @@ const nodeW = (label: string) => 44 + label.length * 8.5;
       <!-- ONE SVG: wires + hub + nodes + pulses, all in 0 0 1000 560 -->
       <svg class="diagram-svg" viewBox="0 0 1000 560" role="img" aria-label="Marketing systeem diagram: SEO, GEO, Positionering, Taalregister, Governance, Automatisering, Tracking en Martech verbonden met elkaar">
         <g class="wires">
+          <path d={spinePath} class="wire wire--spine" vector-effect="non-scaling-stroke" />
+          <path d={mainPath} class="wire wire--main" vector-effect="non-scaling-stroke" />
           {nodes.map(n => <path d={wirePath(n)} class="wire" vector-effect="non-scaling-stroke" />)}
         </g>
         <g class="pulses">
           {nodes.map((n, i) => (
-            <circle r="5" fill={n.color} opacity="0.9">
+            <circle r="4" fill={n.color} opacity="0.9">
               <animateMotion dur={`${5 + i * 0.8}s`} repeatCount="indefinite" path={wirePath(n)} />
             </circle>
           ))}
         </g>
-        <circle cx={HUB.x} cy={HUB.y} r="6" fill="#FF5757" />
-        <circle cx={HUB.x} cy={HUB.y} r="12" fill="none" stroke="#FF5757" stroke-opacity="0.2" stroke-width="1.5" />
+        <circle cx={SPINE_X} cy={HUB.y} r="6" fill="#FF5757" />
+        <circle cx={SPINE_X} cy={HUB.y} r="12" fill="none" stroke="#FF5757" stroke-opacity="0.2" stroke-width="1.5" />
+        <circle cx={HUB.x} cy={HUB.y} r="5" fill="#FF5757" />
         {nodes.map(n => {
           const w = nodeW(n.label);
           return (
@@ -99,7 +107,7 @@ const nodeW = (label: string) => 44 + label.length * 8.5;
 .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
 .veld{position:relative;min-width:0}
 .diagram-svg{display:block;width:100%;height:auto;overflow:visible}
-.wire{fill:none;stroke:#D7DEE8;stroke-width:1}
+.wire{fill:none;stroke:#D7DEE8;stroke-width:1}.wire--spine{stroke:#B8C0CC;stroke-width:1.2}.wire--main{stroke:#B8C0CC;stroke-width:1.2}
 .diagram-node text{font-weight:500}
 .meter{position:relative;margin:-8px auto 0;width:min(360px,92%);background:#FFFEF7;border:1px solid rgba(16,23,49,.2);border-radius:16px;padding:2px 16px 11px;box-shadow:0 18px 40px -26px rgba(16,23,49,.35);z-index:2}
 .meter__status{position:absolute;right:-12px;top:-12px;width:26px;height:26px;border-radius:50%;background:#03624C;color:#fff;display:flex;align-items:center;justify-content:center}
