@@ -1,13 +1,13 @@
 ---
 const nodes = [
-  { id: 'seo', label: 'SEO', logo: 'google', side: 'L', phaseNr: '02', phaseName: 'Zichtbaarheid', description: 'Gevonden worden in Google', top: 8, left: 38 },
-  { id: 'geo', label: 'GEO', logo: 'openai', side: 'R', phaseNr: '02', phaseName: 'Zichtbaarheid', description: 'Geciteerd worden door AI', top: 16, left: 50 },
-  { id: 'positionering', label: 'Positionering', logo: 'linkedin', side: 'L', phaseNr: '03', phaseName: 'Merk en taal', description: 'Een positie die blijft hangen', top: 24, left: 38 },
-  { id: 'taalregister', label: 'Taalregister', logo: 'notion', side: 'R', phaseNr: '03', phaseName: 'Merk en taal', description: 'Een taal over al je kanalen', top: 32, left: 50 },
-  { id: 'governance', label: 'Governance', logo: 'copilot', side: 'L', phaseNr: '04', phaseName: 'Werken met AI', description: 'Zelf de controle houden', top: 40, left: 38 },
-  { id: 'automatisering', label: 'Automatisering', logo: 'zapier', side: 'R', phaseNr: '04', phaseName: 'Werken met AI', description: 'Terugkerend werk automatiseren', top: 48, left: 50 },
-  { id: 'tracking', label: 'Tracking', logo: 'gtm', side: 'L', phaseNr: '01', phaseName: 'Data en techniek', description: 'Meten wat er echt gebeurt', top: 57, left: 38 },
-  { id: 'martech', label: 'Martech', logo: 'hubspot', side: 'R', phaseNr: '01', phaseName: 'Data en techniek', description: 'Koppelingen tussen je tools', top: 65, left: 50 },
+  { id: 'seo', label: 'SEO', logo: 'google', side: 'L', phaseNr: '02', phaseName: 'Zichtbaarheid', description: 'Gevonden worden in Google', top: 6, left: 39 },
+  { id: 'geo', label: 'GEO', logo: 'openai', side: 'R', phaseNr: '02', phaseName: 'Zichtbaarheid', description: 'Geciteerd worden door AI', top: 13, left: 51 },
+  { id: 'positionering', label: 'Positionering', logo: 'linkedin', side: 'L', phaseNr: '03', phaseName: 'Merk en taal', description: 'Een positie die blijft hangen', top: 20, left: 38 },
+  { id: 'taalregister', label: 'Taalregister', logo: 'notion', side: 'R', phaseNr: '03', phaseName: 'Merk en taal', description: 'Een taal over al je kanalen', top: 27, left: 52 },
+  { id: 'governance', label: 'Governance', logo: 'copilot', side: 'L', phaseNr: '04', phaseName: 'Werken met AI', description: 'Zelf de controle houden', top: 35, left: 36 },
+  { id: 'automatisering', label: 'Automatisering', logo: 'zapier', side: 'R', phaseNr: '04', phaseName: 'Werken met AI', description: 'Terugkerend werk automatiseren', top: 41, left: 49 },
+  { id: 'tracking', label: 'Tracking', logo: 'gtm', side: 'L', phaseNr: '01', phaseName: 'Data en techniek', description: 'Meten wat er echt gebeurt', top: 47, left: 37 },
+  { id: 'martech', label: 'Martech', logo: 'hubspot', side: 'R', phaseNr: '01', phaseName: 'Data en techniek', description: 'Koppelingen tussen je tools', top: 53, left: 51 },
 ];
 const logos: Record<string, string> = {
   google: '<svg class="w-4 h-4" aria-hidden="true" viewBox="0 0 24 24"><path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.66-5.17 3.66-9.17z"/><path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.13C3.27 21.39 7.35 24 12 24z"/><path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.6H1.25C.45 8.18 0 10.02 0 12s.45 3.82 1.25 5.4l4.03-3.13z"/><path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.35 0 3.27 2.61 1.25 6.6l4.03 3.13c.95-2.83 3.6-4.98 6.72-4.98z"/></svg>',
@@ -61,8 +61,9 @@ const logos: Record<string, string> = {
 .remix-btn-primary:hover{background:#ff4040;box-shadow:0 8px 16px rgba(255,87,87,0.3)}
 .remix-textlink{position:relative;font-size:16px;font-weight:500;color:#101731;text-decoration:underline;text-decoration-color:rgba(16,23,49,0.4);text-underline-offset:4px}
 .remix-textlink:hover{color:#ff5757;text-decoration-color:#ff5757}
-.tree-ref{position:relative;min-height:660px;width:100%}
-@media(min-width:1024px){.tree-ref{grid-column:span 7;min-height:760px}}
+.tree-ref{position:relative;min-height:720px;width:100%}
+@media(min-width:1024px){.tree-ref{grid-column:span 7;min-height:820px}}
+@media(min-width:1280px){.tree-ref{min-height:860px}}
 .remix-node{position:absolute;z-index:20;display:flex;cursor:pointer;align-items:center;gap:8px;border-radius:999px;padding:6px 14px;font-size:13px;font-weight:500;transition:all .3s;border:1px dashed #aaa;background:#fffef7;color:rgba(16,23,49,0.65)}
 @media(min-width:640px){.remix-node{font-size:14px}}
 .remix-node.is-left{flex-direction:row-reverse}
@@ -78,7 +79,7 @@ const logos: Record<string, string> = {
 .remix-tooltip-head{display:flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:#101731}
 .remix-tooltip-nr{display:inline-flex;height:16px;min-width:16px;align-items:center;justify-content:center;border-radius:999px;background:rgba(16,23,49,0.1);padding:0 4px;font-size:10px;font-weight:700;color:#101731}
 .remix-tooltip-desc{margin-top:6px;font-size:12px;line-height:1.4;color:rgba(16,23,49,0.8)}
-.meter-card{position:absolute;right:32px;bottom:16px;z-index:20;width:290px;border-radius:16px;border:1px solid rgba(16,23,49,0.15);background:#fff;padding:16px;box-shadow:0 12px 32px rgba(16,23,49,0.08);transition:all .3s}
+.meter-card{position:absolute;right:32px;bottom:24px;z-index:20;width:290px;border-radius:16px;border:1px solid rgba(16,23,49,0.15);background:#fff;padding:16px;box-shadow:0 12px 32px rgba(16,23,49,0.08);transition:all .3s}
 @media(min-width:640px){.meter-card{right:112px;width:310px}}
 .meter-check{position:absolute;top:-14px;right:24px;display:flex;height:28px;width:28px;align-items:center;justify-content:center;border-radius:50%;background:#03624c;color:#fff;box-shadow:0 4px 8px rgba(3,98,76,0.3);font-size:14px;font-weight:700}
 .meter-tabs{display:grid;grid-template-columns:repeat(3,1fr);border-bottom:1px solid rgba(16,23,49,0.1);padding-bottom:12px;text-align:left}
@@ -105,7 +106,7 @@ const logos: Record<string, string> = {
 const CHART = [{"l":12,"v":490,"c":2.4},{"l":14,"v":520,"c":2.6},{"l":11,"v":460,"c":2.3},{"l":16,"v":580,"c":2.7},{"l":10,"v":430,"c":2.3},{"l":9,"v":380,"c":2.3},{"l":8,"v":350,"c":2.2},{"l":15,"v":540,"c":2.7},{"l":13,"v":510,"c":2.5},{"l":18,"v":610,"c":2.9},{"l":15,"v":530,"c":2.8},{"l":14,"v":520,"c":2.6},{"l":11,"v":410,"c":2.6},{"l":10,"v":390,"c":2.5},{"l":19,"v":640,"c":2.9},{"l":22,"v":720,"c":3},{"l":26,"v":790,"c":3.2},{"l":21,"v":690,"c":3},{"l":20,"v":670,"c":2.9},{"l":15,"v":480,"c":3.1},{"l":14,"v":460,"c":3},{"l":25,"v":780,"c":3.2},{"l":31,"v":890,"c":3.4},{"l":33,"v":920,"c":3.5},{"l":27,"v":810,"c":3.3},{"l":23,"v":750,"c":3},{"l":18,"v":540,"c":3.3},{"l":17,"v":520,"c":3.2}];
 const PREV = [{"l":10,"v":450,"c":2.2},{"l":11,"v":480,"c":2.2},{"l":9,"v":420,"c":2.1},{"l":12,"v":500,"c":2.4},{"l":8,"v":380,"c":2.1},{"l":7,"v":340,"c":2},{"l":7,"v":330,"c":2.1},{"l":11,"v":470,"c":2.3},{"l":10,"v":460,"c":2.1},{"l":13,"v":520,"c":2.5},{"l":12,"v":490,"c":2.4},{"l":11,"v":470,"c":2.3},{"l":8,"v":380,"c":2.1},{"l":7,"v":350,"c":2},{"l":12,"v":500,"c":2.4},{"l":14,"v":530,"c":2.6},{"l":15,"v":560,"c":2.6},{"l":14,"v":540,"c":2.5},{"l":13,"v":510,"c":2.5},{"l":9,"v":410,"c":2.1},{"l":8,"v":390,"c":2},{"l":13,"v":520,"c":2.5},{"l":14,"v":550,"c":2.5},{"l":15,"v":570,"c":2.6},{"l":14,"v":540,"c":2.5},{"l":12,"v":500,"c":2.4},{"l":9,"v":420,"c":2.1},{"l":9,"v":410,"c":2.1}];
 function trunkPath(o, spineX, targetY, R=20){ const s=o.x, a=o.y; if(Math.abs(spineX-s)<2) return `M ${spineX},${a} V ${targetY}`; const dirX=Math.sign(spineX-s); const dirY=Math.sign(targetY-a)||1; const r=Math.min(R, Math.abs(targetY-a)/2, Math.abs(spineX-s)); return `M ${s},${a} H ${spineX - dirX*r} Q ${spineX},${a} ${spineX},${a + dirY*r} V ${targetY}`; }
-let activeId = 'positionering'; let hoveredId = null; let selectedMetric = 'leads'; let chartHoverIdx = null;
+let activeId = 'positionering'; let hoveredId = null; let selectedMetric = 'leads'; let chartHoverIdx = null; let nodeCustomTops = {};
 function currentLit(){ return hoveredId || activeId; }
 function renderChart(){
   const W=272, H=64, pb=12, pt=6, ah=H-pb-pt;
@@ -128,7 +129,18 @@ function renderWires(){
   if(!hero || !hart) return;
   const heroRect = hero.getBoundingClientRect(); const dotRect = hart.getBoundingClientRect();
   const origin = { x: dotRect.left + dotRect.width/2 - heroRect.left, y: dotRect.top + dotRect.height/2 - heroRect.top };
-  let spineX = heroRect.width * 0.72; if(tree){ const tr = tree.getBoundingClientRect(); spineX = tr.left - heroRect.left + tr.width * 0.44; }
+  let spineX = heroRect.width * 0.72; if(tree){ const tr = tree.getBoundingClientRect(); spineX = tr.left - heroRect.left + tr.width * 0.44;
+    if(card){
+      const cardRect = card.getBoundingClientRect(); const cardTopInTree = cardRect.top - tr.top; const safeMaxNodeCenter = cardTopInTree - 48; const martechProjectedCenter = (53/100) * tr.height;
+      if(martechProjectedCenter > safeMaxNodeCenter){
+        const originYInTree = origin.y - (tr.top - heroRect.top); const lowerStart = originYInTree + 32; const lowerEnd = safeMaxNodeCenter; const lowerSpan = Math.max(lowerEnd - lowerStart, 110);
+        const newTops = {}; const lowerIds = ['governance','automatisering','tracking','martech']; lowerIds.forEach((id, idx)=>{ newTops[id] = lowerStart + (idx/(lowerIds.length-1))*lowerSpan; });
+        const upperStart = 24; const upperEnd = originYInTree - 28; const upperSpan = Math.max(upperEnd - upperStart, 100); const upperIds = ['seo','geo','positionering','taalregister']; upperIds.forEach((id, idx)=>{ newTops[id] = upperStart + (idx/(upperIds.length-1))*upperSpan; });
+        let changed = Object.keys(newTops).some(k=>Math.abs((nodeCustomTops[k]||0) - newTops[k]) > 1.5);
+        if(changed){ nodeCustomTops = newTops; document.querySelectorAll('.remix-node').forEach(el=>{ const id=el.getAttribute('data-id'); if(nodeCustomTops[id]!==undefined) el.style.top = nodeCustomTops[id]+'px'; }); }
+      } else if(Object.keys(nodeCustomTops).length>0){ nodeCustomTops = {}; document.querySelectorAll('.remix-node').forEach(el=>{ el.style.top=''; }); }
+    }
+  }
   const R = 20; const baseG = document.getElementById('baseWires'); const cardG = document.getElementById('cardWireG'); const activeG = document.getElementById('activeWireG');
   baseG.innerHTML=''; cardG.innerHTML=''; activeG.innerHTML=''; const lit = currentLit(); const branches = {};
   document.querySelectorAll('.remix-node').forEach((el)=>{
