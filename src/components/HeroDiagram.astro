@@ -45,8 +45,8 @@ const logos: Record<string, string> = {
 .remix-kop{font-size:36px;font-weight:800;letter-spacing:-0.04em;color:#101731;line-height:1.02;margin:0}
 @media(min-width:640px){.remix-kop{font-size:48px}}
 @media(min-width:768px){.remix-kop{font-size:52px}}
-@media(min-width:1024px){.remix-kop{font-size:56px}}
-@media(min-width:1280px){.remix-kop{font-size:61.6px}}
+@media(min-width:1024px){.remix-kop{font-size:68px}}
+@media(min-width:1280px){.remix-kop{font-size:72px}}
 .remix-kop-line{display:block}
 .remix-kop-line2{position:relative;margin-top:4px;display:inline-flex;align-items:baseline;white-space:nowrap}
 .hart{position:relative;margin-left:6px;display:inline-flex;width:14px;height:14px;cursor:pointer;align-items:center;justify-content:center;transform:translateY(2px)}
@@ -61,9 +61,9 @@ const logos: Record<string, string> = {
 .remix-btn-primary:hover{background:#ff4040;box-shadow:0 8px 16px rgba(255,87,87,0.3)}
 .remix-textlink{position:relative;font-size:16px;font-weight:500;color:#101731;text-decoration:underline;text-decoration-color:rgba(16,23,49,0.4);text-underline-offset:4px}
 .remix-textlink:hover{color:#ff5757;text-decoration-color:#ff5757}
-.tree-ref{position:relative;min-height:720px;width:100%}
-@media(min-width:1024px){.tree-ref{min-height:780px}}
-@media(min-width:1280px){.tree-ref{min-height:820px}}
+.tree-ref{position:relative;min-height:660px;width:100%}
+@media(min-width:1024px){.tree-ref{min-height:720px}}
+@media(min-width:1280px){.tree-ref{min-height:760px}}
 .remix-node{position:absolute;z-index:20;display:flex;cursor:pointer;align-items:center;gap:8px;border-radius:999px;padding:6px 14px;font-size:13px;font-weight:500;transition:all .3s;border:1px dashed #aaa;background:#fffef7;color:rgba(16,23,49,0.65)}
 @media(min-width:640px){.remix-node{font-size:14px}}
 .remix-node.is-left{flex-direction:row-reverse}
@@ -81,8 +81,8 @@ const logos: Record<string, string> = {
 .remix-tooltip-head{display:flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:#101731}
 .remix-tooltip-nr{display:inline-flex;height:16px;min-width:16px;align-items:center;justify-content:center;border-radius:999px;background:rgba(16,23,49,0.1);padding:0 4px;font-size:10px;font-weight:700;color:#101731}
 .remix-tooltip-desc{margin-top:6px;font-size:12px;line-height:1.4;color:rgba(16,23,49,0.8)}
-.meter-card{position:absolute;left:48%;transform:translateX(-50%);bottom:24px;z-index:20;width:290px;border-radius:16px;border:1px solid rgba(16,23,49,0.15);background:#fff;padding:16px;box-shadow:0 12px 32px rgba(16,23,49,0.08);transition:all .3s}
-@media(min-width:640px){.meter-card{width:310px}}
+.meter-card{position:absolute;right:32px;bottom:24px;z-index:20;width:290px;border-radius:16px;border:1px solid rgba(16,23,49,0.15);background:#fff;padding:16px;box-shadow:0 12px 32px rgba(16,23,49,0.08);transition:all .3s}
+@media(min-width:640px){.meter-card{right:112px;width:310px}}
 .meter-check{position:absolute;top:-14px;right:24px;display:flex;height:28px;width:28px;align-items:center;justify-content:center;border-radius:50%;background:#03624c;color:#fff;box-shadow:0 4px 8px rgba(3,98,76,0.3);font-size:14px;font-weight:700}
 .meter-tabs{display:grid;grid-template-columns:repeat(3,1fr);border-bottom:1px solid rgba(16,23,49,0.1);padding-bottom:12px;text-align:left}
 .meter-tab{padding:0 8px;text-align:left;background:none;border:0;cursor:pointer;opacity:0.65}
@@ -108,7 +108,7 @@ const logos: Record<string, string> = {
 const CHART = [{"l":12,"v":490,"c":2.4},{"l":14,"v":520,"c":2.6},{"l":11,"v":460,"c":2.3},{"l":16,"v":580,"c":2.7},{"l":10,"v":430,"c":2.3},{"l":9,"v":380,"c":2.3},{"l":8,"v":350,"c":2.2},{"l":15,"v":540,"c":2.7},{"l":13,"v":510,"c":2.5},{"l":18,"v":610,"c":2.9},{"l":15,"v":530,"c":2.8},{"l":14,"v":520,"c":2.6},{"l":11,"v":410,"c":2.6},{"l":10,"v":390,"c":2.5},{"l":19,"v":640,"c":2.9},{"l":22,"v":720,"c":3},{"l":26,"v":790,"c":3.2},{"l":21,"v":690,"c":3},{"l":20,"v":670,"c":2.9},{"l":15,"v":480,"c":3.1},{"l":14,"v":460,"c":3},{"l":25,"v":780,"c":3.2},{"l":31,"v":890,"c":3.4},{"l":33,"v":920,"c":3.5},{"l":27,"v":810,"c":3.3},{"l":23,"v":750,"c":3},{"l":18,"v":540,"c":3.3},{"l":17,"v":520,"c":3.2}];
 const PREV = [{"l":10,"v":450,"c":2.2},{"l":11,"v":480,"c":2.2},{"l":9,"v":420,"c":2.1},{"l":12,"v":500,"c":2.4},{"l":8,"v":380,"c":2.1},{"l":7,"v":340,"c":2},{"l":7,"v":330,"c":2.1},{"l":11,"v":470,"c":2.3},{"l":10,"v":460,"c":2.1},{"l":13,"v":520,"c":2.5},{"l":12,"v":490,"c":2.4},{"l":11,"v":470,"c":2.3},{"l":8,"v":380,"c":2.1},{"l":7,"v":350,"c":2},{"l":12,"v":500,"c":2.4},{"l":14,"v":530,"c":2.6},{"l":15,"v":560,"c":2.6},{"l":14,"v":540,"c":2.5},{"l":13,"v":510,"c":2.5},{"l":9,"v":410,"c":2.1},{"l":8,"v":390,"c":2},{"l":13,"v":520,"c":2.5},{"l":14,"v":550,"c":2.5},{"l":15,"v":570,"c":2.6},{"l":14,"v":540,"c":2.5},{"l":12,"v":500,"c":2.4},{"l":9,"v":420,"c":2.1},{"l":9,"v":410,"c":2.1}];
 function trunkPath(o, spineX, targetY, R=20){ const s=o.x, a=o.y; if(Math.abs(spineX-s)<2) return `M ${spineX},${a} V ${targetY}`; const dirX=Math.sign(spineX-s); const dirY=Math.sign(targetY-a)||1; const r=Math.min(R, Math.abs(targetY-a)/2, Math.abs(spineX-s)); return `M ${s},${a} H ${spineX - dirX*r} Q ${spineX},${a} ${spineX},${a + dirY*r} V ${targetY}`; }
-let activeId = 'positionering'; let hoveredId = null; let selectedMetric = 'leads'; let chartHoverIdx = null; let nodeCustomTops = {};
+let activeId = null; let hoveredId = null; let selectedMetric = 'leads'; let chartHoverIdx = null; let nodeCustomTops = {};
 function currentLit(){ return hoveredId || activeId; }
 function renderChart(){
   const W=272, H=64, pb=12, pt=6, ah=H-pb-pt;
