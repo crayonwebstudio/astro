@@ -1,194 +1,169 @@
 ---
-import { site, home } from '../data/content.ts';
-// SINGLE coordinated coordinate system: everything in the diagram lives in
-// one SVG viewBox 0 0 1000 560. Nodes, wires, hub and pulses all share these
-// coordinates, so wires can never drift away from their nodes.
-// No HTML nodes positioned with % + a separate SVG: that was the bug.
-const SPINE_X = 720;
-const SPINE_Y1 = 32;
-const SPINE_Y2 = 520;
-const HUB = { x: 0, y: 292 };
 const nodes = [
-  { label: "SEO", color: "#4285F4", icon: "G", x: 560, y: 48, side: "left" as const, cluster: "02 Zichtbaarheid", detail: "Beter gevonden worden" },
-  { label: "GEO", color: "#111827", icon: "◉", x: 880, y: 118, side: "right" as const, cluster: "02 Zichtbaarheid", detail: "Vindbaar in AI-antwoorden" },
-  { label: "Positionering", color: "#0A66C2", icon: "in", x: 520, y: 188, side: "left" as const, cluster: "03 Merk en taal", detail: "Duidelijk maken wat je biedt" },
-  { label: "Taalregister", color: "#111827", icon: "N", x: 880, y: 258, side: "right" as const, cluster: "03 Merk en taal", detail: "Herkenbare taal op elk kanaal" },
-  { label: "Governance", color: "#7B5CFF", icon: "◆", x: 520, y: 292, side: "left" as const, cluster: "04 Werken met AI", detail: "Zelf de controle houden" },
-  { label: "Automatisering", color: "#FF5A1F", icon: "◍", x: 870, y: 362, side: "right" as const, cluster: "01 Data en techniek", detail: "Systemen die samenwerken" },
-  { label: "Tracking", color: "#2563EB", icon: "◆", x: 530, y: 432, side: "left" as const, cluster: "01 Data en techniek", detail: "Meten wat marketing oplevert" },
-  { label: "Martech", color: "#FF4D1C", icon: "↗", x: 880, y: 492, side: "right" as const, cluster: "01 Data en techniek", detail: "Cijfers waarmee je keuzes maakt" },
+  { id: 'seo', label: 'SEO', logo: 'google', side: 'L', phaseNr: '02', phaseName: 'Zichtbaarheid', description: 'Gevonden worden in Google', top: 8, left: 38 },
+  { id: 'geo', label: 'GEO', logo: 'openai', side: 'R', phaseNr: '02', phaseName: 'Zichtbaarheid', description: 'Geciteerd worden door AI', top: 16, left: 50 },
+  { id: 'positionering', label: 'Positionering', logo: 'linkedin', side: 'L', phaseNr: '03', phaseName: 'Merk en taal', description: 'Een positie die blijft hangen', top: 24, left: 38 },
+  { id: 'taalregister', label: 'Taalregister', logo: 'notion', side: 'R', phaseNr: '03', phaseName: 'Merk en taal', description: 'Een taal over al je kanalen', top: 32, left: 50 },
+  { id: 'governance', label: 'Governance', logo: 'copilot', side: 'L', phaseNr: '04', phaseName: 'Werken met AI', description: 'Zelf de controle houden', top: 40, left: 38 },
+  { id: 'automatisering', label: 'Automatisering', logo: 'zapier', side: 'R', phaseNr: '04', phaseName: 'Werken met AI', description: 'Terugkerend werk automatiseren', top: 48, left: 50 },
+  { id: 'tracking', label: 'Tracking', logo: 'gtm', side: 'L', phaseNr: '01', phaseName: 'Data en techniek', description: 'Meten wat er echt gebeurt', top: 57, left: 38 },
+  { id: 'martech', label: 'Martech', logo: 'hubspot', side: 'R', phaseNr: '01', phaseName: 'Data en techniek', description: 'Koppelingen tussen je tools', top: 65, left: 50 },
 ];
-// Reference model: single vertical spine + horizontal branches, not fan-out curves.
-// Right nodes: spine -> horizontal to node left edge. Left nodes: spine -> horizontal to node right edge.
-const wirePath = (n: typeof nodes[number]) => {
-  const endX = n.side === "right" ? n.x - nodeW(n.label) / 2 : n.x + nodeW(n.label) / 2;
-  return `M ${SPINE_X} ${n.y} H ${endX}`;
+const logos: Record<string, string> = {
+  google: '<svg class="w-4 h-4" aria-hidden="true" viewBox="0 0 24 24"><path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.66-5.17 3.66-9.17z"/><path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.13C3.27 21.39 7.35 24 12 24z"/><path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.6H1.25C.45 8.18 0 10.02 0 12s.45 3.82 1.25 5.4l4.03-3.13z"/><path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.35 0 3.27 2.61 1.25 6.6l4.03 3.13c.95-2.83 3.6-4.98 6.72-4.98z"/></svg>',
+  openai: '<svg class="w-4 h-4" aria-hidden="true" fill="currentColor" viewBox="0 0 24 24"><path d="M22.282 9.821a5.985 5.985 0 0 0-.516-4.91 6.046 6.046 0 0 0-6.51-2.9A6.065 6.065 0 0 0 4.981 4.18a5.985 5.985 0 0 0-3.998 2.9 6.046 6.046 0 0 0 .743 7.097 5.98 5.98 0 0 0 .51 4.911 6.051 6.051 0 0 0 6.515 2.9A5.985 5.985 0 0 0 13.26 24a6.056 6.056 0 0 0 5.771-4.206 5.99 5.99 0 0 0 3.997-2.9 6.056 6.056 0 0 0-.746-7.073zM13.26 22.43a4.476 4.476 0 0 1-2.876-1.04l.141-.081 4.779-2.758a.795.795 0 0 0 .392-.681v-6.737l2.02 1.168a.071.071 0 0 1 .038.052v5.583a4.504 4.504 0 0 1-4.494 4.494zM3.6 18.304a4.47 4.47 0 0 1-.535-3.014l.142.085 4.783 2.759a.771.771 0 0 0 .78 0l5.843-3.369v2.332a.08.08 0 0 1-.033.062L9.74 19.95a4.5 4.5 0 0 1-6.14-1.646zm-1.04-9.972A4.476 4.476 0 0 1 4.9 6.275v5.676a.79.79 0 0 0 .392.681l5.844 3.369-2.02 1.168a.076.076 0 0 1-.071 0l-4.839-2.793a4.499 4.499 0 0 1-1.646-6.046zm15.753 3.659l-5.843-3.369 2.02-1.168a.076.076 0 0 1 .071 0l4.839 2.793a4.5 4.5 0 0 1-.53 8.113v-5.688a.79.79 0 0 0-.557-.681zm2.088-3.014a4.47 4.47 0 0 1 .535 3.014l-.142-.085-4.783-2.759a.77.77 0 0 0-.78 0l-5.843 3.369v-2.332a.08.08 0 0 1 .033-.062L14.26 4.05a4.5 4.5 0 0 1 6.14 1.646zM8.37 12l2.858-1.65 2.86 1.65v3.3L11.23 17 8.37 15.3z"/></svg>',
+  linkedin: '<svg class="w-4 h-4" aria-hidden="true" fill="#0A66C2" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>',
+  notion: '<svg class="w-4 h-4" aria-hidden="true" fill="currentColor" viewBox="0 0 24 24"><path d="M4.459 4.208c.746.606 1.026.56 2.428.466l13.215-.793c.28 0 .047-.28-.046-.326L17.86 1.74c-.466-.373-.84-.56-1.773-.467L2.873 2.533c-.42.047-.514.28-.327.467l1.913 1.208zm1.073 3.963v12.78c0 .7.373.933 1.166.886l13.447-.793c.793-.047.887-.513.887-1.166V6.914c0-.653-.28-.933-.98-.887l-13.54.793c-.7.047-.98.373-.98.887v.463zm12.322.28c.093.42 0 .84-.42.887l-.7.14v10.315c-.607.327-1.167.514-1.634.514-.747 0-.933-.233-1.494-.933l-4.573-7.234v6.954l1.447.327s0 .84-1.167.84l-3.22.186c-.093-.186 0-.653.327-.746l.84-.233V9.888l-1.167-.094c-.093-.42.14-1.026.793-1.073l3.454-.233 4.76 7.328V9.328l-1.213-.14c-.093-.513.28-.886.746-.933l3.22-.186z"/></svg>',
+  copilot: '<svg class="w-4 h-4" aria-hidden="true" viewBox="0 0 24 24" fill="none"><path d="M17.5 4.5a3 3 0 0 0-2.8-2h-.9a3 3 0 0 0-2.9 2.4L9.5 13l.4-1.3a3 3 0 0 1 2.9-2.2h5.1l2.1.8 2.1-.8h-.6a3 3 0 0 1-2.9-2.2l-.9-2.8z" fill="url(#copilot-grad-1)"/><path d="M6.5 19.5a3 3 0 0 0 2.8 2h1.8a3 3 0 0 0 2.9-2.8l.2-7.8-.4 1.4a3 3 0 0 1-2.9 2.1H5.7l-1.8-1-2 1h.6a3 3 0 0 1 2.9 2.2l.9 2.9z" fill="url(#copilot-grad-2)"/><defs><linearGradient id="copilot-grad-1" x1="10" y1="2" x2="22" y2="14" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#00AEFF"/><stop offset="100%" stop-color="#0736C4"/></linearGradient><linearGradient id="copilot-grad-2" x1="4" y1="12" x2="14" y2="22" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#FFB657"/><stop offset="100%" stop-color="#C02B3C"/></linearGradient></defs></svg>',
+  zapier: '<svg class="w-4 h-4" aria-hidden="true" fill="#FF4F00" viewBox="0 0 24 24"><rect width="24" height="24" rx="4" fill="#FF4F00"/><path fill="#FFFFFF" d="M11.5 5h1v4.5l3.2-3.2.7.7-3.2 3.2H18v1h-4.8l3.2 3.2-.7.7-3.2-3.2V19h-1v-4.8l-3.2 3.2-.7-.7 3.2-3.2H6v-1h4.8L7.6 7.3l.7-.7 3.2 3.2V5z"/></svg>',
+  gtm: '<svg class="w-4 h-4" aria-hidden="true" fill="#246FDB" viewBox="0 0 24 24"><path d="M12.003 0a3 3 0 0 0-2.121 5.121l6.865 6.865-4.446 4.541 1.745 1.836a3.432 3.432 0 0 1 .7.739l.012.011-.001.002a3.432 3.432 0 0 1 .609 1.953 3.432 3.432 0 0 1-.09.78l7.75-7.647c.031-.029.067-.05.098-.08.023-.023.038-.052.06-.076a2.994 2.994 0 0 0-.06-4.166l-9-9A2.99 2.99 0 0 0 12.003 0zM8.63 2.133L.88 9.809a2.998 2.998 0 0 0 0 4.238l7.7 7.75a3.432 3.432 0 0 1-.077-.729 3.432 3.432 0 0 1 3.431-3.431 3.432 3.432 0 0 1 .826.101l-5.523-5.81 4.371-4.373-2.08-2.08c-.903-.904-1.193-2.183-.898-3.342zm3.304 16.004a2.932 2.932 0 0 0-2.931 2.931A2.932 2.932 0 0 0 11.934 24a2.932 2.932 0 0 0 2.932-2.932 2.932 2.932 0 0 0-2.932-2.931z"/></svg>',
+  hubspot: '<svg class="w-4 h-4" aria-hidden="true" fill="#FF7A59" viewBox="0 0 24 24"><path d="M18.164 7.93V5.084a2.198 2.198 0 001.267-1.978v-.067A2.2 2.2 0 0017.238.845h-.067a2.2 2.2 0 00-2.193 2.193v.067a2.196 2.196 0 001.252 1.973l.013.006v2.852a6.22 6.22 0 00-2.969 1.31l.012-.01-7.828-6.095A2.497 2.497 0 104.3 4.656l-.012.006 7.697 5.991a6.176 6.176 0 00-1.038 3.446c0 1.343.425 2.588 1.147 3.607l-.013-.02-2.342 2.343a1.968 1.968 0 00-.58-.095h-.002a2.033 2.033 0 102.033 2.033 1.978 1.978 0 00-.1-.595l.005.014 2.317-2.317a6.247 6.247 0 104.782-11.134l-.036-.005zm-.964 9.378a3.206 3.206 0 113.215-3.207v.002a3.206 3.206 0 01-3.207 3.207z"/></svg>',
 };
-const spinePath = `M ${SPINE_X} ${SPINE_Y1} V ${SPINE_Y2}`;
-const mainPath = `M ${HUB.x} ${HUB.y} H ${SPINE_X}`;
-const nodeW = (label: string) => 62 + label.length * 8.5;
-// Wire ends exactly at the node's left edge (centre - half width), so the
-// line visibly connects to the box for every label length.
 ---
-<section class="hartslag" id="hartslag">
-  <div class="hero__body"><div class="hero__lower">
-    <div class="hero__copy">
-      <h1 class="kop"><span class="kop__line"><span class="kop__inner">Marketing die klopt</span></span><span class="kop__line"><span class="kop__inner">tot in de systemen<span class="sr-only">.</span><span class="hart" id="hart" aria-hidden="true"><span class="hart__ring"></span></span></span></span></h1>
-      <p class="lead">{home.heroLead}</p>
-      <div class="hero-actions"><a class="btn" href={site.ctaHref}>{site.ctaLabel} &rarr;</a><a class="textlink" href={home.heroSecondaryHref}>{home.heroSecondaryLabel}</a></div>
+<section id="biite-hero" class="biite-hero">
+  <svg id="wireCanvas" class="wire-canvas" aria-hidden="true"><defs><linearGradient id="chartFill" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#2563eb" stop-opacity="0.22"/><stop offset="100%" stop-color="#2563eb" stop-opacity="0.01"/></linearGradient></defs><g id="baseWires"></g><g id="cardWireG"></g><g id="activeWireG"></g></svg>
+  <div class="hero-inner"><div class="hero-grid">
+    <div class="hero-copy">
+      <h1 class="remix-kop"><span class="remix-kop-line">Marketing die klopt</span><span class="remix-kop-line2">tot in de systemen<span id="hart" class="hart"><span class="hart-dot"></span><span class="hart-ring"></span></span></span></h1>
+      <p class="remix-lead">Biite helpt je meer uit online marketing te halen door je strategie, website, data en systemen op elkaar aan te laten sluiten. Samen zorgen we dat je kunt meten wat werkt en daarop kunt verder bouwen.</p>
+      <div class="remix-ctas"><a href="/contact/" class="remix-btn-primary">plan een kennismaking <span aria-hidden="true">→</span></a><a href="/werkwijze/" class="remix-textlink">bekijk de werkwijze</a></div>
     </div>
-    <div class="veld" id="veld">
-      <!-- ONE SVG: wires + hub + nodes + pulses, all in 0 0 1000 560 -->
-      <div class="diagram-wrap">
-      <svg class="diagram-svg" id="diagramSvg" viewBox="0 0 1000 560" role="img" aria-label="Marketing systeem diagram: SEO, GEO, Positionering, Taalregister, Governance, Automatisering, Tracking en Martech verbonden met elkaar">
-        <g class="wires">
-          <path d={spinePath} class="wire wire--spine" vector-effect="non-scaling-stroke" />
-          <path d={mainPath} class="wire wire--main" vector-effect="non-scaling-stroke" />
-          {nodes.map((n, i) => <path d={wirePath(n)} class="wire wire--branch" data-index={i} vector-effect="non-scaling-stroke" />)}
-        </g>
-        <g class="pulses">
-          {nodes.map((n, i) => (
-            <circle r="4" fill={n.color} opacity="0.9">
-              <animateMotion dur={`${5 + i * 0.8}s`} repeatCount="indefinite" path={wirePath(n)} />
-            </circle>
-          ))}
-        </g>
-        <circle cx={SPINE_X} cy={HUB.y} r="6" fill="#FF5757" />
-        <circle cx={SPINE_X} cy={HUB.y} r="12" fill="none" stroke="#FF5757" stroke-opacity="0.2" stroke-width="1.5" />
-        <circle cx={HUB.x} cy={HUB.y} r="5" fill="#FF5757" />
-        {nodes.map((n, i) => {
-          const w = nodeW(n.label);
-          return (
-            <g class="diagram-node" data-index={i} data-cluster={n.cluster} data-detail={n.detail} data-cx={n.x} data-cy={n.y} tabindex="0" transform={`translate(${n.x - w / 2},${n.y - 19})`}>
-              <rect x="0" y="0" width={w} height="38" rx="19" fill="#fff" stroke="#D7DEE8" stroke-dasharray="5 4" />
-              <text x="16" y="24" font-size="14" fill="#475569" font-family="inherit">{n.label}</text>
-              <rect x={w - 28} y="9" width="20" height="20" rx="5" fill={n.color} />
-              <text x={w - 18} y="24" font-size="11" fill="#fff" font-weight="700" text-anchor="middle" font-family="inherit">{n.icon}</text>
-              <title>{n.label} - {n.cluster} - {n.detail}</title>
-            </g>
-          );
-        })}
-      </svg>
-      <div class="node-card" id="nodeCard" aria-hidden="true"><span class="node-card__cluster" id="nodeCardCluster"></span><span class="node-card__detail" id="nodeCardDetail"></span></div>
-      </div>
-      <div class="meter" id="meter">
-        <span class="meter__status"><svg class="status__vink" viewBox="0 0 256 256"><path d="M232.49,80.49l-128,128a12,12,0,0,1-17,0l-56-56a12,12,0,1,1,17-17L96,183,215.51,63.51a12,12,0,0,1,17,17Z"></path></svg></span>
-        <div class="meter__rijen">
-          <span class="meter__indicator"></span>
-          {home.stats.map((s, i) => <div class={`meter__rij ${i === 0 ? 'is-actief' : ''}`}><span class="meter__naam">{s.label}</span><span class="meter__getal">{s.value}</span></div>)}
-        </div>
-        <div class="grafiek">
-          <svg class="spoor" viewBox="0 0 272 68" aria-hidden="true">
-            <g class="spoor__y"><text x="262" y="16">40</text><text x="262" y="36">20</text><text x="262" y="56">0</text></g><g class="spoor__raster">{[12, 26, 40, 54].map(y => <line x1="0" y1={y} x2="272" y2={y} />)}</g>
-            <g class="spoor__datums"><text x="4" y="66">22 sep</text><text x="78" y="66">29</text><text x="152" y="66">06 okt</text><text x="226" y="66">13</text></g>
-            <path class="spoor__vorig" d="M0,52 L30,54 L60,50 L90,55 L120,53 L150,52 L180,54 L220,53 L272,54" />
-            <path class="spoor__lijn" d="M0,44 L25,42 L50,47 L75,41 L100,45 L125,39 L150,43 L175,28 L200,41 L230,37 L272,45" />
-            <circle class="spoor__piek" cx="175" cy="28" r="3" />
-            <circle class="spoor__punt" cx="175" cy="28" r="3.5" />
-          </svg>
-        </div>
-        <p class="meter__voet"><span><i></i>{home.statsNote}</span><span><i class="is-vorig"></i>{home.statsPrev}</span></p>
-      </div>
-      <div class="krabbel" id="krabbel"><span class="krabbel__tekst">{home.scribble}</span>
-        <svg class="krabbel__pijl krabbel__pijl--rechts" viewBox="0 0 90 60"><path class="krabbel__lijn" d="M78 4 C 82 30, 52 50, 8 47"></path><path class="krabbel__lijn krabbel__kop" d="M19 39 L8 47 L20 54"></path></svg>
-        <svg class="krabbel__pijl krabbel__pijl--onder" viewBox="0 0 70 56"><path class="krabbel__lijn" d="M8 52 C 14 30, 34 12, 62 6"></path><path class="krabbel__lijn krabbel__kop" d="M49 3 L62 6 L55 17"></path></svg>
-      </div>
+    <div id="treeRef" class="tree-ref">
+      {nodes.map((n) => (<div class="remix-node" data-id={n.id} data-side={n.side} style={`top:${n.top}%;left:${n.left}%;transform:${n.side === 'L' ? 'translate(-100%, -50%)' : 'translate(0%, -50%)'}`} role="button" tabindex="0" aria-label={`${n.label} (${n.phaseName})`}><span class="remix-node-logo" set:html={logos[n.logo]} /><span class="remix-node-label">{n.label}</span><div class="remix-tooltip"><div class="remix-tooltip-head"><span class="remix-tooltip-nr">{n.phaseNr}</span><span>{n.phaseName}</span></div><p class="remix-tooltip-desc">{n.description}</p></div></div>))}
+      <div id="meterCard" class="meter-card"><div class="meter-check" title="Systeem geverifieerd en gekoppeld">✓</div><div class="meter-tabs"><button type="button" class="meter-tab active" data-metric="leads"><span class="meter-tab-label">Leads</span><span class="meter-tab-value">417</span></button><button type="button" class="meter-tab" data-metric="verkeer"><span class="meter-tab-label">Verkeer</span><span class="meter-tab-value">17.758</span></button><button type="button" class="meter-tab" data-metric="conversie"><span class="meter-tab-label">Conversie</span><span class="meter-tab-value">2,3%</span></button></div><div class="meter-chart-wrap"><svg class="meter-chart" viewBox="0 0 272 64" preserveAspectRatio="none" aria-hidden="true"><line x1="8" y1="12" x2="264" y2="12" stroke="#e5e7eb" stroke-width="0.75" /><line x1="8" y1="34" x2="264" y2="34" stroke="#e5e7eb" stroke-width="0.75" /><line x1="8" y1="52" x2="264" y2="52" stroke="#e5e7eb" stroke-width="0.75" /><path id="chartArea" fill="url(#chartFill)" /><path id="chartPrev" fill="none" stroke="#94a3b8" stroke-width="1.25" stroke-dasharray="3 3" /><path id="chartCurr" fill="none" stroke="#2563eb" stroke-width="1.75" stroke-linecap="round" /><circle cx="218" cy="18" r="3" fill="#2563eb" /><circle cx="218" cy="18" r="5" fill="none" stroke="#2563eb" stroke-opacity="0.4" /><g id="chartHoverG" style="display:none"><line id="chartHoverLine" y1="6" y2="52" stroke="#2563eb" stroke-width="1" stroke-dasharray="2 2" /><circle id="chartHoverDot" r="4" fill="#2563eb" stroke="#ffffff" stroke-width="1.5" /></g></svg><div class="meter-hover-cols" id="meterHoverCols"></div><div class="meter-y"><span>40</span><span>20</span><span>0</span></div></div><div class="meter-dates"><span>22 sep</span><span>29</span><span>06 okt</span><span>13</span></div><div class="meter-legend"><span><i class="legend-line"></i>Afgelopen 28 dagen</span><span><i class="legend-dash"></i>Vorige periode</span></div><div class="groei-wrap"><span class="groei-text">Groei die blijft</span><svg class="groei-arrow" viewBox="0 0 90 60" fill="none"><path d="M 75 4 C 82 28, 54 48, 12 47" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M 22 39 L 12 47 L 24 53" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
     </div>
   </div></div>
 </section>
 <style>
-.hartslag{position:relative;overflow:visible;padding:130px 0 60px}
-.hero__body{position:relative;z-index:1;max-width:1600px;margin:0 auto;padding:0 20px}
-@media(min-width:768px){.hero__body{padding:0 40px}}
-.hero__lower{display:grid;gap:32px;align-items:center}
-@media(min-width:1024px){.hero__lower{grid-template-columns:1fr 1fr;gap:40px}}
-.hero__copy{min-width:0;padding-top:8px}
-.kop{font-size:clamp(48px,4.6vw,72px);line-height:.95;letter-spacing:-.03em;margin:0;font-weight:700;overflow-wrap:break-word}
-.kop__line{display:block;white-space:nowrap}.kop__inner{display:inline-block;max-width:100%}
-.hart{position:relative;display:inline-block;width:.19em;height:.19em;border-radius:50%;background:var(--vivid);margin-left:.02em;vertical-align:baseline;transform:translateY(-.02em)}
-.hart__ring{position:absolute;inset:-.35em;border:1.5px solid var(--vivid);border-radius:50%;animation:hartPulse 2.4s ease-out infinite}
-@keyframes hartPulse{0%{transform:scale(.5);opacity:.9}100%{transform:scale(1.4);opacity:0}}
-.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
-.veld{position:relative;min-width:0}
-.diagram-svg{display:block;width:100%;height:auto;overflow:visible}
-.wire{fill:none;stroke:#D7DEE8;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;transition:stroke .2s,stroke-width .2s,opacity .2s}.wire--spine{stroke:#B8C0CC;stroke-width:1.2}.wire--main{stroke:#B8C0CC;stroke-width:1.2}
-.diagram-node{cursor:pointer;transition:opacity .2s}.diagram-node rect{transition:stroke .2s,stroke-width .2s}.diagram-node text{font-weight:500}
-.diagram-wrap{position:relative}
-.node-card{position:absolute;left:0;top:0;display:none;z-index:5;background:#fff;border:1px solid #E3E4E8;border-radius:12px;box-shadow:0 12px 32px rgba(16,23,49,.14);padding:10px 14px;pointer-events:none;transform:translate(-50%,-115%);max-width:220px}
-.node-card__cluster{display:block;font-size:12px;color:#C084FC;font-weight:700}
-.node-card__detail{display:block;font-size:14px;color:#101731;font-weight:600;margin-top:2px}
-.diagram-wrap[data-active] .wire--branch:not(.is-active){opacity:.18}
-.diagram-wrap[data-active] .wire--spine,.diagram-wrap[data-active] .wire--main{opacity:.18}
-.diagram-wrap[data-active] .diagram-node:not(.is-active){opacity:.25}
-.diagram-wrap[data-active] .wire--branch.is-active{stroke:#101731;stroke-width:2;opacity:1}
-.diagram-wrap[data-active] .wire--main.is-active{stroke:#101731;stroke-width:2;opacity:1}
-.diagram-wrap[data-active] .diagram-node.is-active rect{stroke:#101731;stroke-width:1.5}
-.diagram-wrap[data-active] .node-card{display:block}
-.meter{position:relative;margin:-8px auto 0;width:min(360px,92%);background:#FFFEF7;border:1px solid rgba(16,23,49,.2);border-radius:16px;padding:2px 16px 11px;box-shadow:0 18px 40px -26px rgba(16,23,49,.35);z-index:2}
-.meter__status{position:absolute;right:-12px;top:-12px;width:26px;height:26px;border-radius:50%;background:#03624C;color:#fff;display:flex;align-items:center;justify-content:center}
-.status__vink{width:14px;height:14px;fill:#fff}
-.meter__rijen{position:relative;display:grid;grid-template-columns:repeat(3,1fr);border-bottom:1px solid #E3E4E8;margin:0 -16px}
-.meter__indicator{position:absolute;top:0;left:0;width:33.3333%;height:2px;background:#1A73E8;background-clip:content-box;padding:0 12px}
-.meter__rij{display:grid;padding:10px 10px 8px 16px}
-.meter__rij+.meter__rij{border-left:1px solid #E3E4E8;padding-left:10px}
-.meter__rij.is-actief .meter__naam{color:#1A73E8}
-.meter__naam{font-size:12px;color:#5F6368;white-space:nowrap}
-.meter__getal{font-size:17px;font-weight:400;line-height:1.25;color:#101731;font-variant-numeric:tabular-nums;white-space:nowrap}
-.spoor{width:100%;height:68px;margin-top:10px}
-.spoor__raster line{stroke:#E3E4E8;stroke-width:.5}
-.spoor__datums text{font-size:7px;fill:#5F6368;font-family:inherit}
-.spoor__vorig{fill:none;stroke:#94A3B8;stroke-width:1;stroke-dasharray:3 3}
-.spoor__lijn{fill:none;stroke:#1A73E8;stroke-width:1.6}
-.spoor__piek{fill:var(--vivid)}.spoor__punt{fill:none;stroke:var(--vivid);stroke-width:1}
-.meter__voet{display:flex;gap:14px;font-size:11px;color:#5F6368;margin:8px 0 0}
-.meter__voet span{display:inline-flex;align-items:center;gap:6px}
-.meter__voet i{display:inline-block;width:14px;border-top:2px solid #1A73E8}
-.meter__voet i.is-vorig{border-top:1.5px dashed #1A73E8;opacity:.6}
-.krabbel{display:flex;align-items:flex-start;justify-content:flex-end;gap:6px;margin-top:10px}
-.krabbel__tekst{font-family:"Schoolbell","Segoe Script",cursive;font-size:20px;color:#101731;transform:rotate(-4deg);line-height:1}
-.krabbel__pijl{width:52px;height:42px;overflow:visible;flex:none}
-.krabbel__pijl--onder{width:44px;height:36px}
-.krabbel__lijn{fill:none;stroke:#0F172A;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
-@media(max-width:1023px){.hartslag{padding-top:110px}}
-@media(prefers-reduced-motion:reduce){.hart__ring{animation:none}}
+.biite-hero{position:relative;min-height:92vh;width:100%;overflow:hidden;background:#fffef7;padding:40px 24px 80px;background-image:radial-gradient(circle at 75% 40%, rgba(255,87,87,0.02) 0%, transparent 60%)}
+.wire-canvas{pointer-events:none;position:absolute;inset:0;z-index:0;width:100%;height:100%;overflow:visible}
+.hero-inner{position:relative;z-index:10;margin:0 auto;max-width:1600px}
+.hero-grid{display:grid;grid-template-columns:1fr;gap:40px;align-items:start}
+@media(min-width:1024px){.hero-grid{grid-template-columns:repeat(12,minmax(0,1fr));gap:24px}}
+.hero-copy{padding-top:56px}
+@media(min-width:1024px){.hero-copy{grid-column:span 5}}
+.remix-kop{font-size:36px;font-weight:800;letter-spacing:-0.03em;color:#101731;line-height:1.06;margin:0}
+@media(min-width:640px){.remix-kop{font-size:48px}}
+@media(min-width:768px){.remix-kop{font-size:60px}}
+@media(min-width:1024px){.remix-kop{font-size:64px}}
+@media(min-width:1280px){.remix-kop{font-size:70.4px}}
+.remix-kop-line{display:block;white-space:nowrap}
+.remix-kop-line2{position:relative;margin-top:4px;display:inline-flex;align-items:baseline;white-space:nowrap}
+.hart{position:relative;margin-left:4px;display:inline-flex;width:16px;height:16px;cursor:pointer;align-items:center;justify-content:center;transform:translateY(2px)}
+.hart-dot{position:absolute;display:inline-block;width:14px;height:14px;border-radius:50%;background:#ff5757;box-shadow:0 1px 2px rgba(255,87,87,0.5)}
+.hart-ring{position:absolute;width:20px;height:20px;border-radius:50%;border:2px solid #ff5757;animation:pulse-ring 2.4s cubic-bezier(0.25,1,0.5,1) infinite}
+@keyframes pulse-ring{0%{transform:scale(0.95);opacity:0.8}50%{transform:scale(1.6);opacity:0}100%{transform:scale(0.95);opacity:0}}
+@keyframes pulse-signal{0%{stroke-dashoffset:1000}100%{stroke-dashoffset:0}}
+.remix-lead{margin-top:32px;max-width:48ch;font-size:16px;line-height:1.65;color:rgba(16,23,49,0.75)}
+@media(min-width:640px){.remix-lead{font-size:18px}}
+.remix-ctas{margin-top:40px;display:flex;flex-wrap:wrap;align-items:center;gap:24px}
+.remix-btn-primary{display:inline-flex;align-items:center;gap:12px;border-radius:999px;background:#ff5757;padding:14px 32px;font-size:16px;font-weight:600;color:#fff;box-shadow:0 4px 6px rgba(255,87,87,0.2);transition:all .3s}
+.remix-btn-primary:hover{background:#ff4040;box-shadow:0 8px 16px rgba(255,87,87,0.3)}
+.remix-textlink{position:relative;font-size:16px;font-weight:500;color:#101731;text-decoration:underline;text-decoration-color:rgba(16,23,49,0.4);text-underline-offset:4px}
+.remix-textlink:hover{color:#ff5757;text-decoration-color:#ff5757}
+.tree-ref{position:relative;min-height:660px;width:100%}
+@media(min-width:1024px){.tree-ref{grid-column:span 7;min-height:760px}}
+.remix-node{position:absolute;z-index:20;display:flex;cursor:pointer;align-items:center;gap:8px;border-radius:999px;padding:6px 14px;font-size:13px;font-weight:500;transition:all .3s;border:1px dashed #aaa;background:#fffef7;color:rgba(16,23,49,0.65)}
+@media(min-width:640px){.remix-node{font-size:14px}}
+.remix-node.is-left{flex-direction:row-reverse}
+.remix-node.is-lit{border:1px solid #101731;background:#fff;color:#101731;box-shadow:0 4px 12px rgba(16,23,49,0.1)}
+.remix-node-logo{display:flex;width:16px;height:16px;flex:none;align-items:center;justify-content:center;opacity:0.55;filter:grayscale(1);transition:all .3s}
+.remix-node.is-lit .remix-node-logo{opacity:1;filter:none;transform:scale(1.05)}
+.remix-node:hover .remix-node-logo{opacity:1;filter:none}
+.remix-node-label{letter-spacing:-0.01em;user-select:none;white-space:nowrap}
+.remix-tooltip{pointer-events:none;position:absolute;bottom:calc(100% + 10px);z-index:30;width:224px;border-radius:12px;border:1px solid rgba(16,23,49,0.15);background:#fff;padding:12px;box-shadow:0 12px 32px rgba(16,23,49,0.1);transition:all .3s;opacity:0;transform:translateY(8px) scale(0.95)}
+.remix-node.is-left .remix-tooltip{right:0}
+.remix-node:not(.is-left) .remix-tooltip{left:0}
+.remix-node.is-lit .remix-tooltip{opacity:1;transform:translateY(0) scale(1)}
+.remix-tooltip-head{display:flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:#101731}
+.remix-tooltip-nr{display:inline-flex;height:16px;min-width:16px;align-items:center;justify-content:center;border-radius:999px;background:rgba(16,23,49,0.1);padding:0 4px;font-size:10px;font-weight:700;color:#101731}
+.remix-tooltip-desc{margin-top:6px;font-size:12px;line-height:1.4;color:rgba(16,23,49,0.8)}
+.meter-card{position:absolute;right:32px;bottom:16px;z-index:20;width:290px;border-radius:16px;border:1px solid rgba(16,23,49,0.15);background:#fff;padding:16px;box-shadow:0 12px 32px rgba(16,23,49,0.08);transition:all .3s}
+@media(min-width:640px){.meter-card{right:112px;width:310px}}
+.meter-check{position:absolute;top:-14px;right:24px;display:flex;height:28px;width:28px;align-items:center;justify-content:center;border-radius:50%;background:#03624c;color:#fff;box-shadow:0 4px 8px rgba(3,98,76,0.3);font-size:14px;font-weight:700}
+.meter-tabs{display:grid;grid-template-columns:repeat(3,1fr);border-bottom:1px solid rgba(16,23,49,0.1);padding-bottom:12px;text-align:left}
+.meter-tab{padding:0 8px;text-align:left;background:none;border:0;cursor:pointer;opacity:0.65}
+.meter-tab.active{opacity:1}
+.meter-tab-label{display:block;font-size:11px;font-weight:500;color:rgba(16,23,49,0.7)}
+.meter-tab.active .meter-tab-label{color:#2563eb;text-decoration:underline;text-decoration-color:#2563eb;text-decoration-thickness:2px;text-underline-offset:4px}
+.meter-tab-value{display:block;margin-top:4px;font-size:18px;font-weight:700;letter-spacing:-0.02em;color:#101731}
+.meter-chart-wrap{position:relative;margin-top:8px;height:80px;width:100%}
+.meter-chart{height:100%;width:100%;overflow:visible}
+.meter-hover-cols{position:absolute;inset:0;display:flex}
+.meter-hover-col{height:100%;flex:1;cursor:pointer}
+.meter-y{pointer-events:none;position:absolute;top:4px;right:0;display:flex;flex-direction:column;justify-content:space-between;font-size:9px;color:#9ca3af}
+.meter-dates{margin-top:4px;display:flex;align-items:center;justify-content:space-between;font-size:10px;color:#9ca3af}
+.meter-legend{margin-top:12px;display:flex;align-items:center;justify-content:space-between;border-top:1px solid rgba(16,23,49,0.1);padding-top:10px;font-size:10px;color:rgba(16,23,49,0.75)}
+.legend-line{display:inline-block;height:2px;width:12px;border-radius:999px;background:#2563eb;vertical-align:middle;margin-right:6px}
+.legend-dash{display:inline-block;height:2px;width:12px;border-top:1px dashed #9ca3af;vertical-align:middle;margin-right:6px}
+.groei-wrap{pointer-events:none;position:absolute;top:-32px;right:-112px;display:none}
+@media(min-width:640px){.groei-wrap{display:block}}
+.groei-text{display:block;font-family:Schoolbell, cursive;font-size:18px;font-weight:700;color:#101731;transform:rotate(-4deg)}
+.groei-arrow{margin-top:4px;height:48px;width:80px;color:#101731;overflow:visible}
 </style>
 <script>
-const wrap = document.querySelector('.diagram-wrap');
-const svg = document.getElementById('diagramSvg');
-const card = document.getElementById('nodeCard');
-const clusterEl = document.getElementById('nodeCardCluster');
-const detailEl = document.getElementById('nodeCardDetail');
-if (wrap && svg && card) {
-  const nodes = svg.querySelectorAll('.diagram-node');
-  const branches = svg.querySelectorAll('.wire--branch');
-  const main = svg.querySelector('.wire--main');
-  const clear = () => {
-    wrap.removeAttribute('data-active');
-    nodes.forEach(n => n.classList.remove('is-active'));
-    branches.forEach(b => b.classList.remove('is-active'));
-    if (main) main.classList.remove('is-active');
-    card.setAttribute('aria-hidden', 'true');
-  };
-  nodes.forEach((node) => {
-    const idx = node.getAttribute('data-index');
-    const show = () => {
-      wrap.setAttribute('data-active', idx || '');
-      nodes.forEach(n => n.classList.toggle('is-active', n === node));
-      branches.forEach(b => b.classList.toggle('is-active', b.getAttribute('data-index') === idx));
-      if (main) main.classList.add('is-active');
-      if (clusterEl) clusterEl.textContent = node.getAttribute('data-cluster') || '';
-      if (detailEl) detailEl.textContent = node.getAttribute('data-detail') || '';
-      const leftPct = ((parseFloat(node.getAttribute('data-cx') || '0')) / 1000) * 100;
-      card.style.left = leftPct + '%';
-      const topPct = ((parseFloat(node.getAttribute('data-cy') || '0')) / 560) * 100;
-      card.style.top = topPct + '%';
-      card.setAttribute('aria-hidden', 'false');
-    };
-    node.addEventListener('mouseenter', show);
-    node.addEventListener('focus', show);
-    node.addEventListener('mouseleave', clear);
-    node.addEventListener('blur', clear);
-  });
-  svg.addEventListener('mouseleave', clear);
+const CHART = [{"l":12,"v":490,"c":2.4},{"l":14,"v":520,"c":2.6},{"l":11,"v":460,"c":2.3},{"l":16,"v":580,"c":2.7},{"l":10,"v":430,"c":2.3},{"l":9,"v":380,"c":2.3},{"l":8,"v":350,"c":2.2},{"l":15,"v":540,"c":2.7},{"l":13,"v":510,"c":2.5},{"l":18,"v":610,"c":2.9},{"l":15,"v":530,"c":2.8},{"l":14,"v":520,"c":2.6},{"l":11,"v":410,"c":2.6},{"l":10,"v":390,"c":2.5},{"l":19,"v":640,"c":2.9},{"l":22,"v":720,"c":3},{"l":26,"v":790,"c":3.2},{"l":21,"v":690,"c":3},{"l":20,"v":670,"c":2.9},{"l":15,"v":480,"c":3.1},{"l":14,"v":460,"c":3},{"l":25,"v":780,"c":3.2},{"l":31,"v":890,"c":3.4},{"l":33,"v":920,"c":3.5},{"l":27,"v":810,"c":3.3},{"l":23,"v":750,"c":3},{"l":18,"v":540,"c":3.3},{"l":17,"v":520,"c":3.2}];
+const PREV = [{"l":10,"v":450,"c":2.2},{"l":11,"v":480,"c":2.2},{"l":9,"v":420,"c":2.1},{"l":12,"v":500,"c":2.4},{"l":8,"v":380,"c":2.1},{"l":7,"v":340,"c":2},{"l":7,"v":330,"c":2.1},{"l":11,"v":470,"c":2.3},{"l":10,"v":460,"c":2.1},{"l":13,"v":520,"c":2.5},{"l":12,"v":490,"c":2.4},{"l":11,"v":470,"c":2.3},{"l":8,"v":380,"c":2.1},{"l":7,"v":350,"c":2},{"l":12,"v":500,"c":2.4},{"l":14,"v":530,"c":2.6},{"l":15,"v":560,"c":2.6},{"l":14,"v":540,"c":2.5},{"l":13,"v":510,"c":2.5},{"l":9,"v":410,"c":2.1},{"l":8,"v":390,"c":2},{"l":13,"v":520,"c":2.5},{"l":14,"v":550,"c":2.5},{"l":15,"v":570,"c":2.6},{"l":14,"v":540,"c":2.5},{"l":12,"v":500,"c":2.4},{"l":9,"v":420,"c":2.1},{"l":9,"v":410,"c":2.1}];
+function trunkPath(o, spineX, targetY, R=20){ const s=o.x, a=o.y; if(Math.abs(spineX-s)<2) return `M ${spineX},${a} V ${targetY}`; const dirX=Math.sign(spineX-s); const dirY=Math.sign(targetY-a)||1; const r=Math.min(R, Math.abs(targetY-a)/2, Math.abs(spineX-s)); return `M ${s},${a} H ${spineX - dirX*r} Q ${spineX},${a} ${spineX},${a + dirY*r} V ${targetY}`; }
+let activeId = 'positionering'; let hoveredId = null; let selectedMetric = 'leads'; let chartHoverIdx = null;
+function currentLit(){ return hoveredId || activeId; }
+function renderChart(){
+  const W=272, H=64, pb=12, pt=6, ah=H-pb-pt;
+  const key = selectedMetric==='leads' ? 'l' : selectedMetric==='verkeer' ? 'v' : 'c';
+  const vals = CHART.map(d=>d[key]); const prev = PREV.map(d=>d[key]);
+  const max = Math.max(...vals, ...prev)*1.05;
+  const pts = (arr)=>arr.map((v,i)=>{ const x=(i/(arr.length-1))*(W-16)+8; const y=H-pb-((v-0)/max)*ah; return {x,y,val:v}; });
+  const cur = pts(vals); const prv = pts(prev);
+  const path = (ps)=>ps.reduce((acc,p,i)=>{ if(i===0) return `M ${p.x.toFixed(1)},${p.y.toFixed(1)}`; const prevP=ps[i-1]; const cx=(prevP.x+p.x)/2; return `${acc} C ${cx.toFixed(1)},${prevP.y.toFixed(1)} ${cx.toFixed(1)},${p.y.toFixed(1)} ${p.x.toFixed(1)},${p.y.toFixed(1)}`; },'');
+  const curPath = path(cur); const prevPath = path(prv);
+  const area = `${curPath} L ${cur[cur.length-1].x},${H-pb} L ${cur[0].x},${H-pb} Z`;
+  document.getElementById('chartCurr').setAttribute('d', curPath);
+  document.getElementById('chartPrev').setAttribute('d', prevPath);
+  document.getElementById('chartArea').setAttribute('d', area);
+  const g = document.getElementById('chartHoverG');
+  if(chartHoverIdx!==null && cur[chartHoverIdx]){ g.style.display='block'; const p=cur[chartHoverIdx]; const l=document.getElementById('chartHoverLine'); l.setAttribute('x1',p.x); l.setAttribute('x2',p.x); const d=document.getElementById('chartHoverDot'); d.setAttribute('cx',p.x); d.setAttribute('cy',p.y); } else { g.style.display='none'; }
 }
+function renderWires(){
+  const hero = document.getElementById('biite-hero'); const hart = document.getElementById('hart'); const tree = document.getElementById('treeRef'); const card = document.getElementById('meterCard');
+  if(!hero || !hart) return;
+  const heroRect = hero.getBoundingClientRect(); const dotRect = hart.getBoundingClientRect();
+  const origin = { x: dotRect.left + dotRect.width/2 - heroRect.left, y: dotRect.top + dotRect.height/2 - heroRect.top };
+  let spineX = heroRect.width * 0.72; if(tree){ const tr = tree.getBoundingClientRect(); spineX = tr.left - heroRect.left + tr.width * 0.44; }
+  const R = 20; const baseG = document.getElementById('baseWires'); const cardG = document.getElementById('cardWireG'); const activeG = document.getElementById('activeWireG');
+  baseG.innerHTML=''; cardG.innerHTML=''; activeG.innerHTML=''; const lit = currentLit(); const branches = {};
+  document.querySelectorAll('.remix-node').forEach((el)=>{
+    const id = el.getAttribute('data-id'); const side = el.getAttribute('data-side'); const r = el.getBoundingClientRect();
+    const nodeX = r.left - heroRect.left; const nodeY = r.top - heroRect.top; const nodeW = r.width; const nodeH = r.height;
+    const targetY = nodeY + nodeH/2; const targetX = side==='L' ? nodeX + nodeW : nodeX;
+    const dirX = side==='L' ? -1 : 1; const dirY = Math.sign(targetY - origin.y) || 1;
+    const cornerR = Math.min(R, Math.abs(targetX - spineX)*0.6);
+    const trunk = trunkPath(origin, spineX, targetY - dirY*cornerR, R);
+    const d = `${trunk} Q ${spineX},${targetY} ${spineX + dirX*cornerR},${targetY} H ${targetX}`;
+    branches[id]=d; const isLit = lit===id;
+    const p = document.createElementNS('http://www.w3.org/2000/svg','path'); p.setAttribute('d', d); p.setAttribute('fill','none'); p.setAttribute('stroke', isLit ? '#101731' : 'rgba(16,23,49,0.14)'); p.setAttribute('stroke-width', isLit ? 1.75 : 1.25); p.setAttribute('stroke-dasharray', isLit ? 'none' : '4 3'); p.setAttribute('stroke-linecap','round'); p.style.transition='all .3s'; baseG.appendChild(p);
+    el.classList.toggle('is-left', side==='L'); el.classList.toggle('is-lit', isLit);
+  });
+  if(card){
+    const c = card.getBoundingClientRect(); const cardX = c.left - heroRect.left; const cardY = c.top - heroRect.top; const cardW = c.width;
+    const targetX = cardX + cardW*0.28; const targetY = cardY; const stepUp = targetY - 26; const dirX = Math.sign(targetX - spineX); const cornerR = Math.min(R,18);
+    const trunk = trunkPath(origin, spineX, stepUp - cornerR, R);
+    const d = `${trunk} Q ${spineX},${stepUp} ${spineX + dirX*cornerR},${stepUp} H ${targetX - dirX*cornerR} Q ${targetX},${stepUp} ${targetX},${stepUp + cornerR} V ${targetY}`;
+    const p = document.createElementNS('http://www.w3.org/2000/svg','path'); p.setAttribute('d', d); p.setAttribute('fill','none'); p.setAttribute('stroke', lit==='card' ? '#101731' : 'rgba(16,23,49,0.14)'); p.setAttribute('stroke-width', lit==='card' ? 1.75 : 1.25); p.setAttribute('stroke-dasharray', lit==='card' ? 'none' : '4 3'); p.setAttribute('stroke-linecap','round'); p.style.transition='all .3s'; cardG.appendChild(p);
+  }
+  if(lit && branches[lit]){
+    const p = document.createElementNS('http://www.w3.org/2000/svg','path'); p.setAttribute('d', branches[lit]); p.setAttribute('fill','none'); p.setAttribute('stroke','#101731'); p.setAttribute('stroke-width','2'); p.setAttribute('stroke-linecap','round'); p.style.transition='all .3s'; activeG.appendChild(p);
+    const pulse = document.createElementNS('http://www.w3.org/2000/svg','path'); pulse.setAttribute('d', branches[lit]); pulse.setAttribute('fill','none'); pulse.setAttribute('stroke','#ff5757'); pulse.setAttribute('stroke-width','2.5'); pulse.setAttribute('stroke-linecap','round'); pulse.setAttribute('stroke-dasharray','40 180'); pulse.style.animation='pulse-signal 2.4s linear infinite'; activeG.appendChild(pulse);
+  } else if(!lit && branches['positionering']){
+    const pulse = document.createElementNS('http://www.w3.org/2000/svg','path'); pulse.setAttribute('d', branches['positionering']); pulse.setAttribute('fill','none'); pulse.setAttribute('stroke','#ff5757'); pulse.setAttribute('stroke-width','2'); pulse.setAttribute('stroke-linecap','round'); pulse.setAttribute('stroke-dasharray','30 200'); pulse.style.animation='pulse-signal 3s linear infinite'; activeG.appendChild(pulse);
+  }
+}
+function bind(){
+  document.querySelectorAll('.remix-node').forEach((el)=>{ el.addEventListener('mouseenter', ()=>{ hoveredId = el.getAttribute('data-id'); renderWires(); }); el.addEventListener('mouseleave', ()=>{ hoveredId = null; renderWires(); }); el.addEventListener('click', ()=>{ activeId = el.getAttribute('data-id'); renderWires(); }); el.addEventListener('focus', ()=>{ hoveredId = el.getAttribute('data-id'); renderWires(); }); el.addEventListener('blur', ()=>{ hoveredId = null; renderWires(); }); });
+  const card = document.getElementById('meterCard'); if(card){ card.addEventListener('mouseenter', ()=>{ hoveredId='card'; renderWires(); }); card.addEventListener('mouseleave', ()=>{ hoveredId=null; renderWires(); }); }
+  const hart = document.getElementById('hart'); if(hart){ hart.addEventListener('click', ()=>{ activeId = activeId ? null : 'positionering'; renderWires(); }); }
+  document.querySelectorAll('.meter-tab').forEach((b)=>{ b.addEventListener('click', ()=>{ selectedMetric = b.getAttribute('data-metric'); document.querySelectorAll('.meter-tab').forEach(x=>x.classList.remove('active')); b.classList.add('active'); renderChart(); }); });
+  const cols = document.getElementById('meterHoverCols'); if(cols){ cols.innerHTML=''; for(let i=0;i<28;i++){ const d=document.createElement('div'); d.className='meter-hover-col'; d.addEventListener('mouseenter', ()=>{ chartHoverIdx=i; renderChart(); }); cols.appendChild(d); } cols.addEventListener('mouseleave', ()=>{ chartHoverIdx=null; renderChart(); }); }
+  window.addEventListener('resize', renderWires); setInterval(renderWires, 500);
+}
+renderChart(); bind(); renderWires();
 </script>
