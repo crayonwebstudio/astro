@@ -14,12 +14,12 @@ const nodes = [
   { label: "Tracking", color: "#2563EB", x: 570, y: 420 },
   { label: "Martech", color: "#FF4D1C", x: 860, y: 470 },
 ];
-const HUB = { x: 410, y: 280 };
-// Elbow wire: hub -> horizontal -> vertical -> horizontal into node left edge.
-// Node boxes are ~150 wide, so the wire ends at x - 80.
+const HUB = { x: 380, y: 280 };
+// Smooth curve wire: hub -> gentle S-curve into node left edge, no sharp elbows.
 const wirePath = (n: typeof nodes[number]) => {
-  const midX = (HUB.x + n.x) / 2;
-  return `M ${HUB.x} ${HUB.y} H ${midX} V ${n.y} H ${n.x - nodeW(n.label) / 2}`;
+  const endX = n.x - nodeW(n.label) / 2;
+  const c1x = HUB.x + (endX - HUB.x) * 0.5;
+  return `M ${HUB.x} ${HUB.y} C ${c1x} ${HUB.y}, ${c1x} ${n.y}, ${endX} ${n.y}`;
 };
 const nodeW = (label: string) => 44 + label.length * 8.5;
 // Wire ends exactly at the node's left edge (centre - half width), so the
