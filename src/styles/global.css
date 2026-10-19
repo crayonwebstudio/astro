@@ -21,7 +21,7 @@ header.site{position:absolute;inset:0 0 auto 0;z-index:40}
 @media(min-width:768px){.site-logo{height:28px}}
 .header-actions{position:fixed;top:12px;right:20px;z-index:70;display:flex;align-items:center;gap:8px}
 @media(min-width:768px){.header-actions{top:16px;right:40px}}
-.header-cta{box-shadow:0 0 0 1px var(--bg);padding:8px 18px;font-size:13px}
+.btn.header-cta{box-shadow:0 0 0 1px var(--bg);padding:8px 18px;font-size:13px;line-height:1.4}
 @media(max-width:639px){.btn.header-cta{display:none}}
 .logo{font-weight:900;letter-spacing:-.04em;font-size:26px;line-height:1}
 .logo i{color:var(--vivid);font-style:normal}
@@ -38,7 +38,7 @@ nav.main a{padding:6px 12px;color:var(--muted)} nav.main a:hover{color:var(--viv
 @media(min-width:768px){.hero{padding:150px 0 80px}}
 .hero-grid{display:grid;gap:48px}
 @media(min-width:1024px){.hero-grid{grid-template-columns:1.15fr .85fr;align-items:end}}
-h1{font-size:clamp(48px,7.2vw,104px);line-height:.92;letter-spacing:-.055em;margin:0;font-weight:850}
+h1{font-size:clamp(40px,4.6vw,72px);line-height:.95;letter-spacing:-.03em;margin:0;font-weight:700}
 h1 .accent{color:var(--vivid)}
 .lead{font-size:16px;color:var(--muted);max-width:56ch;line-height:1.65}
 @media(min-width:768px){.lead{font-size:17px}}
