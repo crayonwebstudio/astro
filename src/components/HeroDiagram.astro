@@ -1,7 +1,194 @@
 ---
-import { site } from '../data/content.ts';
+import { site, home } from '../data/content.ts';
+// SINGLE coordinated coordinate system: everything in the diagram lives in
+// one SVG viewBox 0 0 1000 560. Nodes, wires, hub and pulses all share these
+// coordinates, so wires can never drift away from their nodes.
+// No HTML nodes positioned with % + a separate SVG: that was the bug.
+const SPINE_X = 720;
+const SPINE_Y1 = 32;
+const SPINE_Y2 = 520;
+const HUB = { x: 0, y: 292 };
+const nodes = [
+  { label: "SEO", color: "#4285F4", icon: "G", x: 560, y: 48, side: "left" as const, cluster: "02 Zichtbaarheid", detail: "Beter gevonden worden" },
+  { label: "GEO", color: "#111827", icon: "◉", x: 880, y: 118, side: "right" as const, cluster: "02 Zichtbaarheid", detail: "Vindbaar in AI-antwoorden" },
+  { label: "Positionering", color: "#0A66C2", icon: "in", x: 520, y: 188, side: "left" as const, cluster: "03 Merk en taal", detail: "Duidelijk maken wat je biedt" },
+  { label: "Taalregister", color: "#111827", icon: "N", x: 880, y: 258, side: "right" as const, cluster: "03 Merk en taal", detail: "Herkenbare taal op elk kanaal" },
+  { label: "Governance", color: "#7B5CFF", icon: "◆", x: 520, y: 292, side: "left" as const, cluster: "04 Werken met AI", detail: "Zelf de controle houden" },
+  { label: "Automatisering", color: "#FF5A1F", icon: "◍", x: 870, y: 362, side: "right" as const, cluster: "01 Data en techniek", detail: "Systemen die samenwerken" },
+  { label: "Tracking", color: "#2563EB", icon: "◆", x: 530, y: 432, side: "left" as const, cluster: "01 Data en techniek", detail: "Meten wat marketing oplevert" },
+  { label: "Martech", color: "#FF4D1C", icon: "↗", x: 880, y: 492, side: "right" as const, cluster: "01 Data en techniek", detail: "Cijfers waarmee je keuzes maakt" },
+];
+// Reference model: single vertical spine + horizontal branches, not fan-out curves.
+// Right nodes: spine -> horizontal to node left edge. Left nodes: spine -> horizontal to node right edge.
+const wirePath = (n: typeof nodes[number]) => {
+  const endX = n.side === "right" ? n.x - nodeW(n.label) / 2 : n.x + nodeW(n.label) / 2;
+  return `M ${SPINE_X} ${n.y} H ${endX}`;
+};
+const spinePath = `M ${SPINE_X} ${SPINE_Y1} V ${SPINE_Y2}`;
+const mainPath = `M ${HUB.x} ${HUB.y} H ${SPINE_X}`;
+const nodeW = (label: string) => 62 + label.length * 8.5;
+// Wire ends exactly at the node's left edge (centre - half width), so the
+// line visibly connects to the box for every label length.
 ---
-<link rel="stylesheet" href="/original/assets/contact-Dnh_JLTF.css" />
-<!-- Original hero HTML verbatim from supplied export, stats updated to 414 / 17.695 / 2,3%, links fixed to /contact/ /werkwijze/ -->
-<section class="hartslag"><svg class="hartslag__draden" aria-hidden="true"><g class="wires__base"></g><g class="wires__staart"></g><g class="wires__puls"></g></svg><div class="hero__body mx-auto w-full max-w-[1600px] px-5 md:px-10"><div class="hero__lower"><div class="hero__copy"><h1 class="kop"><span class="kop__line"><span class="kop__inner">Marketing die<br class="kop__br"/> klopt<!-- --> </span></span><span class="kop__line"><span class="kop__inner">tot in de<br class="kop__br"/> systemen<span class="sr-only">.</span><span class="hart" id="hart" aria-hidden="true"><span class="hart__ring"></span></span></span></span></h1><p class="lead onthul onthul--1">Biite helpt je meer uit online marketing te halen door je strategie, website, data en systemen op elkaar aan te laten sluiten. Samen zorgen we dat je kunt meten wat werkt en daarop kunt verder bouwen.</p><div class="acties onthul onthul--2"><span id="hero-cta"><a href="/contact/" class="flow-btn flow-btn--solid px-8 py-3 text-sm md:text-base"><span class="flow-btn__arrow flow-btn__arrow--in" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 256 256"><path d="M224.49,136.49l-72,72a12,12,0,0,1-17-17L187,140H40a12,12,0,0,1,0-24H187L135.51,64.48a12,12,0,0,1,17-17l72,72A12,12,0,0,1,224.49,136.49Z"></path></svg></span><span class="flow-btn__label">plan een kennismaking</span><span class="flow-btn__circle" aria-hidden="true"></span><span class="flow-btn__arrow flow-btn__arrow--out" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 256 256"><path d="M224.49,136.49l-72,72a12,12,0,0,1-17-17L187,140H40a12,12,0,0,1,0-24H187L135.51,64.48a12,12,0,0,1,17-17l72,72A12,12,0,0,1,224.49,136.49Z"></path></svg></span></a></span><a class="tekstlink" href="/werkwijze/">bekijk de werkwijze</a></div></div><div class="veld" id="veld" aria-hidden="true"><span class="veld__hub" id="veld-hub"></span><div class="meter" id="meter" data-fase="data-en-techniek"><span class="meter__status"><svg class="status__wacht" viewBox="0 0 26 26"><circle cx="13" cy="13" r="10"></circle></svg><svg class="status__vink" viewBox="0 0 256 256"><path d="M232.49,80.49l-128,128a12,12,0,0,1-17,0l-56-56a12,12,0,1,1,17-17L96,183,215.51,63.51a12,12,0,0,1,17,17Z"></path></svg></span><div class="meter__rijen"><span class="meter__indicator"></span><div class="meter__rij is-actief"><span class="meter__naam">Leads</span><span class="meter__getal">414</span></div><div class="meter__rij"><span class="meter__naam">Verkeer</span><span class="meter__getal">17.695</span></div><div class="meter__rij"><span class="meter__naam">Conversie</span><span class="meter__getal">2,3%</span></div></div><div class="grafiek"><svg class="spoor" viewBox="0 0 272 68" aria-hidden="true"><g class="spoor__raster"></g><g class="spoor__datums"></g><path class="spoor__vorig"></path><line class="spoor__kruis"></line><path class="spoor__lijn"></path><path class="spoor__glans"></path><circle class="spoor__piek" r="3"></circle><circle class="spoor__ring" r="4"></circle><circle class="spoor__punt" r="3.5"></circle><circle class="spoor__hover" r="4"></circle></svg><div class="grafiek__tip"><span class="grafiek__datum"></span><span class="grafiek__rij"><i class="grafiek__lijn"></i><span class="grafiek__naam">Leads</span><b class="grafiek__nu"></b></span><span class="grafiek__rij"><i class="grafiek__lijn grafiek__lijn--vorig"></i>Vorige periode<b class="grafiek__vorig"></b></span></div></div><p class="meter__voet"><span><i></i>Afgelopen 28 dagen</span><span><i class="is-vorig"></i>Vorige periode</span></p></div><div class="krabbel" id="krabbel"><span class="krabbel__tekst">Groei die blijft</span><svg class="krabbel__pijl krabbel__pijl--rechts" viewBox="0 0 90 60"><path class="krabbel__lijn" pathLength="1" d="M78 4 C 82 30, 52 50, 8 47"></path><path class="krabbel__lijn krabbel__kop" pathLength="1" d="M19 39 L8 47 L20 54"></path></svg><svg class="krabbel__pijl krabbel__pijl--onder" viewBox="0 0 70 56"><path class="krabbel__lijn" pathLength="1" d="M8 52 C 14 30, 34 12, 62 6"></path><path class="krabbel__lijn krabbel__kop" pathLength="1" d="M49 3 L62 6 L55 17"></path></svg></div></div></div></div></section>
-<script type="module" src="/original/assets/main-D988eXPf.js"></script>
+<section class="hartslag" id="hartslag">
+  <div class="hero__body"><div class="hero__lower">
+    <div class="hero__copy">
+      <h1 class="kop"><span class="kop__line"><span class="kop__inner">Marketing die klopt</span></span><span class="kop__line"><span class="kop__inner">tot in de systemen<span class="sr-only">.</span><span class="hart" id="hart" aria-hidden="true"><span class="hart__ring"></span></span></span></span></h1>
+      <p class="lead">{home.heroLead}</p>
+      <div class="hero-actions"><a class="btn" href={site.ctaHref}>{site.ctaLabel} &rarr;</a><a class="textlink" href={home.heroSecondaryHref}>{home.heroSecondaryLabel}</a></div>
+    </div>
+    <div class="veld" id="veld">
+      <!-- ONE SVG: wires + hub + nodes + pulses, all in 0 0 1000 560 -->
+      <div class="diagram-wrap">
+      <svg class="diagram-svg" id="diagramSvg" viewBox="0 0 1000 560" role="img" aria-label="Marketing systeem diagram: SEO, GEO, Positionering, Taalregister, Governance, Automatisering, Tracking en Martech verbonden met elkaar">
+        <g class="wires">
+          <path d={spinePath} class="wire wire--spine" vector-effect="non-scaling-stroke" />
+          <path d={mainPath} class="wire wire--main" vector-effect="non-scaling-stroke" />
+          {nodes.map((n, i) => <path d={wirePath(n)} class="wire wire--branch" data-index={i} vector-effect="non-scaling-stroke" />)}
+        </g>
+        <g class="pulses">
+          {nodes.map((n, i) => (
+            <circle r="4" fill={n.color} opacity="0.9">
+              <animateMotion dur={`${5 + i * 0.8}s`} repeatCount="indefinite" path={wirePath(n)} />
+            </circle>
+          ))}
+        </g>
+        <circle cx={SPINE_X} cy={HUB.y} r="6" fill="#FF5757" />
+        <circle cx={SPINE_X} cy={HUB.y} r="12" fill="none" stroke="#FF5757" stroke-opacity="0.2" stroke-width="1.5" />
+        <circle cx={HUB.x} cy={HUB.y} r="5" fill="#FF5757" />
+        {nodes.map((n, i) => {
+          const w = nodeW(n.label);
+          return (
+            <g class="diagram-node" data-index={i} data-cluster={n.cluster} data-detail={n.detail} data-cx={n.x} data-cy={n.y} tabindex="0" transform={`translate(${n.x - w / 2},${n.y - 19})`}>
+              <rect x="0" y="0" width={w} height="38" rx="19" fill="#fff" stroke="#D7DEE8" stroke-dasharray="5 4" />
+              <text x="16" y="24" font-size="14" fill="#475569" font-family="inherit">{n.label}</text>
+              <rect x={w - 28} y="9" width="20" height="20" rx="5" fill={n.color} />
+              <text x={w - 18} y="24" font-size="11" fill="#fff" font-weight="700" text-anchor="middle" font-family="inherit">{n.icon}</text>
+              <title>{n.label} - {n.cluster} - {n.detail}</title>
+            </g>
+          );
+        })}
+      </svg>
+      <div class="node-card" id="nodeCard" aria-hidden="true"><span class="node-card__cluster" id="nodeCardCluster"></span><span class="node-card__detail" id="nodeCardDetail"></span></div>
+      </div>
+      <div class="meter" id="meter">
+        <span class="meter__status"><svg class="status__vink" viewBox="0 0 256 256"><path d="M232.49,80.49l-128,128a12,12,0,0,1-17,0l-56-56a12,12,0,1,1,17-17L96,183,215.51,63.51a12,12,0,0,1,17,17Z"></path></svg></span>
+        <div class="meter__rijen">
+          <span class="meter__indicator"></span>
+          {home.stats.map((s, i) => <div class={`meter__rij ${i === 0 ? 'is-actief' : ''}`}><span class="meter__naam">{s.label}</span><span class="meter__getal">{s.value}</span></div>)}
+        </div>
+        <div class="grafiek">
+          <svg class="spoor" viewBox="0 0 272 68" aria-hidden="true">
+            <g class="spoor__y"><text x="262" y="16">40</text><text x="262" y="36">20</text><text x="262" y="56">0</text></g><g class="spoor__raster">{[12, 26, 40, 54].map(y => <line x1="0" y1={y} x2="272" y2={y} />)}</g>
+            <g class="spoor__datums"><text x="4" y="66">22 sep</text><text x="78" y="66">29</text><text x="152" y="66">06 okt</text><text x="226" y="66">13</text></g>
+            <path class="spoor__vorig" d="M0,52 L30,54 L60,50 L90,55 L120,53 L150,52 L180,54 L220,53 L272,54" />
+            <path class="spoor__lijn" d="M0,44 L25,42 L50,47 L75,41 L100,45 L125,39 L150,43 L175,28 L200,41 L230,37 L272,45" />
+            <circle class="spoor__piek" cx="175" cy="28" r="3" />
+            <circle class="spoor__punt" cx="175" cy="28" r="3.5" />
+          </svg>
+        </div>
+        <p class="meter__voet"><span><i></i>{home.statsNote}</span><span><i class="is-vorig"></i>{home.statsPrev}</span></p>
+      </div>
+      <div class="krabbel" id="krabbel"><span class="krabbel__tekst">{home.scribble}</span>
+        <svg class="krabbel__pijl krabbel__pijl--rechts" viewBox="0 0 90 60"><path class="krabbel__lijn" d="M78 4 C 82 30, 52 50, 8 47"></path><path class="krabbel__lijn krabbel__kop" d="M19 39 L8 47 L20 54"></path></svg>
+        <svg class="krabbel__pijl krabbel__pijl--onder" viewBox="0 0 70 56"><path class="krabbel__lijn" d="M8 52 C 14 30, 34 12, 62 6"></path><path class="krabbel__lijn krabbel__kop" d="M49 3 L62 6 L55 17"></path></svg>
+      </div>
+    </div>
+  </div></div>
+</section>
+<style>
+.hartslag{position:relative;overflow:visible;padding:130px 0 60px}
+.hero__body{position:relative;z-index:1;max-width:1600px;margin:0 auto;padding:0 20px}
+@media(min-width:768px){.hero__body{padding:0 40px}}
+.hero__lower{display:grid;gap:32px;align-items:center}
+@media(min-width:1024px){.hero__lower{grid-template-columns:0.85fr 1.15fr;gap:40px}}
+.hero__copy{min-width:0;padding-top:8px}
+.kop{font-size:clamp(56px,5.2vw,92px);line-height:.95;letter-spacing:-.03em;margin:0;font-weight:700;overflow-wrap:break-word}
+.kop__line{display:block}.kop__inner{display:inline-block;max-width:100%}
+.hart{position:relative;display:inline-block;width:.19em;height:.19em;border-radius:50%;background:var(--vivid);margin-left:.02em;vertical-align:baseline;transform:translateY(-.02em)}
+.hart__ring{position:absolute;inset:-.35em;border:1.5px solid var(--vivid);border-radius:50%;animation:hartPulse 2.4s ease-out infinite}
+@keyframes hartPulse{0%{transform:scale(.5);opacity:.9}100%{transform:scale(1.4);opacity:0}}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+.veld{position:relative;min-width:0}
+.diagram-svg{display:block;width:100%;height:auto;overflow:visible}
+.wire{fill:none;stroke:#D7DEE8;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;transition:stroke .2s,stroke-width .2s,opacity .2s}.wire--spine{stroke:#B8C0CC;stroke-width:1.2}.wire--main{stroke:#B8C0CC;stroke-width:1.2}
+.diagram-node{cursor:pointer;transition:opacity .2s}.diagram-node rect{transition:stroke .2s,stroke-width .2s}.diagram-node text{font-weight:500}
+.diagram-wrap{position:relative}
+.node-card{position:absolute;left:0;top:0;display:none;z-index:5;background:#fff;border:1px solid #E3E4E8;border-radius:12px;box-shadow:0 12px 32px rgba(16,23,49,.14);padding:10px 14px;pointer-events:none;transform:translate(-50%,-115%);max-width:220px}
+.node-card__cluster{display:block;font-size:12px;color:#C084FC;font-weight:700}
+.node-card__detail{display:block;font-size:14px;color:#101731;font-weight:600;margin-top:2px}
+.diagram-wrap[data-active] .wire--branch:not(.is-active){opacity:.18}
+.diagram-wrap[data-active] .wire--spine,.diagram-wrap[data-active] .wire--main{opacity:.18}
+.diagram-wrap[data-active] .diagram-node:not(.is-active){opacity:.25}
+.diagram-wrap[data-active] .wire--branch.is-active{stroke:#101731;stroke-width:2;opacity:1}
+.diagram-wrap[data-active] .wire--main.is-active{stroke:#101731;stroke-width:2;opacity:1}
+.diagram-wrap[data-active] .diagram-node.is-active rect{stroke:#101731;stroke-width:1.5}
+.diagram-wrap[data-active] .node-card{display:block}
+.meter{position:relative;margin:-8px auto 0;width:min(360px,92%);background:#FFFEF7;border:1px solid rgba(16,23,49,.2);border-radius:16px;padding:2px 16px 11px;box-shadow:0 18px 40px -26px rgba(16,23,49,.35);z-index:2}
+.meter__status{position:absolute;right:-12px;top:-12px;width:26px;height:26px;border-radius:50%;background:#03624C;color:#fff;display:flex;align-items:center;justify-content:center}
+.status__vink{width:14px;height:14px;fill:#fff}
+.meter__rijen{position:relative;display:grid;grid-template-columns:repeat(3,1fr);border-bottom:1px solid #E3E4E8;margin:0 -16px}
+.meter__indicator{position:absolute;top:0;left:0;width:33.3333%;height:2px;background:#1A73E8;background-clip:content-box;padding:0 12px}
+.meter__rij{display:grid;padding:10px 10px 8px 16px}
+.meter__rij+.meter__rij{border-left:1px solid #E3E4E8;padding-left:10px}
+.meter__rij.is-actief .meter__naam{color:#1A73E8}
+.meter__naam{font-size:12px;color:#5F6368;white-space:nowrap}
+.meter__getal{font-size:17px;font-weight:400;line-height:1.25;color:#101731;font-variant-numeric:tabular-nums;white-space:nowrap}
+.spoor{width:100%;height:68px;margin-top:10px}
+.spoor__raster line{stroke:#E3E4E8;stroke-width:.5}
+.spoor__datums text{font-size:7px;fill:#5F6368;font-family:inherit}
+.spoor__vorig{fill:none;stroke:#94A3B8;stroke-width:1;stroke-dasharray:3 3}
+.spoor__lijn{fill:none;stroke:#1A73E8;stroke-width:1.6}
+.spoor__piek{fill:var(--vivid)}.spoor__punt{fill:none;stroke:var(--vivid);stroke-width:1}
+.meter__voet{display:flex;gap:14px;font-size:11px;color:#5F6368;margin:8px 0 0}
+.meter__voet span{display:inline-flex;align-items:center;gap:6px}
+.meter__voet i{display:inline-block;width:14px;border-top:2px solid #1A73E8}
+.meter__voet i.is-vorig{border-top:1.5px dashed #1A73E8;opacity:.6}
+.krabbel{display:flex;align-items:flex-start;justify-content:flex-end;gap:6px;margin-top:10px}
+.krabbel__tekst{font-family:"Schoolbell","Segoe Script",cursive;font-size:20px;color:#101731;transform:rotate(-4deg);line-height:1}
+.krabbel__pijl{width:52px;height:42px;overflow:visible;flex:none}
+.krabbel__pijl--onder{width:44px;height:36px}
+.krabbel__lijn{fill:none;stroke:#0F172A;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+@media(max-width:1023px){.hartslag{padding-top:110px}}
+@media(prefers-reduced-motion:reduce){.hart__ring{animation:none}}
+</style>
+<script>
+const wrap = document.querySelector('.diagram-wrap');
+const svg = document.getElementById('diagramSvg');
+const card = document.getElementById('nodeCard');
+const clusterEl = document.getElementById('nodeCardCluster');
+const detailEl = document.getElementById('nodeCardDetail');
+if (wrap && svg && card) {
+  const nodes = svg.querySelectorAll('.diagram-node');
+  const branches = svg.querySelectorAll('.wire--branch');
+  const main = svg.querySelector('.wire--main');
+  const clear = () => {
+    wrap.removeAttribute('data-active');
+    nodes.forEach(n => n.classList.remove('is-active'));
+    branches.forEach(b => b.classList.remove('is-active'));
+    if (main) main.classList.remove('is-active');
+    card.setAttribute('aria-hidden', 'true');
+  };
+  nodes.forEach((node) => {
+    const idx = node.getAttribute('data-index');
+    const show = () => {
+      wrap.setAttribute('data-active', idx || '');
+      nodes.forEach(n => n.classList.toggle('is-active', n === node));
+      branches.forEach(b => b.classList.toggle('is-active', b.getAttribute('data-index') === idx));
+      if (main) main.classList.add('is-active');
+      if (clusterEl) clusterEl.textContent = node.getAttribute('data-cluster') || '';
+      if (detailEl) detailEl.textContent = node.getAttribute('data-detail') || '';
+      const leftPct = ((parseFloat(node.getAttribute('data-cx') || '0')) / 1000) * 100;
+      card.style.left = leftPct + '%';
+      const topPct = ((parseFloat(node.getAttribute('data-cy') || '0')) / 560) * 100;
+      card.style.top = topPct + '%';
+      card.setAttribute('aria-hidden', 'false');
+    };
+    node.addEventListener('mouseenter', show);
+    node.addEventListener('focus', show);
+    node.addEventListener('mouseleave', clear);
+    node.addEventListener('blur', clear);
+  });
+  svg.addEventListener('mouseleave', clear);
+}
+</script>
