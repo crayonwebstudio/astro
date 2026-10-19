@@ -1,13 +1,13 @@
 ---
 const nodes = [
-  { id: 'seo', label: 'SEO', logo: 'google', side: 'L', phaseNr: '02', phaseName: 'Zichtbaarheid', description: 'Gevonden worden in Google', top: 6, left: 39 },
-  { id: 'geo', label: 'GEO', logo: 'openai', side: 'R', phaseNr: '02', phaseName: 'Zichtbaarheid', description: 'Geciteerd worden door AI', top: 13, left: 51 },
-  { id: 'positionering', label: 'Positionering', logo: 'linkedin', side: 'L', phaseNr: '03', phaseName: 'Merk en taal', description: 'Een positie die blijft hangen', top: 20, left: 38 },
-  { id: 'taalregister', label: 'Taalregister', logo: 'notion', side: 'R', phaseNr: '03', phaseName: 'Merk en taal', description: 'Een taal over al je kanalen', top: 27, left: 52 },
-  { id: 'governance', label: 'Governance', logo: 'copilot', side: 'L', phaseNr: '04', phaseName: 'Werken met AI', description: 'Zelf de controle houden', top: 35, left: 36 },
-  { id: 'automatisering', label: 'Automatisering', logo: 'zapier', side: 'R', phaseNr: '04', phaseName: 'Werken met AI', description: 'Terugkerend werk automatiseren', top: 41, left: 49 },
-  { id: 'tracking', label: 'Tracking', logo: 'gtm', side: 'L', phaseNr: '01', phaseName: 'Data en techniek', description: 'Meten wat er echt gebeurt', top: 47, left: 37 },
-  { id: 'martech', label: 'Martech', logo: 'hubspot', side: 'R', phaseNr: '01', phaseName: 'Data en techniek', description: 'Koppelingen tussen je tools', top: 53, left: 51 },
+  { id: 'seo', label: 'SEO', logo: 'google', side: 'L', phaseNr: '02', phaseName: 'Zichtbaarheid', description: 'Gevonden worden in Google', top: 8, left: 42 },
+  { id: 'geo', label: 'GEO', logo: 'openai', side: 'R', phaseNr: '02', phaseName: 'Zichtbaarheid', description: 'Geciteerd worden door AI', top: 16, left: 56 },
+  { id: 'positionering', label: 'Positionering', logo: 'linkedin', side: 'L', phaseNr: '03', phaseName: 'Merk en taal', description: 'Een positie die blijft hangen', top: 24, left: 40 },
+  { id: 'taalregister', label: 'Taalregister', logo: 'notion', side: 'R', phaseNr: '03', phaseName: 'Merk en taal', description: 'Een taal over al je kanalen', top: 33, left: 58 },
+  { id: 'governance', label: 'Governance', logo: 'copilot', side: 'L', phaseNr: '04', phaseName: 'Werken met AI', description: 'Zelf de controle houden', top: 41, left: 35 },
+  { id: 'automatisering', label: 'Automatisering', logo: 'zapier', side: 'R', phaseNr: '04', phaseName: 'Werken met AI', description: 'Terugkerend werk automatiseren', top: 54, left: 53 },
+  { id: 'tracking', label: 'Tracking', logo: 'gtm', side: 'L', phaseNr: '01', phaseName: 'Data en techniek', description: 'Meten wat er echt gebeurt', top: 62, left: 38 },
+  { id: 'martech', label: 'Martech', logo: 'hubspot', side: 'R', phaseNr: '01', phaseName: 'Data en techniek', description: 'Koppelingen tussen je tools', top: 70, left: 55 },
 ];
 const logos: Record<string, string> = {
   google: '<svg class="w-4 h-4" aria-hidden="true" viewBox="0 0 24 24"><path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.66-5.17 3.66-9.17z"/><path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.13C3.27 21.39 7.35 24 12 24z"/><path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.6H1.25C.45 8.18 0 10.02 0 12s.45 3.82 1.25 5.4l4.03-3.13z"/><path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.35 0 3.27 2.61 1.25 6.6l4.03 3.13c.95-2.83 3.6-4.98 6.72-4.98z"/></svg>',
@@ -29,7 +29,7 @@ const logos: Record<string, string> = {
       <div class="remix-ctas"><a href="/contact/" class="remix-btn-primary">plan een kennismaking <span aria-hidden="true">→</span></a><a href="/werkwijze/" class="remix-textlink">bekijk de werkwijze</a></div>
     </div>
     <div id="treeRef" class="tree-ref">
-      {nodes.map((n) => (<div class="remix-node" data-id={n.id} data-side={n.side} style={`top:${n.top}%;left:${n.left}%;transform:${n.side === 'L' ? 'translate(-100%, -50%)' : 'translate(0%, -50%)'}`} role="button" tabindex="0" aria-label={`${n.label} (${n.phaseName})`}><span class="remix-node-logo" set:html={logos[n.logo]} /><span class="remix-node-label">{n.label}</span><div class="remix-tooltip"><div class="remix-tooltip-head"><span class="remix-tooltip-nr">{n.phaseNr}</span><span>{n.phaseName}</span></div><p class="remix-tooltip-desc">{n.description}</p></div></div>))}
+      {nodes.map((n, nodeIndex) => (<div class="remix-node" data-id={n.id} data-side={n.side} style={`top:${n.top}%;left:${n.left}%;transform:${n.side === 'L' ? 'translate(-100%, -50%)' : 'translate(0%, -50%)'};--blink:${(1.8 + (nodeIndex * 0.35) % 1.4).toFixed(2)}s;--blink-delay:-${((nodeIndex * 0.45) % 1.8).toFixed(2)}s`} role="button" tabindex="0" aria-label={`${n.label} (${n.phaseName})`}><span class="remix-node-logo" set:html={logos[n.logo]} /><span class="remix-node-label">{n.label}</span><div class="remix-tooltip"><div class="remix-tooltip-head"><span class="remix-tooltip-nr">{n.phaseNr}</span><span>{n.phaseName}</span></div><p class="remix-tooltip-desc">{n.description}</p></div></div>))}
       <div id="meterCard" class="meter-card"><div class="meter-check" title="Systeem geverifieerd en gekoppeld">✓</div><div class="meter-tabs"><button type="button" class="meter-tab active" data-metric="leads"><span class="meter-tab-label">Leads</span><span class="meter-tab-value">417</span></button><button type="button" class="meter-tab" data-metric="verkeer"><span class="meter-tab-label">Verkeer</span><span class="meter-tab-value">17.758</span></button><button type="button" class="meter-tab" data-metric="conversie"><span class="meter-tab-label">Conversie</span><span class="meter-tab-value">2,3%</span></button></div><div class="meter-chart-wrap"><svg class="meter-chart" viewBox="0 0 272 64" preserveAspectRatio="none" aria-hidden="true"><line x1="8" y1="12" x2="264" y2="12" stroke="#e5e7eb" stroke-width="0.75" /><line x1="8" y1="34" x2="264" y2="34" stroke="#e5e7eb" stroke-width="0.75" /><line x1="8" y1="52" x2="264" y2="52" stroke="#e5e7eb" stroke-width="0.75" /><path id="chartArea" fill="url(#chartFill)" /><path id="chartPrev" fill="none" stroke="#94a3b8" stroke-width="1.25" stroke-dasharray="3 3" /><path id="chartCurr" fill="none" stroke="#2563eb" stroke-width="1.75" stroke-linecap="round" /><circle cx="218" cy="18" r="3" fill="#2563eb" /><circle cx="218" cy="18" r="5" fill="none" stroke="#2563eb" stroke-opacity="0.4" /><g id="chartHoverG" style="display:none"><line id="chartHoverLine" y1="6" y2="52" stroke="#2563eb" stroke-width="1" stroke-dasharray="2 2" /><circle id="chartHoverDot" r="4" fill="#2563eb" stroke="#ffffff" stroke-width="1.5" /></g></svg><div class="meter-hover-cols" id="meterHoverCols"></div><div class="meter-y"><span>40</span><span>20</span><span>0</span></div></div><div class="meter-dates"><span>22 sep</span><span>29</span><span>06 okt</span><span>13</span></div><div class="meter-legend"><span><i class="legend-line"></i>Afgelopen 28 dagen</span><span><i class="legend-dash"></i>Vorige periode</span></div><div class="groei-wrap"><span class="groei-text">Groei die blijft</span><svg class="groei-arrow" viewBox="0 0 90 60" fill="none"><path d="M 75 4 C 82 28, 54 48, 12 47" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M 22 39 L 12 47 L 24 53" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
     </div>
   </div></div>
@@ -38,37 +38,39 @@ const logos: Record<string, string> = {
 .biite-hero{position:relative;min-height:92vh;width:100%;overflow:hidden;background:#fffef7;padding:40px 24px 80px;background-image:radial-gradient(circle at 75% 40%, rgba(255,87,87,0.02) 0%, transparent 60%)}
 .wire-canvas{pointer-events:none;position:absolute;inset:0;z-index:0;width:100%;height:100%;overflow:visible}
 .hero-inner{position:relative;z-index:10;margin:0 auto;max-width:1600px}
-.hero-grid{display:grid;grid-template-columns:1fr;gap:40px;align-items:start}
-@media(min-width:1024px){.hero-grid{grid-template-columns:repeat(12,minmax(0,1fr));gap:24px}}
-.hero-copy{padding-top:56px}
-@media(min-width:1024px){.hero-copy{grid-column:span 5}}
-.remix-kop{font-size:36px;font-weight:800;letter-spacing:-0.03em;color:#101731;line-height:1.06;margin:0}
+.hero-grid{display:grid;grid-template-columns:1fr;gap:40px;align-items:center}
+@media(min-width:1024px){.hero-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:48px}}
+@media(min-width:1280px){.hero-grid{gap:64px}}
+.hero-copy{align-self:center;padding:24px 0}
+.remix-kop{font-size:36px;font-weight:800;letter-spacing:-0.04em;color:#101731;line-height:1.02;margin:0}
 @media(min-width:640px){.remix-kop{font-size:48px}}
-@media(min-width:768px){.remix-kop{font-size:60px}}
-@media(min-width:1024px){.remix-kop{font-size:64px}}
-@media(min-width:1280px){.remix-kop{font-size:70.4px}}
-.remix-kop-line{display:block;white-space:nowrap}
+@media(min-width:768px){.remix-kop{font-size:52px}}
+@media(min-width:1024px){.remix-kop{font-size:56px}}
+@media(min-width:1280px){.remix-kop{font-size:61.6px}}
+.remix-kop-line{display:block}
 .remix-kop-line2{position:relative;margin-top:4px;display:inline-flex;align-items:baseline;white-space:nowrap}
-.hart{position:relative;margin-left:4px;display:inline-flex;width:16px;height:16px;cursor:pointer;align-items:center;justify-content:center;transform:translateY(2px)}
+.hart{position:relative;margin-left:6px;display:inline-flex;width:14px;height:14px;cursor:pointer;align-items:center;justify-content:center;transform:translateY(2px)}
 .hart-dot{position:absolute;display:inline-block;width:14px;height:14px;border-radius:50%;background:#ff5757;box-shadow:0 1px 2px rgba(255,87,87,0.5)}
-.hart-ring{position:absolute;width:20px;height:20px;border-radius:50%;border:2px solid #ff5757;animation:pulse-ring 2.4s cubic-bezier(0.25,1,0.5,1) infinite}
-@keyframes pulse-ring{0%{transform:scale(0.95);opacity:0.8}50%{transform:scale(1.6);opacity:0}100%{transform:scale(0.95);opacity:0}}
-@keyframes pulse-signal{0%{stroke-dashoffset:1000}100%{stroke-dashoffset:0}}
-.remix-lead{margin-top:32px;max-width:48ch;font-size:16px;line-height:1.65;color:rgba(16,23,49,0.75)}
+.hart-ring{position:absolute;width:20px;height:20px;border-radius:50%;border:2px solid #ff5757;animation:pulse-ring 2s cubic-bezier(0.19,1,0.22,1) infinite}
+@keyframes pulse-ring{0%{transform:scale(0.9);opacity:0.85}40%{opacity:0.55}85%{opacity:0.1}100%{transform:scale(2.8);opacity:0}}
+@keyframes pulse-signal{0%{stroke-dashoffset:600}100%{stroke-dashoffset:0}}
+.remix-lead{margin-top:28px;max-width:29rem;font-size:16px;line-height:1.65;color:rgba(16,23,49,0.75)}
 @media(min-width:640px){.remix-lead{font-size:18px}}
-.remix-ctas{margin-top:40px;display:flex;flex-wrap:wrap;align-items:center;gap:24px}
+.remix-ctas{margin-top:36px;display:flex;flex-wrap:wrap;align-items:center;gap:24px}
 .remix-btn-primary{display:inline-flex;align-items:center;gap:12px;border-radius:999px;background:#ff5757;padding:14px 32px;font-size:16px;font-weight:600;color:#fff;box-shadow:0 4px 6px rgba(255,87,87,0.2);transition:all .3s}
 .remix-btn-primary:hover{background:#ff4040;box-shadow:0 8px 16px rgba(255,87,87,0.3)}
 .remix-textlink{position:relative;font-size:16px;font-weight:500;color:#101731;text-decoration:underline;text-decoration-color:rgba(16,23,49,0.4);text-underline-offset:4px}
 .remix-textlink:hover{color:#ff5757;text-decoration-color:#ff5757}
 .tree-ref{position:relative;min-height:720px;width:100%}
-@media(min-width:1024px){.tree-ref{grid-column:span 7;min-height:820px}}
-@media(min-width:1280px){.tree-ref{min-height:860px}}
+@media(min-width:1024px){.tree-ref{min-height:780px}}
+@media(min-width:1280px){.tree-ref{min-height:820px}}
 .remix-node{position:absolute;z-index:20;display:flex;cursor:pointer;align-items:center;gap:8px;border-radius:999px;padding:6px 14px;font-size:13px;font-weight:500;transition:all .3s;border:1px dashed #aaa;background:#fffef7;color:rgba(16,23,49,0.65)}
 @media(min-width:640px){.remix-node{font-size:14px}}
 .remix-node.is-left{flex-direction:row-reverse}
 .remix-node.is-lit{border:1px solid #101731;background:#fff;color:#101731;box-shadow:0 4px 12px rgba(16,23,49,0.1)}
 .remix-node-logo{display:flex;width:16px;height:16px;flex:none;align-items:center;justify-content:center;opacity:0.55;filter:grayscale(1);transition:all .3s}
+@keyframes subtle-flicker{0%,100%{opacity:0.45}45%{opacity:0.45}50%{opacity:0.85}55%{opacity:0.45}80%{opacity:0.75}85%{opacity:0.45}}
+.remix-node:not(.is-lit) .remix-node-logo{animation:subtle-flicker var(--blink,2.4s) steps(1,end) infinite var(--blink-delay,0s)}
 .remix-node.is-lit .remix-node-logo{opacity:1;filter:none;transform:scale(1.05)}
 .remix-node:hover .remix-node-logo{opacity:1;filter:none}
 .remix-node-label{letter-spacing:-0.01em;user-select:none;white-space:nowrap}
@@ -79,8 +81,8 @@ const logos: Record<string, string> = {
 .remix-tooltip-head{display:flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:#101731}
 .remix-tooltip-nr{display:inline-flex;height:16px;min-width:16px;align-items:center;justify-content:center;border-radius:999px;background:rgba(16,23,49,0.1);padding:0 4px;font-size:10px;font-weight:700;color:#101731}
 .remix-tooltip-desc{margin-top:6px;font-size:12px;line-height:1.4;color:rgba(16,23,49,0.8)}
-.meter-card{position:absolute;right:32px;bottom:24px;z-index:20;width:290px;border-radius:16px;border:1px solid rgba(16,23,49,0.15);background:#fff;padding:16px;box-shadow:0 12px 32px rgba(16,23,49,0.08);transition:all .3s}
-@media(min-width:640px){.meter-card{right:112px;width:310px}}
+.meter-card{position:absolute;left:48%;transform:translateX(-50%);bottom:24px;z-index:20;width:290px;border-radius:16px;border:1px solid rgba(16,23,49,0.15);background:#fff;padding:16px;box-shadow:0 12px 32px rgba(16,23,49,0.08);transition:all .3s}
+@media(min-width:640px){.meter-card{width:310px}}
 .meter-check{position:absolute;top:-14px;right:24px;display:flex;height:28px;width:28px;align-items:center;justify-content:center;border-radius:50%;background:#03624c;color:#fff;box-shadow:0 4px 8px rgba(3,98,76,0.3);font-size:14px;font-weight:700}
 .meter-tabs{display:grid;grid-template-columns:repeat(3,1fr);border-bottom:1px solid rgba(16,23,49,0.1);padding-bottom:12px;text-align:left}
 .meter-tab{padding:0 8px;text-align:left;background:none;border:0;cursor:pointer;opacity:0.65}
@@ -129,13 +131,13 @@ function renderWires(){
   if(!hero || !hart) return;
   const heroRect = hero.getBoundingClientRect(); const dotRect = hart.getBoundingClientRect();
   const origin = { x: dotRect.left + dotRect.width/2 - heroRect.left, y: dotRect.top + dotRect.height/2 - heroRect.top };
-  let spineX = heroRect.width * 0.72; if(tree){ const tr = tree.getBoundingClientRect(); spineX = tr.left - heroRect.left + tr.width * 0.44;
+  let spineX = heroRect.width * 0.72; if(tree){ const tr = tree.getBoundingClientRect(); spineX = tr.left - heroRect.left + tr.width * 0.48;
     if(card){
-      const cardRect = card.getBoundingClientRect(); const cardTopInTree = cardRect.top - tr.top; const safeMaxNodeCenter = cardTopInTree - 48; const martechProjectedCenter = (53/100) * tr.height;
+      const cardRect = card.getBoundingClientRect(); const cardTopInTree = cardRect.top - tr.top; const safeMaxNodeCenter = cardTopInTree - 44; const martechProjectedCenter = (70/100) * tr.height;
       if(martechProjectedCenter > safeMaxNodeCenter){
         const originYInTree = origin.y - (tr.top - heroRect.top); const lowerStart = originYInTree + 32; const lowerEnd = safeMaxNodeCenter; const lowerSpan = Math.max(lowerEnd - lowerStart, 110);
-        const newTops = {}; const lowerIds = ['governance','automatisering','tracking','martech']; lowerIds.forEach((id, idx)=>{ newTops[id] = lowerStart + (idx/(lowerIds.length-1))*lowerSpan; });
-        const upperStart = 24; const upperEnd = originYInTree - 28; const upperSpan = Math.max(upperEnd - upperStart, 100); const upperIds = ['seo','geo','positionering','taalregister']; upperIds.forEach((id, idx)=>{ newTops[id] = upperStart + (idx/(upperIds.length-1))*upperSpan; });
+        const newTops = {}; const lowerIds = ['automatisering','tracking','martech']; lowerIds.forEach((id, idx)=>{ newTops[id] = lowerStart + (idx/(lowerIds.length-1))*lowerSpan; });
+        const upperStart = 28; const upperEnd = originYInTree - 32; const upperSpan = Math.max(upperEnd - upperStart, 120); const upperIds = ['seo','geo','positionering','taalregister','governance']; upperIds.forEach((id, idx)=>{ newTops[id] = upperStart + (idx/(upperIds.length-1))*upperSpan; });
         let changed = Object.keys(newTops).some(k=>Math.abs((nodeCustomTops[k]||0) - newTops[k]) > 1.5);
         if(changed){ nodeCustomTops = newTops; document.querySelectorAll('.remix-node').forEach(el=>{ const id=el.getAttribute('data-id'); if(nodeCustomTops[id]!==undefined) el.style.top = nodeCustomTops[id]+'px'; }); }
       } else if(Object.keys(nodeCustomTops).length>0){ nodeCustomTops = {}; document.querySelectorAll('.remix-node').forEach(el=>{ el.style.top=''; }); }
@@ -157,16 +159,16 @@ function renderWires(){
   });
   if(card){
     const c = card.getBoundingClientRect(); const cardX = c.left - heroRect.left; const cardY = c.top - heroRect.top; const cardW = c.width;
-    const targetX = cardX + cardW*0.28; const targetY = cardY; const stepUp = targetY - 26; const dirX = Math.sign(targetX - spineX); const cornerR = Math.min(R,18);
-    const trunk = trunkPath(origin, spineX, stepUp - cornerR, R);
-    const d = `${trunk} Q ${spineX},${stepUp} ${spineX + dirX*cornerR},${stepUp} H ${targetX - dirX*cornerR} Q ${targetX},${stepUp} ${targetX},${stepUp + cornerR} V ${targetY}`;
+    const targetX = cardX + cardW/2; const targetY = cardY;
+    let d; if(Math.abs(targetX - spineX) < 4){ d = trunkPath(origin, spineX, targetY, R); } else { const stepUp = targetY - 24; const dirX = Math.sign(targetX - spineX); const cornerR = Math.min(R,16); const trunk = trunkPath(origin, spineX, stepUp - cornerR, R); d = `${trunk} Q ${spineX},${stepUp} ${spineX + dirX*cornerR},${stepUp} H ${targetX - dirX*cornerR} Q ${targetX},${stepUp} ${targetX},${stepUp + cornerR} V ${targetY}`; }
+    window.__cardBranch = d;
     const p = document.createElementNS('http://www.w3.org/2000/svg','path'); p.setAttribute('d', d); p.setAttribute('fill','none'); p.setAttribute('stroke', lit==='card' ? '#101731' : 'rgba(16,23,49,0.14)'); p.setAttribute('stroke-width', lit==='card' ? 1.75 : 1.25); p.setAttribute('stroke-dasharray', lit==='card' ? 'none' : '4 3'); p.setAttribute('stroke-linecap','round'); p.style.transition='all .3s'; cardG.appendChild(p);
   }
   if(lit && branches[lit]){
     const p = document.createElementNS('http://www.w3.org/2000/svg','path'); p.setAttribute('d', branches[lit]); p.setAttribute('fill','none'); p.setAttribute('stroke','#101731'); p.setAttribute('stroke-width','2'); p.setAttribute('stroke-linecap','round'); p.style.transition='all .3s'; activeG.appendChild(p);
-    const pulse = document.createElementNS('http://www.w3.org/2000/svg','path'); pulse.setAttribute('d', branches[lit]); pulse.setAttribute('fill','none'); pulse.setAttribute('stroke','#ff5757'); pulse.setAttribute('stroke-width','2.5'); pulse.setAttribute('stroke-linecap','round'); pulse.setAttribute('stroke-dasharray','40 180'); pulse.style.animation='pulse-signal 2.4s linear infinite'; activeG.appendChild(pulse);
-  } else if(!lit && branches['positionering']){
-    const pulse = document.createElementNS('http://www.w3.org/2000/svg','path'); pulse.setAttribute('d', branches['positionering']); pulse.setAttribute('fill','none'); pulse.setAttribute('stroke','#ff5757'); pulse.setAttribute('stroke-width','2'); pulse.setAttribute('stroke-linecap','round'); pulse.setAttribute('stroke-dasharray','30 200'); pulse.style.animation='pulse-signal 3s linear infinite'; activeG.appendChild(pulse);
+    const pulse = document.createElementNS('http://www.w3.org/2000/svg','path'); pulse.setAttribute('d', branches[lit]); pulse.setAttribute('fill','none'); pulse.setAttribute('stroke','#ff5757'); pulse.setAttribute('stroke-width','2.5'); pulse.setAttribute('stroke-linecap','round'); pulse.setAttribute('stroke-dasharray','40 260'); pulse.style.animation='pulse-signal 1.8s linear infinite'; activeG.appendChild(pulse);
+  } else if(!lit){
+    const idleD = window.__cardBranch || branches['positionering']; if(idleD){ const pulse = document.createElementNS('http://www.w3.org/2000/svg','path'); pulse.setAttribute('d', idleD); pulse.setAttribute('fill','none'); pulse.setAttribute('stroke','#ff5757'); pulse.setAttribute('stroke-width','2'); pulse.setAttribute('stroke-linecap','round'); pulse.setAttribute('stroke-dasharray','30 270'); pulse.style.animation='pulse-signal 2.2s linear infinite'; activeG.appendChild(pulse); }
   }
 }
 function bind(){
