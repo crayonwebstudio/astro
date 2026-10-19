@@ -4,19 +4,19 @@ import { site, home } from '../data/content.ts';
 // one SVG viewBox 0 0 1000 560. Nodes, wires, hub and pulses all share these
 // coordinates, so wires can never drift away from their nodes.
 // No HTML nodes positioned with % + a separate SVG: that was the bug.
-const SPINE_X = 620;
-const SPINE_Y1 = 36;
-const SPINE_Y2 = 512;
-const HUB = { x: 0, y: 288 };
+const SPINE_X = 720;
+const SPINE_Y1 = 32;
+const SPINE_Y2 = 520;
+const HUB = { x: 0, y: 292 };
 const nodes = [
-  { label: "SEO", color: "#4285F4", x: 770, y: 52, side: "right" as const },
-  { label: "GEO", color: "#111827", x: 830, y: 122, side: "right" as const },
-  { label: "Positionering", color: "#0A66C2", x: 450, y: 172, side: "left" as const },
-  { label: "Taalregister", color: "#111827", x: 830, y: 232, side: "right" as const },
-  { label: "Governance", color: "#7B5CFF", x: 450, y: 288, side: "left" as const },
-  { label: "Automatisering", color: "#FF5A1F", x: 810, y: 342, side: "right" as const },
-  { label: "Tracking", color: "#2563EB", x: 460, y: 420, side: "left" as const },
-  { label: "Martech", color: "#FF4D1C", x: 820, y: 478, side: "right" as const },
+  { label: "SEO", color: "#4285F4", icon: "G", x: 560, y: 48, side: "left" as const, cluster: "02 Zichtbaarheid", detail: "Beter gevonden worden" },
+  { label: "GEO", color: "#111827", icon: "◉", x: 880, y: 118, side: "right" as const, cluster: "02 Zichtbaarheid", detail: "Vindbaar in AI-antwoorden" },
+  { label: "Positionering", color: "#0A66C2", icon: "in", x: 520, y: 188, side: "left" as const, cluster: "03 Merk en taal", detail: "Duidelijk maken wat je biedt" },
+  { label: "Taalregister", color: "#111827", icon: "N", x: 880, y: 258, side: "right" as const, cluster: "03 Merk en taal", detail: "Herkenbare taal op elk kanaal" },
+  { label: "Governance", color: "#7B5CFF", icon: "◆", x: 520, y: 292, side: "left" as const, cluster: "04 Werken met AI", detail: "Zelf de controle houden" },
+  { label: "Automatisering", color: "#FF5A1F", icon: "◍", x: 870, y: 362, side: "right" as const, cluster: "01 Data en techniek", detail: "Systemen die samenwerken" },
+  { label: "Tracking", color: "#2563EB", icon: "◆", x: 530, y: 432, side: "left" as const, cluster: "01 Data en techniek", detail: "Meten wat marketing oplevert" },
+  { label: "Martech", color: "#FF4D1C", icon: "↗", x: 880, y: 492, side: "right" as const, cluster: "01 Data en techniek", detail: "Cijfers waarmee je keuzes maakt" },
 ];
 // Reference model: single vertical spine + horizontal branches, not fan-out curves.
 // Right nodes: spine -> horizontal to node left edge. Left nodes: spine -> horizontal to node right edge.
@@ -26,24 +26,25 @@ const wirePath = (n: typeof nodes[number]) => {
 };
 const spinePath = `M ${SPINE_X} ${SPINE_Y1} V ${SPINE_Y2}`;
 const mainPath = `M ${HUB.x} ${HUB.y} H ${SPINE_X}`;
-const nodeW = (label: string) => 44 + label.length * 8.5;
+const nodeW = (label: string) => 62 + label.length * 8.5;
 // Wire ends exactly at the node's left edge (centre - half width), so the
 // line visibly connects to the box for every label length.
 ---
 <section class="hartslag" id="hartslag">
   <div class="hero__body"><div class="hero__lower">
     <div class="hero__copy">
-      <h1 class="kop"><span class="kop__line"><span class="kop__inner">Marketing die<br /> klopt </span></span><span class="kop__line"><span class="kop__inner">tot in de<br /> systemen<span class="sr-only">.</span><span class="hart" id="hart" aria-hidden="true"><span class="hart__ring"></span></span></span></span></h1>
+      <h1 class="kop"><span class="kop__line"><span class="kop__inner">Marketing die klopt</span></span><span class="kop__line"><span class="kop__inner">tot in de systemen<span class="sr-only">.</span><span class="hart" id="hart" aria-hidden="true"><span class="hart__ring"></span></span></span></span></h1>
       <p class="lead">{home.heroLead}</p>
       <div class="hero-actions"><a class="btn" href={site.ctaHref}>{site.ctaLabel} &rarr;</a><a class="textlink" href={home.heroSecondaryHref}>{home.heroSecondaryLabel}</a></div>
     </div>
     <div class="veld" id="veld">
       <!-- ONE SVG: wires + hub + nodes + pulses, all in 0 0 1000 560 -->
-      <svg class="diagram-svg" viewBox="0 0 1000 560" role="img" aria-label="Marketing systeem diagram: SEO, GEO, Positionering, Taalregister, Governance, Automatisering, Tracking en Martech verbonden met elkaar">
+      <div class="diagram-wrap">
+      <svg class="diagram-svg" id="diagramSvg" viewBox="0 0 1000 560" role="img" aria-label="Marketing systeem diagram: SEO, GEO, Positionering, Taalregister, Governance, Automatisering, Tracking en Martech verbonden met elkaar">
         <g class="wires">
           <path d={spinePath} class="wire wire--spine" vector-effect="non-scaling-stroke" />
           <path d={mainPath} class="wire wire--main" vector-effect="non-scaling-stroke" />
-          {nodes.map(n => <path d={wirePath(n)} class="wire" vector-effect="non-scaling-stroke" />)}
+          {nodes.map((n, i) => <path d={wirePath(n)} class="wire wire--branch" data-index={i} vector-effect="non-scaling-stroke" />)}
         </g>
         <g class="pulses">
           {nodes.map((n, i) => (
@@ -55,18 +56,21 @@ const nodeW = (label: string) => 44 + label.length * 8.5;
         <circle cx={SPINE_X} cy={HUB.y} r="6" fill="#FF5757" />
         <circle cx={SPINE_X} cy={HUB.y} r="12" fill="none" stroke="#FF5757" stroke-opacity="0.2" stroke-width="1.5" />
         <circle cx={HUB.x} cy={HUB.y} r="5" fill="#FF5757" />
-        {nodes.map(n => {
+        {nodes.map((n, i) => {
           const w = nodeW(n.label);
           return (
-            <g class="diagram-node" transform={`translate(${n.x - w / 2},${n.y - 19})`}>
+            <g class="diagram-node" data-index={i} data-cluster={n.cluster} data-detail={n.detail} data-cx={n.x} data-cy={n.y} tabindex="0" transform={`translate(${n.x - w / 2},${n.y - 19})`}>
               <rect x="0" y="0" width={w} height="38" rx="19" fill="#fff" stroke="#D7DEE8" stroke-dasharray="5 4" />
-              <circle cx="20" cy="19" r="6" fill={n.color} />
-              <text x="34" y="24" font-size="14" fill="#475569" font-family="inherit">{n.label}</text>
-              <title>{n.label}</title>
+              <text x="16" y="24" font-size="14" fill="#475569" font-family="inherit">{n.label}</text>
+              <rect x={w - 28} y="9" width="20" height="20" rx="5" fill={n.color} />
+              <text x={w - 18} y="24" font-size="11" fill="#fff" font-weight="700" text-anchor="middle" font-family="inherit">{n.icon}</text>
+              <title>{n.label} - {n.cluster} - {n.detail}</title>
             </g>
           );
         })}
       </svg>
+      <div class="node-card" id="nodeCard" aria-hidden="true"><span class="node-card__cluster" id="nodeCardCluster"></span><span class="node-card__detail" id="nodeCardDetail"></span></div>
+      </div>
       <div class="meter" id="meter">
         <span class="meter__status"><svg class="status__vink" viewBox="0 0 256 256"><path d="M232.49,80.49l-128,128a12,12,0,0,1-17,0l-56-56a12,12,0,1,1,17-17L96,183,215.51,63.51a12,12,0,0,1,17,17Z"></path></svg></span>
         <div class="meter__rijen">
@@ -75,8 +79,8 @@ const nodeW = (label: string) => 44 + label.length * 8.5;
         </div>
         <div class="grafiek">
           <svg class="spoor" viewBox="0 0 272 68" aria-hidden="true">
-            <g class="spoor__raster">{[12, 26, 40, 54].map(y => <line x1="0" y1={y} x2="272" y2={y} />)}</g>
-            <g class="spoor__datums"><text x="4" y="66">21 sep</text><text x="78" y="66">28</text><text x="152" y="66">05 okt</text><text x="226" y="66">12</text></g>
+            <g class="spoor__y"><text x="262" y="16">40</text><text x="262" y="36">20</text><text x="262" y="56">0</text></g><g class="spoor__raster">{[12, 26, 40, 54].map(y => <line x1="0" y1={y} x2="272" y2={y} />)}</g>
+            <g class="spoor__datums"><text x="4" y="66">22 sep</text><text x="78" y="66">29</text><text x="152" y="66">06 okt</text><text x="226" y="66">13</text></g>
             <path class="spoor__vorig" d="M0,52 L30,54 L60,50 L90,55 L120,53 L150,52 L180,54 L220,53 L272,54" />
             <path class="spoor__lijn" d="M0,44 L25,42 L50,47 L75,41 L100,45 L125,39 L150,43 L175,28 L200,41 L230,37 L272,45" />
             <circle class="spoor__piek" cx="175" cy="28" r="3" />
@@ -96,10 +100,10 @@ const nodeW = (label: string) => 44 + label.length * 8.5;
 .hartslag{position:relative;overflow:visible;padding:130px 0 60px}
 .hero__body{position:relative;z-index:1;max-width:1600px;margin:0 auto;padding:0 20px}
 @media(min-width:768px){.hero__body{padding:0 40px}}
-.hero__lower{display:grid;gap:32px;align-items:start}
-@media(min-width:1024px){.hero__lower{grid-template-columns:0.95fr 1.05fr;gap:24px}}
+.hero__lower{display:grid;gap:32px;align-items:center}
+@media(min-width:1024px){.hero__lower{grid-template-columns:0.85fr 1.15fr;gap:40px}}
 .hero__copy{min-width:0;padding-top:8px}
-.kop{font-size:clamp(48px,4.6vw,74px);line-height:.94;letter-spacing:-.04em;margin:0;font-weight:700;overflow-wrap:break-word}
+.kop{font-size:clamp(56px,5.2vw,92px);line-height:.95;letter-spacing:-.03em;margin:0;font-weight:700;overflow-wrap:break-word}
 .kop__line{display:block}.kop__inner{display:inline-block;max-width:100%}
 .hart{position:relative;display:inline-block;width:.19em;height:.19em;border-radius:50%;background:var(--vivid);margin-left:.02em;vertical-align:baseline;transform:translateY(-.02em)}
 .hart__ring{position:absolute;inset:-.35em;border:1.5px solid var(--vivid);border-radius:50%;animation:hartPulse 2.4s ease-out infinite}
@@ -107,8 +111,19 @@ const nodeW = (label: string) => 44 + label.length * 8.5;
 .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
 .veld{position:relative;min-width:0}
 .diagram-svg{display:block;width:100%;height:auto;overflow:visible}
-.wire{fill:none;stroke:#D7DEE8;stroke-width:1}.wire--spine{stroke:#B8C0CC;stroke-width:1.2}.wire--main{stroke:#B8C0CC;stroke-width:1.2}
-.diagram-node text{font-weight:500}
+.wire{fill:none;stroke:#D7DEE8;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;transition:stroke .2s,stroke-width .2s,opacity .2s}.wire--spine{stroke:#B8C0CC;stroke-width:1.2}.wire--main{stroke:#B8C0CC;stroke-width:1.2}
+.diagram-node{cursor:pointer;transition:opacity .2s}.diagram-node rect{transition:stroke .2s,stroke-width .2s}.diagram-node text{font-weight:500}
+.diagram-wrap{position:relative}
+.node-card{position:absolute;left:0;top:0;display:none;z-index:5;background:#fff;border:1px solid #E3E4E8;border-radius:12px;box-shadow:0 12px 32px rgba(16,23,49,.14);padding:10px 14px;pointer-events:none;transform:translate(-50%,-115%);max-width:220px}
+.node-card__cluster{display:block;font-size:12px;color:#C084FC;font-weight:700}
+.node-card__detail{display:block;font-size:14px;color:#101731;font-weight:600;margin-top:2px}
+.diagram-wrap[data-active] .wire--branch:not(.is-active){opacity:.18}
+.diagram-wrap[data-active] .wire--spine,.diagram-wrap[data-active] .wire--main{opacity:.18}
+.diagram-wrap[data-active] .diagram-node:not(.is-active){opacity:.25}
+.diagram-wrap[data-active] .wire--branch.is-active{stroke:#101731;stroke-width:2;opacity:1}
+.diagram-wrap[data-active] .wire--main.is-active{stroke:#101731;stroke-width:2;opacity:1}
+.diagram-wrap[data-active] .diagram-node.is-active rect{stroke:#101731;stroke-width:1.5}
+.diagram-wrap[data-active] .node-card{display:block}
 .meter{position:relative;margin:-8px auto 0;width:min(360px,92%);background:#FFFEF7;border:1px solid rgba(16,23,49,.2);border-radius:16px;padding:2px 16px 11px;box-shadow:0 18px 40px -26px rgba(16,23,49,.35);z-index:2}
 .meter__status{position:absolute;right:-12px;top:-12px;width:26px;height:26px;border-radius:50%;background:#03624C;color:#fff;display:flex;align-items:center;justify-content:center}
 .status__vink{width:14px;height:14px;fill:#fff}
@@ -137,3 +152,43 @@ const nodeW = (label: string) => 44 + label.length * 8.5;
 @media(max-width:1023px){.hartslag{padding-top:110px}}
 @media(prefers-reduced-motion:reduce){.hart__ring{animation:none}}
 </style>
+<script>
+const wrap = document.querySelector('.diagram-wrap');
+const svg = document.getElementById('diagramSvg');
+const card = document.getElementById('nodeCard');
+const clusterEl = document.getElementById('nodeCardCluster');
+const detailEl = document.getElementById('nodeCardDetail');
+if (wrap && svg && card) {
+  const nodes = svg.querySelectorAll('.diagram-node');
+  const branches = svg.querySelectorAll('.wire--branch');
+  const main = svg.querySelector('.wire--main');
+  const clear = () => {
+    wrap.removeAttribute('data-active');
+    nodes.forEach(n => n.classList.remove('is-active'));
+    branches.forEach(b => b.classList.remove('is-active'));
+    if (main) main.classList.remove('is-active');
+    card.setAttribute('aria-hidden', 'true');
+  };
+  nodes.forEach((node) => {
+    const idx = node.getAttribute('data-index');
+    const show = () => {
+      wrap.setAttribute('data-active', idx || '');
+      nodes.forEach(n => n.classList.toggle('is-active', n === node));
+      branches.forEach(b => b.classList.toggle('is-active', b.getAttribute('data-index') === idx));
+      if (main) main.classList.add('is-active');
+      if (clusterEl) clusterEl.textContent = node.getAttribute('data-cluster') || '';
+      if (detailEl) detailEl.textContent = node.getAttribute('data-detail') || '';
+      const leftPct = ((parseFloat(node.getAttribute('data-cx') || '0')) / 1000) * 100;
+      card.style.left = leftPct + '%';
+      const topPct = ((parseFloat(node.getAttribute('data-cy') || '0')) / 560) * 100;
+      card.style.top = topPct + '%';
+      card.setAttribute('aria-hidden', 'false');
+    };
+    node.addEventListener('mouseenter', show);
+    node.addEventListener('focus', show);
+    node.addEventListener('mouseleave', clear);
+    node.addEventListener('blur', clear);
+  });
+  svg.addEventListener('mouseleave', clear);
+}
+</script>
