@@ -328,3 +328,16 @@ label{font-size:13px;font-weight:700;display:block;margin:14px 0 6px}
 .cta-band .btn-outline{border-color:rgba(255,255,255,.4);color:#fff}
 .prose-en p{margin:0 0 16px;color:var(--muted);line-height:1.7;max-width:68ch}
 .prose-en p strong{color:var(--deep)}
+
+/* Homepage about section: original 12-column spacing from the supplied export
+   (image spans 5, one empty column, text spans 6, self-centered). */
+.home-about .prose{margin-top:32px}
+.home-about .hero-actions{margin-top:32px}
+.home-about .prose p{margin-bottom:20px}
+@media(min-width:768px){
+  .home-about{grid-template-columns:repeat(12,1fr);gap:64px}
+  .home-about>figure{grid-column:1/span 5}
+  .home-about>div{grid-column:7/span 6;align-self:center}
+  .home-about .prose{margin-top:40px}
+  .home-about .hero-actions{margin-top:40px}
+}

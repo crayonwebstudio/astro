@@ -21,9 +21,9 @@ import { site, home } from '../data/content.ts';
 </div>
 </div></section>
 
-<section><div class="wrap"><div class="about-grid">
+<section><div class="wrap"><div class="about-grid home-about">
 <figure class="about-img" style="padding:0;overflow:hidden;margin:0"><img src="/kennismaking-dylan.jpg" alt={home.aboutImageAlt} width="1122" height="1402" style="width:100%;height:100%;object-fit:cover;aspect-ratio:4/5" /></figure>
-<div><p style="font-size:14px;color:rgba(36,36,36,.62)">{home.aboutEyebrow}</p><h2 class="kop-sectie" style="margin-top:12px;max-width:24ch">{home.aboutTitle}<span class="text-vivid">.</span></h2><div class="prose" style="margin-top:28px;max-width:52ch">{home.aboutBody.map(p => <p>{p}</p>)}</div><div class="hero-actions"><a class="btn" href={home.aboutCtaHref}>{home.aboutCtaLabel} &rarr;</a><a class="textlink" href={home.aboutLinkHref}>{home.aboutLinkLabel}</a></div></div>
+<div><p style="font-size:14px;color:rgba(36,36,36,.62)">{home.aboutEyebrow}</p><h2 class="kop-sectie" style="margin-top:12px;max-width:24ch">{home.aboutTitle}<span class="text-vivid">.</span></h2><div class="prose" style="max-width:52ch">{home.aboutBody.map(p => <p>{p}</p>)}</div><div class="hero-actions"><a class="btn" href={home.aboutCtaHref}>{home.aboutCtaLabel} &rarr;</a><a class="textlink" href={home.aboutLinkHref}>{home.aboutLinkLabel}</a></div></div>
 </div></div></section>
 
 <section><div class="wrap">
