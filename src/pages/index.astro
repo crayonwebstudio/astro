@@ -7,7 +7,7 @@ import { site, home } from '../data/content.ts';
 <HeroDiagram />
 
 <section><div class="wrap"><div class="quote-grid">
-<p class="quote"><em>&ldquo;</em>{home.quote}<em>&rdquo;</em></p>
+<p class="quote"><em>&ldquo;</em>{home.quote.split('Omnimerce').map((part, i) => i === 0 ? part : <><span class="text-vivid">Omnimerce</span>{part}</>)}<em>&rdquo;</em></p>
 <div class="prose">{home.quoteBody.map(p => <p>{p}</p>)}</div>
 </div></div></section>
 
