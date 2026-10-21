@@ -1,13 +1,13 @@
 ---
 const nodes = [
-  { id: 'seo', label: 'SEO', logo: 'google', side: 'L', phaseNr: '04', phaseName: 'Growth', description: 'Improve search visibility', top: 8, left: 42 },
-  { id: 'geo', label: 'AI Content', logo: 'openai', side: 'R', phaseNr: '03', phaseName: 'Content & AI', description: 'Content from verified product data', top: 16, left: 56 },
-  { id: 'positionering', label: 'Marketing', logo: 'linkedin', side: 'L', phaseNr: '04', phaseName: 'Growth', description: 'Campaigns from your catalogue', top: 24, left: 40 },
-  { id: 'taalregister', label: 'Inventory', logo: 'notion', side: 'R', phaseNr: '01', phaseName: 'Operations', description: 'Stock that stays accurate everywhere', top: 33, left: 58 },
-  { id: 'governance', label: 'Automation', logo: 'copilot', side: 'L', phaseNr: '03', phaseName: 'Content & AI', description: 'AI workflows with human approval', top: 41, left: 35 },
-  { id: 'automatisering', label: 'Orders', logo: 'zapier', side: 'R', phaseNr: '02', phaseName: 'Channels', description: 'Orders flow into one system', top: 54, left: 53 },
-  { id: 'tracking', label: 'ERP', logo: 'gtm', side: 'L', phaseNr: '01', phaseName: 'Operations', description: 'Sales, purchasing, stock and accounts', top: 62, left: 38 },
-  { id: 'martech', label: 'Marketplaces', logo: 'hubspot', side: 'R', phaseNr: '02', phaseName: 'Channels', description: 'Amazon, Flipkart, Shopify, WooCommerce', top: 70, left: 55 },
+  { id: 'seo', label: 'Accounting', logo: 'google', side: 'L', phaseNr: '01', phaseName: 'Operations', description: 'Sales, purchasing and accounts in one system', top: 8, left: 42 },
+  { id: 'geo', label: 'AI Content', logo: 'openai', side: 'R', phaseNr: '03', phaseName: 'Content & AI', description: 'Descriptions, listings and imagery from product data', top: 16, left: 56 },
+  { id: 'positionering', label: 'Marketing', logo: 'linkedin', side: 'L', phaseNr: '04', phaseName: 'Growth', description: 'Product-led campaigns, scheduling and reporting', top: 24, left: 40 },
+  { id: 'taalregister', label: 'Inventory', logo: 'notion', side: 'R', phaseNr: '01', phaseName: 'Operations', description: 'Stock, warehouses and channel allocation', top: 33, left: 58 },
+  { id: 'governance', label: 'CRM', logo: 'copilot', side: 'L', phaseNr: '02', phaseName: 'Sales & Channels', description: 'Leads, customers and follow-ups connected', top: 41, left: 35 },
+  { id: 'automatisering', label: 'Orders', logo: 'zapier', side: 'R', phaseNr: '02', phaseName: 'Sales & Channels', description: 'Orders from every channel into one system', top: 54, left: 53 },
+  { id: 'tracking', label: 'Manufacturing', logo: 'gtm', side: 'L', phaseNr: '01', phaseName: 'Operations', description: 'BOMs, work orders and product costing', top: 62, left: 38 },
+  { id: 'martech', label: 'Marketplace', logo: 'hubspot', side: 'R', phaseNr: '02', phaseName: 'Sales & Channels', description: 'Amazon, Flipkart, Shopify and WooCommerce in sync', top: 70, left: 55 },
 ];
 const logos: Record<string, string> = {
   google: '<svg class="w-4 h-4" aria-hidden="true" viewBox="0 0 24 24"><path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.66-5.17 3.66-9.17z"/><path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.13C3.27 21.39 7.35 24 12 24z"/><path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.6H1.25C.45 8.18 0 10.02 0 12s.45 3.82 1.25 5.4l4.03-3.13z"/><path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.35 0 3.27 2.61 1.25 6.6l4.03 3.13c.95-2.83 3.6-4.98 6.72-4.98z"/></svg>',
