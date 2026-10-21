@@ -33,7 +33,7 @@ tags: ["Werken met AI"]
 
 >
 
-> - Agent Passport is een gratis open-source skill van Biite onder MIT-licentie, direct te installeren via npx.
+> - Agent Passport is een gratis open-source skill van Omnimerce onder MIT-licentie, direct te installeren via npx.
 
 > - Het helpt je wijzigingen terugzoeken tijdens het werk en informatie verzamelen voor een review, overdracht of audit.
 
@@ -49,7 +49,7 @@ Binnen een kwartier werken meerdere mensen en agents aan hetzelfde project. De t
 
 Maandagochtend open je je laptop en het scherm staat vol foutmeldingen. Een permissiecontrole in src/auth.py blijkt aangepast. "Wat betekent dit nou weer?" denk je. Op zo'n moment wil je direct kunnen terugzoeken welke agent aan het project werkte, met welk model en onder wiens verantwoordelijkheid. Dat helpt je nu om de fout te onderzoeken en te koppelen aan de juiste discipline in je organisatie. Gaat een agent de fout in? Dan wil je meteen de details boven water hebben. Dat is handig om het op te lossen, maar ook onmisbaar bij een overdracht of audit later.
 
-Daarom heeft Biite **Agent Passport** gemaakt. Deze gratis open-source skill geeft elke agent en tijdelijke subagent een paspoort. Een organogram brengt mensen en agents overzichtelijk bij elkaar, terwijl een log alle geregistreerde acties bijhoudt. Zo heb je overzicht tijdens het werk en een onweerlegbaar spoor om achteraf op terug te vallen.
+Daarom heeft Omnimerce **Agent Passport** gemaakt. Deze gratis open-source skill geeft elke agent en tijdelijke subagent een paspoort. Een organogram brengt mensen en agents overzichtelijk bij elkaar, terwijl een log alle geregistreerde acties bijhoudt. Zo heb je overzicht tijdens het werk en een onweerlegbaar spoor om achteraf op terug te vallen.
 
 ## Het paspoort: taak, grenzen en verantwoordelijkheid
 
@@ -179,13 +179,13 @@ Open daarna `agent-passports/registry.html`. Kijk of de vaste agents, tijdelijke
 
 Ook zonder audit is dit waardevol. Als jij morgen verdergaat, of een collega het project overneemt, wil je kunnen zien welke agents eraan werkten, met welke taak en wat ze veranderden. Dat overzicht hoort bij het adopteren van AI binnen je organisatie.
 
-Wil je hulp bij het inrichten van agents, rechten en controles? Bij [werken met AI](/expertise/werken-met-ai/) lees je hoe Biite je daarbij help.
+Wil je hulp bij het inrichten van agents, rechten en controles? Bij [werken met AI](/expertise/werken-met-ai/) lees je hoe Omnimerce je daarbij help.
 
 [Bekijk de skill op GitHub](https://github.com/Biite-marketing/agent-passport)
 
 ## Wie dit schreef
 
-**Dylan van den Bosch**, Oprichter van Biite. [wie is Biite](/over/) · [LinkedIn](https://www.linkedin.com/in/dylan-van-den-bosch/)
+**Dylan van den Bosch**, Oprichter van Omnimerce. [wie is Omnimerce](/over/) · [LinkedIn](https://www.linkedin.com/in/dylan-van-den-bosch/)
 
 Dit stuk raakt aan [Werken met AI](/expertise/werken-met-ai/). Daar staat wat er precies onder valt en wanneer het niet past.
 

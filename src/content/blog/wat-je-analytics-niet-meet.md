@@ -87,7 +87,7 @@ Wie alleen stuurt op wat gemeten wordt, stuurt vanzelf naar het kanaal dat zich 
 
 ## Wie dit schreef
 
-**Dylan van den Bosch**, Oprichter van Biite. [wie is Biite](/over/) · [LinkedIn](https://www.linkedin.com/in/dylan-van-den-bosch/)
+**Dylan van den Bosch**, Oprichter van Omnimerce. [wie is Omnimerce](/over/) · [LinkedIn](https://www.linkedin.com/in/dylan-van-den-bosch/)
 
 Dit stuk raakt aan [Data en techniek](/expertise/data-en-techniek/). Daar staat wat er precies onder valt en wanneer het niet past.
 

@@ -1,12 +1,12 @@
 // SINGLE CONTENT FILE - edit everything here, no CMS needed.
 // Change text, links, numbers, lists in this file and rebuild.
-// All pages read from this file. Text comes from the supplied HTML export of biite.nl.
+// All pages read from this file. Text comes from the supplied HTML export of omnimerce.nl.
 
 export const site = {
-  "name": "Biite",
+  "name": "Omnimerce",
   "tagline": "Marketing die klopt tot in de systemen",
-  "description": "Strategische online marketing met de techniek als vaste ingang. Biite brengt je strategie, tracking, sitearchitectuur en martech-koppelingen op één lijn.",
-  "email": "hallo@biite.nl",
+  "description": "Strategische online marketing met de techniek als vaste ingang. Omnimerce brengt je strategie, tracking, sitearchitectuur en martech-koppelingen op één lijn.",
+  "email": "hallo@omnimerce.nl",
   "phoneDisplay": "06 19618278",
   "phoneLink": "+31619618278",
   "linkedin": "https://www.linkedin.com/company/biite-agency",
@@ -34,7 +34,7 @@ export const home = {
   "heroTitleB": "klopt",
   "heroTitleC": "tot in de",
   "heroTitleD": "systemen",
-  "heroLead": "Biite helpt je meer uit online marketing te halen door je strategie, website, data en systemen op elkaar aan te laten sluiten. Samen zorgen we dat je kunt meten wat werkt en daarop kunt verder bouwen.",
+  "heroLead": "Omnimerce helpt je meer uit online marketing te halen door je strategie, website, data en systemen op elkaar aan te laten sluiten. Samen zorgen we dat je kunt meten wat werkt en daarop kunt verder bouwen.",
   "heroSecondaryLabel": "bekijk de werkwijze",
   "heroSecondaryHref": "/werkwijze/",
   "stats": [
@@ -107,9 +107,9 @@ export const home = {
   "quote": "Je strategie en je systemen worden zelden samen bedacht.",
   "quoteBody": [
     "Je marketingplan, je website en de keuze voor een nieuw systeem ontstaan vaak los van elkaar. Ondertussen wil jij weten welke inspanningen klanten opleveren.",
-    "Biite brengt die keuzes bij elkaar. We kijken wat je wilt bereiken, wat je daarvoor moet kunnen meten en hoe je systemen dat ondersteunen. Samen met jou en, waar nodig, de mensen met wie je werkt."
+    "Omnimerce brengt die keuzes bij elkaar. We kijken wat je wilt bereiken, wat je daarvoor moet kunnen meten en hoe je systemen dat ondersteunen. Samen met jou en, waar nodig, de mensen met wie je werkt."
   ],
-  "servicesTitle": "Waar Biite je bij helpt",
+  "servicesTitle": "Waar Omnimerce je bij helpt",
   "services": [
     {
       "title": "Data en techniek",
@@ -149,21 +149,21 @@ export const home = {
     }
   ],
   "aboutEyebrow": "Even voorstellen",
-  "aboutTitle": "Dit is Biite. We bijten ons vast in wat jouw marketing verder helpt",
+  "aboutTitle": "Dit is Omnimerce. We bijten ons vast in wat jouw marketing verder helpt",
   "aboutBody": [
-    "Biite brengt marketingplannen en uitvoering bij elkaar. We denken mee over wat je wilt bereiken en kijken meteen wat je website, data en systemen daarvoor moeten kunnen.",
+    "Omnimerce brengt marketingplannen en uitvoering bij elkaar. We denken mee over wat je wilt bereiken en kijken meteen wat je website, data en systemen daarvoor moeten kunnen.",
     "We bijten ons vast in je vraag, maken keuzes en werken mee aan de uitvoering. Je hebt een vast aanspreekpunt dat je situatie kent en betrokken blijft, van het eerste gesprek tot de oplevering."
   ],
   "aboutImageAlt": "Dylan van den Bosch aan een houten tafel achter zijn laptop.",
   "aboutImageFile": "/kennismaking-dylan.jpg",
   "aboutCtaLabel": "bekijk waar ik je mee kan helpen",
   "aboutCtaHref": "/expertise/",
-  "aboutLinkLabel": "Meer over Biite",
+  "aboutLinkLabel": "Meer over Omnimerce",
   "aboutLinkHref": "/over/",
   "processTitle": "Je weet vooraf wat er gaat gebeuren",
   "finalCtaTitle": "Laten we samen kijken waar groei vastloopt",
-  "finalCtaBody": "Je bespreekt je vraag met iemand die ook bij de uitvoering betrokken blijft. Samen met Biite bekijk je wat nodig is en welke eerste stap past. Past je vraag beter bij een andere specialist, dan hoor je dat.",
-  "finalCtaSecondaryLabel": "of lees eerst waar Biite aan werkt",
+  "finalCtaBody": "Je bespreekt je vraag met iemand die ook bij de uitvoering betrokken blijft. Samen met Omnimerce bekijk je wat nodig is en welke eerste stap past. Past je vraag beter bij een andere specialist, dan hoor je dat.",
+  "finalCtaSecondaryLabel": "of lees eerst waar Omnimerce aan werkt",
   "finalCtaSecondaryHref": "/blog/",
   "processSteps": [
     {
@@ -176,7 +176,7 @@ export const home = {
     },
     {
       "title": "Aan de slag",
-      "text": "Biite duikt in je systemen, data en marketingprocessen. De bevindingen worden vertaald naar verbeteringen die bijdragen aan de afgesproken doelen."
+      "text": "Omnimerce duikt in je systemen, data en marketingprocessen. De bevindingen worden vertaald naar verbeteringen die bijdragen aan de afgesproken doelen."
     }
   ],
   "processLinkLabel": "De hele werkwijze, in vijf fases",
@@ -200,7 +200,7 @@ export const werkwijze = {
     {
       "n": "03",
       "title": "Aan de slag",
-      "text": "De opdracht staat vast. Nu duikt Biite in de systemen, data en marketingprocessen die bij je vraag horen. Wat gebeurt er achter de schermen, waar gaat informatie verloren en wat werkt al goed? De bevindingen maken duidelijk wat er nodig is om de afgesproken doelen te bereiken. Verbeteringen die direct kunnen worden opgepakt, gaan mee in de uitvoering."
+      "text": "De opdracht staat vast. Nu duikt Omnimerce in de systemen, data en marketingprocessen die bij je vraag horen. Wat gebeurt er achter de schermen, waar gaat informatie verloren en wat werkt al goed? De bevindingen maken duidelijk wat er nodig is om de afgesproken doelen te bereiken. Verbeteringen die direct kunnen worden opgepakt, gaan mee in de uitvoering."
     },
     {
       "n": "04",
@@ -218,7 +218,7 @@ export const werkwijze = {
   "forms": [
     {
       "title": "Meedenken op afstand",
-      "text": "Je voert zelf uit en wilt kunnen sparren over keuzes. Biite leest mee, beoordeelt voorstellen en helpt je verder wanneer je vastloopt of een tweede blik nodig hebt."
+      "text": "Je voert zelf uit en wilt kunnen sparren over keuzes. Omnimerce leest mee, beoordeelt voorstellen en helpt je verder wanneer je vastloopt of een tweede blik nodig hebt."
     },
     {
       "title": "Een vast dagdeel per week",
@@ -230,14 +230,14 @@ export const werkwijze = {
     },
     {
       "title": "Naast je team meewerken",
-      "text": "Biite sluit aan bij het dagelijkse werk en overleg. Verbeteringen worden samen uitgevoerd, met aandacht voor de kennis en werkwijze die nodig zijn om ermee verder te kunnen."
+      "text": "Omnimerce sluit aan bij het dagelijkse werk en overleg. Verbeteringen worden samen uitgevoerd, met aandacht voor de kennis en werkwijze die nodig zijn om ermee verder te kunnen."
     }
   ],
   "formsClosing": "Je krijgt werk waarmee je verder kunt: duidelijke keuzes, verbeteringen die zijn doorgevoerd en uitleg over hoe het werkt. Wat wordt opgeleverd, staat vooraf vast. Zo blijft de waarde van de samenwerking ook na de opdracht in je bedrijf.",
   "formsImage": "/werkwijze-band.jpg",
   "formsImageAlt": "",
-  "selfTitle": "Zo werkt Biite zelf ook.",
-  "selfIntro": "De aanpak die Biite adviseert, wordt ook in het eigen werk toegepast. AI is onderdeel van onderzoek, uitwerking en uitvoering, met de juiste context, vaste werkwijzen en inhoudelijke beoordeling. Dat helpt om informatie sneller te verwerken, meer mogelijkheden te onderzoeken en terugkerend werk te verminderen. De ervaring uit dat dagelijkse gebruik gaat mee in jouw opdracht.",
+  "selfTitle": "Zo werkt Omnimerce zelf ook.",
+  "selfIntro": "De aanpak die Omnimerce adviseert, wordt ook in het eigen werk toegepast. AI is onderdeel van onderzoek, uitwerking en uitvoering, met de juiste context, vaste werkwijzen en inhoudelijke beoordeling. Dat helpt om informatie sneller te verwerken, meer mogelijkheden te onderzoeken en terugkerend werk te verminderen. De ervaring uit dat dagelijkse gebruik gaat mee in jouw opdracht.",
   "selfItems": [
     {
       "title": "03 Bij onderzoek",
@@ -252,9 +252,9 @@ export const werkwijze = {
       "text": "Terugkerende stappen automatiseren en helpen bij het bouwen en aanpassen. Het resultaat wordt beoordeeld op de doelen en kwaliteit die voor de opdracht zijn afgesproken."
     }
   ],
-  "selfLinkLabel": "Meer over hoe Biite met AI en data werkt",
+  "selfLinkLabel": "Meer over hoe Omnimerce met AI en data werkt",
   "selfLinkHref": "/ai-en-data/",
-  "expertiseIntro": "Van betrouwbare data tot een herkenbaar merk en werkbare AI-processen: ontdek waarbij Biite je kan helpen.",
+  "expertiseIntro": "Van betrouwbare data tot een herkenbaar merk en werkbare AI-processen: ontdek waarbij Omnimerce je kan helpen.",
   "expertiseLinks": [
     {
       "n": "01",
@@ -284,17 +284,17 @@ export const werkwijze = {
 };
 
 export const over = {
-  "title": "Dit is Biite",
-  "eyebrow": "over Biite",
-  "lead": "Biite helpt bedrijven meer samenhang te brengen in hun marketing. Strategie, content, data en techniek worden samen bekeken, omdat een goed plan pas waarde krijgt als het ook werkt in de praktijk. Met aandacht voor wat je wilt bereiken en wat nodig is om daarop voort te bouwen.",
+  "title": "Dit is Omnimerce",
+  "eyebrow": "over Omnimerce",
+  "lead": "Omnimerce helpt bedrijven meer samenhang te brengen in hun marketing. Strategie, content, data en techniek worden samen bekeken, omdat een goed plan pas waarde krijgt als het ook werkt in de praktijk. Met aandacht voor wat je wilt bereiken en wat nodig is om daarop voort te bouwen.",
   "storyTitle": "Van vormgeving naar de vraag waarom iets werkt.",
   "storyBody": [
-    "Biite is ontstaan vanuit de nieuwsgierigheid van oprichter Dylan van den Bosch. Wat begon met vormgeving, groeide uit tot een bredere vraag: waarom doen mensen wat ze doen, en hoe kun je daar met marketing op aansluiten?",
-    "Een website kan er goed uitzien en toch onduidelijk zijn. Een campagne kan veel bezoekers trekken zonder de juiste doelgroep te bereiken. En een stijgend cijfer betekent niet automatisch dat je bedrijf verder komt. Daarom kijkt Biite naar de samenhang tussen wat mensen nodig hebben, wat je vertelt en hoe de techniek daarachter werkt.",
+    "Omnimerce is ontstaan vanuit de nieuwsgierigheid van oprichter Dylan van den Bosch. Wat begon met vormgeving, groeide uit tot een bredere vraag: waarom doen mensen wat ze doen, en hoe kun je daar met marketing op aansluiten?",
+    "Een website kan er goed uitzien en toch onduidelijk zijn. Een campagne kan veel bezoekers trekken zonder de juiste doelgroep te bereiken. En een stijgend cijfer betekent niet automatisch dat je bedrijf verder komt. Daarom kijkt Omnimerce naar de samenhang tussen wat mensen nodig hebben, wat je vertelt en hoe de techniek daarachter werkt.",
     "Het doel is marketing waarop je kunt voortbouwen. Door te begrijpen waarom iets werkt, verbeteringen vast te leggen en kennis bruikbaar te maken in het dagelijkse werk. Zo bouw je aan duurzame groei die verder gaat dan de piek van één campagne."
   ],
   "portraitImage": "/portret-dylan-over.jpg",
-  "portraitAlt": "Dylan van den Bosch, oprichter van Biite, aan een tafel achter zijn laptop.",
+  "portraitAlt": "Dylan van den Bosch, oprichter van Omnimerce, aan een tafel achter zijn laptop.",
   "pullQuote": "Vastbijten in de vraag. Doorwerken aan de oplossing",
   "pillarsTitle": "Waar het werk op rust.",
   "pillars": [
@@ -318,12 +318,12 @@ export const over = {
     },
     {
       "title": "AI in de praktijk",
-      "text": "AI wordt ook binnen Biite dagelijks toegepast. Met vaste werkwijzen en inhoudelijke beoordeling. De ervaring daarmee gaat mee in het werk voor jouw bedrijf.",
-      "linkLabel": "Zo werkt Biite met AI en data",
+      "text": "AI wordt ook binnen Omnimerce dagelijks toegepast. Met vaste werkwijzen en inhoudelijke beoordeling. De ervaring daarmee gaat mee in het werk voor jouw bedrijf.",
+      "linkLabel": "Zo werkt Omnimerce met AI en data",
       "linkHref": "/ai-en-data/"
     }
   ],
-  "expectationsTitle": "Wat je van Biite kunt verwachten",
+  "expectationsTitle": "Wat je van Omnimerce kunt verwachten",
   "expectations": [
     "Meedenken over de aanpak en meewerken aan de uitvoering.",
     "Marketingkeuzes die aansluiten op je doelen en je systemen.",
@@ -338,12 +338,12 @@ export const over = {
     "Je vraag valt buiten de expertise. Dan wordt besproken welk type specialist beter kan helpen."
   ],
   "founderName": "Dylan van den Bosch",
-  "founderRole": "Oprichter van Biite"
+  "founderRole": "Oprichter van Omnimerce"
 };
 
 export const expertiseIndex = {
   "title": "Vier diensten die op elkaar aansluiten",
-  "lead": "Wil je beter gevonden worden, meer grip op je cijfers of duidelijkheid over hoe je AI kunt gebruiken? Biite helpt je uitzoeken wat nodig is en werkt mee aan de uitvoering. Soms gaat het om één onderdeel. Soms vraagt je vraagstuk om verbeteringen op meerdere plekken.",
+  "lead": "Wil je beter gevonden worden, meer grip op je cijfers of duidelijkheid over hoe je AI kunt gebruiken? Omnimerce helpt je uitzoeken wat nodig is en werkt mee aan de uitvoering. Soms gaat het om één onderdeel. Soms vraagt je vraagstuk om verbeteringen op meerdere plekken.",
   "clusters": [
     {
       "number": "01",
@@ -352,7 +352,7 @@ export const expertiseIndex = {
       "href": "/expertise/data-en-techniek/",
       "tagline": "We zetten marketing aan tafel.",
       "diensten": "Systeemkeuzes, één bron voor cijfers, datamodel, tracking, martech en AI-gereedheid",
-      "description": "Je wilt weten wat marketing oplevert. Maar je website, klantensysteem en rapportages geven niet altijd hetzelfde beeld. Biite zoekt uit hoe je gegevens worden gemeten en doorgegeven. Daarna worden de metingen en systemen op elkaar afgestemd, zodat je met die cijfers keuzes kunt maken.",
+      "description": "Je wilt weten wat marketing oplevert. Maar je website, klantensysteem en rapportages geven niet altijd hetzelfde beeld. Omnimerce zoekt uit hoe je gegevens worden gemeten en doorgegeven. Daarna worden de metingen en systemen op elkaar afgestemd, zodat je met die cijfers keuzes kunt maken.",
       "items": [
         "De juiste marketingsystemen kiezen",
         "Rapportages die op elkaar aansluiten",
@@ -371,7 +371,7 @@ export const expertiseIndex = {
       "href": "/expertise/zichtbaarheid/",
       "tagline": "We halen de ruis eruit.",
       "diensten": "SEO, GEO, ASO, sitearchitectuur, CRO en contentmanagement",
-      "description": "Je wilt dat potentiële klanten je vinden en begrijpen wat je voor ze kunt doen. Biite werkt aan de structuur, inhoud en techniek van je website, voor zoekmachines en AI-zoekdiensten. Ook de stap naar contact krijgt aandacht: vinden bezoekers wat ze nodig hebben om een aanvraag te doen? Heb je een app, dan kan de vindbaarheid in appstores worden meegenomen.",
+      "description": "Je wilt dat potentiële klanten je vinden en begrijpen wat je voor ze kunt doen. Omnimerce werkt aan de structuur, inhoud en techniek van je website, voor zoekmachines en AI-zoekdiensten. Ook de stap naar contact krijgt aandacht: vinden bezoekers wat ze nodig hebben om een aanvraag te doen? Heb je een app, dan kan de vindbaarheid in appstores worden meegenomen.",
       "items": [
         "Beter vindbaar in Google (SEO)",
         "Zichtbaarheid in AI-antwoorden (GEO)",
@@ -390,7 +390,7 @@ export const expertiseIndex = {
       "href": "/expertise/merk-en-taal/",
       "tagline": "We leggen je positie vast.",
       "diensten": "Positionering, taalafspraken, herkenbaar in AI, contentstrategie en missie en visie",
-      "description": "Op je website staat het net anders dan in een verkoopgesprek. En in een offerte krijgt je aanbod weer een andere uitleg. Biite helpt je scherp krijgen wat je biedt, voor wie en waarom dat relevant is. Je krijgt een helder verhaal en praktische taalafspraken, zodat je dat overal herkenbaar kunt vertellen.",
+      "description": "Op je website staat het net anders dan in een verkoopgesprek. En in een offerte krijgt je aanbod weer een andere uitleg. Omnimerce helpt je scherp krijgen wat je biedt, voor wie en waarom dat relevant is. Je krijgt een helder verhaal en praktische taalafspraken, zodat je dat overal herkenbaar kunt vertellen.",
       "items": [
         "Duidelijk maken waar je voor staat",
         "Herkenbaar in al je content",
@@ -408,7 +408,7 @@ export const expertiseIndex = {
       "href": "/expertise/werken-met-ai/",
       "tagline": "We houden het menselijk.",
       "diensten": "Testen en uitbreiden, governance, automatisering, meebouwen, kennis vastleggen en adoptie",
-      "description": "AI verandert hoe bedrijven hun marketing organiseren en uitvoeren. Biite helpt je die verandering te vertalen naar je eigen bedrijf: welke processen kunnen beter, welke kennis is nodig en hoe richt je systemen daarop in? Van de eerste keuzes tot de uitvoering, met duidelijke afspraken over data, kwaliteit en verantwoordelijkheid. Zo krijgt AI een vaste plek in je marketing en bouw je aan waarde die verder gaat dan een geslaagd experiment.",
+      "description": "AI verandert hoe bedrijven hun marketing organiseren en uitvoeren. Omnimerce helpt je die verandering te vertalen naar je eigen bedrijf: welke processen kunnen beter, welke kennis is nodig en hoe richt je systemen daarop in? Van de eerste keuzes tot de uitvoering, met duidelijke afspraken over data, kwaliteit en verantwoordelijkheid. Zo krijgt AI een vaste plek in je marketing en bouw je aan waarde die verder gaat dan een geslaagd experiment.",
       "items": [
         "Klein testen, uitbreiden wat werkt",
         "Afspraken over kwaliteit en verantwoordelijkheid",
@@ -430,7 +430,7 @@ export const expertiseDetails = [
     "title": "Data en techniek",
     "headline": "Systemen die samenwerken en cijfers die je helpen betere marketingkeuzes te maken.",
     "description": "Marketingsystemen die je bedrijfsdoelen volgen. Tracking, martech-koppelingen en één datamodel, zodat je cijfers kloppen en je weer op feiten stuurt.",
-    "lead": "Je wilt weten welke marketing klanten oplevert. Maar je website, klantensysteem en rapportages geven niet altijd hetzelfde beeld. Biite onderzoekt waar die verschillen vandaan komen: wat wordt gemeten, hoe gegevens worden doorgegeven en welke afspraken er over de cijfers zijn. Je krijgt inzicht in wat beter moet en hulp om het uit te voeren. Daarbij blijft wat al goed werkt behouden.",
+    "lead": "Je wilt weten welke marketing klanten oplevert. Maar je website, klantensysteem en rapportages geven niet altijd hetzelfde beeld. Omnimerce onderzoekt waar die verschillen vandaan komen: wat wordt gemeten, hoe gegevens worden doorgegeven en welke afspraken er over de cijfers zijn. Je krijgt inzicht in wat beter moet en hulp om het uit te voeren. Daarbij blijft wat al goed werkt behouden.",
     "painTitle": "Waar het meestal misgaat",
     "painPoints": [
       {
@@ -452,23 +452,23 @@ export const expertiseDetails = [
     "whatYouGet": [
       {
         "title": "De juiste marketingsystemen kiezen",
-        "body": "Een nieuw systeem lost weinig op als het niet past bij hoe je werkt. Biite bekijkt wat je nodig hebt, wat je huidige systemen al kunnen en waar ze tekortschieten. Je krijgt een onderbouwd advies over behouden, aanpassen of vervangen. Zo voorkom je dat je betaalt voor functies die je niet gebruikt of opnieuw tegen dezelfde beperkingen aanloopt."
+        "body": "Een nieuw systeem lost weinig op als het niet past bij hoe je werkt. Omnimerce bekijkt wat je nodig hebt, wat je huidige systemen al kunnen en waar ze tekortschieten. Je krijgt een onderbouwd advies over behouden, aanpassen of vervangen. Zo voorkom je dat je betaalt voor functies die je niet gebruikt of opnieuw tegen dezelfde beperkingen aanloopt."
       },
       {
         "title": "Rapportages die op elkaar aansluiten",
-        "body": "Foutieve of onvolledige cijfers kunnen je geld kosten zonder dat je het doorhebt. Je blijft investeren in campagnes die weinig opleveren, terwijl kansen buiten beeld blijven. Biite brengt de gegevens uit je systemen bij elkaar en onderzoekt waar informatie ontbreekt of verkeerd wordt geteld. Zo krijg je zicht op blinde vlekken en kun je beter bepalen waar je budget naartoe gaat."
+        "body": "Foutieve of onvolledige cijfers kunnen je geld kosten zonder dat je het doorhebt. Je blijft investeren in campagnes die weinig opleveren, terwijl kansen buiten beeld blijven. Omnimerce brengt de gegevens uit je systemen bij elkaar en onderzoekt waar informatie ontbreekt of verkeerd wordt geteld. Zo krijg je zicht op blinde vlekken en kun je beter bepalen waar je budget naartoe gaat."
       },
       {
         "title": "Dezelfde afspraken over je cijfers",
-        "body": "Wanneer telt iemand als lead of klant? En welke omzet schrijf je toe aan een campagne? Als systemen daar anders mee omgaan, vergelijk je cijfers die niet hetzelfde betekenen. Biite legt die definities vast en helpt ze consequent toe te passen in je systemen en rapportages. Zo beoordeel je resultaten op dezelfde basis."
+        "body": "Wanneer telt iemand als lead of klant? En welke omzet schrijf je toe aan een campagne? Als systemen daar anders mee omgaan, vergelijk je cijfers die niet hetzelfde betekenen. Omnimerce legt die definities vast en helpt ze consequent toe te passen in je systemen en rapportages. Zo beoordeel je resultaten op dezelfde basis."
       },
       {
         "title": "Meten wat je wilt weten",
-        "body": "Veel bedrijven meten wat hun tools standaard aanbieden, zonder te controleren of die cijfers aansluiten op hun doelstellingen. Biite brengt eerst in kaart welke vragen je wilt beantwoorden. Daarna richten we de metingen zo in dat je ziet welke stappen bezoekers zetten, waar ze afhaken en welke acties bijdragen aan wat je wilt bereiken."
+        "body": "Veel bedrijven meten wat hun tools standaard aanbieden, zonder te controleren of die cijfers aansluiten op hun doelstellingen. Omnimerce brengt eerst in kaart welke vragen je wilt beantwoorden. Daarna richten we de metingen zo in dat je ziet welke stappen bezoekers zetten, waar ze afhaken en welke acties bijdragen aan wat je wilt bereiken."
       },
       {
         "title": "Je systemen laten samenwerken",
-        "body": "Je CRM, website, advertentieplatformen en rapportages bevatten allemaal een deel van je informatie. Als die systemen niet goed samenwerken, blijft er werk liggen bij je team en ontstaan er gaten in je beeld. Biite brengt in kaart welke gegevens je nodig hebt en hoe ze tussen systemen moeten bewegen. Zo voorkom je dubbel werk en houd je marketinginformatie bruikbaar."
+        "body": "Je CRM, website, advertentieplatformen en rapportages bevatten allemaal een deel van je informatie. Als die systemen niet goed samenwerken, blijft er werk liggen bij je team en ontstaan er gaten in je beeld. Omnimerce brengt in kaart welke gegevens je nodig hebt en hoe ze tussen systemen moeten bewegen. Zo voorkom je dubbel werk en houd je marketinginformatie bruikbaar."
       },
       {
         "title": "Klaar voor AI",
@@ -563,7 +563,7 @@ export const expertiseDetails = [
     "title": "Zichtbaarheid",
     "headline": "Beter gevonden worden en meer bezoekers omzetten in klanten.",
     "description": "Gevonden worden in Google en geciteerd worden in AI-antwoorden. SEO, GEO, sitearchitectuur en CRO, met een helder pad van eerste bezoek naar gesprek.",
-    "lead": "Je wilt dat potentiële klanten je vinden en begrijpen wat je voor ze kunt doen. Biite verbindt de inhoud, structuur en techniek van je website, zodat vindbaarheid en conversie elkaar versterken. Van verschijnen in zoekresultaten en AI-antwoorden tot de stap waarmee een bezoeker een lead wordt.",
+    "lead": "Je wilt dat potentiële klanten je vinden en begrijpen wat je voor ze kunt doen. Omnimerce verbindt de inhoud, structuur en techniek van je website, zodat vindbaarheid en conversie elkaar versterken. Van verschijnen in zoekresultaten en AI-antwoorden tot de stap waarmee een bezoeker een lead wordt.",
     "painTitle": "Waar het meestal misgaat",
     "painPoints": [
       {
@@ -572,7 +572,7 @@ export const expertiseDetails = [
       },
       {
         "title": "Je bedrijf ontbreekt in AI-antwoorden",
-        "text": "Bij vragen over je vakgebied zie je andere bedrijven terug. Je potentiële klant krijgt daardoor misschien geen volledig beeld van de mogelijkheden. Biite onderzoekt hoe je bedrijf wordt beschreven en waar je eigen informatie duidelijker en consistenter kan."
+        "text": "Bij vragen over je vakgebied zie je andere bedrijven terug. Je potentiële klant krijgt daardoor misschien geen volledig beeld van de mogelijkheden. Omnimerce onderzoekt hoe je bedrijf wordt beschreven en waar je eigen informatie duidelijker en consistenter kan."
       },
       {
         "title": "Je website groeit, maar het overzicht verdwijnt",
@@ -589,7 +589,7 @@ export const expertiseDetails = [
       },
       {
         "title": "Zichtbaarheid in AI-antwoorden (GEO)",
-        "body": "Biite maakt je website en bedrijfsinformatie vindbaar voor AI-zoekdiensten. Van heldere inhoud en metadata tot gestructureerde gegevens en een herkenbaar verhaal over je bedrijf. Ook wordt onderzocht hoe je nu in AI-antwoorden voorkomt en waar informatie ontbreekt of verkeerd wordt weergegeven."
+        "body": "Omnimerce maakt je website en bedrijfsinformatie vindbaar voor AI-zoekdiensten. Van heldere inhoud en metadata tot gestructureerde gegevens en een herkenbaar verhaal over je bedrijf. Ook wordt onderzocht hoe je nu in AI-antwoorden voorkomt en waar informatie ontbreekt of verkeerd wordt weergegeven."
       },
       {
         "title": "Je app beter presenteren in appstores (ASO)",
@@ -601,11 +601,11 @@ export const expertiseDetails = [
       },
       {
         "title": "Van bezoekers naar leads (CRO)",
-        "body": "Meer bezoekers leveren pas iets op als ze de volgende stap zetten. Biite onderzoekt waar mensen afhaken en verbetert de pagina’s, formulieren en contactmogelijkheden. Gericht op meer relevante aanvragen uit het verkeer dat je al aantrekt."
+        "body": "Meer bezoekers leveren pas iets op als ze de volgende stap zetten. Omnimerce onderzoekt waar mensen afhaken en verbetert de pagina’s, formulieren en contactmogelijkheden. Gericht op meer relevante aanvragen uit het verkeer dat je al aantrekt."
       },
       {
         "title": "Contentmanagement",
-        "body": "Goede content vraagt ook om goed beheer. Biite helpt je content te organiseren, publiceren en actueel te houden. Je boodschap krijgt een passende vorm op je website, in e-mails en op sociale media, met een herkenbaar verhaal als basis. Met een duidelijke structuur en werkbare afspraken blijft alles op elkaar aansluiten, ook als je bedrijf groeit."
+        "body": "Goede content vraagt ook om goed beheer. Omnimerce helpt je content te organiseren, publiceren en actueel te houden. Je boodschap krijgt een passende vorm op je website, in e-mails en op sociale media, met een herkenbaar verhaal als basis. Met een duidelijke structuur en werkbare afspraken blijft alles op elkaar aansluiten, ook als je bedrijf groeit."
       }
     ],
     "processTitle": "Kort, en met jou erbij in plaats van erover.",
@@ -613,7 +613,7 @@ export const expertiseDetails = [
     "process": [
       {
         "title": "Onderzoeken hoe je gevonden wordt",
-        "text": "Biite bekijkt hoe bezoekers binnenkomen, welke pagina’s aanvragen opleveren en hoe je bedrijf in AI-antwoorden verschijnt."
+        "text": "Omnimerce bekijkt hoe bezoekers binnenkomen, welke pagina’s aanvragen opleveren en hoe je bedrijf in AI-antwoorden verschijnt."
       },
       {
         "title": "Bepalen wat aandacht nodig heeft",
@@ -621,7 +621,7 @@ export const expertiseDetails = [
       },
       {
         "title": "Uitvoeren en verbeteren",
-        "text": "Biite werkt aan de aanpassingen en volgt wat ze opleveren. Waar nodig worden je medewerkers of externe partners betrokken, zodat de aanpak aansluit op hoe je werkt."
+        "text": "Omnimerce werkt aan de aanpassingen en volgt wat ze opleveren. Waar nodig worden je medewerkers of externe partners betrokken, zodat de aanpak aansluit op hoe je werkt."
       }
     ],
     "sameTitle": "Wat er in elke opdracht hetzelfde is",
@@ -640,24 +640,24 @@ export const expertiseDetails = [
       }
     ],
     "fitsTitle": "Dit past als",
-    "fitsIntro": "Is nog niet duidelijk wat je biedt of voor wie? Dan helpt Biite eerst je verhaal aan te scherpen. Dat geeft je vindbaarheid een duidelijke basis.",
+    "fitsIntro": "Is nog niet duidelijk wat je biedt of voor wie? Dan helpt Omnimerce eerst je verhaal aan te scherpen. Dat geeft je vindbaarheid een duidelijke basis.",
     "fits": [
       "Je investeert in vindbaarheid, maar krijgt onvoldoende relevante aanvragen.",
       "Je wilt beter zichtbaar worden in zoekmachines en AI-antwoorden.",
       "Je website en content groeien, maar de samenhang ontbreekt."
     ],
     "notFits": [
-      "Biite past minder goed als je uitsluitend losse teksten zoekt of alleen snelle resultaten verwacht zonder de nodige verbeteringen aan je website."
+      "Omnimerce past minder goed als je uitsluitend losse teksten zoekt of alleen snelle resultaten verwacht zonder de nodige verbeteringen aan je website."
     ],
     "faqTitle": "Wat je waarschijnlijk wilt weten",
     "faq": [
       {
         "q": "Wat kost dit?",
-        "a": "Dat hangt af van wat nodig is. Een aantal pagina’s verbeteren vraagt iets anders dan je hele sitestructuur aanpakken. Vooraf spreek je met Biite af wat de opdracht omvat en wat het kost."
+        "a": "Dat hangt af van wat nodig is. Een aantal pagina’s verbeteren vraagt iets anders dan je hele sitestructuur aanpakken. Vooraf spreek je met Omnimerce af wat de opdracht omvat en wat het kost."
       },
       {
         "q": "Hoe lang duurt zoiets?",
-        "a": "De planning hangt af van de omvang en de uitgangssituatie. Je weet vooraf wanneer het afgesproken werk wordt opgeleverd. Daarna volgt Biite hoe de vindbaarheid en aanvragen zich ontwikkelen."
+        "a": "De planning hangt af van de omvang en de uitgangssituatie. Je weet vooraf wanneer het afgesproken werk wordt opgeleverd. Daarna volgt Omnimerce hoe de vindbaarheid en aanvragen zich ontwikkelen."
       },
       {
         "q": "Wat als het probleem ergens anders blijkt te zitten?",
@@ -669,7 +669,7 @@ export const expertiseDetails = [
       },
       {
         "q": "Wat als we hier maar een deel van nodig hebben?",
-        "a": "Ja. Je kunt beginnen met bijvoorbeeld SEO, conversieverbetering of contentmanagement. Samen met Biite bepaal je welke afbakening bij je vraag past."
+        "a": "Ja. Je kunt beginnen met bijvoorbeeld SEO, conversieverbetering of contentmanagement. Samen met Omnimerce bepaal je welke afbakening bij je vraag past."
       }
     ],
     "relatedTitle": "Meer lezen hierover",
@@ -710,7 +710,7 @@ export const expertiseDetails = [
     "title": "Merk en taal",
     "headline": "Een merkverhaal dat je doelgroep begrijpt en herkent, waar die je ook tegenkomt.",
     "description": "Een positie die overeind blijft als iemand anders je verhaal navertelt. Eén taal over al je kanalen, ook in de samenvatting die een AI-model van je maakt.",
-    "lead": "Je wilt dat je doelgroep begrijpt waar je voor staat en je herkent in alles wat je deelt. Biite helpt je missie en visie te vertalen naar een helder merkverhaal, een eigen toon en samenhangende content. Zodat wat je uitstraalt ook past bij wie je bent en wat je wilt bereiken.",
+    "lead": "Je wilt dat je doelgroep begrijpt waar je voor staat en je herkent in alles wat je deelt. Omnimerce helpt je missie en visie te vertalen naar een helder merkverhaal, een eigen toon en samenhangende content. Zodat wat je uitstraalt ook past bij wie je bent en wat je wilt bereiken.",
     "painTitle": "Waar het meestal misgaat",
     "painPoints": [
       {
@@ -740,7 +740,7 @@ export const expertiseDetails = [
       },
       {
         "title": "Je merkverhaal in AI-antwoorden",
-        "body": "Hoe wordt je bedrijf beschreven als iemand AI om advies vraagt? Biite onderzoekt of je aanbod en onderscheid daarin goed terugkomen. Onduidelijke of tegenstrijdige informatie in je eigen communicatie wordt aangescherpt, zodat je merkverhaal ook daar een betere basis heeft."
+        "body": "Hoe wordt je bedrijf beschreven als iemand AI om advies vraagt? Omnimerce onderzoekt of je aanbod en onderscheid daarin goed terugkomen. Onduidelijke of tegenstrijdige informatie in je eigen communicatie wordt aangescherpt, zodat je merkverhaal ook daar een betere basis heeft."
       },
       {
         "title": "Een contentstrategie rond je belangrijkste thema’s",
@@ -835,7 +835,7 @@ export const expertiseDetails = [
     "title": "Werken met AI",
     "headline": "AI inzetten om je marketingprocessen blijvend te verbeteren.",
     "description": "Sneller werken met AI, terwijl de keuzes en je data van jou blijven. Eerst klein bewijzen in echt werk, daarna vastleggen wat werkt.",
-    "lead": "AI verandert hoe je marketing organiseert en uitvoert. Biite helpt je bepalen wat dat voor jouw bedrijf betekent en de veranderingen doorvoeren in je processen, systemen en dagelijkse werk. Van onderzoek en content tot rapportage en opvolging: welke processen kan AI verbeteren, wat vraagt dat van je organisatie en hoe beoordeel je het resultaat? Zo bouw je aan een aanpak die verder gaat dan losse experimenten en mee kan veranderen met nieuwe ontwikkelingen.",
+    "lead": "AI verandert hoe je marketing organiseert en uitvoert. Omnimerce helpt je bepalen wat dat voor jouw bedrijf betekent en de veranderingen doorvoeren in je processen, systemen en dagelijkse werk. Van onderzoek en content tot rapportage en opvolging: welke processen kan AI verbeteren, wat vraagt dat van je organisatie en hoe beoordeel je het resultaat? Zo bouw je aan een aanpak die verder gaat dan losse experimenten en mee kan veranderen met nieuwe ontwikkelingen.",
     "painTitle": "Waar het meestal misgaat",
     "painPoints": [
       {
@@ -865,7 +865,7 @@ export const expertiseDetails = [
       },
       {
         "title": "Marketingprocessen verbeteren en automatiseren",
-        "body": "Van informatie verzamelen tot content publiceren of resultaten rapporteren: Biite bekijkt het hele proces. Welke stappen kunnen slimmer, welke kunnen automatisch en waar blijft menselijke beoordeling nodig? Daarna worden de werkwijze en de betrokken systemen daarop aangepast."
+        "body": "Van informatie verzamelen tot content publiceren of resultaten rapporteren: Omnimerce bekijkt het hele proces. Welke stappen kunnen slimmer, welke kunnen automatisch en waar blijft menselijke beoordeling nodig? Daarna worden de werkwijze en de betrokken systemen daarop aangepast."
       },
       {
         "title": "Samen bouwen in het dagelijkse werk",
@@ -920,7 +920,7 @@ export const expertiseDetails = [
       "Je zoekt hulp bij zowel de keuzes als de uitvoering."
     ],
     "notFits": [
-      "Biite richt zich op de praktische toepassing van AI in marketing. Voor juridisch advies over AI of gegevensgebruik is een daarvoor bevoegde specialist nodig.",
+      "Omnimerce richt zich op de praktische toepassing van AI in marketing. Voor juridisch advies over AI of gegevensgebruik is een daarvoor bevoegde specialist nodig.",
       "Het uitgangspunt is mensen beter laten werken met AI. Een traject dat uitsluitend draait om medewerkers vervangen, past daar niet bij."
     ],
     "faqTitle": "Wat je waarschijnlijk wilt weten",
@@ -974,28 +974,28 @@ export const expertiseDetails = [
       }
     ],
     "extraNoteTitle": "Het gereedschap wisselt sneller dan de afspraken",
-    "extraNote": "Dit zijn voorbeelden van tools die Biite gebruikt. Welke tool bij jouw bedrijf past, hangt af van het werk, je systemen en de eisen aan het resultaat. Je proces krijgt een duidelijke basis die ruimte laat om nieuwe modellen toe te passen wanneer die beter aansluiten op je behoeften. De werkwijze, kwaliteitscontrole en verantwoordelijkheden geven houvast bij het beoordelen en invoeren van die veranderingen."
+    "extraNote": "Dit zijn voorbeelden van tools die Omnimerce gebruikt. Welke tool bij jouw bedrijf past, hangt af van het werk, je systemen en de eisen aan het resultaat. Je proces krijgt een duidelijke basis die ruimte laat om nieuwe modellen toe te passen wanneer die beter aansluiten op je behoeften. De werkwijze, kwaliteitscontrole en verantwoordelijkheden geven houvast bij het beoordelen en invoeren van die veranderingen."
   }
 ];
 
 export const aiEnData = {
-  "title": "Zo werkt Biite met AI en data",
-  "lead": "Een model doet het voorwerk en Biite houdt de controle. Zo heb je sneller een scherp beeld, en jij beslist wat ermee gebeurt.",
+  "title": "Zo werkt Omnimerce met AI en data",
+  "lead": "Een model doet het voorwerk en Omnimerce houdt de controle. Zo heb je sneller een scherp beeld, en jij beslist wat ermee gebeurt.",
   "heroImage": "/kennismaking-dylan.jpg",
   "heroImageAlt": "Dylan van den Bosch aan tafel achter zijn laptop, kijkend naar het scherm.",
   "rolesTitle": "Drie plekken waar een model meewerkt.",
   "roles": [
     {
       "title": "Onderzoeken",
-      "text": "Je hebt sneller een beeld van waar je staat. Een model neemt je data, site en zichtbaarheid door. Biite haalt eruit wat ertoe doet."
+      "text": "Je hebt sneller een beeld van waar je staat. Een model neemt je data, site en zichtbaarheid door. Omnimerce haalt eruit wat ertoe doet."
     },
     {
       "title": "Uitwerken",
-      "text": "Je kiest uit meer dan één route. Met een model liggen varianten en eerste versies snel klaar, en welke het wordt bepaal je samen met Biite."
+      "text": "Je kiest uit meer dan één route. Met een model liggen varianten en eerste versies snel klaar, en welke het wordt bepaal je samen met Omnimerce."
     },
     {
       "title": "Nalopen",
-      "text": "Fouten vallen op voordat ze live staan. Een model loopt je teksten en tracking na. Wat het vindt, beoordeelt Biite."
+      "text": "Fouten vallen op voordat ze live staan. Een model loopt je teksten en tracking na. Wat het vindt, beoordeelt Omnimerce."
     }
   ],
   "rolesImage": "/ai-en-data-keuze.jpg",
@@ -1008,8 +1008,8 @@ export const aiEnData = {
       "text": "Gegevens van jou en je klanten gaan alleen in AI-tools op zakelijke accounts waar training uit staat."
     },
     {
-      "title": "Biite houdt de controle",
-      "text": "Wat een model oplevert, beoordeelt Biite voordat het naar buiten gaat. De verantwoordelijkheid ligt bij Biite."
+      "title": "Omnimerce houdt de controle",
+      "text": "Wat een model oplevert, beoordeelt Omnimerce voordat het naar buiten gaat. De verantwoordelijkheid ligt bij Omnimerce."
     },
     {
       "title": "Over mensen beslist een mens",
@@ -1024,7 +1024,7 @@ export const aiEnData = {
     },
     {
       "title": "Eerlijk over hoe het werkt",
-      "text": "Vooraf weet je wat iets kost, zonder verrassing in de laatste stap. Bij elk voorstel van Biite hoor je ook waar het op rust."
+      "text": "Vooraf weet je wat iets kost, zonder verrassing in de laatste stap. Bij elk voorstel van Omnimerce hoor je ook waar het op rust."
     },
     {
       "title": "Vindbaar omdat het klopt",
@@ -1032,10 +1032,10 @@ export const aiEnData = {
     },
     {
       "title": "Groei die volgend jaar nog staat",
-      "text": "Een campagnepiek is pas winst als je merk en je klantrelatie er sterker van worden. Daarom kiest Biite voor wat je over een jaar nog kunt verdedigen."
+      "text": "Een campagnepiek is pas winst als je merk en je klantrelatie er sterker van worden. Daarom kiest Omnimerce voor wat je over een jaar nog kunt verdedigen."
     }
   ],
-  "relatedTitle": "Wat Biite schrijft over nieuwe modellen",
+  "relatedTitle": "Wat Omnimerce schrijft over nieuwe modellen",
   "relatedPosts": [
     {
       "title": "Geen paspoort, geen productie: grip en audit trails voor je AI-agents",
@@ -1065,8 +1065,8 @@ export const aiEnData = {
   "faqTitle": "Wat je waarschijnlijk wilt weten",
   "faq": [
     {
-      "q": "Gebruikt Biite AI in een opdracht?",
-      "a": "Ja, in het voorwerk. Wat een model oplevert, beoordeelt Biite voordat het naar jou gaat, en over mensen beslist geen model."
+      "q": "Gebruikt Omnimerce AI in een opdracht?",
+      "a": "Ja, in het voorwerk. Wat een model oplevert, beoordeelt Omnimerce voordat het naar jou gaat, en over mensen beslist geen model."
     },
     {
       "q": "Wat gebeurt er met onze data als je met AI werkt?",
@@ -1078,7 +1078,7 @@ export const aiEnData = {
     },
     {
       "q": "Wie is verantwoordelijk als een model een fout maakt?",
-      "a": "Biite. Wat een model oplevert, beoordeelt Biite voordat het naar jou gaat, dus een fout die erdoorheen glipt is een fout van Biite."
+      "a": "Omnimerce. Wat een model oplevert, beoordeelt Omnimerce voordat het naar jou gaat, dus een fout die erdoorheen glipt is een fout van Omnimerce."
     },
     {
       "q": "Kun je ons team helpen om zo met AI te werken?",
@@ -1086,7 +1086,7 @@ export const aiEnData = {
     },
     {
       "q": "Wat als een opdracht botst met deze afspraken?",
-      "a": "Dan hoor je dat in het eerste gesprek, en zoeken we samen een route die wel past. Lukt dat niet, dan denkt Biite mee over wie je wel verder kan helpen."
+      "a": "Dan hoor je dat in het eerste gesprek, en zoeken we samen een route die wel past. Lukt dat niet, dan denkt Omnimerce mee over wie je wel verder kan helpen."
     }
   ]
 };
@@ -1107,7 +1107,7 @@ export const contactPage = {
   "calendarHref": "https://calendar.app.google/KUeioa9oKrn7SDWQ6",
   "calendarDetails": ["30 minuten", "Google Meet", "Vrijblijvend"],
   "founderName": "Dylan van den Bosch",
-  "consentText": "Ik ga ermee akkoord dat Biite mijn gegevens gebruikt om op dit bericht te reageren, zoals beschreven in de ",
+  "consentText": "Ik ga ermee akkoord dat Omnimerce mijn gegevens gebruikt om op dit bericht te reageren, zoals beschreven in de ",
   "honeypotLabel": "Laat dit veld leeg",
   "formPrivacyNote": "Je gegevens gebruik ik alleen om op dit bericht te reageren. Ik deel ze niet met anderen en bewaar ze niet langer dan nodig.",
   "companyFieldLabel": "Bedrijfsnaam (optioneel)",
@@ -1121,19 +1121,19 @@ export const contactPage = {
     "Ik lees je bericht en reageer persoonlijk. Wil je liever gebeld worden? Laat dan je telefoonnummer achter."
   ],
   "privacyNote": "Een paar zinnen is genoeg. Een link naar je website mag erbij.",
-  "emailLabel": "Mail Biite",
-  "phoneLabel": "Bel Biite"
+  "emailLabel": "Mail Omnimerce",
+  "phoneLabel": "Bel Omnimerce"
 };
 
 export const privacy = {
   "title": "Privacyverklaring",
-  "description": "Wat Biite met je gegevens doet als je het contactformulier invult, op welke grondslag, hoe lang, en welke rechten je hebt.",
+  "description": "Wat Omnimerce met je gegevens doet als je het contactformulier invult, op welke grondslag, hoe lang, en welke rechten je hebt.",
   "lead": "Deze pagina beschrijft wat er met je gegevens gebeurt als je het contactformulier invult, rechtstreeks contact opneemt of een vraag stelt onder de veelgestelde vragen, en wat er gemeten wordt als je de site bezoekt.",
   "sections": [
     {
       "heading": "Wie verwerkt je gegevens",
       "paras": [
-        "Biite is verantwoordelijk voor de verwerking. Je bereikt Biite via hallo@biite.nl of 06 19618278."
+        "Omnimerce is verantwoordelijk voor de verwerking. Je bereikt Omnimerce via hallo@omnimerce.nl of 06 19618278."
       ]
     },
     {
@@ -1152,7 +1152,7 @@ export const privacy = {
     {
       "heading": "Wie je gegevens ontvangt",
       "paras": [
-        "Het formulier verstuurt je antwoorden rechtstreeks naar een mailbox bij Cloud86, de hostingpartij van deze site. De site en die mailbox staan op servers in Nederland. Er zit geen externe formulierdienst tussen, dus je bericht gaat niet langs een partij die er zelf iets mee doet. Cloud86 verwerkt je gegevens uitsluitend in opdracht van Biite, op basis van een verwerkersovereenkomst.",
+        "Het formulier verstuurt je antwoorden rechtstreeks naar een mailbox bij Cloud86, de hostingpartij van deze site. De site en die mailbox staan op servers in Nederland. Er zit geen externe formulierdienst tussen, dus je bericht gaat niet langs een partij die er zelf iets mee doet. Cloud86 verwerkt je gegevens uitsluitend in opdracht van Omnimerce, op basis van een verwerkersovereenkomst.",
         "Voordat het formulier verstuurt, controleert Cloudflare Turnstile of de inzending van een mens komt. Daarvoor verwerkt Cloudflare kort je IP-adres en een aantal browserkenmerken. Zonder die controle loopt dit formulier vol met geautomatiseerde berichten."
       ]
     },
@@ -1180,7 +1180,7 @@ export const privacy = {
     {
       "heading": "Je rechten",
       "paras": [
-        "Je mag je gegevens inzien, laten corrigeren of laten verwijderen. Je mag bezwaar maken tegen de verwerking en vragen om overdracht van je gegevens. Een verzoek daartoe stuur je naar hallo@biite.nl, en je krijgt binnen een maand antwoord.",
+        "Je mag je gegevens inzien, laten corrigeren of laten verwijderen. Je mag bezwaar maken tegen de verwerking en vragen om overdracht van je gegevens. Een verzoek daartoe stuur je naar hallo@omnimerce.nl, en je krijgt binnen een maand antwoord.",
         "Kom je er met mij niet uit, dan kun je een klacht indienen bij de Autoriteit Persoonsgegevens.",
         "Laatst bijgewerkt op 14 september 2026."
       ]
@@ -1190,9 +1190,9 @@ export const privacy = {
 
 export const voorwaarden = {
   "title": "Algemene voorwaarden",
-  "description": "De algemene voorwaarden van Biite: wat je van Biite mag verwachten, wat Biite van jou nodig heeft, en wat er geldt als iets anders loopt dan bedoeld.",
-  "lead": "Deze voorwaarden gelden voor iedere offerte en iedere opdracht van Biite. Ze gaan over wat je van Biite mag verwachten, wat Biite van jou nodig heeft, en wat er geldt als iets anders loopt dan bedoeld.",
-  "companyLine": "Biite, eenmanszaak, gevestigd te Zeewolde · KvK 42153735 · btw NL005540062B37",
+  "description": "De algemene voorwaarden van Omnimerce: wat je van Omnimerce mag verwachten, wat Omnimerce van jou nodig heeft, en wat er geldt als iets anders loopt dan bedoeld.",
+  "lead": "Deze voorwaarden gelden voor iedere offerte en iedere opdracht van Omnimerce. Ze gaan over wat je van Omnimerce mag verwachten, wat Omnimerce van jou nodig heeft, en wat er geldt als iets anders loopt dan bedoeld.",
+  "companyLine": "Omnimerce, eenmanszaak, gevestigd te Zeewolde · KvK 42153735 · btw NL005540062B37",
   "toc": [
     "1. Definities",
     "2. Toepasselijkheid",
@@ -1228,35 +1228,35 @@ export const voorwaarden = {
         },
         {
           "type": "p",
-          "text": "Biite: de eenmanszaak Biite, gevestigd te Zeewolde, ingeschreven bij de Kamer van Koophandel onder nummer 42153735, gebruiker van deze voorwaarden."
+          "text": "Omnimerce: de eenmanszaak Omnimerce, gevestigd te Zeewolde, ingeschreven bij de Kamer van Koophandel onder nummer 42153735, gebruiker van deze voorwaarden."
         },
         {
           "type": "p",
-          "text": "Opdrachtgever: de partij die met Biite een Overeenkomst aangaat of daarover onderhandelt, handelend in de uitoefening van een beroep of bedrijf."
+          "text": "Opdrachtgever: de partij die met Omnimerce een Overeenkomst aangaat of daarover onderhandelt, handelend in de uitoefening van een beroep of bedrijf."
         },
         {
           "type": "p",
-          "text": "Partijen: Biite en Opdrachtgever samen."
+          "text": "Partijen: Omnimerce en Opdrachtgever samen."
         },
         {
           "type": "p",
-          "text": "Overeenkomst: iedere afspraak tussen Partijen over door Biite te verrichten werkzaamheden, inclusief de Offerte, de opdrachtbevestiging en deze Voorwaarden."
+          "text": "Overeenkomst: iedere afspraak tussen Partijen over door Omnimerce te verrichten werkzaamheden, inclusief de Offerte, de opdrachtbevestiging en deze Voorwaarden."
         },
         {
           "type": "p",
-          "text": "Opdracht: de werkzaamheden die Biite op grond van de Overeenkomst verricht, waaronder advies, onderzoek, analyse, het inrichten van meetsystemen en tracking, sitearchitectuur, martech-koppelingen, het opzetten van marketingsystemen en processen, tekst, en begeleiding bij het werken met AI."
+          "text": "Opdracht: de werkzaamheden die Omnimerce op grond van de Overeenkomst verricht, waaronder advies, onderzoek, analyse, het inrichten van meetsystemen en tracking, sitearchitectuur, martech-koppelingen, het opzetten van marketingsystemen en processen, tekst, en begeleiding bij het werken met AI."
         },
         {
           "type": "p",
-          "text": "Offerte: ieder aanbod van Biite, in welke vorm dan ook."
+          "text": "Offerte: ieder aanbod van Omnimerce, in welke vorm dan ook."
         },
         {
           "type": "p",
-          "text": "Werk: alles wat Biite bij de uitvoering van een Opdracht specifiek voor Opdrachtgever oplevert, waaronder rapporten, adviezen, meetplannen, dashboards, configuraties, teksten, ontwerpen en broncode."
+          "text": "Werk: alles wat Omnimerce bij de uitvoering van een Opdracht specifiek voor Opdrachtgever oplevert, waaronder rapporten, adviezen, meetplannen, dashboards, configuraties, teksten, ontwerpen en broncode."
         },
         {
           "type": "p",
-          "text": "Materialen: de methoden, werkwijzen, modellen, sjablonen, checklists, scripts, hulpprogramma's, presentaties en kennis van algemene aard die Biite bij de uitvoering gebruikt en die niet specifiek voor Opdrachtgever zijn ontwikkeld."
+          "text": "Materialen: de methoden, werkwijzen, modellen, sjablonen, checklists, scripts, hulpprogramma's, presentaties en kennis van algemene aard die Omnimerce bij de uitvoering gebruikt en die niet specifiek voor Opdrachtgever zijn ontwikkeld."
         },
         {
           "type": "p",
@@ -1277,15 +1277,15 @@ export const voorwaarden = {
       "blocks": [
         {
           "type": "p",
-          "text": "Deze Voorwaarden zijn van toepassing op iedere Offerte, Overeenkomst en rechtsverhouding tussen Biite en Opdrachtgever, en op alle daaruit voortvloeiende vervolgopdrachten."
+          "text": "Deze Voorwaarden zijn van toepassing op iedere Offerte, Overeenkomst en rechtsverhouding tussen Omnimerce en Opdrachtgever, en op alle daaruit voortvloeiende vervolgopdrachten."
         },
         {
           "type": "p",
-          "text": "Biite stelt deze Voorwaarden voor of bij het sluiten van de Overeenkomst langs elektronische weg ter beschikking, en verstrekt op verzoek kosteloos een exemplaar."
+          "text": "Omnimerce stelt deze Voorwaarden voor of bij het sluiten van de Overeenkomst langs elektronische weg ter beschikking, en verstrekt op verzoek kosteloos een exemplaar."
         },
         {
           "type": "p",
-          "text": "De toepasselijkheid van inkoop-, leverings- of andere algemene voorwaarden van Opdrachtgever wordt uitdrukkelijk van de hand gewezen. Verwijst Opdrachtgever naar zijn eigen voorwaarden, dan gelden die alleen als Biite de toepasselijkheid daarvan vooraf en uitdrukkelijk schriftelijk heeft aanvaard."
+          "text": "De toepasselijkheid van inkoop-, leverings- of andere algemene voorwaarden van Opdrachtgever wordt uitdrukkelijk van de hand gewezen. Verwijst Opdrachtgever naar zijn eigen voorwaarden, dan gelden die alleen als Omnimerce de toepasselijkheid daarvan vooraf en uitdrukkelijk schriftelijk heeft aanvaard."
         },
         {
           "type": "p",
@@ -1314,19 +1314,19 @@ export const voorwaarden = {
         },
         {
           "type": "p",
-          "text": "Biite is niet gebonden aan kennelijke vergissingen of verschrijvingen in een Offerte."
+          "text": "Omnimerce is niet gebonden aan kennelijke vergissingen of verschrijvingen in een Offerte."
         },
         {
           "type": "p",
-          "text": "Een samengestelde prijsopgave verplicht Biite niet een deel van de Opdracht uit te voeren tegen een evenredig deel van de prijs."
+          "text": "Een samengestelde prijsopgave verplicht Omnimerce niet een deel van de Opdracht uit te voeren tegen een evenredig deel van de prijs."
         },
         {
           "type": "p",
-          "text": "De Overeenkomst komt tot stand op het moment dat Opdrachtgever de Offerte schriftelijk aanvaardt, of op het moment dat Biite met instemming van Opdrachtgever met de uitvoering begint."
+          "text": "De Overeenkomst komt tot stand op het moment dat Opdrachtgever de Offerte schriftelijk aanvaardt, of op het moment dat Omnimerce met instemming van Opdrachtgever met de uitvoering begint."
         },
         {
           "type": "p",
-          "text": "Wordt de Opdracht namens Opdrachtgever verstrekt door een natuurlijke persoon, dan mag Biite ervan uitgaan dat deze daartoe bevoegd is."
+          "text": "Wordt de Opdracht namens Opdrachtgever verstrekt door een natuurlijke persoon, dan mag Omnimerce ervan uitgaan dat deze daartoe bevoegd is."
         },
         {
           "type": "p",
@@ -1339,31 +1339,31 @@ export const voorwaarden = {
       "blocks": [
         {
           "type": "p",
-          "text": "Biite voert de Opdracht uit naar beste inzicht en vermogen, en met de zorgvuldigheid die van een redelijk handelend en redelijk bekwaam vakgenoot mag worden verwacht."
+          "text": "Omnimerce voert de Opdracht uit naar beste inzicht en vermogen, en met de zorgvuldigheid die van een redelijk handelend en redelijk bekwaam vakgenoot mag worden verwacht."
         },
         {
           "type": "p",
-          "text": "Biite bepaalt de wijze waarop en door wie de Opdracht wordt uitgevoerd, en houdt daarbij rekening met de wensen van Opdrachtgever voor zover dat redelijk is."
+          "text": "Omnimerce bepaalt de wijze waarop en door wie de Opdracht wordt uitgevoerd, en houdt daarbij rekening met de wensen van Opdrachtgever voor zover dat redelijk is."
         },
         {
           "type": "p",
-          "text": "Biite mag bij de uitvoering derden inschakelen. Biite blijft daarbij het aanspreekpunt van Opdrachtgever en blijft verantwoordelijk voor het resultaat, met inachtneming van artikel 15."
+          "text": "Omnimerce mag bij de uitvoering derden inschakelen. Omnimerce blijft daarbij het aanspreekpunt van Opdrachtgever en blijft verantwoordelijk voor het resultaat, met inachtneming van artikel 15."
         },
         {
           "type": "p",
-          "text": "De artikelen 7:404 en 7:407 lid 2 van het Burgerlijk Wetboek zijn niet van toepassing. De Opdracht wordt verstrekt aan Biite als onderneming en niet aan een bepaalde persoon, ook niet als Opdrachtgever de Opdracht met het oog op een bepaalde persoon heeft verleend."
+          "text": "De artikelen 7:404 en 7:407 lid 2 van het Burgerlijk Wetboek zijn niet van toepassing. De Opdracht wordt verstrekt aan Omnimerce als onderneming en niet aan een bepaalde persoon, ook niet als Opdrachtgever de Opdracht met het oog op een bepaalde persoon heeft verleend."
         },
         {
           "type": "p",
-          "text": "Opgegeven termijnen en opleverdata zijn streefdata en geen fatale termijnen, tenzij Partijen uitdrukkelijk schriftelijk anders zijn overeengekomen. Overschrijding geeft Opdrachtgever geen recht op ontbinding of schadevergoeding, tenzij Biite ook na een redelijke termijn van ingebrekestelling niet presteert."
+          "text": "Opgegeven termijnen en opleverdata zijn streefdata en geen fatale termijnen, tenzij Partijen uitdrukkelijk schriftelijk anders zijn overeengekomen. Overschrijding geeft Opdrachtgever geen recht op ontbinding of schadevergoeding, tenzij Omnimerce ook na een redelijke termijn van ingebrekestelling niet presteert."
         },
         {
           "type": "p",
-          "text": "Biite mag de Opdracht in fasen uitvoeren en het uitgevoerde deel afzonderlijk factureren."
+          "text": "Omnimerce mag de Opdracht in fasen uitvoeren en het uitgevoerde deel afzonderlijk factureren."
         },
         {
           "type": "p",
-          "text": "Is voor de voortgang de goedkeuring of medewerking van Opdrachtgever nodig, dan mag Biite de uitvoering opschorten tot die er is. De gevolgen daarvan komen voor rekening van Opdrachtgever."
+          "text": "Is voor de voortgang de goedkeuring of medewerking van Opdrachtgever nodig, dan mag Omnimerce de uitvoering opschorten tot die er is. De gevolgen daarvan komen voor rekening van Opdrachtgever."
         }
       ]
     },
@@ -1372,23 +1372,23 @@ export const voorwaarden = {
       "blocks": [
         {
           "type": "p",
-          "text": "Alle verbintenissen van Biite zijn inspanningsverbintenissen, tenzij en voor zover Biite in de Overeenkomst uitdrukkelijk en schriftelijk een resultaat heeft toegezegd."
+          "text": "Alle verbintenissen van Omnimerce zijn inspanningsverbintenissen, tenzij en voor zover Omnimerce in de Overeenkomst uitdrukkelijk en schriftelijk een resultaat heeft toegezegd."
         },
         {
           "type": "p",
-          "text": "Biite geeft geen garantie op een bepaalde uitkomst. Dit geldt in het bijzonder voor posities in zoekmachines, zichtbaarheid of vermelding in door AI gegenereerde antwoorden, bereik, bezoekersaantallen, aanvragen, leads, conversie, omzet, marktaandeel of rendement op investeringen."
+          "text": "Omnimerce geeft geen garantie op een bepaalde uitkomst. Dit geldt in het bijzonder voor posities in zoekmachines, zichtbaarheid of vermelding in door AI gegenereerde antwoorden, bereik, bezoekersaantallen, aanvragen, leads, conversie, omzet, marktaandeel of rendement op investeringen."
         },
         {
           "type": "p",
-          "text": "Prognoses, ramingen, benchmarks en scenario's die Biite verstrekt zijn schattingen op basis van de op dat moment beschikbare gegevens. Daaraan kunnen geen rechten worden ontleend."
+          "text": "Prognoses, ramingen, benchmarks en scenario's die Omnimerce verstrekt zijn schattingen op basis van de op dat moment beschikbare gegevens. Daaraan kunnen geen rechten worden ontleend."
         },
         {
           "type": "p",
-          "text": "Biite adviseert. De besluiten over de eigen organisatie, de eigen communicatie en de eigen investeringen blijven bij Opdrachtgever, en de gevolgen daarvan ook."
+          "text": "Omnimerce adviseert. De besluiten over de eigen organisatie, de eigen communicatie en de eigen investeringen blijven bij Opdrachtgever, en de gevolgen daarvan ook."
         },
         {
           "type": "p",
-          "text": "Wijkt Opdrachtgever af van een advies van Biite, dan is Biite niet aansprakelijk voor de gevolgen daarvan. Biite mag in dat geval verlangen dat de afwijking schriftelijk wordt vastgelegd."
+          "text": "Wijkt Opdrachtgever af van een advies van Omnimerce, dan is Omnimerce niet aansprakelijk voor de gevolgen daarvan. Omnimerce mag in dat geval verlangen dat de afwijking schriftelijk wordt vastgelegd."
         }
       ]
     },
@@ -1397,23 +1397,23 @@ export const voorwaarden = {
       "blocks": [
         {
           "type": "p",
-          "text": "De werkzaamheden van Biite zijn voor een deel afhankelijk van platforms, systemen en diensten van derden, waaronder zoekmachines, advertentieplatforms, sociale netwerken, aanbieders van AI-modellen, contentmanagementsystemen, analyse- en tagbeheerprogramma's, toestemmingsplatforms, koppelingen en hostingpartijen."
+          "text": "De werkzaamheden van Omnimerce zijn voor een deel afhankelijk van platforms, systemen en diensten van derden, waaronder zoekmachines, advertentieplatforms, sociale netwerken, aanbieders van AI-modellen, contentmanagementsystemen, analyse- en tagbeheerprogramma's, toestemmingsplatforms, koppelingen en hostingpartijen."
         },
         {
           "type": "p",
-          "text": "Wijzigingen in algoritmes, ranking, weergave, beleid, voorwaarden, tarieven, functionaliteit, koppelingen of beschikbaarheid van die platforms en diensten leveren geen tekortkoming van Biite op, en geven Opdrachtgever geen recht op ontbinding, korting of schadevergoeding."
+          "text": "Wijzigingen in algoritmes, ranking, weergave, beleid, voorwaarden, tarieven, functionaliteit, koppelingen of beschikbaarheid van die platforms en diensten leveren geen tekortkoming van Omnimerce op, en geven Opdrachtgever geen recht op ontbinding, korting of schadevergoeding."
         },
         {
           "type": "p",
-          "text": "Hetzelfde geldt voor het beperken, opschorten, blokkeren of beëindigen van een account van Opdrachtgever door een dergelijke partij, tenzij dit rechtstreeks het gevolg is van een aan Biite toe te rekenen fout."
+          "text": "Hetzelfde geldt voor het beperken, opschorten, blokkeren of beëindigen van een account van Opdrachtgever door een dergelijke partij, tenzij dit rechtstreeks het gevolg is van een aan Omnimerce toe te rekenen fout."
         },
         {
           "type": "p",
-          "text": "Licenties, abonnementen, advertentiebudgetten en andere kosten van derden komen voor rekening van Opdrachtgever. Biite gaat die verplichtingen alleen aan op naam en voor rekening van Opdrachtgever na diens schriftelijke akkoord."
+          "text": "Licenties, abonnementen, advertentiebudgetten en andere kosten van derden komen voor rekening van Opdrachtgever. Omnimerce gaat die verplichtingen alleen aan op naam en voor rekening van Opdrachtgever na diens schriftelijke akkoord."
         },
         {
           "type": "p",
-          "text": "Op producten en diensten van derden zijn de voorwaarden van die derden van toepassing. Biite aanvaardt daarvoor geen verdergaande aansprakelijkheid dan zij op die derde kan verhalen."
+          "text": "Op producten en diensten van derden zijn de voorwaarden van die derden van toepassing. Omnimerce aanvaardt daarvoor geen verdergaande aansprakelijkheid dan zij op die derde kan verhalen."
         }
       ]
     },
@@ -1422,7 +1422,7 @@ export const voorwaarden = {
       "blocks": [
         {
           "type": "p",
-          "text": "Opdrachtgever verstrekt tijdig alle gegevens, documenten, toegang en medewerking die Biite voor de uitvoering nodig heeft, en staat in voor de juistheid en volledigheid daarvan."
+          "text": "Opdrachtgever verstrekt tijdig alle gegevens, documenten, toegang en medewerking die Omnimerce voor de uitvoering nodig heeft, en staat in voor de juistheid en volledigheid daarvan."
         },
         {
           "type": "p",
@@ -1430,11 +1430,11 @@ export const voorwaarden = {
         },
         {
           "type": "p",
-          "text": "Opdrachtgever reageert binnen tien werkdagen op verzoeken om goedkeuring of terugkoppeling, tenzij Partijen een andere termijn afspreken. Blijft een reactie uit, dan mag Biite de betreffende stap als goedgekeurd beschouwen na een schriftelijke herinnering met een termijn van vijf werkdagen."
+          "text": "Opdrachtgever reageert binnen tien werkdagen op verzoeken om goedkeuring of terugkoppeling, tenzij Partijen een andere termijn afspreken. Blijft een reactie uit, dan mag Omnimerce de betreffende stap als goedgekeurd beschouwen na een schriftelijke herinnering met een termijn van vijf werkdagen."
         },
         {
           "type": "p",
-          "text": "Opdrachtgever staat ervoor in dat hij gerechtigd is de gegevens, teksten, beelden, merken en andere materialen die hij aanlevert door Biite te laten gebruiken, en vrijwaart Biite voor aanspraken van derden daarover."
+          "text": "Opdrachtgever staat ervoor in dat hij gerechtigd is de gegevens, teksten, beelden, merken en andere materialen die hij aanlevert door Omnimerce te laten gebruiken, en vrijwaart Omnimerce voor aanspraken van derden daarover."
         },
         {
           "type": "p",
@@ -1442,7 +1442,7 @@ export const voorwaarden = {
         },
         {
           "type": "p",
-          "text": "Blijft Opdrachtgever in gebreke met wat in dit artikel staat, dan mag Biite de uitvoering opschorten. De daardoor ontstane wachttijd, extra werkzaamheden en kosten worden doorbelast tegen het geldende uurtarief. Bij een Doorlopende Overeenkomst blijft de periodieke vergoeding gedurende de opschorting verschuldigd."
+          "text": "Blijft Opdrachtgever in gebreke met wat in dit artikel staat, dan mag Omnimerce de uitvoering opschorten. De daardoor ontstane wachttijd, extra werkzaamheden en kosten worden doorbelast tegen het geldende uurtarief. Bij een Doorlopende Overeenkomst blijft de periodieke vergoeding gedurende de opschorting verschuldigd."
         }
       ]
     },
@@ -1451,15 +1451,15 @@ export const voorwaarden = {
       "blocks": [
         {
           "type": "p",
-          "text": "Uitgangspunt is dat alle accounts die bij de werkzaamheden worden gebruikt, waaronder meet-, tag-, advertentie- en toestemmingsaccounts, op naam van Opdrachtgever staan en zijn eigendom blijven. Biite krijgt daarop toegang als gebruiker of beheerder."
+          "text": "Uitgangspunt is dat alle accounts die bij de werkzaamheden worden gebruikt, waaronder meet-, tag-, advertentie- en toestemmingsaccounts, op naam van Opdrachtgever staan en zijn eigendom blijven. Omnimerce krijgt daarop toegang als gebruiker of beheerder."
         },
         {
           "type": "p",
-          "text": "Is een account om praktische redenen op naam van Biite aangemaakt, dan draagt Biite dat op eerste verzoek en uiterlijk bij het einde van de Overeenkomst kosteloos over aan Opdrachtgever, voor zover het betreffende platform dat toestaat."
+          "text": "Is een account om praktische redenen op naam van Omnimerce aangemaakt, dan draagt Omnimerce dat op eerste verzoek en uiterlijk bij het einde van de Overeenkomst kosteloos over aan Opdrachtgever, voor zover het betreffende platform dat toestaat."
         },
         {
           "type": "p",
-          "text": "Bij het einde van de Overeenkomst levert Biite haar toegang in. Biite verwijdert, wijzigt of deactiveert daarbij niets in de omgeving van Opdrachtgever, tenzij Opdrachtgever daar schriftelijk om vraagt."
+          "text": "Bij het einde van de Overeenkomst levert Omnimerce haar toegang in. Omnimerce verwijdert, wijzigt of deactiveert daarbij niets in de omgeving van Opdrachtgever, tenzij Opdrachtgever daar schriftelijk om vraagt."
         },
         {
           "type": "p",
@@ -1467,11 +1467,11 @@ export const voorwaarden = {
         },
         {
           "type": "p",
-          "text": "Biite bewaart de bestanden die bij een Opdracht horen gedurende twaalf maanden na afronding, en is niet verplicht die langer te bewaren. Opdrachtgever is zelf verantwoordelijk voor het maken en bewaren van kopieën van opgeleverd Werk."
+          "text": "Omnimerce bewaart de bestanden die bij een Opdracht horen gedurende twaalf maanden na afronding, en is niet verplicht die langer te bewaren. Opdrachtgever is zelf verantwoordelijk voor het maken en bewaren van kopieën van opgeleverd Werk."
         },
         {
           "type": "p",
-          "text": "Biite is niet verantwoordelijk voor back-ups van de systemen van Opdrachtgever, tenzij dat uitdrukkelijk tot de Opdracht behoort."
+          "text": "Omnimerce is niet verantwoordelijk voor back-ups van de systemen van Opdrachtgever, tenzij dat uitdrukkelijk tot de Opdracht behoort."
         }
       ]
     },
@@ -1484,11 +1484,11 @@ export const voorwaarden = {
         },
         {
           "type": "p",
-          "text": "Van meerwerk is in ieder geval sprake wanneer Opdrachtgever de omvang of het resultaat van de Opdracht uitbreidt, wanneer eerder gegeven uitgangspunten worden gewijzigd, wanneer aangeleverde informatie onjuist of onvolledig blijkt, of wanneer werk opnieuw moet worden gedaan door een oorzaak die niet aan Biite is toe te rekenen."
+          "text": "Van meerwerk is in ieder geval sprake wanneer Opdrachtgever de omvang of het resultaat van de Opdracht uitbreidt, wanneer eerder gegeven uitgangspunten worden gewijzigd, wanneer aangeleverde informatie onjuist of onvolledig blijkt, of wanneer werk opnieuw moet worden gedaan door een oorzaak die niet aan Omnimerce is toe te rekenen."
         },
         {
           "type": "p",
-          "text": "Biite meldt meerwerk vooraf, met een indicatie van de gevolgen voor prijs en planning, en voert het pas uit na schriftelijk akkoord van Opdrachtgever."
+          "text": "Omnimerce meldt meerwerk vooraf, met een indicatie van de gevolgen voor prijs en planning, en voert het pas uit na schriftelijk akkoord van Opdrachtgever."
         },
         {
           "type": "p",
@@ -1496,7 +1496,7 @@ export const voorwaarden = {
         },
         {
           "type": "p",
-          "text": "Een wijziging kan gevolgen hebben voor de planning. Biite is niet aansprakelijk voor vertraging die daaruit voortvloeit."
+          "text": "Een wijziging kan gevolgen hebben voor de planning. Omnimerce is niet aansprakelijk voor vertraging die daaruit voortvloeit."
         },
         {
           "type": "p",
@@ -1513,11 +1513,11 @@ export const voorwaarden = {
         },
         {
           "type": "p",
-          "text": "Biite mag de tarieven jaarlijks per 1 januari aanpassen aan de ontwikkeling van het consumentenprijsindexcijfer voor alle huishoudens van het Centraal Bureau voor de Statistiek over het voorafgaande kalenderjaar. Biite kondigt dit ten minste dertig dagen van tevoren aan. Deze aanpassing geeft geen recht op tussentijdse opzegging."
+          "text": "Omnimerce mag de tarieven jaarlijks per 1 januari aanpassen aan de ontwikkeling van het consumentenprijsindexcijfer voor alle huishoudens van het Centraal Bureau voor de Statistiek over het voorafgaande kalenderjaar. Omnimerce kondigt dit ten minste dertig dagen van tevoren aan. Deze aanpassing geeft geen recht op tussentijdse opzegging."
         },
         {
           "type": "p",
-          "text": "Stijgen de kosten van Biite tussentijds aantoonbaar en substantieel, bijvoorbeeld door hogere tarieven van derden of gewijzigde heffingen, dan mag Biite de prijs daaraan aanpassen. Biite kondigt dit ten minste dertig dagen van tevoren schriftelijk aan en onderbouwt de aanpassing."
+          "text": "Stijgen de kosten van Omnimerce tussentijds aantoonbaar en substantieel, bijvoorbeeld door hogere tarieven van derden of gewijzigde heffingen, dan mag Omnimerce de prijs daaraan aanpassen. Omnimerce kondigt dit ten minste dertig dagen van tevoren schriftelijk aan en onderbouwt de aanpassing."
         },
         {
           "type": "p",
@@ -1550,15 +1550,15 @@ export const voorwaarden = {
         },
         {
           "type": "p",
-          "text": "Bij een Opdracht op uurbasis houdt Biite een urenregistratie bij en verstrekt die op verzoek. Bij verschil van inzicht geldt de registratie van Biite als bewijs, behoudens tegenbewijs."
+          "text": "Bij een Opdracht op uurbasis houdt Omnimerce een urenregistratie bij en verstrekt die op verzoek. Bij verschil van inzicht geldt de registratie van Omnimerce als bewijs, behoudens tegenbewijs."
         },
         {
           "type": "p",
-          "text": "Biite mag verlangen dat Opdrachtgever vooruitbetaalt of zekerheid stelt, als er gegronde reden is om te twijfelen aan diens nakoming. Voldoet Opdrachtgever daar niet aan, dan mag Biite de uitvoering opschorten."
+          "text": "Omnimerce mag verlangen dat Opdrachtgever vooruitbetaalt of zekerheid stelt, als er gegronde reden is om te twijfelen aan diens nakoming. Voldoet Opdrachtgever daar niet aan, dan mag Omnimerce de uitvoering opschorten."
         },
         {
           "type": "p",
-          "text": "Opdrachtgever mag betaling niet opschorten en niet verrekenen met een vordering op Biite, van welke aard ook."
+          "text": "Opdrachtgever mag betaling niet opschorten en niet verrekenen met een vordering op Omnimerce, van welke aard ook."
         },
         {
           "type": "p",
@@ -1574,7 +1574,7 @@ export const voorwaarden = {
         },
         {
           "type": "p",
-          "text": "Bij verzuim mag Biite de werkzaamheden opschorten, nadat zij Opdrachtgever daar schriftelijk op heeft gewezen. Biite is niet aansprakelijk voor schade die daaruit voortvloeit."
+          "text": "Bij verzuim mag Omnimerce de werkzaamheden opschorten, nadat zij Opdrachtgever daar schriftelijk op heeft gewezen. Omnimerce is niet aansprakelijk voor schade die daaruit voortvloeit."
         },
         {
           "type": "p",
@@ -1587,7 +1587,7 @@ export const voorwaarden = {
       "blocks": [
         {
           "type": "p",
-          "text": "Opdracht tegen vaste prijs. Deze eindigt door oplevering en aanvaarding van het Werk. Zegt Opdrachtgever tussentijds op, dan is hij het reeds uitgevoerde deel van de Opdracht naar rato verschuldigd, vermeerderd met de verplichtingen die Biite voor de Opdracht al jegens derden is aangegaan."
+          "text": "Opdracht tegen vaste prijs. Deze eindigt door oplevering en aanvaarding van het Werk. Zegt Opdrachtgever tussentijds op, dan is hij het reeds uitgevoerde deel van de Opdracht naar rato verschuldigd, vermeerderd met de verplichtingen die Omnimerce voor de Opdracht al jegens derden is aangegaan."
         },
         {
           "type": "p",
@@ -1603,7 +1603,7 @@ export const voorwaarden = {
         },
         {
           "type": "p",
-          "text": "Biite mag de Doorlopende Overeenkomst schriftelijk opzeggen tegen het einde van een kalendermaand, met inachtneming van een opzegtermijn van twee maanden."
+          "text": "Omnimerce mag de Doorlopende Overeenkomst schriftelijk opzeggen tegen het einde van een kalendermaand, met inachtneming van een opzegtermijn van twee maanden."
         },
         {
           "type": "p",
@@ -1611,7 +1611,7 @@ export const voorwaarden = {
         },
         {
           "type": "p",
-          "text": "Bij het einde van de Overeenkomst verricht Biite op verzoek een redelijke overdracht aan Opdrachtgever of aan een door hem aangewezen partij. Deze werkzaamheden worden afgerekend tegen het geldende uurtarief, tenzij anders is afgesproken."
+          "text": "Bij het einde van de Overeenkomst verricht Omnimerce op verzoek een redelijke overdracht aan Opdrachtgever of aan een door hem aangewezen partij. Deze werkzaamheden worden afgerekend tegen het geldende uurtarief, tenzij anders is afgesproken."
         }
       ]
     },
@@ -1620,7 +1620,7 @@ export const voorwaarden = {
       "blocks": [
         {
           "type": "p",
-          "text": "Biite mag de Overeenkomst geheel of gedeeltelijk ontbinden, of de nakoming daarvan opschorten, zonder ingebrekestelling en zonder tot schadevergoeding gehouden te zijn, als:"
+          "text": "Omnimerce mag de Overeenkomst geheel of gedeeltelijk ontbinden, of de nakoming daarvan opschorten, zonder ingebrekestelling en zonder tot schadevergoeding gehouden te zijn, als:"
         },
         {
           "type": "ul",
@@ -1633,7 +1633,7 @@ export const voorwaarden = {
         },
         {
           "type": "p",
-          "text": "In de gevallen van lid 1 zijn alle vorderingen van Biite op Opdrachtgever onmiddellijk opeisbaar."
+          "text": "In de gevallen van lid 1 zijn alle vorderingen van Omnimerce op Opdrachtgever onmiddellijk opeisbaar."
         },
         {
           "type": "p",
@@ -1641,7 +1641,7 @@ export const voorwaarden = {
         },
         {
           "type": "p",
-          "text": "Ontbinding werkt niet terug voor prestaties die al zijn verricht. Wat Biite tot het moment van ontbinding heeft geleverd, wordt afgerekend."
+          "text": "Ontbinding werkt niet terug voor prestaties die al zijn verricht. Wat Omnimerce tot het moment van ontbinding heeft geleverd, wordt afgerekend."
         }
       ]
     },
@@ -1650,23 +1650,23 @@ export const voorwaarden = {
       "blocks": [
         {
           "type": "p",
-          "text": "Biite is niet gehouden tot nakoming van enige verplichting als zij daartoe wordt gehinderd door een omstandigheid die niet aan haar schuld te wijten is, en die evenmin op grond van de wet, een rechtshandeling of het verkeer voor haar rekening komt."
+          "text": "Omnimerce is niet gehouden tot nakoming van enige verplichting als zij daartoe wordt gehinderd door een omstandigheid die niet aan haar schuld te wijten is, en die evenmin op grond van de wet, een rechtshandeling of het verkeer voor haar rekening komt."
         },
         {
           "type": "p",
-          "text": "Onder overmacht wordt in ieder geval verstaan: ziekte, ongeval of arbeidsongeschiktheid aan de zijde van Biite of van door haar ingeschakelde personen; storingen, uitval of beëindiging van diensten van hosting-, platform-, netwerk- of energieleveranciers; cyberaanvallen, gijzelsoftware en datalekken bij derden; het uitvallen van internet- of telecommunicatieverbindingen; overheidsmaatregelen; oorlog, terrorisme en maatschappelijke ontwrichting; en tekortkomingen van door Biite ingeschakelde derden."
+          "text": "Onder overmacht wordt in ieder geval verstaan: ziekte, ongeval of arbeidsongeschiktheid aan de zijde van Omnimerce of van door haar ingeschakelde personen; storingen, uitval of beëindiging van diensten van hosting-, platform-, netwerk- of energieleveranciers; cyberaanvallen, gijzelsoftware en datalekken bij derden; het uitvallen van internet- of telecommunicatieverbindingen; overheidsmaatregelen; oorlog, terrorisme en maatschappelijke ontwrichting; en tekortkomingen van door Omnimerce ingeschakelde derden."
         },
         {
           "type": "p",
-          "text": "Tijdens overmacht worden de verplichtingen van Biite opgeschort. Duurt de overmacht langer dan zestig dagen, dan mag ieder van Partijen de Overeenkomst schriftelijk ontbinden, zonder verplichting tot schadevergoeding over en weer."
+          "text": "Tijdens overmacht worden de verplichtingen van Omnimerce opgeschort. Duurt de overmacht langer dan zestig dagen, dan mag ieder van Partijen de Overeenkomst schriftelijk ontbinden, zonder verplichting tot schadevergoeding over en weer."
         },
         {
           "type": "p",
-          "text": "Heeft Biite bij het intreden van de overmacht al gedeeltelijk gepresteerd, of kan zij nog gedeeltelijk presteren, dan mag zij dat deel afzonderlijk factureren."
+          "text": "Heeft Omnimerce bij het intreden van de overmacht al gedeeltelijk gepresteerd, of kan zij nog gedeeltelijk presteren, dan mag zij dat deel afzonderlijk factureren."
         },
         {
           "type": "p",
-          "text": "Bij langdurige verhindering van de persoon die de werkzaamheden feitelijk verricht, spant Biite zich in om voor vervanging te zorgen. Lukt dat niet binnen een redelijke termijn, dan geldt lid 3."
+          "text": "Bij langdurige verhindering van de persoon die de werkzaamheden feitelijk verricht, spant Omnimerce zich in om voor vervanging te zorgen. Lukt dat niet binnen een redelijke termijn, dan geldt lid 3."
         }
       ]
     },
@@ -1675,33 +1675,33 @@ export const voorwaarden = {
       "blocks": [
         {
           "type": "p",
-          "text": "Biite is uitsluitend aansprakelijk voor directe schade die het gevolg is van een toerekenbare tekortkoming in de nakoming van de Overeenkomst."
+          "text": "Omnimerce is uitsluitend aansprakelijk voor directe schade die het gevolg is van een toerekenbare tekortkoming in de nakoming van de Overeenkomst."
         },
         {
           "type": "p",
-          "text": "Onder directe schade wordt uitsluitend verstaan: de redelijke kosten om de prestatie van Biite alsnog aan de Overeenkomst te laten beantwoorden, de redelijke kosten om de oorzaak en de omvang van de schade vast te stellen, en de redelijke kosten om de schade te voorkomen of te beperken."
+          "text": "Onder directe schade wordt uitsluitend verstaan: de redelijke kosten om de prestatie van Omnimerce alsnog aan de Overeenkomst te laten beantwoorden, de redelijke kosten om de oorzaak en de omvang van de schade vast te stellen, en de redelijke kosten om de schade te voorkomen of te beperken."
         },
         {
           "type": "p",
-          "text": "De aansprakelijkheid van Biite is per gebeurtenis en per kalenderjaar beperkt tot het bedrag dat Opdrachtgever in de twaalf maanden voorafgaand aan de schadeveroorzakende gebeurtenis op grond van de Overeenkomst aan Biite heeft betaald, exclusief btw. Bestaat de Overeenkomst op dat moment korter dan twaalf maanden, dan geldt het tot dat moment betaalde bedrag. Een reeks van samenhangende gebeurtenissen geldt als één gebeurtenis."
+          "text": "De aansprakelijkheid van Omnimerce is per gebeurtenis en per kalenderjaar beperkt tot het bedrag dat Opdrachtgever in de twaalf maanden voorafgaand aan de schadeveroorzakende gebeurtenis op grond van de Overeenkomst aan Omnimerce heeft betaald, exclusief btw. Bestaat de Overeenkomst op dat moment korter dan twaalf maanden, dan geldt het tot dat moment betaalde bedrag. Een reeks van samenhangende gebeurtenissen geldt als één gebeurtenis."
         },
         {
           "type": "p",
-          "text": "Heeft Biite een aansprakelijkheidsverzekering die in het betreffende geval dekking biedt en tot uitkering overgaat, dan is de aansprakelijkheid beperkt tot het door de verzekeraar uitgekeerde bedrag, vermeerderd met het eigen risico. In dat geval gaat dit lid voor op het vorige lid."
+          "text": "Heeft Omnimerce een aansprakelijkheidsverzekering die in het betreffende geval dekking biedt en tot uitkering overgaat, dan is de aansprakelijkheid beperkt tot het door de verzekeraar uitgekeerde bedrag, vermeerderd met het eigen risico. In dat geval gaat dit lid voor op het vorige lid."
         },
         {
           "type": "p",
-          "text": "Biite is niet aansprakelijk voor indirecte schade. Daaronder valt in ieder geval: gederfde winst, gemiste omzet, gemiste besparingen, verminderde goodwill, reputatieschade, schade door bedrijfsstagnatie, schade door verlies van posities in zoekmachines of van zichtbaarheid in door AI gegenereerde antwoorden, schade door verlies, verminking of verkeerd gebruik van gegevens, boetes en sancties van toezichthouders, en schade door aanspraken van derden."
+          "text": "Omnimerce is niet aansprakelijk voor indirecte schade. Daaronder valt in ieder geval: gederfde winst, gemiste omzet, gemiste besparingen, verminderde goodwill, reputatieschade, schade door bedrijfsstagnatie, schade door verlies van posities in zoekmachines of van zichtbaarheid in door AI gegenereerde antwoorden, schade door verlies, verminking of verkeerd gebruik van gegevens, boetes en sancties van toezichthouders, en schade door aanspraken van derden."
         },
         {
           "type": "p",
-          "text": "Biite is niet aansprakelijk voor schade die het gevolg is van:"
+          "text": "Omnimerce is niet aansprakelijk voor schade die het gevolg is van:"
         },
         {
           "type": "ul",
           "items": [
             "onjuiste, onvolledige of te laat verstrekte gegevens van Opdrachtgever",
-            "besluiten van Opdrachtgever die afwijken van het advies van Biite",
+            "besluiten van Opdrachtgever die afwijken van het advies van Omnimerce",
             "het handelen of nalaten van derden, waaronder de partijen genoemd in artikel 6",
             "wijzigingen die Opdrachtgever of een derde na oplevering in het Werk aanbrengt",
             "het niet nakomen van de verplichtingen uit artikel 7 door Opdrachtgever."
@@ -1709,15 +1709,15 @@ export const voorwaarden = {
         },
         {
           "type": "p",
-          "text": "Voorwaarde voor het ontstaan van enig recht op schadevergoeding is dat Opdrachtgever de schade zo spoedig mogelijk, en uiterlijk binnen dertig dagen na ontdekking, schriftelijk aan Biite meldt."
+          "text": "Voorwaarde voor het ontstaan van enig recht op schadevergoeding is dat Opdrachtgever de schade zo spoedig mogelijk, en uiterlijk binnen dertig dagen na ontdekking, schriftelijk aan Omnimerce meldt."
         },
         {
           "type": "p",
-          "text": "De beperkingen in dit artikel gelden niet voor zover de schade het gevolg is van opzet of bewuste roekeloosheid van Biite."
+          "text": "De beperkingen in dit artikel gelden niet voor zover de schade het gevolg is van opzet of bewuste roekeloosheid van Omnimerce."
         },
         {
           "type": "p",
-          "text": "Opdrachtgever vrijwaart Biite voor aanspraken van derden die verband houden met de uitvoering van de Overeenkomst, voor zover die aanspraken hun oorzaak vinden in de risicosfeer van Opdrachtgever zoals omschreven in deze Voorwaarden."
+          "text": "Opdrachtgever vrijwaart Omnimerce voor aanspraken van derden die verband houden met de uitvoering van de Overeenkomst, voor zover die aanspraken hun oorzaak vinden in de risicosfeer van Opdrachtgever zoals omschreven in deze Voorwaarden."
         }
       ]
     },
@@ -1726,7 +1726,7 @@ export const voorwaarden = {
       "blocks": [
         {
           "type": "p",
-          "text": "Opdrachtgever onderzoekt het opgeleverde Werk zodra hij daarover beschikt, en meldt gebreken binnen veertien dagen na ontdekking schriftelijk en onderbouwd aan Biite."
+          "text": "Opdrachtgever onderzoekt het opgeleverde Werk zodra hij daarover beschikt, en meldt gebreken binnen veertien dagen na ontdekking schriftelijk en onderbouwd aan Omnimerce."
         },
         {
           "type": "p",
@@ -1734,7 +1734,7 @@ export const voorwaarden = {
         },
         {
           "type": "p",
-          "text": "Is de klacht gegrond, dan krijgt Biite een redelijke termijn om het Werk alsnog te leveren, te herstellen of te vervangen. Lukt dat niet, dan mag Biite in plaats daarvan een deel van de prijs crediteren."
+          "text": "Is de klacht gegrond, dan krijgt Omnimerce een redelijke termijn om het Werk alsnog te leveren, te herstellen of te vervangen. Lukt dat niet, dan mag Omnimerce in plaats daarvan een deel van de prijs crediteren."
         },
         {
           "type": "p",
@@ -1742,7 +1742,7 @@ export const voorwaarden = {
         },
         {
           "type": "p",
-          "text": "Iedere vordering van Opdrachtgever op Biite vervalt in ieder geval twaalf maanden nadat Opdrachtgever bekend werd of redelijkerwijs bekend kon zijn met de feiten waarop de vordering berust, en in ieder geval twaalf maanden na het einde van de Overeenkomst."
+          "text": "Iedere vordering van Opdrachtgever op Omnimerce vervalt in ieder geval twaalf maanden nadat Opdrachtgever bekend werd of redelijkerwijs bekend kon zijn met de feiten waarop de vordering berust, en in ieder geval twaalf maanden na het einde van de Overeenkomst."
         }
       ]
     },
@@ -1751,27 +1751,27 @@ export const voorwaarden = {
       "blocks": [
         {
           "type": "p",
-          "text": "Alle intellectuele eigendomsrechten op de Materialen berusten bij Biite en blijven bij Biite. Opdrachtgever verkrijgt daarop geen rechten, ook niet wanneer die Materialen in het Werk zijn verwerkt of daarvoor zijn ingezet."
+          "text": "Alle intellectuele eigendomsrechten op de Materialen berusten bij Omnimerce en blijven bij Omnimerce. Opdrachtgever verkrijgt daarop geen rechten, ook niet wanneer die Materialen in het Werk zijn verwerkt of daarvoor zijn ingezet."
         },
         {
           "type": "p",
-          "text": "Biite blijft vrij om de kennis, ervaring, methoden en werkwijzen die zij bij de uitvoering van de Opdracht opdoet of gebruikt, voor andere opdrachtgevers in te zetten, mits daarbij geen vertrouwelijke informatie van Opdrachtgever wordt gebruikt of openbaar wordt."
+          "text": "Omnimerce blijft vrij om de kennis, ervaring, methoden en werkwijzen die zij bij de uitvoering van de Opdracht opdoet of gebruikt, voor andere opdrachtgevers in te zetten, mits daarbij geen vertrouwelijke informatie van Opdrachtgever wordt gebruikt of openbaar wordt."
         },
         {
           "type": "p",
-          "text": "Biite draagt hierbij, onder de opschortende voorwaarde van volledige betaling van alles wat Opdrachtgever uit hoofde van de Overeenkomst verschuldigd is, aan Opdrachtgever over: alle intellectuele eigendomsrechten op het Werk, voor zover die rechten bij Biite berusten en voor zover zij overdraagbaar zijn. Opdrachtgever aanvaardt die overdracht hierbij. Partijen beogen dat deze bepaling, samen met de schriftelijke aanvaarding van de Offerte, geldt als akte in de zin van artikel 2 van de Auteurswet."
+          "text": "Omnimerce draagt hierbij, onder de opschortende voorwaarde van volledige betaling van alles wat Opdrachtgever uit hoofde van de Overeenkomst verschuldigd is, aan Opdrachtgever over: alle intellectuele eigendomsrechten op het Werk, voor zover die rechten bij Omnimerce berusten en voor zover zij overdraagbaar zijn. Opdrachtgever aanvaardt die overdracht hierbij. Partijen beogen dat deze bepaling, samen met de schriftelijke aanvaarding van de Offerte, geldt als akte in de zin van artikel 2 van de Auteurswet."
         },
         {
           "type": "p",
-          "text": "Zolang niet volledig is betaald, berusten alle rechten op het Werk bij Biite en is het Opdrachtgever niet toegestaan het Werk te gebruiken, te verveelvoudigen of openbaar te maken."
+          "text": "Zolang niet volledig is betaald, berusten alle rechten op het Werk bij Omnimerce en is het Opdrachtgever niet toegestaan het Werk te gebruiken, te verveelvoudigen of openbaar te maken."
         },
         {
           "type": "p",
-          "text": "Voor zover Materialen in het Werk zijn verwerkt en het Werk zonder die Materialen niet bruikbaar is, verleent Biite aan Opdrachtgever een niet-exclusief, wereldwijd, eeuwigdurend en niet-overdraagbaar gebruiksrecht op die Materialen, beperkt tot het gebruik van het Werk binnen de eigen onderneming van Opdrachtgever. Dit gebruiksrecht gaat in op hetzelfde moment als de overdracht in lid 3."
+          "text": "Voor zover Materialen in het Werk zijn verwerkt en het Werk zonder die Materialen niet bruikbaar is, verleent Omnimerce aan Opdrachtgever een niet-exclusief, wereldwijd, eeuwigdurend en niet-overdraagbaar gebruiksrecht op die Materialen, beperkt tot het gebruik van het Werk binnen de eigen onderneming van Opdrachtgever. Dit gebruiksrecht gaat in op hetzelfde moment als de overdracht in lid 3."
         },
         {
           "type": "p",
-          "text": "Biite doet afstand van het recht op naamsvermelding, voor zover dat naar Nederlands recht mogelijk is. Het recht om zich te verzetten tegen misvorming of aantasting van het Werk blijft bestaan."
+          "text": "Omnimerce doet afstand van het recht op naamsvermelding, voor zover dat naar Nederlands recht mogelijk is. Het recht om zich te verzetten tegen misvorming of aantasting van het Werk blijft bestaan."
         },
         {
           "type": "p",
@@ -1779,7 +1779,7 @@ export const voorwaarden = {
         },
         {
           "type": "p",
-          "text": "Biite is niet aansprakelijk voor inbreuk op rechten van derden door materialen die Opdrachtgever heeft aangeleverd of voorgeschreven."
+          "text": "Omnimerce is niet aansprakelijk voor inbreuk op rechten van derden door materialen die Opdrachtgever heeft aangeleverd of voorgeschreven."
         }
       ]
     },
@@ -1788,27 +1788,27 @@ export const voorwaarden = {
       "blocks": [
         {
           "type": "p",
-          "text": "Biite mag bij de uitvoering van de Opdracht kunstmatige intelligentie inzetten. Biite legt per Opdracht schriftelijk vast op welke onderdelen dat gebeurt."
+          "text": "Omnimerce mag bij de uitvoering van de Opdracht kunstmatige intelligentie inzetten. Omnimerce legt per Opdracht schriftelijk vast op welke onderdelen dat gebeurt."
         },
         {
           "type": "p",
-          "text": "Biite blijft voor het opgeleverde Werk volledig verantwoordelijk, ongeacht of daarbij AI is ingezet. De inzet van AI vormt geen grond voor beperking van de verplichtingen van Biite."
+          "text": "Omnimerce blijft voor het opgeleverde Werk volledig verantwoordelijk, ongeacht of daarbij AI is ingezet. De inzet van AI vormt geen grond voor beperking van de verplichtingen van Omnimerce."
         },
         {
           "type": "p",
-          "text": "Biite verstrekt geen vertrouwelijke informatie en geen persoonsgegevens van Opdrachtgever aan publiek toegankelijke AI-diensten, tenzij Partijen daarover vooraf schriftelijk afspraken hebben gemaakt en de verwerking voldoet aan artikel 20."
+          "text": "Omnimerce verstrekt geen vertrouwelijke informatie en geen persoonsgegevens van Opdrachtgever aan publiek toegankelijke AI-diensten, tenzij Partijen daarover vooraf schriftelijk afspraken hebben gemaakt en de verwerking voldoet aan artikel 20."
         },
         {
           "type": "p",
-          "text": "Zet Opdrachtgever zelf AI in, al dan niet met systemen, koppelingen, instructies of werkwijzen die door Biite zijn opgezet, dan is hij zelf verantwoordelijk voor de uitkomsten daarvan en voor het gebruik en de publicatie ervan."
+          "text": "Zet Opdrachtgever zelf AI in, al dan niet met systemen, koppelingen, instructies of werkwijzen die door Omnimerce zijn opgezet, dan is hij zelf verantwoordelijk voor de uitkomsten daarvan en voor het gebruik en de publicatie ervan."
         },
         {
           "type": "p",
-          "text": "Uitkomsten van AI kunnen onjuist, onvolledig of misleidend zijn. Opdrachtgever controleert het Werk voordat hij het publiceert of in gebruik neemt, ook wanneer Biite dat al heeft gedaan."
+          "text": "Uitkomsten van AI kunnen onjuist, onvolledig of misleidend zijn. Opdrachtgever controleert het Werk voordat hij het publiceert of in gebruik neemt, ook wanneer Omnimerce dat al heeft gedaan."
         },
         {
           "type": "p",
-          "text": "Op materiaal dat geheel of gedeeltelijk door AI is gegenereerd, rusten mogelijk geen of beperkte intellectuele eigendomsrechten. De overdracht in artikel 17.3 geldt uitsluitend voor zover die rechten bestaan en overdraagbaar zijn. Biite garandeert niet dat op AI-gegenereerd materiaal auteursrecht rust."
+          "text": "Op materiaal dat geheel of gedeeltelijk door AI is gegenereerd, rusten mogelijk geen of beperkte intellectuele eigendomsrechten. De overdracht in artikel 17.3 geldt uitsluitend voor zover die rechten bestaan en overdraagbaar zijn. Omnimerce garandeert niet dat op AI-gegenereerd materiaal auteursrecht rust."
         }
       ]
     },
@@ -1842,7 +1842,7 @@ export const voorwaarden = {
       "blocks": [
         {
           "type": "p",
-          "text": "Verwerkt Biite bij de uitvoering van de Opdracht persoonsgegevens waarvoor Opdrachtgever het doel en de middelen bepaalt, dan is Opdrachtgever verwerkingsverantwoordelijke en Biite verwerker in de zin van de Algemene verordening gegevensbescherming. Dit artikel geldt in dat geval als verwerkersovereenkomst."
+          "text": "Verwerkt Omnimerce bij de uitvoering van de Opdracht persoonsgegevens waarvoor Opdrachtgever het doel en de middelen bepaalt, dan is Opdrachtgever verwerkingsverantwoordelijke en Omnimerce verwerker in de zin van de Algemene verordening gegevensbescherming. Dit artikel geldt in dat geval als verwerkersovereenkomst."
         },
         {
           "type": "p",
@@ -1850,43 +1850,43 @@ export const voorwaarden = {
         },
         {
           "type": "p",
-          "text": "Biite verwerkt de persoonsgegevens uitsluitend op schriftelijke instructie van Opdrachtgever, tenzij een wettelijke verplichting anders bepaalt. Biite informeert Opdrachtgever als naar haar oordeel een instructie in strijd is met de wet."
+          "text": "Omnimerce verwerkt de persoonsgegevens uitsluitend op schriftelijke instructie van Opdrachtgever, tenzij een wettelijke verplichting anders bepaalt. Omnimerce informeert Opdrachtgever als naar haar oordeel een instructie in strijd is met de wet."
         },
         {
           "type": "p",
-          "text": "Biite legt geheimhouding op aan iedereen die onder haar verantwoordelijkheid toegang tot de gegevens heeft."
+          "text": "Omnimerce legt geheimhouding op aan iedereen die onder haar verantwoordelijkheid toegang tot de gegevens heeft."
         },
         {
           "type": "p",
-          "text": "Biite treft passende technische en organisatorische maatregelen als bedoeld in artikel 32 van de Algemene verordening gegevensbescherming, en houdt daarbij rekening met de stand van de techniek en de aard van de gegevens."
+          "text": "Omnimerce treft passende technische en organisatorische maatregelen als bedoeld in artikel 32 van de Algemene verordening gegevensbescherming, en houdt daarbij rekening met de stand van de techniek en de aard van de gegevens."
         },
         {
           "type": "p",
-          "text": "Opdrachtgever verleent Biite algemene toestemming om subverwerkers in te schakelen. Biite informeert Opdrachtgever over voorgenomen wijzigingen in de subverwerkers en geeft hem gelegenheid daartegen binnen veertien dagen gemotiveerd bezwaar te maken. Biite legt aan subverwerkers verplichtingen op die niet minder streng zijn dan die uit dit artikel."
+          "text": "Opdrachtgever verleent Omnimerce algemene toestemming om subverwerkers in te schakelen. Omnimerce informeert Opdrachtgever over voorgenomen wijzigingen in de subverwerkers en geeft hem gelegenheid daartegen binnen veertien dagen gemotiveerd bezwaar te maken. Omnimerce legt aan subverwerkers verplichtingen op die niet minder streng zijn dan die uit dit artikel."
         },
         {
           "type": "p",
-          "text": "Biite verleent Opdrachtgever redelijke bijstand bij het beantwoorden van verzoeken van betrokkenen, bij gegevensbeschermingseffectbeoordelingen en bij overleg met de toezichthouder. Voor deze bijstand mag Biite het geldende uurtarief in rekening brengen, tenzij de bijstand voortvloeit uit een tekortkoming van Biite."
+          "text": "Omnimerce verleent Opdrachtgever redelijke bijstand bij het beantwoorden van verzoeken van betrokkenen, bij gegevensbeschermingseffectbeoordelingen en bij overleg met de toezichthouder. Voor deze bijstand mag Omnimerce het geldende uurtarief in rekening brengen, tenzij de bijstand voortvloeit uit een tekortkoming van Omnimerce."
         },
         {
           "type": "p",
-          "text": "Biite meldt een inbreuk in verband met persoonsgegevens zonder onredelijke vertraging en in ieder geval binnen achtenveertig uur na ontdekking schriftelijk aan Opdrachtgever, met de informatie die Opdrachtgever nodig heeft om aan zijn eigen meldplicht te voldoen. Het melden bij de toezichthouder en bij betrokkenen is de verantwoordelijkheid van Opdrachtgever."
+          "text": "Omnimerce meldt een inbreuk in verband met persoonsgegevens zonder onredelijke vertraging en in ieder geval binnen achtenveertig uur na ontdekking schriftelijk aan Opdrachtgever, met de informatie die Opdrachtgever nodig heeft om aan zijn eigen meldplicht te voldoen. Het melden bij de toezichthouder en bij betrokkenen is de verantwoordelijkheid van Opdrachtgever."
         },
         {
           "type": "p",
-          "text": "Bij het einde van de Overeenkomst verwijdert Biite de persoonsgegevens, of geeft zij die terug, naar keuze van Opdrachtgever, tenzij een wettelijke bewaarplicht anders bepaalt."
+          "text": "Bij het einde van de Overeenkomst verwijdert Omnimerce de persoonsgegevens, of geeft zij die terug, naar keuze van Opdrachtgever, tenzij een wettelijke bewaarplicht anders bepaalt."
         },
         {
           "type": "p",
-          "text": "Biite stelt Opdrachtgever op verzoek de informatie ter beschikking die nodig is om de naleving van dit artikel aan te tonen, en werkt mee aan een audit door Opdrachtgever of een door hem aangewezen onafhankelijke deskundige, met een maximum van één audit per kalenderjaar. De kosten daarvan komen voor rekening van Opdrachtgever, tenzij uit de audit een wezenlijke tekortkoming van Biite blijkt."
+          "text": "Omnimerce stelt Opdrachtgever op verzoek de informatie ter beschikking die nodig is om de naleving van dit artikel aan te tonen, en werkt mee aan een audit door Opdrachtgever of een door hem aangewezen onafhankelijke deskundige, met een maximum van één audit per kalenderjaar. De kosten daarvan komen voor rekening van Opdrachtgever, tenzij uit de audit een wezenlijke tekortkoming van Omnimerce blijkt."
         },
         {
           "type": "p",
-          "text": "Biite verwerkt persoonsgegevens uitsluitend binnen de Europese Economische Ruimte, of daarbuiten met passende waarborgen als bedoeld in hoofdstuk V van de Algemene verordening gegevensbescherming."
+          "text": "Omnimerce verwerkt persoonsgegevens uitsluitend binnen de Europese Economische Ruimte, of daarbuiten met passende waarborgen als bedoeld in hoofdstuk V van de Algemene verordening gegevensbescherming."
         },
         {
           "type": "p",
-          "text": "Opdrachtgever staat in voor de rechtmatigheid van de verwerking, waaronder het bestaan van een geldige grondslag, het informeren van betrokkenen en het verkrijgen van toestemming waar die vereist is. Opdrachtgever vrijwaart Biite voor aanspraken van betrokkenen, derden en toezichthouders die daarmee verband houden."
+          "text": "Opdrachtgever staat in voor de rechtmatigheid van de verwerking, waaronder het bestaan van een geldige grondslag, het informeren van betrokkenen en het verkrijgen van toestemming waar die vereist is. Opdrachtgever vrijwaart Omnimerce voor aanspraken van betrokkenen, derden en toezichthouders die daarmee verband houden."
         },
         {
           "type": "p",
@@ -1899,15 +1899,15 @@ export const voorwaarden = {
       "blocks": [
         {
           "type": "p",
-          "text": "Biite mag de naam en het beeldmerk van Opdrachtgever noemen als referentie, en de aard van de werkzaamheden op hoofdlijnen beschrijven, zonder daarbij vertrouwelijke informatie of niet openbare resultaten te vermelden."
+          "text": "Omnimerce mag de naam en het beeldmerk van Opdrachtgever noemen als referentie, en de aard van de werkzaamheden op hoofdlijnen beschrijven, zonder daarbij vertrouwelijke informatie of niet openbare resultaten te vermelden."
         },
         {
           "type": "p",
-          "text": "Opdrachtgever kan hiertegen op elk moment schriftelijk bezwaar maken. Biite staakt het gebruik dan binnen een redelijke termijn."
+          "text": "Opdrachtgever kan hiertegen op elk moment schriftelijk bezwaar maken. Omnimerce staakt het gebruik dan binnen een redelijke termijn."
         },
         {
           "type": "p",
-          "text": "Voor het publiceren van cijfers, resultaten of een uitgewerkte klantcase vraagt Biite vooraf schriftelijk toestemming."
+          "text": "Voor het publiceren van cijfers, resultaten of een uitgewerkte klantcase vraagt Omnimerce vooraf schriftelijk toestemming."
         }
       ]
     },
@@ -1916,15 +1916,15 @@ export const voorwaarden = {
       "blocks": [
         {
           "type": "p",
-          "text": "Opdrachtgever mag zijn rechten en verplichtingen uit de Overeenkomst niet aan een derde overdragen zonder voorafgaande schriftelijke toestemming van Biite. Deze bepaling heeft goederenrechtelijke werking als bedoeld in artikel 3:83 lid 2 van het Burgerlijk Wetboek."
+          "text": "Opdrachtgever mag zijn rechten en verplichtingen uit de Overeenkomst niet aan een derde overdragen zonder voorafgaande schriftelijke toestemming van Omnimerce. Deze bepaling heeft goederenrechtelijke werking als bedoeld in artikel 3:83 lid 2 van het Burgerlijk Wetboek."
         },
         {
           "type": "p",
-          "text": "Biite mag haar rechten en verplichtingen overdragen aan een partij die haar onderneming of het betreffende onderdeel daarvan overneemt. Biite informeert Opdrachtgever daar vooraf over."
+          "text": "Omnimerce mag haar rechten en verplichtingen overdragen aan een partij die haar onderneming of het betreffende onderdeel daarvan overneemt. Omnimerce informeert Opdrachtgever daar vooraf over."
         },
         {
           "type": "p",
-          "text": "Biite mag deze Voorwaarden wijzigen. Bij een Doorlopende Overeenkomst treedt een wijziging in werking dertig dagen na schriftelijke aankondiging."
+          "text": "Omnimerce mag deze Voorwaarden wijzigen. Bij een Doorlopende Overeenkomst treedt een wijziging in werking dertig dagen na schriftelijke aankondiging."
         },
         {
           "type": "p",
@@ -1941,7 +1941,7 @@ export const voorwaarden = {
         },
         {
           "type": "p",
-          "text": "De administratie van Biite geldt tussen Partijen als bewijs, behoudens tegenbewijs."
+          "text": "De administratie van Omnimerce geldt tussen Partijen als bewijs, behoudens tegenbewijs."
         },
         {
           "type": "p",
@@ -1986,7 +1986,7 @@ export const footer = {
       "href": "/blog/"
     },
     {
-      "label": "Wie is Biite",
+      "label": "Wie is Omnimerce",
       "href": "/over/"
     },
     {
@@ -2018,7 +2018,7 @@ export const footer = {
     }
   ],
   "contactTitle": "Contact",
-  "legalLine": "2026 Biite · KvK 42153735 · btw NL005540062B37",
+  "legalLine": "2026 Omnimerce · KvK 42153735 · btw NL005540062B37",
   "legal": [
     {
       "label": "Algemene voorwaarden",

@@ -137,7 +137,7 @@ Hoe vind je de echte oorzaak? Gebruik dit stappenplan:
 
 Je hoeft de technische puzzel niet alleen op te lossen, maar door deze stappen te volgen stel je een veel betere diagnose dan de aanname: "Google haat mijn AI content." Natuurlijk zijn er nog veel meer factoren die je posities binnen een zoekmachine beïnvloeden. Als we daar nu dieper op inzoomen, wordt deze blog een boekwerk waar je morgen nog niet doorheen bent. Dit stappenplan is dan ook vooral bedoeld als een snelle indicatie. Heeft jouw website echt een probleem, of is de weging van het systeem (Google) simpelweg veranderd?
 
-Kom je er zelf niet helemaal uit of wil je hier graag hulp bij? Dan helpt Biite je natuurlijk graag verder.
+Kom je er zelf niet helemaal uit of wil je hier graag hulp bij? Dan helpt Omnimerce je natuurlijk graag verder.
 
 ## Moet je dalende AI-pagina's nu offline halen?
 
@@ -197,7 +197,7 @@ Wil je liever dat er een expert met je meekijkt? Via [zichtbaarheid](/expertise/
 
 ## Wie dit schreef
 
-**Dylan van den Bosch**, Oprichter van Biite. [wie is Biite](/over/) · [LinkedIn](https://www.linkedin.com/in/dylan-van-den-bosch/)
+**Dylan van den Bosch**, Oprichter van Omnimerce. [wie is Omnimerce](/over/) · [LinkedIn](https://www.linkedin.com/in/dylan-van-den-bosch/)
 
 Dit stuk raakt aan [Zichtbaarheid](/expertise/zichtbaarheid/). Daar staat wat er precies onder valt en wanneer het niet past.
 

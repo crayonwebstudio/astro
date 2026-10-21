@@ -45,7 +45,7 @@ Veel mensen gebruiken AI nog zo: je stelt een vraag, krijgt een antwoord en slui
 
 OpenAI presenteerde dots op 29 september 2026 op DevDay, het ontwikkelaarsevent van het bedrijf ([OpenAI](https://openai.com/nl-NL/index/introducing-dots/)). Eén ding vooraf: dots zijn geen nieuw model. Ze draaien op GPT-6 Astra. Wat deze release interessant maakt, is de manier van werken eromheen.
 
-Bij Biite volg ik elke release, maar deze maakt me nieuwsgieriger dan de vorige. De stukken over [GPT-6 Sol en Luna](/blog/gpt-6-sol-en-luna-marketing/) en [Claude Opus 5.5](/blog/claude-opus-5-5-online-marketing/) gingen over welk model welk werk het best doet. Dots gaan over iets anders: wat er gebeurt als je werk echt uit handen geeft. Ze zijn vandaag gelanceerd, dus in een opdracht heb ik ze nog niet kunnen inzetten. Wat hier staat, komt uit de aankondiging, de helppagina en de systeemkaart van OpenAI. Vooral die laatste is verrassend openhartig.
+Bij Omnimerce volg ik elke release, maar deze maakt me nieuwsgieriger dan de vorige. De stukken over [GPT-6 Sol en Luna](/blog/gpt-6-sol-en-luna-marketing/) en [Claude Opus 5.5](/blog/claude-opus-5-5-online-marketing/) gingen over welk model welk werk het best doet. Dots gaan over iets anders: wat er gebeurt als je werk echt uit handen geeft. Ze zijn vandaag gelanceerd, dus in een opdracht heb ik ze nog niet kunnen inzetten. Wat hier staat, komt uit de aankondiging, de helppagina en de systeemkaart van OpenAI. Vooral die laatste is verrassend openhartig.
 
 ## Wat is een dot precies?
 
@@ -147,7 +147,7 @@ Daarnaast gelden vaste grenzen:
 
 Voordat een dot een mail verstuurt of een bestand aanpast, controleert een apart systeem de actie aan de hand van je instructies en regels. Bij een mail kijkt het onder meer of de ontvanger klopt. In de Activiteitenweergave zie je wat je dot doet, ook op de achtergrond, en kun je bijsturen of hem laten stoppen.
 
-Voor je data is dit het belangrijkste om te weten. Inhoud uit werkruimtes van ChatGPT Business en Enterprise wordt standaard niet gebruikt om modellen te trainen. Maar ontkoppel je een app, dan blijft wat je dot al uit die app wist in zijn eigen context staan. Volgens de helppagina moet je de dot resetten om die informatie te verwijderen. Dat verwijdert de hele dot, inclusief zijn gesprekken, opgeslagen herinneringen en geplande taken. Bedenk dus vooraf welke apps je koppelt, zeker als er klantgegevens in staan. Hoe Biite zelf met AI en data omgaat, lees je op [AI en data](/ai-en-data/).
+Voor je data is dit het belangrijkste om te weten. Inhoud uit werkruimtes van ChatGPT Business en Enterprise wordt standaard niet gebruikt om modellen te trainen. Maar ontkoppel je een app, dan blijft wat je dot al uit die app wist in zijn eigen context staan. Volgens de helppagina moet je de dot resetten om die informatie te verwijderen. Dat verwijdert de hele dot, inclusief zijn gesprekken, opgeslagen herinneringen en geplande taken. Bedenk dus vooraf welke apps je koppelt, zeker als er klantgegevens in staan. Hoe Omnimerce zelf met AI en data omgaat, lees je op [AI en data](/ai-en-data/).
 
 ## De kanttekeningen
 
@@ -193,7 +193,7 @@ Wil je weten waar een agent in jouw marketing werk kan overnemen, en hoe je dat 
 
 ## Wie dit schreef
 
-**Dylan van den Bosch**, Oprichter van Biite. [wie is Biite](/over/) · [LinkedIn](https://www.linkedin.com/in/dylan-van-den-bosch/)
+**Dylan van den Bosch**, Oprichter van Omnimerce. [wie is Omnimerce](/over/) · [LinkedIn](https://www.linkedin.com/in/dylan-van-den-bosch/)
 
 Dit stuk raakt aan [Werken met AI](/expertise/werken-met-ai/). Daar staat wat er precies onder valt en wanneer het niet past.
 

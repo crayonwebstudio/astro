@@ -39,7 +39,7 @@ tags: ["Werken met AI"]
 
 Zes dagen na [Claude Opus 5.5](/blog/claude-opus-5-5-online-marketing/) brengt Anthropic de goedkopere versie uit, en het verschil in kwaliteit is kleiner dan je zou verwachten. Op GDPval-AA, de benchmark die kenniswerk meet zoals analyses, rapporten en presentaties, scoort het nieuwe [Claude Sonnet 5.5](https://www.anthropic.com/claude-sonnet-5-5) 1844 punten. Opus 5.5 haalt er 1846. Twee punten verschil, voor de helft van de prijs per token.
 
-Voor marketingteams is dat het belangrijkste nieuws van deze release. Het meeste werk in een marketingafdeling is precies het soort werk dat GDPval meet: een rapportage in elkaar zetten, een presentatie maken, een spreadsheet ordenen. Bij Biite gebruik ik Opus voor het meeste werk en Sonnet ernaast. Met deze release schuift die verdeling op. In dit stuk lees je wat Sonnet 5.5 is, wanneer je het kiest boven Opus, en waar het in je online marketing het verschil maakt.
+Voor marketingteams is dat het belangrijkste nieuws van deze release. Het meeste werk in een marketingafdeling is precies het soort werk dat GDPval meet: een rapportage in elkaar zetten, een presentatie maken, een spreadsheet ordenen. Bij Omnimerce gebruik ik Opus voor het meeste werk en Sonnet ernaast. Met deze release schuift die verdeling op. In dit stuk lees je wat Sonnet 5.5 is, wanneer je het kiest boven Opus, en waar het in je online marketing het verschil maakt.
 
 ## Wat is Claude Sonnet 5.5?
 
@@ -122,7 +122,7 @@ Wil je weten welk model in jouw marketing welk werk kan doen, en hoe je dat zo i
 
 ## Wie dit schreef
 
-**Dylan van den Bosch**, Oprichter van Biite. [wie is Biite](/over/) · [LinkedIn](https://www.linkedin.com/in/dylan-van-den-bosch/)
+**Dylan van den Bosch**, Oprichter van Omnimerce. [wie is Omnimerce](/over/) · [LinkedIn](https://www.linkedin.com/in/dylan-van-den-bosch/)
 
 Dit stuk raakt aan [Werken met AI](/expertise/werken-met-ai/). Daar staat wat er precies onder valt en wanneer het niet past.
 

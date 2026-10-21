@@ -1,7 +1,7 @@
 ---
 import Base from '../../layouts/Base.astro';
 import { expertiseIndex, site } from '../../data/content.ts';
-const bgFor: Record<string, [string, string]> = { '01': ['#101731', '#FFFFFF'], '02': ['#A5EBD6', '#101731'], '03': ['#A5C8EB', '#101731'], '04': ['#FFACEA', '#101731'] };
+const bgFor: Record<string, [string, string]> = { '01': ['#242424', '#FFFFFF'], '02': ['#A5EBD6', '#242424'], '03': ['#A5C8EB', '#242424'], '04': ['#FFACEA', '#242424'] };
 ---
 <Base title={`${expertiseIndex.title} - ${site.name}`} description={expertiseIndex.lead}>
 <section class="hero"><div class="wrap"><div class="hero-grid"><div><h1>{expertiseIndex.title}<span class="text-vivid">.</span></h1><p class="lead" style="margin-top:28px">{expertiseIndex.lead}</p><ul class="cluster-links">{expertiseIndex.clusters.map(c => <li><a href={c.anchor} style="display:flex;gap:16px;align-items:baseline"><span style="font-size:13px;font-weight:800;color:var(--muted)">{c.number}</span><span style="font-family:Switzer,sans-serif;font-weight:700;font-size:20px">{c.title}</span></a></li>)}</ul></div><div class="gebied-grid">{expertiseIndex.clusters.map(c => <a class="gebied-card" href={c.anchor} style={`background:${bgFor[c.number][0]};color:${bgFor[c.number][1]}`}><span class="gebied-nr">{c.number}</span><p class="gebied-naam">{c.title}</p><p class="gebied-diensten">{c.diensten}</p></a>)}</div></div></div></section>

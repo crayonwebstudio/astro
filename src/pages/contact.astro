@@ -4,10 +4,10 @@ import { contactPage, site } from '../data/content.ts';
 const siteUrl = 'https://astro.woodwolfdigital.com';
 const jsonLd = [
   { '@type': 'ContactPage', '@id': `${siteUrl}/contact/#webpage`, url: `${siteUrl}/contact/`, inLanguage: 'nl-NL', isPartOf: { '@id': `${siteUrl}/#website` }, name: 'Contact', mainEntity: { '@id': `${siteUrl}/#organisatie` }, publisher: { '@id': `${siteUrl}/#organisatie` }, breadcrumb: { '@id': `${siteUrl}/contact/#kruimelpad` } },
-  { '@type': 'BreadcrumbList', '@id': `${siteUrl}/contact/#kruimelpad`, itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Biite', item: `${siteUrl}/` }, { '@type': 'ListItem', position: 2, name: 'Contact', item: `${siteUrl}/contact/` }] },
+  { '@type': 'BreadcrumbList', '@id': `${siteUrl}/contact/#kruimelpad`, itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Omnimerce', item: `${siteUrl}/` }, { '@type': 'ListItem', position: 2, name: 'Contact', item: `${siteUrl}/contact/` }] },
 ];
 ---
-<Base title="Contact en kennismaking · Biite" description="Plan een vrijblijvende kennismaking van 30 minuten met Biite of stuur een bericht. Bespreek je vraag over marketing, strategie en techniek direct met Dylan." jsonLd={jsonLd}>
+<Base title="Contact en kennismaking · Omnimerce" description="Plan een vrijblijvende kennismaking van 30 minuten met Omnimerce of stuur een bericht. Bespreek je vraag over marketing, strategie en techniek direct met Dylan." jsonLd={jsonLd}>
 <section class="hero"><div class="wrap"><p class="eyebrow">{contactPage.eyebrow}</p><h1>{contactPage.title}</h1><p class="lead">{contactPage.lead}</p></div></section>
 
 <section><div class="wrap"><div class="contact-grid">

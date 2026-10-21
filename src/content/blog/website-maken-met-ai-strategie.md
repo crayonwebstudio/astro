@@ -55,7 +55,7 @@ Zo kan een adviesbureau ineens klinken als een grote organisatie, terwijl de per
 
 Het lastige is dat zo’n voorstel best aannemelijk kan klinken. “Persoonlijk advies voor ambitieuze ondernemers” leest soepel. Maar welke ondernemers, welk advies en wat hebben ze eraan? Die vragen blijven onbeantwoord. Een nieuwe kleur of een sterkere openingszin maakt het aanbod nog niet duidelijker.
 
-Bij Biite gebruik ik AI ook om ideeën en eerste versies uit te werken. Die snelheid is nuttig: je hebt eerder iets om te bespreken. Juist daarom wil ik vooraf weten welke keuzes vaststaan en waar nog vragen liggen. Anders beoordeel je een ontwerp waarin de tool al beslissingen voor je heeft genomen.
+Bij Omnimerce gebruik ik AI ook om ideeën en eerste versies uit te werken. Die snelheid is nuttig: je hebt eerder iets om te bespreken. Juist daarom wil ik vooraf weten welke keuzes vaststaan en waar nog vragen liggen. Anders beoordeel je een ontwerp waarin de tool al beslissingen voor je heeft genomen.
 
 ## Begin bij de aansluiting tussen doelgroep en aanbod
 
@@ -141,7 +141,7 @@ Hoe ik samen met je die basis uitwerk, lees je bij [merk en taal](/expertise/mer
 
 ## Wie dit schreef
 
-**Dylan van den Bosch**, Oprichter van Biite. [wie is Biite](/over/) · [LinkedIn](https://www.linkedin.com/in/dylan-van-den-bosch/)
+**Dylan van den Bosch**, Oprichter van Omnimerce. [wie is Omnimerce](/over/) · [LinkedIn](https://www.linkedin.com/in/dylan-van-den-bosch/)
 
 Dit stuk raakt aan [Merk en taal](/expertise/merk-en-taal/). Daar staat wat er precies onder valt en wanneer het niet past.
 

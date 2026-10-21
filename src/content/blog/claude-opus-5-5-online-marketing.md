@@ -43,7 +43,7 @@ Op 22 september kondigde Trump bij de Verenigde Naties aan dat hij AI in Amerika
 
 Anthropic koos dezelfde dag de lastige route en bracht [Claude Opus 5.5](https://www.anthropic.com/claude-opus-5-5) uit. Dat kreeg minder aandacht, maar voor marketeers betekent het een stuk meer.
 
-Bij Biite is Opus het model waar ik het vaakst naar grijp. Ik gebruik het voor analyses, voor het bouwen en doorlichten van websites en voor het vinden van de patronen die je met de hand over het hoofd ziet. Een nieuwe versie merk ik dus meteen in mijn dagelijkse werk, en sinds de release draait Opus 5.5 bij mij al mee. Eén dag is te kort voor een eindoordeel. Het is wel genoeg om te zien waar dit model het verschil gaat maken in jouw marketing, en waar je beter nog even kritisch blijft.
+Bij Omnimerce is Opus het model waar ik het vaakst naar grijp. Ik gebruik het voor analyses, voor het bouwen en doorlichten van websites en voor het vinden van de patronen die je met de hand over het hoofd ziet. Een nieuwe versie merk ik dus meteen in mijn dagelijkse werk, en sinds de release draait Opus 5.5 bij mij al mee. Eén dag is te kort voor een eindoordeel. Het is wel genoeg om te zien waar dit model het verschil gaat maken in jouw marketing, en waar je beter nog even kritisch blijft.
 
 ## Wat is er nieuw aan Claude Opus 5.5?
 
@@ -102,7 +102,7 @@ Met een lagere prijs en goedkoper lezen uit de cache verschuift die afweging. Ee
 
 Hoe meer een agent zelf doet, hoe belangrijker de vraag wordt waar hij bij mag. Een model dat zelfstandig je CMS, je advertentieaccount of je CRM in gaat, kan op een webpagina instructies tegenkomen die het werk proberen over te nemen. De gemeten weerstand tegen prompt injection en de voorwaarden voor dataretentie zijn daarom punten om met je IT-afdeling of je functionaris gegevensbescherming te bespreken. Ze vervangen geen beperking van toegang of controle op wat de agent uitvoert.
 
-De afspraak zelf blijft wel jouw werk. Welke systemen mag een agent lezen, waar mag hij schrijven en wanneer kijkt er een mens mee? Die vragen zijn bij elk model hetzelfde, en bij Biite begin ik er elke AI-opdracht mee. Meer daarover lees je bij [werken met AI](/expertise/werken-met-ai/).
+De afspraak zelf blijft wel jouw werk. Welke systemen mag een agent lezen, waar mag hij schrijven en wanneer kijkt er een mens mee? Die vragen zijn bij elk model hetzelfde, en bij Omnimerce begin ik er elke AI-opdracht mee. Meer daarover lees je bij [werken met AI](/expertise/werken-met-ai/).
 
 ## Hoe werk je het best met Opus 5.5?
 
@@ -144,7 +144,7 @@ Wil je weten waar een model in jouw marketing werk kan overnemen en waar je het 
 
 ## Wie dit schreef
 
-**Dylan van den Bosch**, Oprichter van Biite. [wie is Biite](/over/) · [LinkedIn](https://www.linkedin.com/in/dylan-van-den-bosch/)
+**Dylan van den Bosch**, Oprichter van Omnimerce. [wie is Omnimerce](/over/) · [LinkedIn](https://www.linkedin.com/in/dylan-van-den-bosch/)
 
 Dit stuk raakt aan [Werken met AI](/expertise/werken-met-ai/). Daar staat wat er precies onder valt en wanneer het niet past.
 

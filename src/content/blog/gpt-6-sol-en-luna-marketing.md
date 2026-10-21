@@ -45,7 +45,7 @@ Stel dat je tweeduizend formulierinzendingen hebt liggen. Bedrijfsnamen op vijf 
 
 Precies dat soort onderscheid maakt OpenAI nu zelf. Op 22 september bracht het naast het zware GPT-6 Astra twee nieuwe modellen uit: GPT-6 Sol en GPT-6 Luna. Het was een drukke week. Een dag eerder had SpaceXAI al [Grok 4.7](/blog/grok-4-7-online-marketing/) uitgebracht, en op dezelfde dag kwam Anthropic met [Claude Opus 5.5](/blog/claude-opus-5-5-online-marketing/).
 
-Wie elke release najaagt, is volgende week weer aan het overstappen. Bij Biite ben ik daarom niet aan één model getrouwd. Opus doet bij mij het meeste werk, en Sonnet, Gemini en GPT-6 Astra pakken op wat zij beter kunnen. Die verdeling maken is het eigenlijke vak, en elke release schuift haar een stukje op. Sol en Luna heb ik zelf nog niet in een opdracht gebruikt, want ze zijn een dag oud. Wat hier staat, komt uit wat OpenAI publiceert en uit wat onafhankelijke testers in de eerste dag hebben gemeten.
+Wie elke release najaagt, is volgende week weer aan het overstappen. Bij Omnimerce ben ik daarom niet aan één model getrouwd. Opus doet bij mij het meeste werk, en Sonnet, Gemini en GPT-6 Astra pakken op wat zij beter kunnen. Die verdeling maken is het eigenlijke vak, en elke release schuift haar een stukje op. Sol en Luna heb ik zelf nog niet in een opdracht gebruikt, want ze zijn een dag oud. Wat hier staat, komt uit wat OpenAI publiceert en uit wat onafhankelijke testers in de eerste dag hebben gemeten.
 
 ## Wat zijn GPT-6 Sol en GPT-6 Luna?
 
@@ -94,7 +94,7 @@ Lees die tabel als een startpunt en niet als een uitslag. De cijfers van OpenAI 
 
 ## Zo zet je een nieuw model goed in
 
-Een model kiezen is eigenlijk het makkelijke deel. Of het werkt, hangt vooral af van wat je eromheen inricht. Bij Biite loop ik daarvoor steeds dezelfde stappen door.
+Een model kiezen is eigenlijk het makkelijke deel. Of het werkt, hangt vooral af van wat je eromheen inricht. Bij Omnimerce loop ik daarvoor steeds dezelfde stappen door.
 
 Begin bij de taak en niet bij het model. Schrijf op wat er binnenkomt, wat eruit moet komen en welke fout het duurst is. Een verkeerd getagde pagina is vervelend, een verkeerd gekoppelde lead kost omzet. Maak daarna een testset van een stuk of vijftig voorbeelden die je met de hand hebt gecontroleerd, en laat twee of drie modellen daar hun werk op doen. In een middag zie je welk model bij jouw data past.
 
@@ -124,7 +124,7 @@ Wil je weten welk model in jouw marketingprocessen welk werk kan doen, en hoe je
 
 ## Wie dit schreef
 
-**Dylan van den Bosch**, Oprichter van Biite. [wie is Biite](/over/) · [LinkedIn](https://www.linkedin.com/in/dylan-van-den-bosch/)
+**Dylan van den Bosch**, Oprichter van Omnimerce. [wie is Omnimerce](/over/) · [LinkedIn](https://www.linkedin.com/in/dylan-van-den-bosch/)
 
 Dit stuk raakt aan [Werken met AI](/expertise/werken-met-ai/). Daar staat wat er precies onder valt en wanneer het niet past.
 

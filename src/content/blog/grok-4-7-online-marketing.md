@@ -27,7 +27,7 @@ tags: ["Werken met AI"]
 
 - [Veelgestelde vragen](#veelgestelde-vragen)
 
-- [Waar Grok bij Biite staat](#waar-grok-bij-biite-staat)
+- [Waar Grok bij Omnimerce staat](#waar-grok-bij-omnimerce-staat)
 
 > **Kort samengevat**
 
@@ -41,7 +41,7 @@ tags: ["Werken met AI"]
 
 > - Elk model heeft een eigen karakter. Kies het model waarvan je de output zou durven doorsturen.
 
-Grok is bij Biite geen model voor elke dag. Voor analyses, websites en rapportages grijp ik naar andere modellen. Maar soms wil je weten wat er in een bepaalde hoek van de markt gezegd wordt. Welke kant een discussie op beweegt, wat de stemmen die ertoe doen ervan vinden, waar mensen zich aan ergeren. Dan open ik Grok, en dat heeft een simpele reden: Grok kan zelf zoeken op X.
+Grok is bij Omnimerce geen model voor elke dag. Voor analyses, websites en rapportages grijp ik naar andere modellen. Maar soms wil je weten wat er in een bepaalde hoek van de markt gezegd wordt. Welke kant een discussie op beweegt, wat de stemmen die ertoe doen ervan vinden, waar mensen zich aan ergeren. Dan open ik Grok, en dat heeft een simpele reden: Grok kan zelf zoeken op X.
 
 Op 21 september bracht SpaceXAI, het bedrijf dat eerder als xAI bekendstond, [Grok 4.7](https://x.ai/news/grok-4-7) uit. Het opende een drukke week, want een dag later volgden [Claude Opus 5.5](/blog/claude-opus-5-5-online-marketing/) en [GPT-6 Sol en Luna](/blog/gpt-6-sol-en-luna-marketing/). Drie releases in twee dagen, en alle drie gebouwd voor ander werk. In dit stuk lees je waar Grok 4.7 in je marketing een plek verdient, en waar je het beter laat liggen.
 
@@ -53,7 +53,7 @@ De prijs is gelijk gebleven: 2 dollar input en 6 dollar output per miljoen token
 
 ## Waar is Grok 4.7 sterk in?
 
-Het eerste is waar Grok bij Biite voor op tafel komt: horen wat er gezegd wordt. Welke onderwerpen spelen er in een branche, wat zeggen de mensen met bereik, waar wordt over geklaagd en waar is men enthousiast over? Grok zoekt het op en vat het samen. Met de hand ben je daar een middag scrollend mee bezig.
+Het eerste is waar Grok bij Omnimerce voor op tafel komt: horen wat er gezegd wordt. Welke onderwerpen spelen er in een branche, wat zeggen de mensen met bereik, waar wordt over geklaagd en waar is men enthousiast over? Grok zoekt het op en vat het samen. Met de hand ben je daar een middag scrollend mee bezig.
 
 Het tweede is analyse. [Artificial Analysis](https://artificialanalysis.ai/articles/benchmarking-grok-4-7) meet op AA-Briefcase, een benchmark met realistisch professioneel werk, apart hoe goed de analyse is en hoe goed de presentatie. Op analyse scoort Grok 4.7 1994 Elo, ruim 300 punten meer dan de vorige versie. In voorbeelden van [AlphaSignal](https://alphasignal.ai/news/xai-s-grok-4-7-beats-claude-at-enterprise-analysis-but-doubles-your-bill) vond het model zelf een afwijking in financiële cijfers die zijn voorganger over het hoofd zag.
 
@@ -77,7 +77,7 @@ Het waarom blijft mensenwerk. Een verschil kan een meetfout zijn, een dubbele ta
 
 ## Waar laat je Grok beter liggen?
 
-Voor rapportages die ik doorstuur, blijft Opus bij Biite mijn eerste kandidaat. Dezelfde meting die Grok 4.7 zo hoog zet op analyse, geeft het voor presentatie 1499 Elo, iets lager dan de vorige versie. Op GDPval, dat kenniswerk meet in de vorm van documenten en presentaties, scoort het 1695 tegen 1846 voor Claude Opus 5.5. Dat maakt niet elk eindproduct van Grok onbruikbaar. Het is wel reden om de presentatie apart te beoordelen en de inhoud bij elk model te controleren.
+Voor rapportages die ik doorstuur, blijft Opus bij Omnimerce mijn eerste kandidaat. Dezelfde meting die Grok 4.7 zo hoog zet op analyse, geeft het voor presentatie 1499 Elo, iets lager dan de vorige versie. Op GDPval, dat kenniswerk meet in de vorm van documenten en presentaties, scoort het 1695 tegen 1846 voor Claude Opus 5.5. Dat maakt niet elk eindproduct van Grok onbruikbaar. Het is wel reden om de presentatie apart te beoordelen en de inhoud bij elk model te controleren.
 
 Voor grote aantallen zou ik eerst snelheid en kosten meten. In de Intelligence Index van [Artificial Analysis](https://artificialanalysis.ai/articles/benchmarking-grok-4-7) deed Grok 4.7 op xhigh gemiddeld 7,1 minuten over een taak en gebruikte het zo'n 81.000 outputtokens, tegenover 27.000 voor GPT-6 Astra op max. Dat zijn veeleisende benchmarktaken. Je kunt daaruit niet afleiden hoe lang het opschonen van formulierregels of het taggen van pagina's duurt. Voor dat werk zou ik het goedkopere GPT-6 Luna als eerste testen, en Grok op een passende instelling laten meedoen als de kwaliteit daar aanleiding toe geeft.
 
@@ -117,15 +117,15 @@ Ja. Via de API kun je zoeken op het web en op X aanzetten, waarna Grok bij je vr
 
 Dat hangt af van je taak. Grok is een kandidaat voor analyse en het peilen van wat er op X speelt. Voor rapportages zou ik Opus 5.5 eerst testen, voor automatisering met een beperkt budget GPT-6 Sol en voor grote aantallen eenvoudige taken GPT-6 Luna. Dat is een startpunt voor je eigen vergelijking, geen vaste rangorde.
 
-## Waar Grok bij Biite staat
+## Waar Grok bij Omnimerce staat
 
-Grok 4.7 wordt bij Biite geen model voor elke dag, en dat hoeft ook niet. Het heeft een eigen plek in de gereedschapskist: horen wat er in je markt gezegd wordt, en uitrekenen waar je cijfers niet kloppen. Voor de rest zijn er modellen die beter passen, en de kunst is om per taak de juiste te kiezen.
+Grok 4.7 wordt bij Omnimerce geen model voor elke dag, en dat hoeft ook niet. Het heeft een eigen plek in de gereedschapskist: horen wat er in je markt gezegd wordt, en uitrekenen waar je cijfers niet kloppen. Voor de rest zijn er modellen die beter passen, en de kunst is om per taak de juiste te kiezen.
 
 Wil je weten welk model in jouw marketing welk werk kan doen, en hoe je dat zo inricht dat je de uitkomst kunt vertrouwen? Daar gaat [werken met AI](/expertise/werken-met-ai/) over.
 
 ## Wie dit schreef
 
-**Dylan van den Bosch**, Oprichter van Biite. [wie is Biite](/over/) · [LinkedIn](https://www.linkedin.com/in/dylan-van-den-bosch/)
+**Dylan van den Bosch**, Oprichter van Omnimerce. [wie is Omnimerce](/over/) · [LinkedIn](https://www.linkedin.com/in/dylan-van-den-bosch/)
 
 Dit stuk raakt aan [Werken met AI](/expertise/werken-met-ai/). Daar staat wat er precies onder valt en wanneer het niet past.
 
