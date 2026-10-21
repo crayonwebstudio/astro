@@ -1,0 +1,43 @@
+---
+import Base from '../layouts/Base.astro';
+import Crumb from '../components/Crumb.astro';
+import { site } from '../data/omnimerce.ts';
+
+// Structured outline from the content master document. The final terms require legal review
+// and must reflect the actual service model and contractual arrangements. Bracketed text marks
+// content that must not be treated as final legal wording.
+const sections = [
+  'Business identity and contact information',
+  'Website usage',
+  'Intellectual property',
+  'Accuracy and limitations of website information',
+  'Enquiry and proposal process',
+  'Scope and acceptance of project work',
+  'Fees, payment and additional work',
+  'Third-party platforms and dependencies',
+  'AI-generated outputs and review responsibilities',
+  'Confidentiality and data handling',
+  'Liability and applicable limitations',
+  'Governing law and dispute resolution',
+  'Changes to the terms',
+  'Contact information',
+];
+---
+<Base title="Terms & Conditions | Omnimerce" description="The conditions for using the Omnimerce website and the general terms applicable to enquiries and services.">
+  <section class="legal-hero"><div class="wrap">
+    <Crumb trail={[{ label: 'Home', href: '/' }, { label: 'Terms & Conditions' }]} />
+    <h1 style="font-size:clamp(34px,3.6vw,52px);font-weight:400;letter-spacing:-.02em;margin:8px 0 0">Terms &amp; Conditions</h1>
+    <div class="prose-en" style="margin-top:20px">
+      <p>These terms explain the conditions for using the Omnimerce website and the general terms applicable to enquiries and services, where relevant.</p>
+    </div>
+    <p class="note" style="margin-top:20px;max-width:72ch">These terms are in preparation and require review by a qualified legal professional in the relevant jurisdiction before they are final. Project work is governed by the written proposal and agreement issued for that project. For questions, contact {site.email}.</p>
+  </div></section>
+  <section class="om-sec"><div class="wrap"><div class="clauses">
+    {sections.map((t, i) => (
+      <div class="clause" style="margin-bottom:28px">
+        <h2 style="font-size:21px;font-weight:600;margin:0 0 6px"><span class="clause-num" style="color:var(--vivid);margin-right:10px">{i + 1}.</span>{t}</h2>
+        <div class="clause-body prose-en"><p>[Section text to be completed after legal review, reflecting the actual service model and contractual arrangements of Omnimerce.]</p></div>
+      </div>
+    ))}
+  </div></div></section>
+</Base>

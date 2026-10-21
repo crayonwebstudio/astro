@@ -1,0 +1,55 @@
+---
+import Base from '../layouts/Base.astro';
+import FaqList from '../components/FaqList.astro';
+import CtaBand from '../components/CtaBand.astro';
+import Crumb from '../components/Crumb.astro';
+
+const groups = [
+  { h: 'General questions', items: [
+    { q: 'What is Omnimerce?', a: 'Omnimerce is an ecommerce technology solutions provider focused on connecting business systems, streamlining workflows and implementing AI-assisted automation.' },
+    { q: 'Is Omnimerce a SaaS product?', a: 'Omnimerce is positioned as a solution-based business. Projects may involve implementation, customization, integration and ongoing support rather than requiring every client to adopt a single standardized software subscription.' },
+    { q: 'Does Omnimerce work with existing systems?', a: 'Yes. The approach begins with assessing your existing systems and determining whether integration, configuration, replacement or custom development is most appropriate.' },
+  ] },
+  { h: 'ERP and manufacturing', items: [
+    { q: 'Can Omnimerce implement ERPNext?', a: 'ERPNext can be used for suitable ERP, inventory, accounting, purchasing and manufacturing requirements. The scope depends on your processes and the required configuration or customization.' },
+    { q: 'Can you connect manufacturing and ecommerce inventory?', a: 'Yes, where the required production, stock and channel workflows are defined and the relevant systems can support them.' },
+    { q: 'Can the solution handle multiple warehouses?', a: 'Multiple warehouses can be supported where the selected ERP and implementation include the required locations, movements, permissions and stock rules.' },
+  ] },
+  { h: 'Marketplace integrations', items: [
+    { q: 'Which marketplaces can you connect?', a: 'Supported marketplaces depend on available APIs, account permissions, connector scope and the workflows required. Amazon and Flipkart are potential initial integrations, with additional channels evaluated as needed.' },
+    { q: 'Can you synchronize inventory across channels?', a: 'Yes, where the integrations support the required updates. Reliable synchronization also requires stock allocation rules, error handling and reconciliation.' },
+    { q: 'Can you automate order processing?', a: 'Order ingestion and selected processing steps can be automated. Business-specific rules and exceptions must be defined before automation is enabled.' },
+  ] },
+  { h: 'AI automation', items: [
+    { q: 'Can AI generate product descriptions and images?', a: 'AI can assist with product descriptions, listing content and reference-based image workflows. Outputs should be validated for factual accuracy and product identity.' },
+    { q: 'Can you automate repetitive business tasks?', a: 'Yes. We assess repetitive workflows and determine which steps can be automated safely, including the required approvals and exception handling.' },
+    { q: 'Is every AI-generated action fully automatic?', a: 'No. The level of automation depends on the task, risk and available data. Actions involving financial records, inventory changes, public publishing or customer communication may require approval.' },
+  ] },
+  { h: 'SEO and marketing', items: [
+    { q: 'Can you improve ecommerce SEO?', a: 'We can assess technical SEO, product and category content, search analytics and user experience, then implement agreed improvements.' },
+    { q: 'Can you guarantee rankings or AI search visibility?', a: 'No. Search rankings and AI-generated responses depend on external systems and many factors beyond any provider\'s control.' },
+    { q: 'Can social media posts be scheduled automatically?', a: 'Scheduling is possible through supported platform integrations and account permissions. Availability varies by social network and content format.' },
+  ] },
+  { h: 'Projects and pricing', items: [
+    { q: 'How much does a project cost?', a: 'Pricing depends on scope, integrations, data complexity, customization, testing and ongoing support. We define the required work before providing a project proposal.' },
+    { q: 'How long does implementation take?', a: 'The timeline depends on the number of systems, API availability, data quality, required functionality and validation needs. A project plan is agreed during scoping.' },
+    { q: 'Do you provide ongoing maintenance?', a: 'Maintenance, monitoring and further improvements can be included when agreed as part of the engagement.' },
+  ] },
+];
+---
+<Base title="Ecommerce Solutions FAQs | Omnimerce" description="Answers to common questions about ecommerce ERP, marketplace integrations, AI automation, manufacturing, implementation and SEO.">
+  <section class="om-hero"><div class="wrap">
+    <Crumb trail={[{ label: 'Home', href: '/' }, { label: 'FAQ' }]} />
+    <h1>Questions about ecommerce systems and automation?</h1>
+    <p class="lead" style="margin-top:18px">Find answers to common questions about Omnimerce's solutions, implementation approach and integration capabilities.</p>
+  </div></section>
+
+  {groups.map((g, i) => (
+    <section class={`om-sec ${i % 2 ? 'om-sec--raised' : ''}`} style={i === 0 ? 'padding-top:24px' : ''}><div class="wrap">
+      <h2 class="kop-sectie">{g.h}</h2>
+      <FaqList items={g.items} />
+    </div></section>
+  ))}
+
+  <CtaBand h2="Didn't find the answer you need?" text="Tell us about your business and the systems you use. We'll help identify the next step." primaryLabel="Contact Omnimerce" />
+</Base>

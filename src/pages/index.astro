@@ -1,34 +1,171 @@
 ---
 import Base from '../layouts/Base.astro';
-import HeroDiagram from '../components/HeroDiagram.astro';
-import { site, home } from '../data/content.ts';
+import ImgPh from '../components/ImgPh.astro';
+import FaqList from '../components/FaqList.astro';
+import CtaBand from '../components/CtaBand.astro';
+
+const problems = [
+  { t: 'Disconnected systems', d: 'Your ERP, online store, marketplaces and accounting tools hold different pieces of information. Keeping them synchronized becomes an ongoing challenge.' },
+  { t: 'Repetitive manual work', d: 'Product uploads, data entry, reporting, content creation and order updates consume valuable time.' },
+  { t: 'Limited operational visibility', d: 'Without connected data, it becomes harder to understand inventory, costs, profitability and business performance.' },
+  { t: 'Growth that adds complexity', d: 'New sales channels and products create more processes to manage, more integrations to maintain and more opportunities for errors.' },
+];
+const homeCards = [
+  { n: '01', t: 'ERP & Business Management', d: 'Bring business processes into a more connected system with ERP, accounting, purchasing, sales management and operational reporting.', img: 'ERP dashboard showing purchasing, invoices, stock valuation and sales reporting on a desktop screen.', link: 'Explore ERP Solutions', slug: 'ecommerce-erp-accounting' },
+  { n: '02', t: 'Manufacturing & Inventory', d: 'Connect production planning, bills of materials, material consumption, stock levels and product costing.', img: 'A real manufacturing workspace with finished products, raw materials, barcode labels and organized inventory.', link: 'Explore Manufacturing Solutions', slug: 'manufacturing-inventory' },
+  { n: '03', t: 'Marketplace & Store Integrations', d: 'Connect ecommerce stores and marketplaces with your operational systems to improve product, inventory and order synchronization.', img: 'A visual diagram connecting an online store, Amazon-style marketplace listings, inventory and order fulfilment.', link: 'Explore Marketplace Integrations', slug: 'marketplace-integration' },
+  { n: '04', t: 'AI Product Content Studio', d: 'Create product descriptions, marketplace listings, SEO metadata and product imagery using AI-assisted workflows and controlled product data.', img: 'A product photography workspace showing an original product photo alongside approved studio, lifestyle and detail images.', link: 'Explore AI Product Content', slug: 'ai-product-content' },
+  { n: '05', t: 'Marketing & Social Automation', d: 'Streamline product-led campaigns, social media content creation, scheduling and performance tracking.', img: 'A social content calendar displaying product campaigns, approved creatives and scheduled publishing dates.', link: 'Explore Marketing Automation', slug: 'marketing-automation' },
+  { n: '06', t: 'Ecommerce SEO & Growth Analytics', d: 'Improve search visibility, identify content gaps and connect SEO activity to measurable ecommerce outcomes.', img: 'A search analytics dashboard showing organic clicks, impressions, landing pages, product performance and prioritized technical issues.', link: 'Explore Ecommerce SEO', slug: 'ecommerce-seo' },
+];
+const flow = ['Product Master', 'Manufacturing / Procurement', 'Inventory', 'Store & Marketplaces', 'Fulfilment', 'Accounting & Analytics'];
+const aiCards = [
+  { t: 'Product content generation', d: 'Prepare descriptions, titles, attributes and listing copy from verified product information.' },
+  { t: 'AI image workflows', d: 'Create approved product image variations, lifestyle compositions and supporting graphics.' },
+  { t: 'Workflow automation', d: 'Connect repetitive steps across products, orders, reporting and marketing.' },
+  { t: 'Intelligent analysis', d: 'Summarize operational data, identify exceptions and surface opportunities for investigation.' },
+  { t: 'Human approval', d: 'Keep review and approval steps where accuracy, money, publishing or customer communication matters.' },
+];
+const audiences = [
+  { t: 'Manufacturers', d: 'Connect production planning, material costs, inventory and online sales.' },
+  { t: 'Multichannel ecommerce sellers', d: 'Coordinate products, orders, inventory and fulfilment across stores and marketplaces.' },
+  { t: 'Wholesale and distribution businesses', d: 'Improve product data management, purchasing, stock visibility and order processing.' },
+  { t: 'Growing ecommerce brands', d: 'Streamline product content, marketing operations and ecommerce analytics.' },
+  { t: 'Agencies and multi-store operators', d: 'Reduce repetitive catalogue and reporting work across multiple clients or stores.' },
+];
+const why = [
+  { t: 'Solutions built around your workflow', d: 'We begin with your business goals, current systems and operational challenges before recommending an implementation.' },
+  { t: 'Integration over unnecessary replacement', d: 'Where practical, we connect and improve the systems you already use instead of replacing everything.' },
+  { t: 'Automation with purpose', d: 'We prioritize repetitive work, avoidable errors and processes that consume disproportionate time.' },
+  { t: 'Implementation that considers the whole picture', d: 'We consider data, workflows, integrations, usability and long-term maintenance together.' },
+  { t: 'Room to grow', d: 'We design solutions that can evolve as your product catalogue, channels, team and operational needs expand.' },
+];
+const steps = [
+  { t: 'Discover', d: 'We understand your business, existing systems, goals and the processes causing friction.' },
+  { t: 'Design', d: 'We map the workflows, define requirements and recommend the appropriate architecture and integrations.' },
+  { t: 'Implement', d: 'We configure, develop and connect the solution in manageable stages.' },
+  { t: 'Validate', d: 'We test key workflows, data accuracy, exceptions, permissions and operational readiness.' },
+  { t: 'Improve', d: 'We support the agreed next steps, refine automation and help your team use the solution effectively.' },
+];
+const faq = [
+  { q: 'What does Omnimerce do?', a: 'Omnimerce designs and implements ecommerce technology solutions covering ERP, manufacturing, inventory, marketplace integrations, AI automation, product content and ecommerce growth.' },
+  { q: 'Does Omnimerce provide customized ecommerce solutions?', a: 'Yes. Solutions can be configured around existing systems and workflows, with custom development and integrations where required.' },
+  { q: 'Can Omnimerce connect our existing ERP to marketplaces?', a: 'The approach depends on your ERP, marketplace APIs, data structure and operational requirements. We assess the systems and design an appropriate integration plan.' },
+  { q: 'How can AI improve ecommerce operations?', a: 'AI can assist with product content, image creation, repetitive workflows, data analysis and reporting. Suitable use cases depend on data quality, business rules and review requirements.' },
+  { q: 'Does Omnimerce replace our existing systems?', a: 'Not necessarily. We first assess what your current systems do well and where they fall short. Integration, configuration, replacement or custom development may be appropriate depending on the situation.' },
+];
 ---
-<Base>
-<HeroDiagram />
+<Base title="Omnimerce | AI-Powered Ecommerce Solutions" description="Connect ecommerce ERP, manufacturing, inventory, marketplaces and AI automation with tailored solutions built around your business.">
+  <section class="om-hero"><div class="wrap"><div class="split">
+    <div>
+      <p class="eyebrow">AI-Powered Ecommerce Solutions</p>
+      <h1>Commerce Without Complexity<span class="text-vivid">.</span></h1>
+      <div class="prose-en" style="margin-top:22px">
+        <p>Your ecommerce business shouldn't be held back by disconnected systems, repetitive tasks and manual processes.</p>
+        <p>Omnimerce brings ERP, manufacturing, inventory, marketplaces and AI-powered automation together through solutions designed around how your business actually works.</p>
+      </div>
+      <div class="hero-actions" style="margin-top:28px">
+        <a class="btn btn-lg" href="/contact/">Discuss Your Project &rarr;</a>
+        <a class="textlink" href="/solutions/">Explore Our Solutions</a>
+      </div>
+      <p class="lead" style="margin-top:24px">From business processes and system integrations to AI-powered growth, we help you build a more connected ecommerce operation.</p>
+    </div>
+    <ImgPh desc="Wide hero visual showing a modern ecommerce operations dashboard connected to product manufacturing, inventory, marketplace orders and AI content workflows. Clean, premium composition. Avoid generic robot imagery." ratio="wide" label="Hero image" />
+  </div></div></section>
 
-<section><div class="wrap"><div class="quote-grid">
-<p class="quote"><em>&ldquo;</em>{home.quote}<em>&rdquo;</em></p>
-<div class="prose">{home.quoteBody.map(p => <p>{p}</p>)}</div>
-</div></div></section>
+  <section class="om-sec"><div class="wrap">
+    <p class="eyebrow">The Challenge</p>
+    <h2 class="kop-sectie">Your business is growing. Your systems should keep up.</h2>
+    <div class="prose-en sec-intro">
+      <p>Selling across multiple channels creates complexity. Products need to be maintained, inventory needs to stay accurate, orders must reach the right systems, and marketing content needs constant attention.</p>
+      <p>When every task relies on a different tool or manual process, your team spends more time managing operations than improving the business.</p>
+    </div>
+    <div class="feat-grid">
+      {problems.map(p => <div class="card"><h3>{p.t}</h3><p>{p.d}</p></div>)}
+    </div>
+    <p class="lead" style="margin-top:32px">Omnimerce helps connect these moving parts through practical technology, thoughtful implementation and intelligent automation.</p>
+  </div></section>
 
-<section id="clusters"><div class="wrap">
-<h2 class="kop-sectie">{home.servicesTitle}</h2>
-<div class="services">
-<div class="svc-img" style="padding:0;overflow:hidden"><img src="/diensten-beeld-1.jpg" alt="" width="1600" height="744" style="width:100%;height:100%;object-fit:cover" /></div>
-{home.services.slice(0,2).map((s, i) => <a class="svc" id={['fundament','zichtbaarheid'][i]} href={s.href}><svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 256 256" aria-hidden="true"><path d="M204,64V168a12,12,0,0,1-24,0V93L72.49,200.49a12,12,0,0,1-17-17L163,76H88a12,12,0,0,1,0-24H192A12,12,0,0,1,204,64Z"></path></svg><h3>{s.title}</h3><ul>{s.points.map(pt => <li>{pt}</li>)}</ul></a>)}
-{home.services.slice(2).map((s, i) => <a class="svc" id={['merk-en-taal','ai-werkmodel'][i]} href={s.href}><svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 256 256" aria-hidden="true"><path d="M204,64V168a12,12,0,0,1-24,0V93L72.49,200.49a12,12,0,0,1-17-17L163,76H88a12,12,0,0,1,0-24H192A12,12,0,0,1,204,64Z"></path></svg><h3>{s.title}</h3><ul>{s.points.map(pt => <li>{pt}</li>)}</ul></a>)}
-<div class="svc-img" style="padding:0;overflow:hidden"><img src="/diensten-beeld-2.jpg" alt="" width="1600" height="744" style="width:100%;height:100%;object-fit:cover" /></div>
-</div>
-</div></section>
+  <section class="om-sec om-sec--raised"><div class="wrap">
+    <p class="eyebrow">What We Do</p>
+    <h2 class="kop-sectie">Everything behind your ecommerce business, working together.</h2>
+    <p class="lead sec-intro">From your back-office operations to customer acquisition, we design and implement solutions that help your business run more efficiently.</p>
+    <div style="display:grid;gap:20px;margin-top:40px">
+      {homeCards.map(c => (
+        <article class="card"><div class="split" style="align-items:start">
+          <div>
+            <p class="eyebrow">{c.n}</p>
+            <h3 style="font-size:24px;margin:10px 0 8px">{c.t}</h3>
+            <p style="color:var(--muted);margin:0 0 16px;max-width:56ch">{c.d}</p>
+            <a class="textlink" href={`/solutions/${c.slug}/`}>{c.link} &rarr;</a>
+          </div>
+          <ImgPh desc={c.img} ratio="std" />
+        </div></article>
+      ))}
+    </div>
+  </div></section>
 
-<section><div class="wrap"><div class="about-grid">
-<figure class="about-img" style="padding:0;overflow:hidden;margin:0"><img src="/kennismaking-dylan.jpg" alt="Dylan van den Bosch aan een houten tafel achter zijn laptop." width="1122" height="1402" style="width:100%;height:100%;object-fit:cover;aspect-ratio:4/5" /></figure>
-<div><p style="font-size:14px;color:rgba(36,36,36,.62)">{home.aboutEyebrow}</p><h2 class="kop-sectie" style="margin-top:12px;max-width:24ch">{home.aboutTitle}<span class="text-vivid">.</span></h2><div class="prose" style="margin-top:28px;max-width:52ch">{home.aboutBody.map(p => <p>{p}</p>)}</div><div class="hero-actions"><a class="btn" href={home.aboutCtaHref}>{home.aboutCtaLabel} &rarr;</a><a class="textlink" href={home.aboutLinkHref}>{home.aboutLinkLabel}</a></div></div>
-</div></div></section>
+  <section class="om-sec"><div class="wrap">
+    <p class="eyebrow">One Connected Operation</p>
+    <h2 class="kop-sectie">More than individual tools. A system designed around your business.</h2>
+    <div class="prose-en sec-intro">
+      <p>Your product data influences inventory. Inventory affects marketplace availability. Orders affect fulfilment and accounting. Product content influences search visibility and conversion.</p>
+      <p>When these processes work together, your team gains better visibility and spends less time moving information between systems.</p>
+    </div>
+    <div class="flow" role="img" aria-label="Workflow diagram: Product Master, Manufacturing and Procurement, Inventory, Store and Marketplaces, Fulfilment, Accounting and Analytics, with an AI automation layer spanning the workflow">
+      {flow.map((f, i) => (<><span class="flow-step">{f}</span>{i < flow.length - 1 && <span class="flow-arrow" aria-hidden="true">&rarr;</span>}</>))}
+    </div>
+    <p class="lead" style="margin-top:16px;font-size:14px">An AI automation layer spans the whole workflow.</p>
+    <div class="prose-en" style="margin-top:24px">
+      <p>We look at the complete workflow before deciding which systems, integrations and automations make sense. That may mean improving your existing ERP, connecting third-party platforms or building custom functionality where standard tools fall short.</p>
+    </div>
+    <div style="margin-top:24px"><a class="btn" href="/contact/">Discuss Your Workflow &rarr;</a></div>
+  </div></section>
 
-<section><div class="wrap">
-<h2 class="kop-sectie leeskolom">{home.processTitle}.</h2>
-<div class="steps leeskolom">{home.processSteps.map((s,i) => <div class="step"><b>0{i+1}</b><div class="step-body"><h3>{s.title}</h3><p style="color:var(--muted)">{s.text}</p></div></div>)}</div>
-<p class="leeskolom process-link"><a class="textlink" href={home.processLinkHref}>{home.processLinkLabel} &rarr;</a></p>
-</div></section>
+  <section class="om-sec om-sec--raised"><div class="wrap">
+    <p class="eyebrow">Practical AI</p>
+    <h2 class="kop-sectie">Put AI to work where it makes a difference.</h2>
+    <div class="prose-en sec-intro">
+      <p>AI can help reduce repetitive work, accelerate product content creation and support better operational decisions. The greatest value comes when it works with reliable business data and well-defined processes.</p>
+      <p>Omnimerce helps identify the right opportunities, integrate suitable AI capabilities and design workflows that keep your team in control.</p>
+    </div>
+    <div class="feat-grid c3">
+      {aiCards.map(c => <div class="card"><h3>{c.t}</h3><p>{c.d}</p></div>)}
+    </div>
+    <div style="margin-top:28px"><a class="textlink" href="/solutions/ai-product-content/">Explore AI Solutions &rarr;</a></div>
+  </div></section>
+
+  <section class="om-sec"><div class="wrap">
+    <p class="eyebrow">Built Around Your Business</p>
+    <h2 class="kop-sectie">Solutions for businesses that want to operate and grow smarter.</h2>
+    <div class="feat-grid c3">
+      {audiences.map(a => <div class="card"><h3>{a.t}</h3><p>{a.d}</p></div>)}
+    </div>
+    <div style="margin-top:28px"><a class="btn" href="/industries/">Find the Right Solution &rarr;</a></div>
+  </div></section>
+
+  <section class="om-sec om-sec--raised"><div class="wrap">
+    <p class="eyebrow">Our Approach</p>
+    <h2 class="kop-sectie">Technology should simplify your business, not create another layer of complexity.</h2>
+    <div class="feat-grid">
+      {why.map(w => <div class="card"><h3>{w.t}</h3><p>{w.d}</p></div>)}
+    </div>
+  </div></section>
+
+  <section class="om-sec"><div class="wrap">
+    <p class="eyebrow">A Clear Path Forward</p>
+    <h2 class="kop-sectie">From complexity to a workable solution.</h2>
+    <div class="steps" style="grid-template-columns:1fr">
+      {steps.map((s, i) => <div class="step"><p class="eyebrow">{String(i + 1).padStart(2, '0')}</p><h3 style="margin:8px 0 6px;font-size:20px">{s.t}</h3><p style="margin:0;color:var(--muted);font-size:15px">{s.d}</p></div>)}
+    </div>
+    <div style="margin-top:28px"><a class="textlink" href="/our-approach/">Explore Our Approach &rarr;</a></div>
+  </div></section>
+
+  <CtaBand h2="Let's make your ecommerce operations simpler." text="Whether you're connecting an ERP, managing multiple sales channels or exploring AI automation, the first step is understanding where your business needs help. Tell us what you're trying to improve. We'll discuss a practical approach and the right next step." secondaryLabel="Explore Our Solutions" secondaryHref="/solutions/" />
+
+  <section class="om-sec"><div class="wrap">
+    <h2 class="kop-sectie">Frequently asked questions</h2>
+    <FaqList items={faq} />
+    <p style="margin-top:24px"><a class="textlink" href="/faq/">See all questions &rarr;</a></p>
+  </div></section>
 </Base>

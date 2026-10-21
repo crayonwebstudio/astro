@@ -1,25 +1,40 @@
 ---
 import '../styles/global.css';
-import { site, nav, footer, home } from '../data/content.ts';
-const { title = site.name + ' · ' + site.tagline, description = site.description, ogDescription = description, jsonLd = [], finalCtaImage = '/portret-dylan.jpg', finalCtaImageAlt = 'Dylan van den Bosch, oprichter van Omnimerce' } = Astro.props;
-const siteUrl = 'https://astro.woodwolfdigital.com';
+import { site, nav, SITE_URL } from '../data/omnimerce.ts';
+const { title = site.name + ' | ' + site.positioning, description = site.description, ogDescription = description, jsonLd = [] } = Astro.props;
+const siteUrl = SITE_URL;
 const canonical = `${siteUrl}${Astro.url.pathname}`;
 const ogImage = `${siteUrl}/og.jpg`;
 const jsonLdGraph = [
-  { '@type': 'Organization', '@id': `${siteUrl}/#organisatie`, name: 'Omnimerce', url: `${siteUrl}/`, description: 'Omnimerce werkt waar strategie, techniek, zichtbaarheid, taal en AI elkaar raken. Eén aanspreekpunt, van het eerste gesprek tot de oplevering.', email: 'hallo@omnimerce.online', telephone: '+31619618278', logo: { '@type': 'ImageObject', '@id': `${siteUrl}/#logo`, url: `${siteUrl}/omnimerce-logo.svg`, contentUrl: `${siteUrl}/omnimerce-logo.svg`, caption: 'Omnimerce' }, image: { '@id': `${siteUrl}/#logo` }, contactPoint: { '@type': 'ContactPoint', contactType: 'sales', email: 'hallo@omnimerce.online', telephone: '+31619618278', availableLanguage: 'nl', areaServed: 'NL' }, founder: { '@id': `${siteUrl}/over/#oprichter` }, sameAs: ['https://www.linkedin.com/company/biite-agency'], identifier: { '@type': 'PropertyValue', name: 'KvK', value: '42153735' }, iso6523Code: '0106:42153735', vatID: 'NL005540062B37', areaServed: 'NL', knowsLanguage: 'nl-NL' },
-  { '@type': 'WebSite', '@id': `${siteUrl}/#website`, url: `${siteUrl}/`, name: 'Omnimerce', alternateName: 'omnimerce.online', inLanguage: 'nl-NL', publisher: { '@id': `${siteUrl}/#organisatie` } },
-  { '@type': 'Person', '@id': `${siteUrl}/over/#oprichter`, name: 'Dylan van den Bosch', url: `${siteUrl}/over/`, jobTitle: 'Oprichter', image: `${siteUrl}/portret-dylan.jpg`, sameAs: ['https://www.linkedin.com/in/dylan-van-den-bosch/'], worksFor: { '@id': `${siteUrl}/#organisatie` } },
+  { '@type': 'Organization', '@id': `${siteUrl}/#organization`, name: 'Omnimerce', url: `${siteUrl}/`, slogan: 'Commerce Without Complexity', description: 'Omnimerce connects the systems, processes and technology behind ecommerce businesses. From ERP and manufacturing to marketplace integrations, AI-powered product content and digital growth, we help businesses reduce manual work and operate with greater clarity.', email: site.email, logo: { '@type': 'ImageObject', '@id': `${siteUrl}/#logo`, url: `${siteUrl}/omnimerce-logo.svg`, contentUrl: `${siteUrl}/omnimerce-logo.svg`, caption: 'Omnimerce' }, image: { '@id': `${siteUrl}/#logo` }, contactPoint: { '@type': 'ContactPoint', contactType: 'sales', email: site.email, availableLanguage: 'en' } },
+  { '@type': 'WebSite', '@id': `${siteUrl}/#website`, url: `${siteUrl}/`, name: 'Omnimerce', alternateName: 'omnimerce.online', inLanguage: 'en', publisher: { '@id': `${siteUrl}/#organization` } },
   ...jsonLd,
 ];
-const checkItems = [
-  'Je bespreekt je vraag met iemand die ook bij de uitvoering betrokken blijft.',
-  'Samen met Omnimerce bekijk je wat nodig is en welke eerste stap past.',
-  'Past je vraag beter bij een andere specialist, dan hoor je dat.',
+const solutionLinks = [
+  { label: 'ERP & Accounting', href: '/solutions/ecommerce-erp-accounting/' },
+  { label: 'Manufacturing & Inventory', href: '/solutions/manufacturing-inventory/' },
+  { label: 'Marketplace Integrations', href: '/solutions/marketplace-integration/' },
+  { label: 'AI Product Content', href: '/solutions/ai-product-content/' },
+  { label: 'Marketing Automation', href: '/solutions/marketing-automation/' },
+  { label: 'Ecommerce SEO', href: '/solutions/ecommerce-seo/' },
+  { label: 'Custom Integrations', href: '/solutions/custom-integrations/' },
 ];
-const checkSvg = '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256" aria-hidden="true" class="cta-check"><path d="M232.49,80.49l-128,128a12,12,0,0,1-17,0l-56-56a12,12,0,1,1,17-17L96,183,215.51,63.51a12,12,0,0,1,17,17Z"></path></svg>';
+const companyLinks = [
+  { label: 'About Omnimerce', href: '/about/' },
+  { label: 'Our Approach', href: '/our-approach/' },
+  { label: 'Industries', href: '/industries/' },
+  { label: 'Case Studies', href: '/case-studies/' },
+  { label: 'Insights', href: '/insights/' },
+  { label: 'Contact', href: '/contact/' },
+];
+const legalLinks = [
+  { label: 'Privacy Policy', href: '/privacy-policy/' },
+  { label: 'Terms & Conditions', href: '/terms/' },
+  { label: 'FAQ', href: '/faq/' },
+];
 ---
 <!doctype html>
-<html lang="nl">
+<html lang="en">
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -34,7 +49,7 @@ const checkSvg = '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
 <meta property="og:image:height" content="630" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content={canonical} />
-<meta property="og:locale" content="nl_NL" />
+<meta property="og:locale" content="en_US" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content={title} />
 <meta name="twitter:description" content={ogDescription} />
@@ -50,37 +65,28 @@ const checkSvg = '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
 </head>
 <body>
 <header class="site"><div class="wrap"><div class="header-inner">
-<a href="/" aria-label="Omnimerce, naar de homepage"><svg class="site-logo" xmlns="http://www.w3.org/2000/svg" viewBox="40 112 876 176" role="img" aria-label="Omnimerce" style="width:auto"><path d="M136.246 185.335 C149.266 201.063 149.901 223.636 137.785 240.07 C125.67 256.505 103.919 262.575 85.044 254.79 C66.169 247.005 55.022 227.366 58.016 207.169 C61.009 186.972 77.373 171.41 97.694 169.434" fill="none" stroke="#333333" stroke-width="24"/><path d="M126.334 129.677 C128.163 148.45 132.207 154.645 150.776 160.301 C131.926 164.936 127.551 170.901 124.702 189.547 C122.873 170.774 118.83 164.579 100.26 158.924 C119.11 154.289 123.485 148.323 126.334 129.677 Z" fill="#ff795b"/><text transform="matrix(1.02 0 0 1 157.592 269.018)" x="0" y="0" xml:space="preserve" font-family="'Plus Jakarta Sans'" font-size="163.812" font-weight="800" fill="#333333" letter-spacing="-11.139"><tspan x="0" y="0">mnimerce</tspan></text></svg></a>
-<nav class="main" aria-label="hoofdnavigatie">{nav.map(n => <a href={n.href}>{n.label}</a>)}</nav>
+<a href="/" aria-label="Omnimerce, back to homepage"><svg class="site-logo" xmlns="http://www.w3.org/2000/svg" viewBox="40 112 876 176" role="img" aria-label="Omnimerce" style="width:auto"><path d="M136.246 185.335 C149.266 201.063 149.901 223.636 137.785 240.07 C125.67 256.505 103.919 262.575 85.044 254.79 C66.169 247.005 55.022 227.366 58.016 207.169 C61.009 186.972 77.373 171.41 97.694 169.434" fill="none" stroke="#333333" stroke-width="24"/><path d="M126.334 129.677 C128.163 148.45 132.207 154.645 150.776 160.301 C131.926 164.936 127.551 170.901 124.702 189.547 C122.873 170.774 118.83 164.579 100.26 158.924 C119.11 154.289 123.485 148.323 126.334 129.677 Z" fill="#ff795b"/><text transform="matrix(1.02 0 0 1 157.592 269.018)" x="0" y="0" xml:space="preserve" font-family="'Plus Jakarta Sans'" font-size="163.812" font-weight="800" fill="#333333" letter-spacing="-11.139"><tspan x="0" y="0">mnimerce</tspan></text></svg></a>
+<nav class="main" aria-label="Main navigation">{nav.map(n => <a href={n.href}>{n.label}</a>)}</nav>
 </div></div></header>
 <div class="header-actions">
 <a href={site.ctaHref} class="btn header-cta">{site.ctaLabel} &rarr;</a>
-<button type="button" class="menu-btn" aria-expanded="false" aria-controls="mobile-menu" aria-label="menu openen" onclick="document.getElementById('mobile-menu').classList.toggle('open');this.setAttribute('aria-expanded', document.getElementById('mobile-menu').classList.contains('open') ? 'true' : 'false')"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="3" y="5" width="18" height="2" rx="1"></rect><rect x="3" y="11" width="18" height="2" rx="1"></rect><rect x="3" y="17" width="18" height="2" rx="1"></rect></svg></button>
+<button type="button" class="menu-btn" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu" onclick="document.getElementById('mobile-menu').classList.toggle('open');this.setAttribute('aria-expanded', document.getElementById('mobile-menu').classList.contains('open') ? 'true' : 'false')"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="3" y="5" width="18" height="2" rx="1"></rect><rect x="3" y="11" width="18" height="2" rx="1"></rect><rect x="3" y="17" width="18" height="2" rx="1"></rect></svg></button>
 </div>
-<nav id="mobile-menu" class="mobile-menu" aria-label="mobiele navigatie">{nav.map(n => <a href={n.href} onclick="document.getElementById('mobile-menu').classList.remove('open')">{n.label}</a>)}<a href="/blog/" onclick="document.getElementById('mobile-menu').classList.remove('open')">Blog</a><a href="/contact/" onclick="document.getElementById('mobile-menu').classList.remove('open')">Contact</a></nav>
+<nav id="mobile-menu" class="mobile-menu" aria-label="Mobile navigation">{nav.map(n => <a href={n.href} onclick="document.getElementById('mobile-menu').classList.remove('open')">{n.label}</a>)}</nav>
 <main><slot /></main>
 <footer>
-  <section class="final-cta-section"><div class="wrap"><div class="final-cta-grid">
-    <div class="final-cta-card">
-      <h2 class="kop-sectie">Laten we <strong class="text-vivid">samen</strong> kijken waar groei vastloopt</h2>
-      <ul class="final-cta-checklist">
-        {checkItems.map(t => <li><span set:html={checkSvg} />{t}</li>)}
-      </ul>
-      <div class="final-cta-actions"><a class="btn" href={site.ctaHref}>{site.ctaLabel} &rarr;</a><a class="textlink" href="/expertise/">{home.finalCtaSecondaryLabel}</a></div>
-    </div>
-    <div class="final-cta-img"><img src={finalCtaImage} alt={finalCtaImageAlt} width="1122" height="1402" loading="lazy" decoding="async" /></div>
-  </div></div></section>
   <div class="voet-reveal"><div class="voet-reveal__vlak bg-raised"><div class="wrap"><div class="footer-grid-light">
     <div>
       <svg class="footer-logo" xmlns="http://www.w3.org/2000/svg" viewBox="40 112 876 176" role="img" aria-label="Omnimerce" style="height:40px;width:auto;display:block"><path d="M136.246 185.335 C149.266 201.063 149.901 223.636 137.785 240.07 C125.67 256.505 103.919 262.575 85.044 254.79 C66.169 247.005 55.022 227.366 58.016 207.169 C61.009 186.972 77.373 171.41 97.694 169.434" fill="none" stroke="#333333" stroke-width="24"/><path d="M126.334 129.677 C128.163 148.45 132.207 154.645 150.776 160.301 C131.926 164.936 127.551 170.901 124.702 189.547 C122.873 170.774 118.83 164.579 100.26 158.924 C119.11 154.289 123.485 148.323 126.334 129.677 Z" fill="#ff795b"/><text transform="matrix(1.02 0 0 1 157.592 269.018)" x="0" y="0" xml:space="preserve" font-family="'Plus Jakarta Sans'" font-size="163.812" font-weight="800" fill="#333333" letter-spacing="-11.139"><tspan x="0" y="0">mnimerce</tspan></text></svg>
-      <p style="margin-top:20px;max-width:34ch;font-size:14px;line-height:1.7;color:var(--muted)">{footer.intro}</p>
-      <a href={site.linkedin} class="linkedin-btn" aria-label="Omnimerce op LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 256 256" aria-hidden="true"><path d="M216,20H40A20,20,0,0,0,20,40V216a20,20,0,0,0,20,20H216a20,20,0,0,0,20-20V40A20,20,0,0,0,216,20Zm-4,192H44V44H212ZM112,176V120a12,12,0,0,1,21.43-7.41A40,40,0,0,1,192,148v28a12,12,0,0,1-24,0V148a16,16,0,0,0-32,0v28a12,12,0,0,1-24,0ZM96,120v56a12,12,0,0,1-24,0V120a12,12,0,0,1,24,0ZM68,80A16,16,0,1,1,84,96,16,16,0,0,1,68,80Z"></path></svg></a>
+      <p style="margin-top:20px;font-weight:700;color:var(--deep)">Commerce Without Complexity.</p>
+      <p style="margin-top:8px;max-width:36ch;font-size:14px;line-height:1.7;color:var(--muted)">AI-powered ecommerce solutions that connect business operations, marketplace integrations and intelligent automation.</p>
     </div>
-    <nav aria-label="footernavigatie"><p class="footer-col-title">{footer.navTitle}</p><ul class="footer-links">{footer.navLinks.map(l => <li><a href={l.href}>{l.label}</a></li>)}</ul></nav>
-    <nav aria-label="expertise"><p class="footer-col-title">{footer.expertiseTitle}</p><ul class="footer-links">{footer.expertiseLinks.map(l => <li><a href={l.href}><span class="footer-num">{l.n}</span>{l.label}</a></li>)}</ul></nav>
-    <div><p class="footer-col-title">{footer.contactTitle}</p><ul class="footer-links"><li><a href={`mailto:${site.email}`} style="display:inline-flex;align-items:baseline;gap:8px"><svg class="footer-contact-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 256 256" aria-hidden="true"><path d="M224,44H32A12,12,0,0,0,20,56V192a20,20,0,0,0,20,20H216a20,20,0,0,0,20-20V56A12,12,0,0,0,224,44ZM193.15,68,128,127.72,62.85,68ZM44,188V83.28l75.89,69.57a12,12,0,0,0,16.22,0L212,83.28V188Z"></path></svg>{site.email}</a></li><li><a href={`tel:${site.phoneLink}`} style="display:inline-flex;align-items:baseline;gap:8px"><svg class="footer-contact-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 256 256" aria-hidden="true"><path d="M224,154.8l-47.09-21.11-.18-.08a19.94,19.94,0,0,0-19,1.75,13.08,13.08,0,0,0-1.12.84l-22.31,19c-13-7.05-26.43-20.37-33.49-33.21l19.06-22.66a11.76,11.76,0,0,0,.85-1.15,20,20,0,0,0,1.66-18.83,1.42,1.42,0,0,1-.08-.18L101.2,32A20.06,20.06,0,0,0,80.42,20.15,60.27,60.27,0,0,0,28,80c0,81.61,66.39,148,148,148a60.27,60.27,0,0,0,59.85-52.42A20.06,20.06,0,0,0,224,154.8ZM176,204A124.15,124.15,0,0,1,52,80,36.29,36.29,0,0,1,80.48,44.46l18.82,42L80.14,109.28a12,12,0,0,0-.86,1.16A20,20,0,0,0,78,130.08c9.42,19.28,28.83,38.56,48.31,48A20,20,0,0,0,146,176.63a11.63,11.63,0,0,0,1.11-.85l22.43-19.07,42,18.81A36.29,36.29,0,0,1,176,204Z"></path></svg>{site.phoneDisplay}</a></li></ul></div>
+    <nav aria-label="Solutions"><p class="footer-col-title">Solutions</p><ul class="footer-links">{solutionLinks.map(l => <li><a href={l.href}>{l.label}</a></li>)}</ul></nav>
+    <nav aria-label="Company"><p class="footer-col-title">Company</p><ul class="footer-links">{companyLinks.map(l => <li><a href={l.href}>{l.label}</a></li>)}</ul></nav>
+    <div><p class="footer-col-title">Contact</p><ul class="footer-links"><li><a href={`mailto:${site.email}`}>{site.email}</a></li></ul>
+    <p class="footer-col-title" style="margin-top:28px">Legal</p><ul class="footer-links">{legalLinks.map(l => <li><a href={l.href}>{l.label}</a></li>)}</ul></div>
   </div>
-  <div class="footer-bottom-light"><p>2026 Omnimerce<span> &middot; KvK 42153735</span><span> &middot; btw NL005540062B37</span></p><div>{footer.legal.map(l => <a href={l.href}>{l.label}</a>)}</div></div>
+  <div class="footer-bottom-light"><p>Copyright &copy; 2026 Omnimerce. All rights reserved.</p><div>{legalLinks.slice(0,2).map(l => <a href={l.href}>{l.label}</a>)}</div></div>
   </div></div></div>
 </footer>
 </body></html>
