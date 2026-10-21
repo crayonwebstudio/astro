@@ -54,7 +54,8 @@ const logos: Record<string, string> = {
 .remix-kop-line2{position:relative;margin-top:4px;display:inline-flex;align-items:baseline;white-space:nowrap}
 .hart{position:relative;margin-left:6px;display:inline-flex;width:14px;height:14px;cursor:pointer;align-items:center;justify-content:center;transform:translateY(2px)}
 .hart-dot{position:absolute;display:inline-block;width:14px;height:14px;border-radius:50%;background:#ff5757;box-shadow:0 1px 2px rgba(255,87,87,0.5)}
-.hart-ring{position:absolute;width:20px;height:20px;border-radius:50%;border:2px solid #ff5757;animation:pulse-ring 2s cubic-bezier(0.19,1,0.22,1) infinite}
+.hart-ring{position:absolute;width:20px;height:20px;border-radius:50%;border:2px solid #ff5757;opacity:0}
+.hart.pulse-on .hart-ring{animation:pulse-ring 2s cubic-bezier(0.19,1,0.22,1) infinite;opacity:1}
 @keyframes pulse-ring{0%{transform:scale(0.9);opacity:0.85}40%{opacity:0.55}85%{opacity:0.1}100%{transform:scale(2.8);opacity:0}}
 @keyframes pulse-signal{0%{stroke-dashoffset:600}100%{stroke-dashoffset:0}}
 .remix-lead{margin-top:28px;max-width:29rem;font-size:16px;line-height:1.65;color:rgba(16,23,49,0.75)}
@@ -167,11 +168,10 @@ function renderWires(){
     window.__cardBranch = d;
     const p = document.createElementNS('http://www.w3.org/2000/svg','path'); p.setAttribute('d', d); p.setAttribute('fill','none'); p.setAttribute('stroke', lit==='card' ? '#101731' : 'rgba(16,23,49,0.14)'); p.setAttribute('stroke-width', lit==='card' ? 1.75 : 1.25); p.setAttribute('stroke-dasharray', lit==='card' ? 'none' : '4 3'); p.setAttribute('stroke-linecap','round'); p.style.transition='all .3s'; cardG.appendChild(p);
   }
+  hart.classList.toggle('pulse-on', !!(lit && branches[lit]));
   if(lit && branches[lit]){
     const p = document.createElementNS('http://www.w3.org/2000/svg','path'); p.setAttribute('d', branches[lit]); p.setAttribute('fill','none'); p.setAttribute('stroke','#101731'); p.setAttribute('stroke-width','2'); p.setAttribute('stroke-linecap','round'); p.style.transition='all .3s'; activeG.appendChild(p);
     const pulse = document.createElementNS('http://www.w3.org/2000/svg','path'); pulse.setAttribute('d', branches[lit]); pulse.setAttribute('fill','none'); pulse.setAttribute('stroke','#ff5757'); pulse.setAttribute('stroke-width','2.5'); pulse.setAttribute('stroke-linecap','round'); pulse.setAttribute('stroke-dasharray','40 260'); pulse.style.animation='pulse-signal 1.8s linear infinite'; activeG.appendChild(pulse);
-  } else if(!lit){
-    const idleD = window.__cardBranch || branches['positionering']; if(idleD){ const pulse = document.createElementNS('http://www.w3.org/2000/svg','path'); pulse.setAttribute('d', idleD); pulse.setAttribute('fill','none'); pulse.setAttribute('stroke','#ff5757'); pulse.setAttribute('stroke-width','2'); pulse.setAttribute('stroke-linecap','round'); pulse.setAttribute('stroke-dasharray','30 270'); pulse.style.animation='pulse-signal 2.2s linear infinite'; activeG.appendChild(pulse); }
   }
 }
 function bind(){
