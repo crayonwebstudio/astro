@@ -179,7 +179,8 @@ function bind(){
   const card = document.getElementById('meterCard'); if(card){ card.addEventListener('mouseenter', ()=>{ hoveredId='card'; renderWires(); }); card.addEventListener('mouseleave', ()=>{ hoveredId=null; renderWires(); }); }
   const hart = document.getElementById('hart'); if(hart){ hart.addEventListener('click', ()=>{ activeId = activeId ? null : 'positionering'; renderWires(); }); }
   document.querySelectorAll('.meter-tab').forEach((b)=>{ b.addEventListener('click', ()=>{ selectedMetric = b.getAttribute('data-metric'); document.querySelectorAll('.meter-tab').forEach(x=>x.classList.remove('active')); b.classList.add('active'); renderChart(); }); });
-  const cols = document.getElementById('meterHoverCols'); if(cols){ cols.innerHTML=''; for(let i=0;i<28;i++){ const d=document.createElement('div'); d.className='meter-hover-col'; d.addEventListener('mouseenter', ()=>{ chartHoverIdx=i; renderChart(); }); cols.appendChild(d); } cols.addEventListener('mouseleave', ()=>{ chartHoverIdx=null; renderChart(); }); }
+  const cols = document.getElementById('meterHoverCols'); if(cols){ cols.innerHTML=''; for(let i=0;i<28;i++){ const d=document.createElement('div'); d.className='meter-hover-col'; d.addEventListener('mouseenter', ()=>{ chartHoverIdx=i; renderChart(); }); cols.appendChild(d); } cols.addEventListener('mouseleave', ()=>{ chartHoverIdx=null; renderChart(); });
+  const wrap = cols.parentElement; if(wrap){ wrap.addEventListener('mousemove', (e)=>{ const r = wrap.getBoundingClientRect(); if(!r.width) return; const ratio = (e.clientX - r.left) / r.width; const i = Math.max(0, Math.min(27, Math.floor(ratio * 28))); if(i !== chartHoverIdx){ chartHoverIdx = i; renderChart(); } }); wrap.addEventListener('mouseleave', ()=>{ chartHoverIdx=null; renderChart(); }); } }
   window.addEventListener('resize', renderWires); setInterval(renderWires, 500);
 }
 renderChart(); bind(); renderWires();
