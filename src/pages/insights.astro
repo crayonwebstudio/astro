@@ -1,58 +1,28 @@
 ---
 import Base from '../layouts/Base.astro';
-import ImgPh from '../components/ImgPh.astro';
-import CtaBand from '../components/CtaBand.astro';
-import Crumb from '../components/Crumb.astro';
 
-const topics = [
-  { t: 'Ecommerce ERP and operations', d: 'Guides to ERP implementation, inventory, accounting and operational workflows.' },
-  { t: 'Marketplace integrations', d: 'Product mapping, stock synchronization, order processing, settlement reconciliation and connector reliability.' },
-  { t: 'AI for ecommerce', d: 'Product content, image workflows, automation, quality control and practical AI implementation.' },
-  { t: 'Manufacturing and inventory', d: 'BOMs, material planning, production costing and multichannel stock management.' },
-  { t: 'SEO and digital growth', d: 'Technical SEO, product page optimization, analytics, AEO, GEO and conversion experience.' },
-];
-const articles = [
-  { t: 'How to Connect ERPNext With Ecommerce Marketplaces', d: 'The data model, synchronization rules and failure handling that make an ERP-to-marketplace connection reliable in daily operations.' },
-  { t: 'A Practical Guide to Multichannel Inventory Synchronization', d: 'How allocation rules, safety stock and reservations keep stock accurate when the same products sell through several channels.' },
-  { t: 'How to Calculate True Profit Per Ecommerce SKU', d: 'Which costs belong in a per-SKU profit view, from product cost and marketplace fees to shipping and returns, and what the data requires.' },
-  { t: 'AI Product Image Generation: How to Preserve Product Accuracy', d: 'How to use AI image workflows for studio and lifestyle visuals without changing the product a customer actually receives.' },
-  { t: 'How to Automate Ecommerce Product Listing Creation', d: 'Turning verified product data into channel-ready listings with templates, approval steps and controlled publishing.' },
-  { t: 'What to Check Before Choosing an Ecommerce ERP', d: 'The operational questions that matter more than feature lists when selecting an ERP for a growing ecommerce business.' },
-  { t: 'Technical SEO Checklist for Ecommerce Product Pages', d: 'The crawl, indexation, structured data and content checks that decide whether product pages can be found and understood.' },
-  { t: 'How to Connect Manufacturing Costs to Online Sales', d: 'Linking bills of materials and production costs to the products sold online, so margins reflect what items actually cost to make.' },
-  { t: 'How to Build a Reliable Marketplace Integration', d: 'Designing for rate limits, duplicate events, retries and reconciliation, so integrations recover instead of failing silently.' },
-  { t: 'A Practical Introduction to AEO and GEO for Ecommerce Brands', d: 'What answer and generative engine optimization actually involve, and how clear, structured content helps without promising rankings.' },
+// Insights articles are in preparation. Topics are shown honestly as planned
+// articles, never as published posts with invented authors or dates.
+const posts = [
+  { title: "How to connect Amazon inventory with ERPNext", description: "A practical guide to SKU mapping, stock allocation, synchronization frequency and overselling prevention.", tag: "Marketplace Integration" },
+  { title: "What product data do you need before using AI content?", description: "The minimum verified product information required to generate useful descriptions and images.", tag: "AI Product Content" },
+  { title: "How to calculate true marketplace profitability", description: "A framework for combining product cost, commissions, shipping, advertising, returns and settlement differences.", tag: "Ecommerce Operations" },
+  { title: "Why marketplace integrations fail", description: "Common causes of duplicate orders, stale stock, failed retries and reconciliation problems.", tag: "Integrations" },
+  { title: "How to prepare your product catalogue for AI-generated images", description: "Reference images, product facts, brand rules and review processes for AI product imagery.", tag: "AI Product Content" },
+  { title: "Technical SEO checks every ecommerce store should run", description: "A practical framework for crawlability, indexation, duplicate content, templates and structured data.", tag: "Ecommerce SEO" },
+  { title: "What is AEO and GEO in ecommerce?", description: "How answer engines and generative search change the way product and service information should be structured.", tag: "Ecommerce SEO" },
+  { title: "Manufacturing inventory explained for online sellers", description: "BOMs, work orders, material consumption and finished-goods availability for businesses that make what they sell.", tag: "Manufacturing" },
 ];
 ---
-<Base title="Ecommerce Technology, AI & Automation Insights | Omnimerce" description="Practical guidance on ecommerce ERP, manufacturing, inventory, marketplace integrations, AI product content and ecommerce SEO.">
-  <section class="om-hero"><div class="wrap">
-    <Crumb trail={[{ label: 'Home', href: '/' }, { label: 'Insights' }]} />
-    <div class="split">
-      <div>
-        <h1>Ideas and guidance for better ecommerce operations.</h1>
-        <div class="prose-en" style="margin-top:22px">
-          <p>Explore practical articles on ecommerce technology, business systems, AI automation, marketplace integrations and digital growth.</p>
-          <p>Our focus is on helping businesses understand their options, evaluate trade-offs and make better implementation decisions.</p>
-        </div>
-      </div>
-      <ImgPh desc="A clean editorial workspace with a laptop showing an ecommerce workflow diagram, product catalogue and analytics report." ratio="wide" label="Hero image" />
-    </div>
-  </div></section>
-
-  <section class="om-sec"><div class="wrap">
-    <h2 class="kop-sectie">Featured topics</h2>
-    <div class="feat-grid c3">
-      {topics.map(t => <div class="card"><h3>{t.t}</h3><p>{t.d}</p></div>)}
-    </div>
-  </div></section>
-
-  <section class="om-sec om-sec--raised"><div class="wrap">
-    <h2 class="kop-sectie">Articles in preparation</h2>
-    <p class="lead sec-intro">The first Omnimerce articles are being written. These are the topics in the pipeline.</p>
-    <div class="feat-grid">
-      {articles.map(a => <article class="card"><p style="margin:0 0 12px"><span class="tag-soon">Coming soon</span></p><h3>{a.t}</h3><p>{a.d}</p></article>)}
-    </div>
-  </div></section>
-
-  <CtaBand h2="Have a topic you'd like us to explore?" primaryLabel="Contact Omnimerce" />
+<Base title="Ecommerce Insights | ERP, AI, Marketplaces & SEO · Omnimerce" description="Read practical Omnimerce insights on ecommerce ERP, marketplace integrations, manufacturing, AI product content, SEO and business automation.">
+<section class="hero"><div class="wrap"><p class="eyebrow">Insights</p><h1>Ideas and guidance for better ecommerce operations<span class="text-vivid">.</span></h1><p class="lead">Omnimerce Insights will publish practical guidance for ecommerce businesses that want better connected systems, more efficient operations and useful AI implementation. These articles are currently in preparation.</p></div></section>
+<section><div class="wrap"><div class="services">
+{posts.map((post) => (
+  <article class="svc" style="min-height:0">
+    <p style="color:var(--muted);font-size:14px;margin:18px 0 0">Coming soon · {post.tag}</p>
+    <h2 style="margin:10px 0 10px">{post.title}</h2>
+    <p style="color:var(--muted)">{post.description}</p>
+  </article>
+))}
+</div></div></section>
 </Base>

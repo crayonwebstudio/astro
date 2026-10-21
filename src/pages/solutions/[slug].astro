@@ -1,89 +1,30 @@
 ---
 import Base from '../../layouts/Base.astro';
-import ImgPh from '../../components/ImgPh.astro';
-import FaqList from '../../components/FaqList.astro';
-import CtaBand from '../../components/CtaBand.astro';
-import Crumb from '../../components/Crumb.astro';
-import { solutions, SITE_URL } from '../../data/omnimerce.ts';
-
-export function getStaticPaths() {
-  return solutions.map(s => ({ params: { slug: s.slug }, props: { s } }));
-}
-const { s } = Astro.props;
-const related = solutions.filter(x => x.slug !== s.slug);
-const checkSvg = '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 256 256" aria-hidden="true" style="color:var(--vivid);flex:none;margin-top:2px"><path d="M232.49,80.49l-128,128a12,12,0,0,1-17,0l-56-56a12,12,0,0,1,17-17L96,183,215.51,63.51a12,12,0,0,1,17,17Z"></path></svg>';
-const pageUrl = `${SITE_URL}/solutions/${s.slug}/`;
-const jsonLd = [
-  { '@type': 'Service', '@id': `${pageUrl}#service`, name: s.title.split(' | ')[0], description: s.metaDesc, url: pageUrl, provider: { '@id': `${SITE_URL}/#organization` }, areaServed: 'Worldwide' },
-  { '@type': 'BreadcrumbList', itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE_URL}/` },
-    { '@type': 'ListItem', position: 2, name: 'Solutions', item: `${SITE_URL}/solutions/` },
-    { '@type': 'ListItem', position: 3, name: s.name, item: pageUrl },
-  ] },
-];
+import { expertiseDetails, site } from '../../data/content.ts';
+export function getStaticPaths() { return expertiseDetails.map(d => ({ params: { slug: d.slug }, props: { d } })); }
+const { d } = Astro.props as any;
 ---
-<Base title={s.title} description={s.metaDesc} jsonLd={jsonLd}>
-  <section class="om-hero"><div class="wrap">
-    <Crumb trail={[{ label: 'Home', href: '/' }, { label: 'Solutions', href: '/solutions/' }, { label: s.name }]} />
-    <div class="split">
-      <div>
-        <h1>{s.h1}</h1>
-        <div class="prose-en" style="margin-top:22px">{s.heroParas.map(p => <p>{p}</p>)}</div>
-        <div class="hero-actions" style="margin-top:28px"><a class="btn btn-lg" href="/contact/">{s.heroCta} &rarr;</a></div>
-      </div>
-      <ImgPh desc={s.heroImage} ratio="wide" label="Hero image" />
-    </div>
-  </div></section>
+<Base title={`${d.title} - ${site.name}`} description={d.description}>
+<section class="hero" style="padding-bottom:40px"><div class="wrap"><nav class="breadcrumb" aria-label="kruimelpad"><a href="/solutions/">Solutions</a><span>/</span><span>{d.title}</span></nav><p class="eyebrow">{d.number} {d.title}</p><h1 style="font-size:clamp(40px,5vw,72px);max-width:32ch;margin-top:24px">{d.headline}</h1><p style="margin-top:40px"><a class="btn" href={site.ctaHref}>{site.ctaLabel} &rarr;</a></p></div></section>
 
-  {s.blocks.map((b: any, i: number) => (
-    <section class={`om-sec ${i % 2 ? 'om-sec--raised' : ''}`}><div class="wrap">
-      {b.eyebrow && <p class="eyebrow">{b.eyebrow}</p>}
-      <h2 class="kop-sectie">{b.h2}</h2>
-      {b.type === 'text' && (
-        <div class="split" style="margin-top:24px;align-items:start">
-          <div class="prose-en">{b.paras.map((p: string) => <p>{p}</p>)}</div>
-          {b.image ? <ImgPh desc={b.image} ratio="std" /> : <div></div>}
-        </div>
-      )}
-      {b.type === 'features' && (
-        <>
-          <div class="feat-grid">
-            {b.items.map((it: any) => <div class="card"><h3>{it.t}</h3><p>{it.d}</p></div>)}
-          </div>
-          {b.image && <div style="margin-top:32px"><ImgPh desc={b.image} ratio="wide" /></div>}
-        </>
-      )}
-      {b.type === 'list' && (
-        <>
-          {b.intro && <p class="lead sec-intro">{b.intro}</p>}
-          <ul class="checklist list-cols">
-            {b.items.map((it: string) => <li style="display:flex;gap:10px"><span set:html={checkSvg} /><span style="color:var(--deep);font-size:15px">{it}</span></li>)}
-          </ul>
-        </>
-      )}
-      {b.type === 'steps' && (
-        <>
-          {b.intro && <p class="lead sec-intro">{b.intro}</p>}
-          <div class="steps om-steps">
-            {b.items.map((it: any, j: number) => <div class="step"><p class="eyebrow">{String(j + 1).padStart(2, '0')}</p><h3 style="margin:8px 0 6px;font-size:19px">{it.t}</h3>{it.d && <p style="margin:0;color:var(--muted);font-size:15px">{it.d}</p>}</div>)}
-          </div>
-        </>
-      )}
-    </div></section>
-  ))}
+<section style="padding-top:48px;padding-bottom:48px"><div class="wrap"><div style="display:flex;justify-content:flex-end"><p class="detail-intro" style="margin:0">{d.lead}</p></div></div></section>
 
-  <section class="om-sec"><div class="wrap">
-    <h2 class="kop-sectie">Frequently asked questions</h2>
-    <FaqList items={s.faq} />
-  </div></section>
+<section><div class="wrap"><div class="about-grid">
+<div><h2 class="kop-sectie">{d.painTitle}</h2><dl>{d.painPoints.map(p => <div style="border-top:1px solid var(--line);padding:28px 0"><dt><b>{p.title}</b></dt><dd style="margin:12px 0 0;color:var(--muted);max-width:56ch">{p.text}</dd></div>)}</dl></div>
+<figure class="about-img" style="padding:0;overflow:hidden;margin:0;aspect-ratio:3/4"><img src={d.painImage} alt={d.painImageAlt} width="800" height="1200" style="width:100%;height:100%;object-fit:cover" /></figure>
+</div></div></section>
 
-  <CtaBand h2={s.ctaH2} primaryLabel={s.heroCta} />
+{d.extraNoteTitle && <section><div class="wrap"><h2 class="kop-sectie">{d.extraNoteTitle}</h2><div class="prose" style="margin-top:28px;max-width:62ch"><p>{d.extraNote}</p></div></div></section>}
 
-  <section class="om-sec om-sec--tight"><div class="wrap">
-    <h2 class="kop-sectie">Related solutions</h2>
-    <div class="feat-grid c3" style="margin-top:28px">
-      {related.map(r => <a class="card" href={`/solutions/${r.slug}/`} style="display:block"><h3>{r.name}</h3><p>{r.metaDesc}</p><p style="margin-top:12px;color:var(--vivid);font-weight:600;font-size:14px">Explore &rarr;</p></a>)}
-    </div>
-  </div></section>
-  <style>.om-steps{grid-template-columns:1fr}@media(min-width:768px){.om-steps{grid-template-columns:repeat(2,1fr)}}@media(min-width:1200px){.om-steps{grid-template-columns:repeat(3,1fr)}}</style>
+<section><div class="wrap"><h2 class="kop-sectie">{d.whatYouGetTitle}</h2><div class="prose" style="margin-top:32px;max-width:68ch">{d.whatYouGet.map(w => <p>{w.body}</p>)}</div></div></section>
+
+<section class={`proc-${d.processBg}`}><div class="wrap"><h2 class="kop-sectie" style="text-align:center;max-width:24ch;margin:0 auto">{d.processTitle}</h2><div class="proc-steps">{d.process.map(s => <article><h3>{s.title}</h3><p>{s.text}</p></article>)}</div></div></section>
+
+<section><div class="wrap"><h2 class="kop-sectie">{d.sameTitle}</h2><dl>{d.sameInEvery.map(p => <div style="border-top:1px solid var(--line);padding:28px 0;max-width:68ch"><dt><b>{p.title}</b></dt><dd style="margin:12px 0 0;color:var(--muted)">{p.text}</dd></div>)}</dl></div></section>
+
+<section><div class="wrap"><div class="two-col"><div><h2 class="kop-sectie">{d.fitsTitle}</h2><ul>{d.fits.map(f => <li>{f}</li>)}</ul>{d.fitsIntro && <p style="color:var(--muted);margin-top:24px">{d.fitsIntro}</p>}</div><div><h2 class="kop-sectie">This does not fit if</h2><ul>{d.notFits.map(f => <li>{f}</li>)}</ul></div></div></div></section>
+
+<section><div class="wrap"><h2 class="kop-sectie">{d.faqTitle}</h2><div class="faq" style="margin-top:32px">{d.faq.map(f => <details><summary>{f.q}</summary><p>{f.a}</p></details>)}</div></div></section>
+
+<section><div class="wrap"><h2 class="kop-sectie">{d.relatedTitle}</h2><div class="services">{d.relatedPosts.map(p => <a class="svc" href={p.href}>{p.image && <img src={p.image} alt={(p as any).imageAlt ?? ""} width={(p as any).imageWidth ?? 1254} height={(p as any).imageHeight ?? 1254} style="width:100%;border-radius:16px;aspect-ratio:16/9;object-fit:cover" />}<span class="arrow">&nearr;</span><p style="color:var(--muted)">{p.date}</p><h3>{p.title}</h3><p style="color:var(--muted)">{p.description}</p></a>)}</div></div></section>
 </Base>

@@ -1,43 +1,43 @@
 ---
 import Base from '../layouts/Base.astro';
-import Crumb from '../components/Crumb.astro';
-import { site } from '../data/omnimerce.ts';
-
-// Structured outline from the content master document. The final terms require legal review
-// and must reflect the actual service model and contractual arrangements. Bracketed text marks
-// content that must not be treated as final legal wording.
-const sections = [
-  'Business identity and contact information',
-  'Website usage',
-  'Intellectual property',
-  'Accuracy and limitations of website information',
-  'Enquiry and proposal process',
-  'Scope and acceptance of project work',
-  'Fees, payment and additional work',
-  'Third-party platforms and dependencies',
-  'AI-generated outputs and review responsibilities',
-  'Confidentiality and data handling',
-  'Liability and applicable limitations',
-  'Governing law and dispute resolution',
-  'Changes to the terms',
-  'Contact information',
+import { voorwaarden, site } from '../data/content.ts';
+const siteUrl = 'https://astro.woodwolfdigital.com';
+const jsonLd = [
+  { '@type': 'WebPage', '@id': `${siteUrl}/terms/#webpage`, url: `${siteUrl}/terms/`, inLanguage: 'en', isPartOf: { '@id': `${siteUrl}/#website` }, name: 'Terms & Conditions', publisher: { '@id': `${siteUrl}/#organization` }, breadcrumb: { '@id': `${siteUrl}/terms/#breadcrumb` } },
+  { '@type': 'BreadcrumbList', '@id': `${siteUrl}/terms/#breadcrumb`, itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Omnimerce', item: `${siteUrl}/` }, { '@type': 'ListItem', position: 2, name: 'Terms & Conditions', item: `${siteUrl}/terms/` }] },
 ];
+// Group blocks into numbered clause rows. In the reference, every 'p' block is a
+// numbered clause (N.1, N.2, ...) except the intro paragraph of article 1 and the
+// unnumbered version line closing article 23. A 'ul' block belongs to the clause
+// directly above it (e.g. the payment terms in 11.2, the cases in 13.1, 15.6).
+type Row = { num: string | null; text: string; items: string[] | null; boldTerm: boolean };
+const articles: { heading: string; rows: Row[] }[] = voorwaarden.articles.map((a: any, i: number) => {
+  const rows: Row[] = [];
+  let clause = 0;
+  for (const b of a.blocks) {
+    if (b.type === 'ul') {
+      if (rows.length > 0) rows[rows.length - 1].items = b.items;
+      continue;
+    }
+    const isIntro = i === 0 && rows.length === 0;
+    const isVersion = i === voorwaarden.articles.length - 1 && b === a.blocks[a.blocks.length - 1];
+    clause += 1;
+    rows.push({ num: isIntro || isVersion ? null : `${i + 1}.${clause - (i === 0 ? 1 : 0)}`, text: b.text, items: null, boldTerm: i === 0 && !isIntro });
+  }
+  return { heading: a.heading, rows };
+});
+function termSplit(text: string) {
+  const idx = text.indexOf(': ');
+  if (idx === -1) return null;
+  return { term: text.slice(0, idx + 1), rest: text.slice(idx + 2) };
+}
 ---
-<Base title="Terms & Conditions | Omnimerce" description="The conditions for using the Omnimerce website and the general terms applicable to enquiries and services.">
-  <section class="legal-hero"><div class="wrap">
-    <Crumb trail={[{ label: 'Home', href: '/' }, { label: 'Terms & Conditions' }]} />
-    <h1 style="font-size:clamp(34px,3.6vw,52px);font-weight:400;letter-spacing:-.02em;margin:8px 0 0">Terms &amp; Conditions</h1>
-    <div class="prose-en" style="margin-top:20px">
-      <p>These terms explain the conditions for using the Omnimerce website and the general terms applicable to enquiries and services, where relevant.</p>
-    </div>
-    <p class="note" style="margin-top:20px;max-width:72ch">These terms are in preparation and require review by a qualified legal professional in the relevant jurisdiction before they are final. Project work is governed by the written proposal and agreement issued for that project. For questions, contact {site.email}.</p>
-  </div></section>
-  <section class="om-sec"><div class="wrap"><div class="clauses">
-    {sections.map((t, i) => (
-      <div class="clause" style="margin-bottom:28px">
-        <h2 style="font-size:21px;font-weight:600;margin:0 0 6px"><span class="clause-num" style="color:var(--vivid);margin-right:10px">{i + 1}.</span>{t}</h2>
-        <div class="clause-body prose-en"><p>[Section text to be completed after legal review, reflecting the actual service model and contractual arrangements of Omnimerce.]</p></div>
-      </div>
-    ))}
-  </div></div></section>
+<Base title="Terms & Conditions · Omnimerce" description={voorwaarden.description} ogDescription="The conditions for using the Omnimerce website and the general terms applicable to enquiries and services." jsonLd={jsonLd}>
+<section class="legal-hero"><div class="wrap"><div class="leeskolom"><h1>{voorwaarden.title}<span class="text-vivid">.</span></h1><p class="lead">{voorwaarden.lead}</p><p class="company-line">{voorwaarden.companyLine}</p><p class="legal-links"><a class="textlink" href={`mailto:${site.email}`}>Question about these terms</a></p></div>
+<nav class="toc-card" aria-labelledby="inhoud"><h2 class="kop-sectie" id="inhoud">Contents</h2><ol>{voorwaarden.toc.map((t, i) => <li><a class="textlink" href={`#artikel-${i + 1}`}>{t}</a></li>)}</ol></nav>
+</div></section>
+
+<div class="legal-body">
+{articles.map((a, i) => <section class="legal" id={`artikel-${i + 1}`}><div class="wrap"><h2 class="kop-sectie">{a.heading}</h2><div class="clauses">{a.rows.map(r => <div class="clause">{r.num ? <span class="clause-num">{r.num}</span> : <span class="clause-num" aria-hidden="true"></span>}<div class="clause-body">{r.boldTerm && termSplit(r.text) ? <p><strong>{termSplit(r.text)?.term}</strong> {termSplit(r.text)?.rest}</p> : <p>{r.text}</p>}{r.items ? <ul>{r.items.map(it => <li>{it}</li>)}</ul> : null}</div></div>)}</div></div></section>)}
+</div>
 </Base>

@@ -1,34 +1,12 @@
 ---
 import Base from '../../layouts/Base.astro';
-import ImgPh from '../../components/ImgPh.astro';
-import CtaBand from '../../components/CtaBand.astro';
-import Crumb from '../../components/Crumb.astro';
-import { industries, industryCardsExtra } from '../../data/omnimerce.ts';
-const cards = [
-  ...industries.map(i => ({ name: i.name, text: i.cardText, cta: i.cardCta, href: `/industries/${i.slug}/` })),
-  ...industryCardsExtra,
-];
+import { industriesIndex, site } from '../../data/content.ts';
+const bgFor: Record<string, [string, string]> = { '01': ['#242424', '#FFFFFF'], '02': ['#A5EBD6', '#242424'], '03': ['#A5C8EB', '#242424'], '04': ['#FFACEA', '#242424'], '05': ['#FFE1D6', '#242424'] };
 ---
-<Base title="Ecommerce Solutions for Manufacturers & Online Sellers | Omnimerce" description="Explore ecommerce technology solutions for manufacturers, multichannel sellers, wholesalers and growing ecommerce brands.">
-  <section class="om-hero"><div class="wrap">
-    <Crumb trail={[{ label: 'Home', href: '/' }, { label: 'Industries' }]} />
-    <div class="split">
-      <div>
-        <h1>Ecommerce solutions for the way your business operates.</h1>
-        <div class="prose-en" style="margin-top:22px">
-          <p>The right technology depends on what you sell, how you source or manufacture products, where you sell them and how your operations are organized.</p>
-          <p>Omnimerce adapts ecommerce systems, integrations and automation to your business model.</p>
-        </div>
-      </div>
-      <ImgPh desc="A collage of a manufacturing workshop, ecommerce warehouse, product catalogue management screen and online storefront." ratio="wide" label="Hero image" />
-    </div>
-  </div></section>
-
-  <section class="om-sec"><div class="wrap">
-    <div class="feat-grid">
-      {cards.map(c => <a class="card" href={c.href} style="display:block"><h3>{c.name}</h3><p>{c.text}</p><p style="margin-top:12px;color:var(--vivid);font-weight:600;font-size:14px">{c.cta} &rarr;</p></a>)}
-    </div>
-  </div></section>
-
-  <CtaBand h2="Let's design a solution around your business model." primaryLabel="Discuss Your Project" />
+<Base title={`${industriesIndex.title} - ${site.name}`} description={industriesIndex.lead}>
+<section class="hero"><div class="wrap"><div class="hero-grid"><div><h1>{industriesIndex.title}<span class="text-vivid">.</span></h1><p class="lead" style="margin-top:28px">{industriesIndex.lead}</p><ul class="cluster-links">{industriesIndex.clusters.map(c => <li><a href={c.anchor} style="display:flex;gap:16px;align-items:baseline"><span style="font-size:13px;font-weight:800;color:var(--muted)">{c.number}</span><span style="font-family:Switzer,sans-serif;font-weight:700;font-size:20px">{c.title}</span></a></li>)}</ul></div><div class="gebied-grid">{industriesIndex.clusters.map(c => <a class="gebied-card" href={c.anchor} style={`background:${bgFor[c.number][0]};color:${bgFor[c.number][1]}`}><span class="gebied-nr">{c.number}</span><p class="gebied-naam">{c.title}</p><p class="gebied-diensten">{c.diensten}</p></a>)}</div></div></div></section>
+{industriesIndex.clusters.map(c => <section id={c.anchor.slice(1)}><div class="wrap"><div class="about-grid">
+<div><p><span class="cluster-pill" style={`background:${bgFor[c.number][0]};color:${bgFor[c.number][1]}`}>{c.number}</span> <span style="font-size:14px;font-weight:600;color:var(--muted)">{c.tagline}</span></p><h2 class="kop-sectie" style="margin-top:20px">{c.title}</h2><div class="prose" style="margin-top:28px"><p>{c.description}</p></div><ul class="cluster-links">{c.items.map(it => <li><a href={c.href}>{it}</a></li>)}</ul><p style="margin-top:28px"><a class="btn" href={c.href}>More about {c.title} &rarr;</a></p></div>
+<figure class="about-img" style="padding:0;overflow:hidden;margin:0;aspect-ratio:3/4"><img src={c.image} alt={c.imageAlt} width="800" height="1200" style="width:100%;height:100%;object-fit:cover;object-position:50% 15%" /></figure>
+</div></div></section>)}
 </Base>
