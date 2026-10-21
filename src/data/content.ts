@@ -93,7 +93,17 @@ export const home = {
     { "title": "Implement", "text": "We configure, develop and connect the solution in manageable stages." }
   ],
   "processLinkLabel": "The full approach, in six phases",
-  "processLinkHref": "/our-approach/"
+  "processLinkHref": "/our-approach/",
+  "faqTitle": "Frequently asked questions",
+  "faqs": [
+    { "q": "What does Omnimerce do?", "a": "Omnimerce designs and implements ecommerce technology solutions covering ERP, manufacturing, inventory, marketplace integrations, AI automation, product content and ecommerce growth." },
+    { "q": "Does Omnimerce provide customized ecommerce solutions?", "a": "Yes. Solutions can be configured around existing systems and workflows, with custom development and integrations where required." },
+    { "q": "Can Omnimerce connect our existing ERP to marketplaces?", "a": "The approach depends on your ERP, marketplace APIs, data structure and operational requirements. We assess the systems and design an appropriate integration plan." },
+    { "q": "How can AI improve ecommerce operations?", "a": "AI can assist with product content, image creation, repetitive workflows, data analysis and reporting. Suitable use cases depend on data quality, business rules and review requirements." },
+    { "q": "Does Omnimerce replace our existing systems?", "a": "Not necessarily. We first assess what your current systems do well and where they fall short. Integration, configuration, replacement or custom development may be appropriate depending on the situation." }
+  ],
+  "faqLinkLabel": "See all questions",
+  "faqLinkHref": "/faq/"
 };
 
 export const werkwijze = {
