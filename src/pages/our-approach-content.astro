@@ -1,0 +1,66 @@
+---
+import Base from '../layouts/Base.astro';
+import ImgPh from '../components/ImgPh.astro';
+import FaqList from '../components/FaqList.astro';
+import CtaBand from '../components/CtaBand.astro';
+import Crumb from '../components/Crumb.astro';
+
+const phases = [
+  { t: 'Discovery', d: 'We discuss your business model, current systems, goals, challenges and operational constraints.', del: 'Deliverables may include: initial requirements, process overview, known issues and project priorities.' },
+  { t: 'Assessment and design', d: 'We examine workflows, data ownership, integration requirements, security needs and implementation options.', del: 'Deliverables may include: workflow maps, technical recommendations, proposed architecture and implementation scope.' },
+  { t: 'Proposal and planning', d: 'We define the agreed scope, deliverables, responsibilities, dependencies, timeline and commercial terms. No implementation begins until the proposal and required access are approved.' },
+  { t: 'Implementation', d: 'We configure systems, build integrations, develop custom functionality and implement the agreed automation workflows. Work is organized into manageable stages with agreed review points.' },
+  { t: 'Testing and validation', d: 'We test representative workflows, permissions, data accuracy, synchronization failures, recovery procedures and user acceptance.' },
+  { t: 'Handover and improvement', d: 'We provide the agreed documentation, knowledge transfer and operational handover. Additional maintenance or optimization can be arranged where needed.' },
+];
+const principles = [
+  { t: 'Understand before changing', d: 'Identify the underlying cause instead of immediately replacing a tool.' },
+  { t: 'Keep data ownership clear', d: 'Define which system owns each record and how updates flow between systems.' },
+  { t: 'Test beyond the happy path', d: 'Plan for failures, exceptions, duplicate events and recovery.' },
+  { t: 'Use AI responsibly', d: 'Apply review, access controls and clear responsibilities where needed.' },
+  { t: 'Leave the team with usable knowledge', d: 'Document important workflows and explain how the delivered solution works.' },
+];
+const faq = [
+  { q: 'How long does a project take?', a: 'The timeline depends on scope, integrations, data quality, API access, dependencies and testing requirements. A timeline is agreed during planning.' },
+  { q: 'Can we begin with one module?', a: 'Yes. Projects can start with a defined operational problem and expand when the initial solution is validated.' },
+  { q: 'Do you work with existing development teams?', a: 'The engagement can be structured around your team, technical environment and responsibilities.' },
+];
+---
+<Base title="Our Ecommerce Solution Design & Implementation Process | Omnimerce" description="Learn how Omnimerce assesses business needs, designs ecommerce systems, implements integrations and validates automation workflows.">
+  <section class="om-hero"><div class="wrap">
+    <Crumb trail={[{ label: 'Home', href: '/home-content/' }, { label: 'Our Approach' }]} />
+    <div class="split">
+      <div>
+        <h1>A clear plan for a more connected ecommerce business.</h1>
+        <div class="prose-en" style="margin-top:22px">
+          <p>A successful technology project starts with understanding the business, not selecting tools at random.</p>
+          <p>Omnimerce follows a structured approach to identify the right improvements, agree on scope and implement solutions that fit your workflows.</p>
+        </div>
+        <div class="hero-actions" style="margin-top:28px"><a class="btn btn-lg" href="/contact-content/">Discuss Your Project &rarr;</a></div>
+      </div>
+      <ImgPh desc="A technology consultant and ecommerce operations lead reviewing a workflow diagram and implementation plan." ratio="wide" label="Hero image" />
+    </div>
+  </div></section>
+
+  <section class="om-sec"><div class="wrap">
+    <div class="steps om-steps">
+      {phases.map((p, i) => <div class="step"><p class="eyebrow">Phase {i + 1}</p><h3 style="margin:8px 0 6px;font-size:20px">{p.t}</h3><p style="margin:0;color:var(--muted);font-size:15px">{p.d}</p>{p.del && <p style="margin:10px 0 0;font-size:14px;color:var(--deep)">{p.del}</p>}</div>)}
+    </div>
+    <div style="margin-top:32px"><ImgPh desc="Six-step project timeline with icons for discovery, design, planning, implementation, testing and handover." ratio="wide" label="Process diagram" /></div>
+  </div></section>
+
+  <section class="om-sec om-sec--raised"><div class="wrap">
+    <h2 class="kop-sectie">Working principles</h2>
+    <div class="feat-grid">
+      {principles.map(p => <div class="card"><h3>{p.t}</h3><p>{p.d}</p></div>)}
+    </div>
+  </div></section>
+
+  <section class="om-sec"><div class="wrap">
+    <h2 class="kop-sectie">Frequently asked questions</h2>
+    <FaqList items={faq} />
+  </div></section>
+
+  <CtaBand h2="Start with the problem you need to solve." primaryLabel="Discuss Your Project" />
+  <style>.om-steps{grid-template-columns:1fr}@media(min-width:768px){.om-steps{grid-template-columns:repeat(2,1fr)}}@media(min-width:1200px){.om-steps{grid-template-columns:repeat(3,1fr)}}</style>
+</Base>

@@ -1,0 +1,34 @@
+---
+import Base from '../../layouts/Base.astro';
+import ImgPh from '../../components/ImgPh.astro';
+import CtaBand from '../../components/CtaBand.astro';
+import Crumb from '../../components/Crumb.astro';
+import { industries, industryCardsExtra } from '../../data/omnimerce.ts';
+const cards = [
+  ...industries.map(i => ({ name: i.name, text: i.cardText, cta: i.cardCta, href: `/industries-content/${i.slug}/` })),
+  ...industryCardsExtra,
+];
+---
+<Base title="Ecommerce Solutions for Manufacturers & Online Sellers | Omnimerce" description="Explore ecommerce technology solutions for manufacturers, multichannel sellers, wholesalers and growing ecommerce brands.">
+  <section class="om-hero"><div class="wrap">
+    <Crumb trail={[{ label: 'Home', href: '/home-content/' }, { label: 'Industries' }]} />
+    <div class="split">
+      <div>
+        <h1>Ecommerce solutions for the way your business operates.</h1>
+        <div class="prose-en" style="margin-top:22px">
+          <p>The right technology depends on what you sell, how you source or manufacture products, where you sell them and how your operations are organized.</p>
+          <p>Omnimerce adapts ecommerce systems, integrations and automation to your business model.</p>
+        </div>
+      </div>
+      <ImgPh desc="A collage of a manufacturing workshop, ecommerce warehouse, product catalogue management screen and online storefront." ratio="wide" label="Hero image" />
+    </div>
+  </div></section>
+
+  <section class="om-sec"><div class="wrap">
+    <div class="feat-grid">
+      {cards.map(c => <a class="card" href={c.href} style="display:block"><h3>{c.name}</h3><p>{c.text}</p><p style="margin-top:12px;color:var(--vivid);font-weight:600;font-size:14px">{c.cta} &rarr;</p></a>)}
+    </div>
+  </div></section>
+
+  <CtaBand h2="Let's design a solution around your business model." primaryLabel="Discuss Your Project" />
+</Base>

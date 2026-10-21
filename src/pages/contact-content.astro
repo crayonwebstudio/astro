@@ -1,0 +1,101 @@
+---
+import Base from '../layouts/Base.astro';
+import ImgPh from '../components/ImgPh.astro';
+import Crumb from '../components/Crumb.astro';
+import { site } from '../data/omnimerce.ts';
+
+// CONFIGURATION REQUIRED: no enquiry endpoint is connected yet.
+// Set FORM_ENDPOINT to the real submission endpoint (and any required auth) before launch.
+// Until then the form validates input and honestly tells the visitor to email instead of
+// pretending the enquiry was sent. Once connected, show this confirmation after a successful
+// submission: "Thank you for contacting Omnimerce. Your enquiry has been received. We'll review
+// the information and respond using the contact details you provided."
+const FORM_ENDPOINT = '';
+const steps = [
+  { t: 'Tell us about your business', d: 'Share your current systems, sales channels and the problem you\'re trying to solve.' },
+  { t: 'Discuss your requirements', d: 'We review the context and identify the important questions, constraints and possible approaches.' },
+  { t: 'Define a practical next step', d: 'If there\'s a suitable fit, we\'ll outline the assessment, proposal or implementation step needed to move forward.' },
+];
+const helpOptions = ['ERP and accounting', 'Manufacturing and inventory', 'Marketplace integration', 'AI product content and images', 'Marketing automation', 'Ecommerce SEO and analytics', 'Custom integration', 'Other'];
+---
+<Base title="Contact Omnimerce | Discuss Your Ecommerce Project" description="Tell Omnimerce about your ecommerce systems, integration challenges or AI automation goals and discuss a practical next step.">
+  <section class="om-hero"><div class="wrap">
+    <Crumb trail={[{ label: 'Home', href: '/home-content/' }, { label: 'Contact' }]} />
+    <div class="split">
+      <div>
+        <h1>Let's simplify your ecommerce operations.</h1>
+        <div class="prose-en" style="margin-top:22px">
+          <p>Tell us what you're trying to improve, whether it's ERP, inventory, marketplace integration, AI product content or a more connected workflow.</p>
+          <p>You don't need to have every requirement defined. We'll start by understanding your business and the challenge you want to solve.</p>
+        </div>
+      </div>
+      <ImgPh desc="A welcoming, professional meeting setup with a laptop showing an ecommerce workflow diagram. Use a genuine team image if available." ratio="wide" label="Hero image" />
+    </div>
+  </div></section>
+
+  <section class="om-sec om-sec--tight"><div class="wrap">
+    <h2 class="kop-sectie">What happens next?</h2>
+    <div class="steps om-steps">
+      {steps.map((s, i) => <div class="step"><p class="eyebrow">{String(i + 1).padStart(2, '0')}</p><h3 style="margin:8px 0 6px;font-size:20px">{s.t}</h3><p style="margin:0;color:var(--muted);font-size:15px">{s.d}</p></div>)}
+    </div>
+  </div></section>
+
+  <section class="om-sec"><div class="wrap"><div class="split" style="align-items:start">
+    <div class="form-card">
+      <h2 class="kop-sectie" style="margin-top:0">Tell us about your project.</h2>
+      <form id="enquiry-form" novalidate data-endpoint={FORM_ENDPOINT} style="margin-top:28px">
+        <div class="form-grid">
+          <div><label for="f-name">Full name *</label><input class="input" id="f-name" name="name" type="text" autocomplete="name" required /></div>
+          <div><label for="f-email">Business email *</label><input class="input" id="f-email" name="email" type="email" autocomplete="email" required /></div>
+          <div><label for="f-company">Company name *</label><input class="input" id="f-company" name="company" type="text" autocomplete="organization" required /></div>
+          <div><label for="f-website">Website URL <span style="color:var(--muted2)">(optional)</span></label><input class="input" id="f-website" name="website" type="url" autocomplete="url" /></div>
+          <div><label for="f-country">Country / region *</label><input class="input" id="f-country" name="country" type="text" autocomplete="country-name" required /></div>
+          <div><label for="f-help">What would you like help with? *</label>
+            <select class="input" id="f-help" name="help" required>
+              <option value="">Select a topic</option>
+              {helpOptions.map(o => <option value={o}>{o}</option>)}
+            </select>
+          </div>
+          <div style="grid-column:1/-1"><label for="f-systems">Current systems and platforms <span style="color:var(--muted2)">(optional)</span></label><input class="input" id="f-systems" name="systems" type="text" /></div>
+          <div style="grid-column:1/-1"><label for="f-details">Project details *</label><textarea class="input" id="f-details" name="details" rows="6" required></textarea></div>
+          <div style="grid-column:1/-1"><label for="f-contact-method">Preferred contact method <span style="color:var(--muted2)">(optional)</span></label><input class="input" id="f-contact-method" name="contactMethod" type="text" /></div>
+        </div>
+        <p class="field-hint" style="margin-top:16px">By submitting this form, you agree that Omnimerce may use the information provided to respond to your enquiry in accordance with its <a href="/privacy-policy-content/" style="text-decoration:underline">Privacy Policy</a>.</p>
+        <p id="form-error" class="note" role="alert" hidden style="margin-top:16px"></p>
+        <button class="btn btn-lg btn-full" type="submit" style="margin-top:20px">Send My Enquiry &rarr;</button>
+      </form>
+    </div>
+    <div>
+      <h2 class="kop-sectie" style="margin-top:0">Direct contact</h2>
+      <p class="lead" style="margin-top:16px">Email: <a href={`mailto:${site.email}`} style="text-decoration:underline">{site.email}</a></p>
+      <p class="lead" style="margin-top:12px">Phone and business address are published here once verified for publication.</p>
+      <div class="dark-band" style="border-radius:var(--radius);padding:32px;margin-top:32px">
+        <h3 style="color:#fff;margin:0 0 10px;font-size:22px">Commerce without complexity starts with a conversation.</h3>
+        <p style="color:rgba(255,255,255,.75);margin:0">Tell us where your current processes are slowing you down.</p>
+      </div>
+    </div>
+  </div></div></section>
+
+  <script is:inline>
+    document.getElementById('enquiry-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      var form = e.target;
+      var err = document.getElementById('form-error');
+      var missing = [];
+      form.querySelectorAll('[required]').forEach(function (f) { if (!f.value.trim()) missing.push(f); });
+      var email = document.getElementById('f-email');
+      if (email.value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) missing.push(email);
+      if (missing.length) {
+        err.hidden = false;
+        err.textContent = 'Please complete the required fields with valid information so we can respond to your enquiry.';
+        missing[0].focus();
+        return;
+      }
+      // No submission endpoint is configured yet (see FORM_ENDPOINT note in the page source).
+      // Be honest with the visitor instead of showing a false success message.
+      err.hidden = false;
+      err.textContent = 'This form is not connected to an inbox yet. Please email your enquiry to hallo@omnimerce.online and we will respond from there.';
+    });
+  </script>
+  <style>.om-steps{grid-template-columns:1fr}@media(min-width:900px){.om-steps{grid-template-columns:repeat(3,1fr)}}</style>
+</Base>

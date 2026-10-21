@@ -1,0 +1,44 @@
+---
+import Base from '../../layouts/Base.astro';
+import ImgPh from '../../components/ImgPh.astro';
+import CtaBand from '../../components/CtaBand.astro';
+import Crumb from '../../components/Crumb.astro';
+import { solutions } from '../../data/omnimerce.ts';
+const checkSvg = '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 256 256" aria-hidden="true" style="color:var(--vivid);flex:none;margin-top:2px"><path d="M232.49,80.49l-128,128a12,12,0,0,1-17,0l-56-56a12,12,0,0,1,17-17L96,183,215.51,63.51a12,12,0,0,1,17,17Z"></path></svg>';
+---
+<Base title="Ecommerce Solutions for ERP, AI & Automation | Omnimerce" description="Explore ecommerce ERP, manufacturing, inventory, marketplace integrations, AI product content, social automation and SEO solutions.">
+  <section class="om-hero"><div class="wrap">
+    <Crumb trail={[{ label: 'Home', href: '/home-content/' }, { label: 'Solutions' }]} />
+    <div class="split">
+      <div>
+        <h1>Ecommerce solutions designed to work together.</h1>
+        <div class="prose-en" style="margin-top:22px">
+          <p>Every ecommerce business has different operational challenges. Some need better inventory control. Others need marketplace integrations, manufacturing visibility or a more efficient product content workflow.</p>
+          <p>Omnimerce brings these needs together into a tailored solution based on your business, existing systems and goals.</p>
+        </div>
+        <div class="hero-actions" style="margin-top:28px"><a class="btn btn-lg" href="/contact-content/">Discuss Your Requirements &rarr;</a></div>
+      </div>
+      <ImgPh desc="Structured overview of connected ecommerce operations modules surrounding a central product and order data layer." ratio="wide" label="Hero image" />
+    </div>
+  </div></section>
+
+  {solutions.map((s, i) => (
+    <section class={`om-sec ${i % 2 ? '' : 'om-sec--raised'}`}><div class="wrap">
+      <h2 class="kop-sectie" style="margin-top:0">{s.overview.h2}</h2>
+      <div class="split" style="margin-top:28px;align-items:start">
+        <div>
+          <p class="lead">{s.overview.intro}</p>
+          {s.overview.bullets.length > 0 && (
+            <ul class="checklist">
+              {s.overview.bullets.map(b => <li style="display:flex;gap:10px"><span set:html={checkSvg} /><span style="color:var(--deep);font-size:15px">{b}</span></li>)}
+            </ul>
+          )}
+          <div style="margin-top:24px"><a class="btn" href={`/solutions-content/${s.slug}/`}>{s.overview.cta} &rarr;</a></div>
+        </div>
+        <ImgPh desc={s.overview.image} ratio="std" />
+      </div>
+    </div></section>
+  ))}
+
+  <CtaBand h2="Not sure which solution you need?" text="Tell us how your business operates today, which systems you use and where the process becomes difficult. We'll help identify a practical starting point." primaryLabel="Discuss Your Project" />
+</Base>

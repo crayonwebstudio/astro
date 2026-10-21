@@ -1,0 +1,42 @@
+---
+import Base from '../layouts/Base.astro';
+import Crumb from '../components/Crumb.astro';
+import { site } from '../data/omnimerce.ts';
+
+// This page is the structured outline from the content master document. Each section keeps an
+// explicit placeholder: the final policy text requires the verified business identity, actual
+// data practices, analytics tools and form processor, plus legal review. Do not treat the
+// placeholders as a finished legal policy.
+const sections = [
+  { t: 'Who operates this website', d: 'The business identity of the website operator and how to contact us about privacy. Our contact email is ' + site.email + '. [Full legal business name, registration details and postal address to be confirmed before publication.]' },
+  { t: 'What personal information we collect', d: '[To be completed after legal review: the categories of personal information collected through this website, including enquiry form fields such as name, business email, company, country and project details.]' },
+  { t: 'How contact forms and enquiry data are used', d: '[To be completed after legal review: how enquiry data is used to respond to project enquiries, the lawful basis for that use, and confirmation that enquiry data is not sold.]' },
+  { t: 'Cookies, analytics and consent management', d: '[To be completed after legal review: which cookies and analytics tools are actually in use on this website, their purposes, and how consent is requested and managed.]' },
+  { t: 'Third-party services and processors', d: '[To be completed after legal review: the hosting, form processing, analytics and other service providers that process personal information on our behalf.]' },
+  { t: 'Data retention and deletion', d: '[To be completed after legal review: how long enquiry and related data is retained and the criteria used to decide retention periods.]' },
+  { t: 'Data security and access controls', d: '[To be completed after legal review: the technical and organizational measures used to protect personal information and limit access to it.]' },
+  { t: 'International data transfers', d: '[To be completed where applicable: whether personal information is transferred internationally and the safeguards applied.]' },
+  { t: 'Your rights and how to exercise them', d: 'Depending on your jurisdiction, you may have rights to access, correct, delete or restrict the use of your personal information, and to object to certain processing. To make a request, contact us at ' + site.email + '. [Applicable rights and response process to be confirmed for the relevant jurisdictions.]' },
+  { t: "Children's data", d: '[To be completed if relevant: how information relating to children is handled. This website is intended for business enquiries.]' },
+  { t: 'Policy updates', d: '[To be completed after legal review: how changes to this policy are published and communicated.]' },
+  { t: 'Contact details for privacy enquiries', d: 'For privacy enquiries, contact Omnimerce at ' + site.email + '. [Postal address to be added once verified for publication.]' },
+];
+---
+<Base title="Privacy Policy | Omnimerce" description="How Omnimerce handles personal information collected through this website, and how to contact us about privacy.">
+  <section class="legal-hero"><div class="wrap">
+    <Crumb trail={[{ label: 'Home', href: '/home-content/' }, { label: 'Privacy Policy' }]} />
+    <h1 style="font-size:clamp(34px,3.6vw,52px);font-weight:400;letter-spacing:-.02em;margin:8px 0 0">Privacy Policy</h1>
+    <div class="prose-en" style="margin-top:20px">
+      <p>Omnimerce respects your privacy and aims to handle personal information responsibly. This policy explains what information is collected through this website, why it is used, how it is protected and what rights may apply.</p>
+    </div>
+    <p class="note" style="margin-top:20px;max-width:72ch">This policy is being finalized. Sections marked in brackets require verified business details and legal review before the policy is complete. The contact email shown is the live address for privacy enquiries in the meantime.</p>
+  </div></section>
+  <section class="om-sec"><div class="wrap"><div class="clauses">
+    {sections.map((s, i) => (
+      <div class="clause" style="margin-bottom:28px">
+        <h2 style="font-size:21px;font-weight:600;margin:0 0 6px"><span class="clause-num" style="color:var(--vivid);margin-right:10px">{i + 1}.</span>{s.t}</h2>
+        <div class="clause-body prose-en"><p>{s.d}</p></div>
+      </div>
+    ))}
+  </div></div></section>
+</Base>

@@ -1,0 +1,54 @@
+---
+import Base from '../layouts/Base.astro';
+import ImgPh from '../components/ImgPh.astro';
+import CtaBand from '../components/CtaBand.astro';
+import Crumb from '../components/Crumb.astro';
+
+const fields = [
+  { t: 'Client / industry', d: 'Approved client name or industry.' },
+  { t: 'Challenge', d: 'The original business problem.' },
+  { t: 'Existing systems', d: 'Confirmed platforms and tools.' },
+  { t: 'Solution', d: 'The implemented workflows, integrations or automation.' },
+  { t: 'Implementation', d: 'The key decisions, constraints and validation steps.' },
+  { t: 'Outcome', d: 'Verified metrics or specific qualitative results.' },
+  { t: 'Technology', d: 'Technologies actually used.' },
+];
+const topics = [
+  'Connecting an ERP to multiple ecommerce marketplaces.',
+  'Reducing manual product catalogue management.',
+  'Connecting manufacturing and finished-goods inventory.',
+  'Building an AI-assisted product image workflow.',
+  'Improving ecommerce technical SEO and reporting.',
+];
+---
+<Base title="Ecommerce Integration & Automation Case Studies | Omnimerce" description="Explore real ecommerce technology projects, integration challenges, implementation decisions and measurable operational improvements.">
+  <section class="om-hero"><div class="wrap">
+    <Crumb trail={[{ label: 'Home', href: '/home-content/' }, { label: 'Case Studies' }]} />
+    <div class="split">
+      <div>
+        <h1>Practical solutions. Real business problems.</h1>
+        <div class="prose-en" style="margin-top:22px">
+          <p>Every ecommerce business has a different combination of systems, processes and constraints. Our project stories explain the problem, the approach and what changed.</p>
+          <p>Case studies are published only when the project details and claims can be substantiated and any required client permissions are in place. The first approved case studies are being prepared.</p>
+        </div>
+      </div>
+      <ImgPh desc="A collage of anonymized project dashboards, workflow diagrams and product operations screens. Use actual approved project visuals whenever possible." ratio="wide" label="Hero image" />
+    </div>
+  </div></section>
+
+  <section class="om-sec"><div class="wrap">
+    <h2 class="kop-sectie">What each case study covers</h2>
+    <div class="feat-grid">
+      {fields.map(f => <div class="card"><h3>{f.t}</h3><p>{f.d}</p></div>)}
+    </div>
+  </div></section>
+
+  <section class="om-sec om-sec--raised"><div class="wrap">
+    <h2 class="kop-sectie">Case study topics in preparation</h2>
+    <div class="feat-grid">
+      {topics.map(t => <div class="card"><p style="margin:0 0 12px"><span class="tag-soon">In preparation</span></p><h3>{t}</h3></div>)}
+    </div>
+  </div></section>
+
+  <CtaBand h2="Have a similar challenge?" primaryLabel="Discuss Your Project" />
+</Base>

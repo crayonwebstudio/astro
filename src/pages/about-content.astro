@@ -1,0 +1,67 @@
+---
+import Base from '../layouts/Base.astro';
+import ImgPh from '../components/ImgPh.astro';
+import CtaBand from '../components/CtaBand.astro';
+import Crumb from '../components/Crumb.astro';
+
+const guides = [
+  { t: 'Practical over fashionable', d: 'Technology should solve a real business problem. We evaluate tools and AI based on their usefulness, constraints and fit.' },
+  { t: 'Connected by design', d: 'Data, workflows, integrations and user experience should be considered together.' },
+  { t: 'Clear about trade-offs', d: 'We explain implementation options, dependencies and limitations so decisions can be made with confidence.' },
+  { t: 'Built for real operations', d: 'We consider maintenance, monitoring, testing and handover, not just whether a feature works in a demonstration.' },
+  { t: 'AI with accountability', d: 'We use AI where it can improve efficiency, while retaining appropriate human review and control.' },
+];
+const outcomes = [
+  'More connected operational systems.',
+  'Less repetitive data handling.',
+  'Better visibility into inventory and business performance.',
+  'More efficient product content workflows.',
+  'Reliable integrations between existing platforms.',
+  'Practical automation that can be maintained over time.',
+];
+const checkSvg = '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 256 256" aria-hidden="true" style="color:var(--vivid);flex:none;margin-top:2px"><path d="M232.49,80.49l-128,128a12,12,0,0,1-17,0l-56-56a12,12,0,0,1,17-17L96,183,215.51,63.51a12,12,0,0,1,17,17Z"></path></svg>';
+---
+<Base title="About Omnimerce | Ecommerce Technology & AI Solutions" description="Learn about Omnimerce and our approach to connecting ecommerce systems, operational workflows, integrations and AI automation.">
+  <section class="om-hero"><div class="wrap">
+    <Crumb trail={[{ label: 'Home', href: '/home-content/' }, { label: 'About Us' }]} />
+    <div class="split">
+      <div>
+        <h1>We believe commerce should work with less complexity.</h1>
+        <div class="prose-en" style="margin-top:22px">
+          <p>Omnimerce was built around a practical idea: ecommerce businesses should be able to connect their systems, simplify repetitive work and make better use of their operational data.</p>
+          <p>We bring together ecommerce technology, business workflows, integrations and AI-assisted automation to help businesses build more connected operations.</p>
+        </div>
+      </div>
+      <ImgPh desc="A genuine photograph of the Omnimerce team or founder in a modern workspace reviewing ecommerce architecture. Use a real photo when available, not a stock image presented as the team." ratio="wide" label="Team photo" />
+    </div>
+  </div></section>
+
+  <section class="om-sec"><div class="wrap">
+    <p class="eyebrow">Why Omnimerce</p>
+    <h2 class="kop-sectie">The connections between your tools matter as much as the tools.</h2>
+    <div class="split" style="margin-top:24px;align-items:start">
+      <div class="prose-en">
+        <p>Ecommerce technology often grows one tool at a time. An ERP is introduced for accounting, another system manages inventory, marketplaces handle orders, and separate tools support marketing.</p>
+        <p>Over time, the connections between those tools can become as important as the tools themselves.</p>
+        <p>Omnimerce focuses on those connections: understanding how information moves, where manual work accumulates and what changes can make the business easier to operate.</p>
+      </div>
+      <ImgPh desc="Team reviewing a product data flow or a real implementation workspace." ratio="std" />
+    </div>
+  </div></section>
+
+  <section class="om-sec om-sec--raised"><div class="wrap">
+    <h2 class="kop-sectie">What guides our work</h2>
+    <div class="feat-grid">
+      {guides.map(g => <div class="card"><h3>{g.t}</h3><p>{g.d}</p></div>)}
+    </div>
+  </div></section>
+
+  <section class="om-sec"><div class="wrap">
+    <h2 class="kop-sectie">What we help businesses achieve</h2>
+    <ul class="checklist list-cols">
+      {outcomes.map(o => <li style="display:flex;gap:10px"><span set:html={checkSvg} /><span style="color:var(--deep);font-size:15px">{o}</span></li>)}
+    </ul>
+  </div></section>
+
+  <CtaBand h2="Let's make your systems work better together." primaryLabel="Meet With Omnimerce" />
+</Base>

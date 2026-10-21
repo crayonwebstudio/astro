@@ -1,0 +1,11 @@
+---
+const { h2, text, primaryLabel = 'Discuss Your Project', primaryHref = '/contact/', secondaryLabel, secondaryHref } = Astro.props;
+---
+<section class="om-sec om-sec--tight"><div class="wrap"><div class="cta-band">
+  <h2 class="kop-sectie">{h2}</h2>
+  {text && <p style="margin-top:14px">{text}</p>}
+  <div style="display:flex;gap:16px;flex-wrap:wrap;margin-top:28px;align-items:center">
+    <a class="btn btn-lg" href={primaryHref}>{primaryLabel} &rarr;</a>
+    {secondaryLabel && <a class="btn-outline" href={secondaryHref}>{secondaryLabel}</a>}
+  </div>
+</div></div></section>
