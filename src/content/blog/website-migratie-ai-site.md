@@ -279,15 +279,15 @@ Search Console is je controlekamer tijdens een migratie. Dit zijn de stappen.
 
 ## Zo pakte Omnimerce het zelf aan
 
-Twee keer is op omnimerce.nl zelf een deel van de site verhuisd. De pagina over mijn diensten heette eerst `/diensten/` en is `/expertise/` geworden, met de vier onderliggende pagina's erbij. En de pagina `/principes/` is opgegaan in `/ai-en-data/`. Allebei kregen ze een permanente redirect in de `.htaccess`, de regels die je hierboven ziet.
+Twee keer is op omnimerce.com zelf een deel van de site verhuisd. De pagina over mijn diensten heette eerst `/diensten/` en is `/expertise/` geworden, met de vier onderliggende pagina's erbij. En de pagina `/principes/` is opgegaan in `/ai-en-data/`. Allebei kregen ze een permanente redirect in de `.htaccess`, de regels die je hierboven ziet.
 
 Twee lessen uit die verhuizingen neem ik mee als ik een migratie begeleid.
 
-**Een padredirect is nog niet de hele route.** De regels hierboven staan vóór de regels voor https en het domein zonder www. Toch levert die volgorde op zichzelf geen redirect in één sprong op. De bestemmingen bevatten alleen een pad, waardoor http of www nog een extra stap kan vragen. Controleer dus ook die varianten. Wil je direct op het definitieve adres uitkomen, gebruik dan dat volledige adres als bestemming. En kijk wat je hosting zelf al doorstuurt: op omnimerce.nl zet de hosting http om naar https voordat de `.htaccess` aan de beurt is.
+**Een padredirect is nog niet de hele route.** De regels hierboven staan vóór de regels voor https en het domein zonder www. Toch levert die volgorde op zichzelf geen redirect in één sprong op. De bestemmingen bevatten alleen een pad, waardoor http of www nog een extra stap kan vragen. Controleer dus ook die varianten. Wil je direct op het definitieve adres uitkomen, gebruik dan dat volledige adres als bestemming. En kijk wat je hosting zelf al doorstuurt: op omnimerce.com zet de hosting http om naar https voordat de `.htaccess` aan de beurt is.
 
 ![Schema van twee routes naar https://biite.nl/expertise/. Het oude adres http://www.biite.nl/diensten/ doet er drie sprongen over: de hosting zet http om naar https, de padregel in de .htaccess stuurt door naar /expertise/, en een regel haalt www weg. Het adres https://biite.nl/diensten/ komt er in één sprong, via de padregel.](/blog/website-migratie-ai-site/redirectketen-omnimerce.png)
 
-*Gemeten op omnimerce.nl op 30 september 2026. Hetzelfde oude pad, twee routes: welke je krijgt, hangt af van hoe de link begint.*
+*Gemeten op omnimerce.com op 30 september 2026. Hetzelfde oude pad, twee routes: welke je krijgt, hangt af van hoe de link begint.*
 
 **Controleer per pagina, niet alleen de centrale instelling.** De site heeft één centrale schakelaar die bepaalt of pagina's `noindex` dragen. Eén pagina bleek in zijn eigen bronbestand een eigen robots-regel te hebben, en die ging voor de schakelaar. Daardoor deed die pagina iets anders dan de rest van de site. Bij een build met de centrale noindex-schakelaar aan worden daarom eerst bestaande robots-tags verwijderd. Daarna wordt de centrale instructie gezet. De les is breder: een instelling die op "goed" staat, zegt niets over een pagina die er zelf iets anders over zegt. Controleer het op de pagina's zelf.
 

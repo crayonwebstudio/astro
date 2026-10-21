@@ -1,12 +1,12 @@
 // SINGLE CONTENT FILE - edit everything here, no CMS needed.
 // Change text, links, numbers, lists in this file and rebuild.
-// All pages read from this file. Text comes from the supplied HTML export of omnimerce.nl.
+// All pages read from this file. Text comes from the supplied HTML export of omnimerce.com.
 
 export const site = {
   "name": "Omnimerce",
   "tagline": "Marketing die klopt tot in de systemen",
   "description": "Strategische online marketing met de techniek als vaste ingang. Omnimerce brengt je strategie, tracking, sitearchitectuur en martech-koppelingen op één lijn.",
-  "email": "hallo@omnimerce.nl",
+  "email": "hallo@omnimerce.com",
   "phoneDisplay": "06 19618278",
   "phoneLink": "+31619618278",
   "linkedin": "https://www.linkedin.com/company/biite-agency",
@@ -1133,7 +1133,7 @@ export const privacy = {
     {
       "heading": "Wie verwerkt je gegevens",
       "paras": [
-        "Omnimerce is verantwoordelijk voor de verwerking. Je bereikt Omnimerce via hallo@omnimerce.nl of 06 19618278."
+        "Omnimerce is verantwoordelijk voor de verwerking. Je bereikt Omnimerce via hallo@omnimerce.com of 06 19618278."
       ]
     },
     {
@@ -1180,7 +1180,7 @@ export const privacy = {
     {
       "heading": "Je rechten",
       "paras": [
-        "Je mag je gegevens inzien, laten corrigeren of laten verwijderen. Je mag bezwaar maken tegen de verwerking en vragen om overdracht van je gegevens. Een verzoek daartoe stuur je naar hallo@omnimerce.nl, en je krijgt binnen een maand antwoord.",
+        "Je mag je gegevens inzien, laten corrigeren of laten verwijderen. Je mag bezwaar maken tegen de verwerking en vragen om overdracht van je gegevens. Een verzoek daartoe stuur je naar hallo@omnimerce.com, en je krijgt binnen een maand antwoord.",
         "Kom je er met mij niet uit, dan kun je een klacht indienen bij de Autoriteit Persoonsgegevens.",
         "Laatst bijgewerkt op 14 september 2026."
       ]
