@@ -786,13 +786,13 @@ export const footer = {
   ],
   "expertiseTitle": "Solutions",
   "expertiseLinks": [
-    { "n": "01", "label": "ERP & Accounting", "href": "/solutions/ecommerce-erp-accounting/" },
-    { "n": "02", "label": "Manufacturing & Inventory", "href": "/solutions/manufacturing-inventory/" },
-    { "n": "03", "label": "Marketplace Integrations", "href": "/solutions/marketplace-integration/" },
-    { "n": "04", "label": "AI Product Content", "href": "/solutions/ai-product-content/" },
-    { "n": "05", "label": "Marketing Automation", "href": "/solutions/marketing-automation/" },
-    { "n": "06", "label": "Ecommerce SEO", "href": "/solutions/ecommerce-seo/" },
-    { "n": "07", "label": "Custom Integrations", "href": "/solutions/custom-integrations/" }
+    { "icon": "accounting", "label": "ERP & Accounting", "href": "/solutions/ecommerce-erp-accounting/" },
+    { "icon": "manufacturing", "label": "Manufacturing & Inventory", "href": "/solutions/manufacturing-inventory/" },
+    { "icon": "marketplace", "label": "Marketplace Integrations", "href": "/solutions/marketplace-integration/" },
+    { "icon": "ai", "label": "AI Product Content", "href": "/solutions/ai-product-content/" },
+    { "icon": "marketing", "label": "Marketing Automation", "href": "/solutions/marketing-automation/" },
+    { "icon": "seo", "label": "Ecommerce SEO", "href": "/solutions/ecommerce-seo/" },
+    { "icon": "integrations", "label": "Custom Integrations", "href": "/solutions/custom-integrations/" }
   ],
   "contactTitle": "Contact",
   "legalLine": "Copyright © 2026 Omnimerce. All rights reserved.",
