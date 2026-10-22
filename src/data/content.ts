@@ -25,6 +25,39 @@ export const nav = [
   { "label": "Contact", "href": "/contact/" }
 ];
 
+export const megaMenu = {
+  "columns": [
+    {
+      "title": "Solutions", "numbered": true, "links": [
+        { "number": "01", "label": "ERP & Accounting", "href": "/solutions/ecommerce-erp-accounting/" },
+        { "number": "02", "label": "Manufacturing & Inventory", "href": "/solutions/manufacturing-inventory/" },
+        { "number": "03", "label": "Marketplace Integrations", "href": "/solutions/marketplace-integration/" },
+        { "number": "04", "label": "AI Product Content", "href": "/solutions/ai-product-content/" },
+        { "number": "05", "label": "Marketing Automation", "href": "/solutions/marketing-automation/" },
+        { "number": "06", "label": "Ecommerce SEO", "href": "/solutions/ecommerce-seo/" },
+        { "number": "07", "label": "Custom Integrations", "href": "/solutions/custom-integrations/" }
+      ]
+    },
+    {
+      "title": "Industries", "numbered": false, "links": [
+        { "label": "All Industries", "href": "/industries/" },
+        { "label": "Manufacturers", "href": "/industries/ecommerce-manufacturers/" },
+        { "label": "Multichannel sellers", "href": "/industries/multichannel-ecommerce/" }
+      ]
+    },
+    {
+      "title": "Company", "numbered": false, "links": [
+        { "label": "Our Approach", "href": "/our-approach/" },
+        { "label": "About Us", "href": "/about/" },
+        { "label": "Case Studies", "href": "/case-studies/" },
+        { "label": "Insights", "href": "/insights/" },
+        { "label": "FAQ", "href": "/faq/" },
+        { "label": "Contact", "href": "/contact/" }
+      ]
+    }
+  ]
+};
+
 export const home = {
   "heroTitleA": "Commerce",
   "heroTitleB": "Without",

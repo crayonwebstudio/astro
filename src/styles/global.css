@@ -166,9 +166,22 @@ label{font-size:13px;font-weight:700;display:block;margin:14px 0 6px}
 .menu-btn{display:inline-flex;width:44px;height:44px;border-radius:50%;border:1px solid rgba(36,36,36,.15);background:var(--surface,#FAF8F5);color:var(--deep);cursor:pointer;flex:none;align-items:center;justify-content:center;transition:background-color .2s}
 .menu-btn:hover{background:var(--raised)}
 .menu-btn svg{display:block}
-.mobile-menu{display:none;position:fixed;top:64px;left:12px;right:12px;z-index:65;background:var(--bg);border:1px solid var(--line);border-radius:16px;padding:12px 16px;box-shadow:0 24px 48px rgba(36,36,36,.14)}
-.mobile-menu.open{display:flex;flex-direction:column;gap:4px}
-.mobile-menu a{padding:10px 0;font-size:16px}
+.menu-btn .icon-close{display:none}
+.menu-btn.menu-open .icon-close{display:block}
+.menu-btn.menu-open .icon-open{display:none}
+.mega-backdrop{display:none;position:fixed;inset:0;z-index:38;background:rgba(36,36,36,.30)}
+.mega-backdrop.open{display:block}
+.mega-menu{display:none;position:fixed;top:0;left:0;right:0;z-index:39;background:var(--bg);padding:92px 20px 30px;border-radius:0 0 28px 28px;box-shadow:0 30px 60px rgba(36,36,36,.16);max-height:100dvh;overflow:auto}
+.mega-menu.open{display:block}
+.mega-grid{max-width:1600px;margin:0 auto;display:grid;grid-template-columns:1fr;gap:16px}
+@media(min-width:768px){.mega-menu{padding:100px 40px 36px}}
+@media(min-width:1024px){.mega-grid{grid-template-columns:repeat(3,1fr);gap:20px}}
+.mega-col{background:var(--raised);border-radius:20px;padding:28px 30px}
+.mega-col h3{font-size:26px;font-weight:700;color:var(--deep);margin:0 0 16px}
+.mega-col ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+.mega-col a{display:flex;align-items:baseline;gap:10px;padding:7px 0;font-size:15.5px;color:rgba(36,36,36,.78);text-decoration:none;transition:color .2s}
+.mega-col a:hover{color:var(--vivid)}
+.mega-num{font-size:11px;font-weight:600;color:rgba(36,36,36,.42);min-width:20px;flex:none}
 
 /* Group B 1:1 fixes: process bands, dark bands, gebied cards, FAQ, timeline, roles */
 .breadcrumb{font-size:14px;color:var(--muted);margin-bottom:24px}

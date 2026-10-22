@@ -1,6 +1,6 @@
 ---
 import '../styles/global.css';
-import { site, nav, footer, home } from '../data/content.ts';
+import { site, nav, footer, home, megaMenu } from '../data/content.ts';
 const { title = site.name + ' · ' + site.tagline, description = site.description, ogDescription = description, jsonLd = [], finalCtaImage = '/portret-dylan.jpg', finalCtaImageAlt = 'At work on an ecommerce project' } = Astro.props;
 const siteUrl = 'https://astro.woodwolfdigital.com';
 const canonical = `${siteUrl}${Astro.url.pathname}`;
@@ -54,9 +54,13 @@ const checkSvg = '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
 </div></div></header>
 <div class="header-actions">
 <a href={site.ctaHref} class="btn header-cta">{site.ctaLabel} &rarr;</a>
-<button type="button" class="menu-btn" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu" onclick="document.getElementById('mobile-menu').classList.toggle('open');this.setAttribute('aria-expanded', document.getElementById('mobile-menu').classList.contains('open') ? 'true' : 'false')"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="3" y="5" width="18" height="2" rx="1"></rect><rect x="3" y="11" width="18" height="2" rx="1"></rect><rect x="3" y="17" width="18" height="2" rx="1"></rect></svg></button>
+<button type="button" class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="mega-menu" aria-label="Open menu"><svg class="icon-open" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="3" y="5" width="18" height="2" rx="1"></rect><rect x="3" y="11" width="18" height="2" rx="1"></rect><rect x="3" y="17" width="18" height="2" rx="1"></rect></svg><svg class="icon-close" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 5 L19 19 M19 5 L5 19"></path></svg></button>
 </div>
-<nav id="mobile-menu" class="mobile-menu" aria-label="Mobile navigation">{nav.map(n => <a href={n.href} onclick="document.getElementById('mobile-menu').classList.remove('open')">{n.label}</a>)}</nav>
+<div id="mega-backdrop" class="mega-backdrop"></div>
+<nav id="mega-menu" class="mega-menu" aria-label="Menu"><div class="mega-grid">{megaMenu.columns.map(col => <div class="mega-col"><h3>{col.title}</h3><ul>{col.links.map(l => <li><a href={l.href}>{col.numbered && <span class="mega-num">{l.number}</span>}<span>{l.label}</span></a></li>)}</ul></div>)}</div></nav>
+<script>
+(function(){ var btn=document.getElementById('menu-btn'), menu=document.getElementById('mega-menu'), bd=document.getElementById('mega-backdrop'); if(!btn||!menu||!bd) return; function setOpen(o){ menu.classList.toggle('open',o); bd.classList.toggle('open',o); btn.classList.toggle('menu-open',o); btn.setAttribute('aria-expanded', o?'true':'false'); btn.setAttribute('aria-label', o?'Close menu':'Open menu'); } btn.addEventListener('click', function(){ setOpen(!menu.classList.contains('open')); }); bd.addEventListener('click', function(){ setOpen(false); }); menu.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', function(){ setOpen(false); }); }); document.addEventListener('keydown', function(e){ if(e.key==='Escape') setOpen(false); }); })();
+</script>
 <main><slot /></main>
 <footer>
   <section class="final-cta-section"><div class="wrap"><div class="final-cta-grid">
