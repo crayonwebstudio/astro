@@ -8,8 +8,8 @@ export const site = {
   "tagline": "Commerce Without Complexity",
   "description": "Connect ecommerce ERP, manufacturing, inventory, marketplaces and AI automation with tailored solutions built around your business.",
   "email": "hallo@omnimerce.online",
-  "phoneDisplay": "",
-  "phoneLink": "",
+  "phoneDisplay": "+91 9624 05 2424",
+  "phoneLink": "tel:+919624052424",
   "linkedin": "",
   "ctaLabel": "Discuss Your Project",
   "ctaHref": "/contact/"
